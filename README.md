@@ -1,89 +1,170 @@
-<p align="center">
-  <h1 align="center">OpenClaw AI CMO</h1>
-</p>
+<div align="center">
 
-<p align="center">
-  <strong>The Open-Source AI Chief Marketing Officer for Solo Builders</strong><br>
-  Local-first content engine + multi-platform distribution + automated scheduling
-</p>
+<br/>
 
-<p align="center">
-  <a href="#features"><img src="https://img.shields.io/badge/Skills-64-blue?style=flat-square" alt="Skills"/></a>
-  <a href="#platforms"><img src="https://img.shields.io/badge/Platforms-12+-green?style=flat-square" alt="Platforms"/></a>
-  <a href="#models"><img src="https://img.shields.io/badge/LLM-100%25%20Local-orange?style=flat-square" alt="Local LLM"/></a>
-  <a href="#pipeline"><img src="https://img.shields.io/badge/Pipeline-10%20Stage-purple?style=flat-square" alt="Pipeline"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Cost-$0%2Fmonth-brightgreen?style=flat-square" alt="Cost"/></a>
-</p>
+<!-- Capsule Render Hero Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=OpenClaw%20AI%20CMO&fontSize=60&fontAlignY=35&desc=The%20Open-Source%20AI%20Chief%20Marketing%20Officer&descAlignY=55&descSize=18&fontColor=ffffff&animation=fadeIn" width="100%"/>
 
-<p align="center">
-  <a href="docs/guides/QUICKSTART.md">Quickstart</a> |
-  <a href="docs/architecture/SYSTEM-ARCHITECTURE.md">Architecture</a> |
-  <a href="docs/guides/PLATFORM-SETUP.md">Platform Setup</a> |
-  <a href="docs/api-reference/API.md">API Reference</a> |
-  <a href="CONTRIBUTING.md">Contributing</a>
-</p>
+<br/>
 
----
+<!-- Animated Typing SVG -->
+<a href="https://github.com/inbharatai/OpenClaw-AI-CMO">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=22C55E&center=true&vCenter=true&repeat=true&width=750&height=45&lines=64+Skills+%E2%80%A2+10+Stage+Pipeline+%E2%80%A2+12+Platforms;100%25+Local+AI+%E2%80%A2+%240%2Fmonth+%E2%80%A2+Zero+Cloud+APIs;One+Note+%E2%86%92+Multi-Platform+Content+%E2%86%92+Auto+Published;Built+for+Solo+Builders+Who+Ship+Fast" alt="Typing SVG" />
+</a>
+
+<br/><br/>
+
+<!-- Built with Claude Code -->
+[![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-6B4FBB?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/claude-code)
+
+<br/>
+
+<!-- Badge Row -->
+[![Version](https://img.shields.io/badge/v1.0.0-22C55E?style=for-the-badge&label=version)](https://github.com/inbharatai/OpenClaw-AI-CMO/releases)
+[![Skills](https://img.shields.io/badge/64-blue?style=for-the-badge&label=skills)](https://github.com/inbharatai/OpenClaw-AI-CMO)
+[![Platforms](https://img.shields.io/badge/12+-green?style=for-the-badge&label=platforms)](https://github.com/inbharatai/OpenClaw-AI-CMO)
+[![License](https://img.shields.io/badge/MIT-000080?style=for-the-badge&label=license)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-22C55E?style=for-the-badge)](https://github.com/inbharatai/OpenClaw-AI-CMO/pulls)
+
+<br/>
+
+<!-- Tech badges -->
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Qwen](https://img.shields.io/badge/Qwen_3_8B-FF6600?style=flat-square)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![HeyGen](https://img.shields.io/badge/HeyGen-FF4444?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+
+<br/>
+
+[**Quickstart**](docs/guides/QUICKSTART.md) &nbsp;&middot;&nbsp; [**Architecture**](docs/architecture/SYSTEM-ARCHITECTURE.md) &nbsp;&middot;&nbsp; [**Platform Setup**](docs/guides/PLATFORM-SETUP.md) &nbsp;&middot;&nbsp; [**API Reference**](docs/api-reference/API.md) &nbsp;&middot;&nbsp; [**Contributing**](CONTRIBUTING.md)
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
 
 ## What Is This?
 
 **OpenClaw AI CMO** is a complete, local-first AI marketing operating system. It takes one content idea and turns it into multi-platform posts, visual briefs, newsletters, video scripts, and more — then approves, queues, and distributes them automatically.
 
+<div align="center">
+
+> *"Drop one note. Get content for every platform. Zero cloud APIs. Zero monthly fees."*
+
+</div>
+
 **Built for solo builders** who want marketing that runs itself without paying $100-700/month for SaaS tools.
 
-### What It Actually Does
+<br/>
 
-- **You drop a note** ("shipped new API endpoint") into a folder
-- **OpenClaw runs a 10-stage pipeline**: classify → enforce calendar → generate content → score quality → approve/block → create visual briefs → distribute to platform queues → report
-- **Output**: website post + LinkedIn post + X post + Discord announcement + Instagram carousel brief + newsletter snippet — all from one note
-- **Everything runs locally** on your machine with open-source models
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
 
-This is **not** a SaaS tool. You own and operate the entire system.
+<br/>
 
----
+## At a Glance
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center"><h3>64</h3><sub>AI Skills</sub></td>
+<td align="center"><h3>10</h3><sub>Pipeline Stages</sub></td>
+<td align="center"><h3>12</h3><sub>Platforms</sub></td>
+<td align="center"><h3>$0</h3><sub>Monthly Cost</sub></td>
+<td align="center"><h3>100%</h3><sub>Local AI</sub></td>
+<td align="center"><h3>4</h3><sub>Approval Levels</sub></td>
+</tr>
+</table>
+
+<br/>
+
+**v1.0 Released** &nbsp;&middot;&nbsp; **64 Skills** &nbsp;&middot;&nbsp; **12 Platforms** &nbsp;&middot;&nbsp; **HeyGen Video** &nbsp;&middot;&nbsp; **Visual Content** &nbsp;&middot;&nbsp; **Post-Publish Analytics**
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
 
 ## How It Works
 
 ```
          YOUR INPUT                          OPENCLAW PIPELINE
   (1 source note/idea)                      (10 automated stages)
-          │
-          ▼
-  ┌──────────────┐     ┌───────────────┐     ┌──────────────┐
-  │  1. INTAKE   │────▶│ 2. CALENDAR   │────▶│ 3. NEWSROOM  │
-  │  scan+classify│    │   ENFORCER    │     │   + PRODUCT   │
-  └──────────────┘     │  (gap detect) │     │   AGENTS     │
-                       └───────────────┘     └──────┬───────┘
-                                                     │
-  ┌──────────────┐     ┌───────────────┐     ┌──────▼───────┐
-  │  7. VISUAL   │◀────│ 6. APPROVAL   │◀────│ 5. QUALITY   │
-  │   BRIEFS     │     │   ENGINE      │     │   SCORER     │
-  │ carousel/    │     │ L1-L4 policy  │     │  readability  │
-  │ quotes/thumb │     └───────────────┘     │  hook/CTA/fit│
-  └──────┬───────┘                           └──────────────┘
-         │                                          ▲
-         ▼                                          │
-  ┌──────────────┐     ┌───────────────┐     ┌──────────────┐
-  │ 8. DISTRIBUTE│────▶│  9. REPORT    │     │ 4. CONTENT   │
-  │  to queues + │     │  daily/weekly │     │   AGENT      │
-  │  SocialFlow  │     │  /monthly     │     │ multi-channel│
-  └──────────────┘     └───────────────┘     └──────────────┘
-         │
-         ▼
-  ┌──────────────────────────────────────────┐
-  │            SOCIALFLOW ENGINE              │
-  │  LinkedIn │ X │ Instagram │ Discord │     │
-  │  Facebook │ Reddit │ Medium │ Substack │  │
-  │  HeyGen (video) │ Email │ YouTube       │
-  └──────────────────────────────────────────┘
+          |
+          v
+  +----------------+     +-----------------+     +----------------+
+  |  1. INTAKE     |---->| 2. CALENDAR     |---->| 3. NEWSROOM    |
+  |  scan+classify |     |   ENFORCER      |     |   + PRODUCT    |
+  +----------------+     |  (gap detect)   |     |   AGENTS       |
+                         +-----------------+     +-------+--------+
+                                                         |
+  +----------------+     +-----------------+     +-------v--------+
+  |  7. VISUAL     |<----| 6. APPROVAL     |<----| 5. QUALITY     |
+  |   BRIEFS       |     |   ENGINE        |     |   SCORER       |
+  | carousel/      |     | L1-L4 policy    |     |  readability   |
+  | quotes/thumb   |     +-----------------+     |  hook/CTA/fit  |
+  +-------+--------+                             +----------------+
+          |                                             ^
+          v                                             |
+  +----------------+     +-----------------+     +------+----------+
+  | 8. DISTRIBUTE  |---->|  9. REPORT      |     | 4. CONTENT     |
+  |  to queues +   |     |  daily/weekly   |     |   AGENT        |
+  |  SocialFlow    |     |  /monthly       |     | multi-channel  |
+  +----------------+     +-----------------+     +-----------------+
+          |
+          v
+  +------------------------------------------------------+
+  |              SOCIALFLOW ENGINE                        |
+  |  LinkedIn | X | Instagram | Discord | Facebook       |
+  |  Reddit | Medium | Substack | HeyGen | Email         |
+  +------------------------------------------------------+
 ```
 
----
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
+
+## Important: No Paid API Keys Required
+
+<div align="center">
+
+> **OpenClaw generates ALL content locally using Ollama + open-source models. Zero cloud API keys needed.**
+
+</div>
+
+| Scenario | API Key Needed? | How It Works |
+|----------|:--------------:|-------------|
+| **OpenClaw pipeline** (content generation, planning, scoring) | **NO** | Uses local Ollama (qwen3:8b, qwen2.5-coder:7b) |
+| **SocialFlow posting** (publish to platforms) | **NO** | Browser automation only |
+| **HeyGen video** | **NO** | Browser-based login, no API |
+| **SocialFlow standalone** (if used without OpenClaw for text generation) | Yes | Needs OpenAI, Anthropic, or Gemini key |
+
+**Bottom line:** When using OpenClaw + SocialFlow together (the recommended setup), the entire system runs at **$0/month** with no cloud APIs.
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
 
 ## Features
 
-### Content Engine — 64 Skills
+<details>
+<summary><b>Content Engine — 64 Skills (click to expand)</b></summary>
+
+<br/>
 
 | Category | What It Does |
 |----------|-------------|
@@ -93,7 +174,12 @@ This is **not** a SaaS tool. You own and operate the entire system.
 | **Distribution** | Channel-specific formatting, posting queues, SocialFlow bridge, Discord webhooks, newsletter export |
 | **Research & Growth** | Trend-to-content, competitor monitoring, SEO topic mapping, audience angles, content strategy |
 
-### Content Intelligence
+</details>
+
+<details>
+<summary><b>Content Intelligence (click to expand)</b></summary>
+
+<br/>
 
 | Feature | What It Does |
 |---------|-------------|
@@ -102,24 +188,43 @@ This is **not** a SaaS tool. You own and operate the entire system.
 | **Analytics Engine** | Tracks post-publish performance: impressions, engagement, reach. Compares by content type and pillar. 5 API endpoints. |
 | **Proactive Gap Detection** | Doesn't just wait for source notes — identifies missing platform content and pillar imbalances. |
 
-### SocialFlow Posting Engine
+</details>
 
-| Platform | Method | Status |
-|----------|--------|--------|
-| LinkedIn | Browser automation (Playwright) | Ready — awaits credentials |
-| X / Twitter | Browser automation (Playwright) | Ready — awaits credentials |
-| Instagram | Browser automation (Playwright) | Ready — awaits credentials |
-| Facebook | Browser automation (Playwright) | Ready — awaits credentials |
-| Discord | Webhook API | Ready — awaits webhook URL |
-| Reddit | Browser automation (Playwright) | Ready — draft-first |
-| Medium | Browser automation (Playwright) | Ready — awaits credentials |
-| Substack | Browser automation (Playwright) | Ready — awaits credentials |
-| HeyGen | Browser automation (native adapter) | Ready — awaits credentials |
-| beehiiv | Browser automation (Playwright) | Ready — awaits credentials |
-| MailerLite | Browser automation (Playwright) | Ready — awaits credentials |
-| Brevo | Browser automation (Playwright) | Ready — awaits credentials |
+<br/>
 
-### Pipeline Automation — 10 Stages
+## Supported Platforms
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center"><b>Platform</b></td>
+<td align="center"><b>Method</b></td>
+<td align="center"><b>Status</b></td>
+</tr>
+<tr><td><b>LinkedIn</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>X / Twitter</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Instagram</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Facebook</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Discord</b></td><td>Webhook API</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Reddit</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Medium</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Substack</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>HeyGen</b></td><td>Native Video Adapter</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>beehiiv</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>MailerLite</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+<tr><td><b>Brevo</b></td><td>Browser Automation</td><td><img src="https://img.shields.io/badge/Ready-22C55E?style=flat-square" /></td></tr>
+</table>
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
+
+## Pipeline — 10 Stages
 
 | Stage | What It Does | Speed |
 |-------|-------------|-------|
@@ -134,19 +239,14 @@ This is **not** a SaaS tool. You own and operate the entire system.
 | 4. Distribution | Route to platform queues + SocialFlow | ~2s |
 | 5. Report | Generate daily/weekly/monthly pipeline reports | ~10s |
 
-### Scheduling — Live on macOS
-
-| Schedule | Trigger | What Runs |
-|----------|---------|-----------|
-| **Daily** | 6:00 AM (launchd) | Full 10-stage pipeline |
-| **Weekly** | Monday 8:00 AM | Weekly roundup, editorial calendar, video briefs, newsletter |
-| **Monthly** | 1st of month 9:00 AM | Content pillar review, campaign refresh, performance summary |
-
----
+<br/>
 
 ## Architecture
 
-### 3-Layer Model Router
+<details>
+<summary><b>3-Layer Model Router (click to expand)</b></summary>
+
+<br/>
 
 | Layer | Model | Latency | Used For |
 |-------|-------|---------|----------|
@@ -154,7 +254,12 @@ This is **not** a SaaS tool. You own and operate the entire system.
 | **Thinking** | qwen3:8b | 15-60s | Content generation, strategy, articles, complex reasoning |
 | **Recorder** | n/a (async) | 0ms | Timing metrics, audit trail, pipeline events |
 
-### Tech Stack
+</details>
+
+<details>
+<summary><b>Tech Stack (click to expand)</b></summary>
+
+<br/>
 
 | Component | Technology |
 |-----------|-----------|
@@ -167,21 +272,22 @@ This is **not** a SaaS tool. You own and operate the entire system.
 | Analytics | SQLite + FastAPI REST API |
 | Scheduling | macOS launchd (daily/weekly/monthly agents) |
 | Visual Content | Carousel/quote-card/thumbnail skill-based text packs |
-| Date Grounding | Central date-context.sh injected into all prompts |
-| Config | `configs/openclaw.yaml` (models, calendar, pillars, quality gates) |
 | Storage | Local filesystem (Markdown + JSON + SQLite) |
 
----
+</details>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
 
 ## Quick Start
 
-### Prerequisites
+> [!TIP]
+> **Prerequisites:** macOS or Linux &middot; [Ollama](https://ollama.com) installed &middot; Python 3.9+ &middot; No API keys needed
 
-- macOS (scheduling uses launchd) or Linux (use cron)
-- [Ollama](https://ollama.com) installed
-- Python 3.9+
-
-### 1. Clone & Setup
+### One-Command Setup
 
 ```bash
 git clone https://github.com/inbharatai/OpenClaw-AI-CMO.git
@@ -189,36 +295,24 @@ cd OpenClaw-AI-CMO
 ./setup.sh
 ```
 
-### 2. Pull Models
+### Pull Models
 
 ```bash
 ollama pull qwen3:8b           # Thinking layer (content generation)
 ollama pull qwen2.5-coder:7b   # Fast layer (scoring, formatting)
 ```
 
-### 3. Configure
-
-```bash
-# Edit configs to match your setup
-nano configs/openclaw.yaml   # Set timezone, posting targets, content pillar mix
-```
-
-### 4. Run Your First Pipeline
+### Run Your First Pipeline
 
 ```bash
 # Drop a source note
-echo "Launched new AI-powered analytics dashboard with real-time insights" > data/source-notes/my-first-update.md
+echo "Launched new AI-powered analytics dashboard" > data/source-notes/my-first-update.md
 
 # Run the daily pipeline (10 stages)
 ./openclaw daily
-
-# Or run individual stages
-./openclaw intake        # Just intake
-./openclaw approve       # Just approval
-./openclaw status        # System health check
 ```
 
-### 5. Start SocialFlow (for posting)
+### Start SocialFlow (for posting)
 
 ```bash
 cd socialflow/backend
@@ -226,75 +320,15 @@ pip install -r requirements.txt
 playwright install chromium
 python main.py
 # Dashboard at http://localhost:8000
-# API docs at http://localhost:8000/docs
 ```
 
-### 6. Activate Scheduling
+<br/>
 
-```bash
-# Install launchd agents
-./openclaw-engine/scripts/install-schedule.sh
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
 
-# Verify
-launchctl list | grep openclaw
-
-# Remove
-./openclaw-engine/scripts/install-schedule.sh --uninstall
-```
-
----
-
-## Project Structure
-
-```
-OpenClaw-AI-CMO/
-├── openclaw                    # Main CLI (./openclaw daily|status|skill...)
-├── setup.sh                    # One-command setup
-├── configs/
-│   └── openclaw.yaml           # Master config (models, calendar, pillars, quality)
-│
-├── openclaw-engine/            # The AI CMO brain
-│   ├── scripts/                # 24 pipeline + utility scripts
-│   │   ├── daily-pipeline.sh   # 10-stage daily orchestrator
-│   │   ├── calendar-enforcer.sh# Content gap detection
-│   │   ├── quality-scorer.sh   # Content quality gate
-│   │   ├── visual-brief-generator.sh # Visual content system
-│   │   ├── skill-runner.sh     # Executes any skill with local LLM
-│   │   ├── layer-router.sh     # Fast/Think/Recorder model routing
-│   │   ├── install-schedule.sh # macOS launchd setup
-│   │   └── ollama-call.py      # Safe LLM API caller
-│   ├── skills/                 # 64 skill definitions (SKILL.md)
-│   ├── policies/               # Approval rules, brand voice, rate limits
-│   └── memory/                 # Persistent pipeline state
-│
-├── socialflow/                 # Multi-platform posting engine
-│   ├── backend/                # FastAPI server (53 API endpoints)
-│   │   ├── main.py             # Server + content generation routes
-│   │   ├── automation.py       # LinkedIn, Instagram, X automation
-│   │   ├── automation_extended.py # Facebook, Reddit, Medium, Substack, Discord, Email
-│   │   ├── heygen_adapter.py   # HeyGen native video adapter + job state machine
-│   │   ├── heygen_routes.py    # HeyGen API endpoints
-│   │   ├── asset_inventory.py  # Content asset tracking + distribution queue
-│   │   ├── analytics_store.py  # Post-publish performance analytics
-│   │   ├── visual_content_routes.py # Visual brief generation API
-│   │   └── openclaw_bridge.py  # OpenClaw → SocialFlow bridge
-│   └── frontend/               # Web dashboard
-│
-├── data/                       # Content workspace (22 subdirectories)
-├── queues/                     # Per-platform approval queues
-├── approvals/                  # approved/ blocked/ review/ pending/
-├── reports/                    # daily/ weekly/ monthly/
-├── logs/                       # Pipeline and scheduling logs
-├── exports/                    # Posted content archive
-├── tests/                      # Test scripts
-└── docs/                       # 13 architecture + guide documents
-```
-
----
+<br/>
 
 ## Approval Model
-
-Every piece of content goes through a 4-level policy engine before distribution:
 
 | Level | Name | Action | Examples |
 |-------|------|--------|----------|
@@ -303,13 +337,11 @@ Every piece of content goes through a 4-level policy engine before distribution:
 | **L3** | Review Queue | Held for human review | Bold claims, competitor content, PR-sensitive |
 | **L4** | Block | Rejected automatically | Credentials, PII, unverifiable claims, spam patterns |
 
-**Scoring dimensions:** Source confidence (25%) · Claim sensitivity (25%) · Brand voice (15%) · Data safety (15%) · Duplication (10%) · Platform risk (10%)
+**Scoring dimensions:** Source confidence (25%) &middot; Claim sensitivity (25%) &middot; Brand voice (15%) &middot; Data safety (15%) &middot; Duplication (10%) &middot; Platform risk (10%)
 
----
+<br/>
 
 ## Visual Content System
-
-One source idea generates a complete visual content kit:
 
 | Type | Output | Platforms |
 |------|--------|-----------|
@@ -320,86 +352,87 @@ One source idea generates a complete visual content kit:
 | **Image Prompts** | 3 AI image generation prompts | Midjourney, DALL-E, Flux |
 | **Creative Pack** | All of the above from one source | All platforms |
 
----
-
-## Analytics
-
-Post-publish performance tracking with SQLite + REST API:
-
-| Endpoint | What It Does |
-|----------|-------------|
-| `POST /api/analytics/metrics` | Record post performance data |
-| `GET /api/analytics/platform/{name}` | Performance by platform |
-| `GET /api/analytics/top-content-types` | Best-performing content types |
-| `GET /api/analytics/pillars` | Performance by content pillar |
-| `GET /api/analytics/weekly-summary` | Weekly performance overview |
-
----
-
-## HeyGen Video Integration
-
-HeyGen is integrated as a native SocialFlow adapter (not a side script):
-
-```
-Script input → HeyGen job (draft → queued → generating → completed → ready)
-                                                              │
-                                    ┌─────────────────────────┤
-                                    ▼                         ▼
-                              Asset Inventory          Platform Queue
-                              (SQLite tracked)     IG reel │ YT Short │
-                                                   LI post │ X clip  │
-                                                   Discord attachment
-```
-
-| Feature | Status |
-|---------|--------|
-| Job state machine (6 states) | Verified |
-| Asset inventory registration | Verified |
-| Platform-specific distribution (7 rules) | Verified |
-| Browser-based auth (Playwright) | Ready — awaits credentials |
-| Full lifecycle: create → register → distribute | Verified |
-
----
+<br/>
 
 ## What You Do Daily
 
 | Your Time | What You Do | What OpenClaw Does |
 |-----------|-------------|-------------------|
 | **2 min** | Drop 1 source note into `data/source-notes/` | Everything else |
-| **0 min** | Nothing — pipeline runs at 6 AM | Intake → Calendar check → Generate → Score → Approve → Visual briefs → Distribute → Report |
-| **5 min/week** | Review the weekly report, check `approvals/review/` | Weekly roundup, newsletter draft, editorial calendar |
+| **0 min** | Nothing — pipeline runs at 6 AM | Intake, Calendar, Generate, Score, Approve, Visual, Distribute, Report |
+| **5 min/week** | Review weekly report, check `approvals/review/` | Weekly roundup, newsletter draft, editorial calendar |
 
----
+<br/>
 
-## Security & Safety
+## Security
 
-- All credentials encrypted with Fernet (AES-128-CBC)
-- Browser sessions stored locally, never transmitted
-- Rate limiting enforced per platform (configurable in `openclaw.yaml`)
-- Daily posting caps prevent spam
-- No cloud APIs required for core operation
-- Workspace guard prevents operations outside project folder
-- PII/credential regex detection blocks sensitive content
-- Full audit trail for every pipeline run
+<div align="center">
 
----
+| | Layer | Details |
+|:--:|:------|:--------|
+| 1 | **Encrypted Credentials** | All platform passwords encrypted with Fernet (AES-128-CBC) |
+| 2 | **Local-Only Architecture** | No cloud servers, no third-party credential storage |
+| 3 | **PII Auto-Detection** | Regex blocks credentials, SSNs, card numbers before publishing |
+| 4 | **Rate Limiting** | Configurable daily caps per platform prevent spam |
+| 5 | **Workspace Guard** | Prevents operations outside project folder |
+| 6 | **Full Audit Trail** | Every pipeline run logged with timing and evidence |
+
+</div>
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=2&section=header" width="100%"/>
+
+<br/>
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
----
+1. **Fork** the repository
+2. **Branch** — `git checkout -b feature/amazing-feature`
+3. **Commit** — `git commit -m 'Add amazing feature'`
+4. **Push** — `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+<br/>
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+<br/>
 
 ---
 
-<p align="center">
-  Built by <a href="https://github.com/inbharatai">INBharat AI</a> · <a href="mailto:info@inbharat.ai">info@inbharat.ai</a>
-</p>
+<div align="center">
 
-<p align="center">
-  <code>#OpenClaw</code> · <code>#AICMO</code> · <code>#OpenSource</code> · <code>#MarketingAutomation</code> · <code>#SoloBuilder</code> · <code>#LocalAI</code> · <code>#ContentOps</code> · <code>#AIMarketing</code> · <code>#BuildInPublic</code>
-</p>
+<br/>
+
+**Built by [INBharat AI](https://github.com/inbharatai) &middot; [info@inbharat.ai](mailto:info@inbharat.ai)**
+
+*One note in, multi-platform content out — all running locally on your machine*
+
+<br/>
+
+[![Star this repo](https://img.shields.io/github/stars/inbharatai/OpenClaw-AI-CMO?style=for-the-badge&logo=github&label=Star%20OpenClaw&color=22C55E)](https://github.com/inbharatai/OpenClaw-AI-CMO)
+
+<br/>
+
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
+![Qwen](https://img.shields.io/badge/Qwen-FF6600?style=flat-square)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![HeyGen](https://img.shields.io/badge/HeyGen-FF4444?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+
+<sub>`#OpenClaw` `#AICMO` `#OpenSource` `#MarketingAutomation` `#SoloBuilder` `#LocalAI` `#ContentOps` `#AIMarketing` `#BuildInPublic` `#HeyGen` `#Ollama` `#ZeroCloudAPIs`</sub>
+
+<br/>
+
+[![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-6B4FBB?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/claude-code)
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
