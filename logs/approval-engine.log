@@ -1,0 +1,7 @@
+[2026-03-23 19:59:07] === Approval Engine Started ===
+[2026-03-23 19:59:07] APPROVED [L1-AUTO]: discord/discord-update-2026-03-23-e2e-test-1774275843.md (type=) — 0ms
+[2026-03-23 19:59:07] BLOCKED [L4-RISK]: linkedin/linkedin-update-2026-03-23-e2e-test-1774275843.md — max=80, safety=90
+[2026-03-23 19:59:07] BLOCKED [L4-RISK]: website/update-2026-03-23-e2e-test-1774275843.md — max=90, safety=80
+[2026-03-23 19:59:07] APPROVED [L1-AUTO]: x/x-update-2026-03-23-e2e-test-1774275843.md (type=) — 0ms
+[2026-03-23 19:59:07] === Approval Engine Complete ===
+[2026-03-23 19:59:07] Processed: 4 | Approved: 2 | Review: 0 | Blocked: 2 | Time: 5709ms

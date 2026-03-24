@@ -1,0 +1,81 @@
+[
+{
+    "platform": "website",
+    "weekly_target": 3,
+    "produced_this_week": 0,
+    "expected_by_today": 1,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "linkedin",
+    "weekly_target": 4,
+    "produced_this_week": 0,
+    "expected_by_today": 2,
+    "gap": 2,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "x",
+    "weekly_target": 5,
+    "produced_this_week": 1,
+    "expected_by_today": 2,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "instagram",
+    "weekly_target": 3,
+    "produced_this_week": 0,
+    "expected_by_today": 1,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "discord",
+    "weekly_target": 5,
+    "produced_this_week": 1,
+    "expected_by_today": 2,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "reddit",
+    "weekly_target": 1,
+    "produced_this_week": 0,
+    "expected_by_today": 1,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "newsletter",
+    "weekly_target": 1,
+    "produced_this_week": 0,
+    "expected_by_today": 1,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+,
+{
+    "platform": "youtube",
+    "weekly_target": 1,
+    "produced_this_week": 0,
+    "expected_by_today": 1,
+    "gap": 1,
+    "date": "2026-03-24",
+    "day": "Tuesday"
+}
+]

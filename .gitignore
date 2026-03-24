@@ -1,0 +1,59 @@
+# ============================================================
+# OpenClaw AI CMO — .gitignore
+# ============================================================
+
+# Environment and secrets
+.env
+configs/.env
+*.secret_key
+socialflow/backend/.env
+socialflow/backend/.secret_key
+
+# Database
+*.db
+*.sqlite3
+
+# Browser sessions (contain auth cookies)
+socialflow/backend/sessions/
+socialflow/sessions/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# Node
+node_modules/
+package-lock.json
+
+# Uploads
+socialflow/backend/uploads/
+
+# Ollama models (too large for git)
+OllamaModels/
+
+# OS files
+.DS_Store
+._*
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs (optional — you may want to keep these)
+# logs/
+
+# Temp files
+TempFiles/
+
+# Bridge logs
+socialflow/backend/openclaw_bridge_log.json
+
+# Playwright state
+socialflow/backend/playwright-report/

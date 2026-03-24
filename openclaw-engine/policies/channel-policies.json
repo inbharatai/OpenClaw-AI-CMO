@@ -1,0 +1,158 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-23",
+  "description": "Per-channel content policies, format requirements, and guardrails",
+
+  "channels": {
+    "website_updates": {
+      "section": "/updates",
+      "content_types": ["product-update", "changelog", "feature-note", "patch-note"],
+      "format": "markdown_with_frontmatter",
+      "max_length_words": 500,
+      "min_length_words": 50,
+      "required_fields": ["title", "date", "type", "tags"],
+      "tone": "professional, clear, concise",
+      "approval_level": "L1",
+      "guardrails": ["no competitor mentions", "no unverified claims", "must reference product"]
+    },
+    "website_insights": {
+      "section": "/insights",
+      "content_types": ["ai-commentary", "comparison", "educational", "analysis"],
+      "format": "markdown_with_frontmatter",
+      "max_length_words": 2000,
+      "min_length_words": 300,
+      "required_fields": ["title", "date", "type", "tags", "sources"],
+      "tone": "authoritative, educational, thoughtful",
+      "approval_level": "L2",
+      "guardrails": ["cite sources", "no unverified claims", "balanced perspective"]
+    },
+    "website_build_log": {
+      "section": "/build-log",
+      "content_types": ["founder-update", "weekly-build-summary", "milestone"],
+      "format": "markdown_with_frontmatter",
+      "max_length_words": 800,
+      "min_length_words": 100,
+      "required_fields": ["title", "date", "type"],
+      "tone": "authentic, personal, transparent",
+      "approval_level": "L1",
+      "guardrails": ["no sensitive business data", "no unreleased product details without permission"]
+    },
+    "website_news": {
+      "section": "/news",
+      "content_types": ["ai-news-summary", "tool-roundup", "industry-signal"],
+      "format": "markdown_with_frontmatter",
+      "max_length_words": 600,
+      "min_length_words": 100,
+      "required_fields": ["title", "date", "type", "sources"],
+      "tone": "informative, curated, opinionated-but-fair",
+      "approval_level": "L2",
+      "guardrails": ["must cite original source", "no rumors", "attribute properly"]
+    },
+    "linkedin": {
+      "content_types": ["thought-leadership", "product-update", "industry-insight", "build-in-public"],
+      "format": "plain_text_with_line_breaks",
+      "max_length_chars": 3000,
+      "min_length_chars": 200,
+      "tone": "professional, insightful, conversational",
+      "approval_level": "L2",
+      "posting_mode": "queue_export",
+      "guardrails": ["no hashtag spam (max 5)", "no aggressive sales", "no competitor attacks", "include call-to-action"]
+    },
+    "x": {
+      "content_types": ["short-take", "thread", "news-reaction", "product-announcement", "tip"],
+      "format": "plain_text",
+      "max_length_chars": 280,
+      "thread_max_posts": 8,
+      "tone": "sharp, direct, engaging",
+      "approval_level": "L2",
+      "posting_mode": "queue_export",
+      "guardrails": ["no hashtag spam (max 3)", "no controversial hot takes without review", "threads need clear narrative"]
+    },
+    "facebook": {
+      "content_types": ["product-update", "article-share", "community-post"],
+      "format": "plain_text_with_link",
+      "max_length_chars": 2000,
+      "tone": "friendly, accessible, informative",
+      "approval_level": "L2",
+      "posting_mode": "queue_export",
+      "guardrails": ["no clickbait", "include relevant link", "keep casual but professional"]
+    },
+    "instagram": {
+      "content_types": ["product-visual", "behind-the-scenes", "tip-carousel", "announcement"],
+      "format": "caption_with_image_brief",
+      "max_length_chars": 2200,
+      "tone": "visual-first, engaging, story-driven",
+      "approval_level": "L2",
+      "posting_mode": "queue_export",
+      "guardrails": ["max 30 hashtags (aim for 10-15)", "include image brief", "caption must stand alone without image"]
+    },
+    "discord": {
+      "content_types": ["announcement", "product-update", "community-update", "daily-tip"],
+      "format": "markdown_discord_flavor",
+      "max_length_chars": 2000,
+      "tone": "community-friendly, direct, helpful",
+      "approval_level": "L1",
+      "posting_mode": "webhook_auto",
+      "guardrails": ["no @everyone unless launch", "keep announcements concise", "use embed format for links"]
+    },
+    "reddit": {
+      "content_types": ["discussion", "show-and-tell", "question", "resource-share"],
+      "format": "reddit_markdown",
+      "max_length_chars": 10000,
+      "tone": "genuine, community-native, non-promotional",
+      "approval_level": "L3",
+      "posting_mode": "manual_first_always",
+      "guardrails": ["NEVER auto-post", "match subreddit rules", "no overt self-promotion", "provide value first", "use throwaway language check"]
+    },
+    "medium": {
+      "content_types": ["long-form-article", "tutorial", "case-study", "opinion"],
+      "format": "markdown",
+      "max_length_words": 3000,
+      "min_length_words": 500,
+      "tone": "authoritative, well-structured, educational",
+      "approval_level": "L2",
+      "posting_mode": "draft_export",
+      "guardrails": ["include subheadings", "cite sources", "original content preferred over repurposed"]
+    },
+    "substack": {
+      "content_types": ["newsletter", "long-form", "weekly-digest"],
+      "format": "markdown_or_html",
+      "max_length_words": 2500,
+      "min_length_words": 300,
+      "tone": "personal, insightful, subscriber-focused",
+      "approval_level": "L2",
+      "posting_mode": "draft_export",
+      "guardrails": ["subscriber-value first", "include personal angle", "clear subject line"]
+    },
+    "email_newsletter": {
+      "content_types": ["weekly-digest", "product-announcement", "special-update"],
+      "format": "markdown_or_html",
+      "max_length_words": 1500,
+      "min_length_words": 200,
+      "tone": "personal, valuable, concise",
+      "approval_level": "L2",
+      "posting_mode": "draft_export_manual_send",
+      "guardrails": ["must include unsubscribe (platform handles)", "subject line under 60 chars", "no attachments with credentials", "no cold outreach"]
+    },
+    "heygen": {
+      "content_types": ["video-brief", "avatar-script", "talking-head-outline"],
+      "format": "structured_brief_markdown",
+      "max_length_words": 500,
+      "tone": "conversational, clear, script-ready",
+      "approval_level": "L1",
+      "posting_mode": "brief_export",
+      "guardrails": ["keep scripts under 2 minutes", "include visual notes", "specify avatar and background"]
+    }
+  },
+
+  "global_guardrails": [
+    "Never include credentials, API keys, or passwords in any content",
+    "Never include personal email addresses or phone numbers",
+    "Never publish unverified claims as facts",
+    "Never attack competitors by name without review (L3)",
+    "Always attribute sources for third-party information",
+    "Never auto-post to Reddit, Hacker News, or Product Hunt",
+    "All content must pass brand voice check",
+    "All content must include source evidence reference"
+  ]
+}

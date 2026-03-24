@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check shell scripts syntax
+        run: |
+          for f in openclaw-engine/scripts/*.sh; do
+            bash -n "$f" && echo "✓ $f" || echo "✗ $f"
+          done
+
+      - name: Check all skills have SKILL.md
+        run: |
+          for d in openclaw-engine/skills/*/; do
+            if [ ! -f "$d/SKILL.md" ]; then
+              echo "✗ Missing SKILL.md in $d"
+              exit 1
+            fi
+          done
+          echo "✓ All skills have SKILL.md"
+
+      - name: Check policies are valid JSON
+        run: |
+          for f in openclaw-engine/policies/*.json; do
+            python3 -m json.tool "$f" > /dev/null && echo "✓ $f" || exit 1
+          done
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check SocialFlow syntax
+        run: |
+          cd socialflow/backend
+          python3 -m py_compile main.py && echo "✓ main.py"
+          python3 -m py_compile automation.py && echo "✓ automation.py"
+          python3 -m py_compile automation_extended.py && echo "✓ automation_extended.py"
+          python3 -m py_compile openclaw_bridge.py && echo "✓ openclaw_bridge.py"
+
+      - name: Check directory structure
+        run: |
+          for d in data/source-notes data/source-links openclaw-engine/scripts openclaw-engine/skills openclaw-engine/policies approvals/approved approvals/blocked reports/daily logs exports/posted; do
+            [ -d "$d" ] && echo "✓ $d" || (echo "✗ Missing $d" && exit 1)
+          done
