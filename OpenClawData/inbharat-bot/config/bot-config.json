@@ -1,0 +1,41 @@
+{
+  "name": "InBharat Bot",
+  "version": "1.0.0",
+  "role": "Central ecosystem intelligence and builder operations bot",
+  "traits": ["accurate", "grounded", "modular", "approval-aware", "founder-controlled", "evidence-driven"],
+  "workspace_root": "/Volumes/Expansion/CMO-10million",
+  "ollama_url": "http://127.0.0.1:11434",
+  "models": {
+    "reasoning": "qwen3:8b",
+    "coding": "qwen2.5-coder:7b"
+  },
+  "scanner": {
+    "repos": [],
+    "websites": [],
+    "local_projects": [
+      "/Volumes/Expansion/CMO-10million"
+    ]
+  },
+  "approval_levels": {
+    "observe": "auto",
+    "infer": "auto",
+    "propose": "auto",
+    "act": "review_required",
+    "publish": "review_required"
+  },
+  "logging": {
+    "dir": "/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/logging",
+    "level": "info"
+  },
+  "rate_limits": {
+    "scans_per_day": 10,
+    "proposals_per_day": 20,
+    "cmo_bridge_per_day": 10
+  },
+  "cmo_pipeline": {
+    "scripts_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/scripts",
+    "queues_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/queues",
+    "approvals_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/approvals",
+    "reports_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/reports"
+  }
+}

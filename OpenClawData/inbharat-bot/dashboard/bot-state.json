@@ -1,0 +1,28 @@
+{
+  "bot": "InBharat Bot",
+  "version": "1.0.0",
+  "timestamp": "2026-03-25T16:41:01Z",
+  "health": {
+    "ollama": "running",
+    "gateway": "running"
+  },
+  "counts": {
+    "scans": 1,
+    "findings": 1,
+    "proposals": 1,
+    "cmo_bridges": 1,
+    "review_pending": 0,
+    "blocked": 0,
+    "approved": 0
+  },
+  "last_activity": {
+    "scan": "2026-03-25 22:02",
+    "findings": "2026-03-25 22:04",
+    "proposals": "2026-03-25 22:08"
+  },
+  "today_logs": {
+    "lines": 38,
+    "errors": 0
+0
+  }
+}

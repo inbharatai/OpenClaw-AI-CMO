@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Ollama model blobs (huge binary files)
+OllamaModels/
+
+# Temp files
+TempFiles/
+*.tmp
+
+# Node modules if any
+node_modules/
+
+# Logs (keep structure, not old logs)
+# OpenClawData/logs/*.log
+
+# Sensitive
+.env
+*.key
+*.pem
+*.secret
