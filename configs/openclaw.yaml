@@ -1,0 +1,106 @@
+# ============================================================
+# OpenClaw AI CMO — Master Configuration
+# ============================================================
+
+system:
+  name: "OpenClaw AI CMO"
+  version: "1.1.0"
+  workspace: "."  # relative to project root
+  timezone: "Asia/Kolkata"  # adjust to your timezone
+
+# ── Models ────────────────────────────────────────────────────
+models:
+  ollama_host: "http://127.0.0.1:11434"
+  fast_model: "qwen2.5-coder:7b"     # routing, formatting, approvals
+  think_model: "qwen3:8b"            # content generation, strategy
+  fast_timeout: 30                     # seconds
+  think_timeout: 120                   # seconds
+
+# ── Content Calendar ─────────────────────────────────────────
+calendar:
+  # Weekly posting targets per platform
+  weekly_targets:
+    website: 3
+    linkedin: 4
+    x: 5
+    instagram: 3
+    discord: 5
+    reddit: 1
+    newsletter: 1
+    youtube: 1
+
+  # Content pillar mix (must sum to 100)
+  pillars:
+    product_updates: 30
+    educational: 25
+    ai_industry: 20
+    build_in_public: 15
+    community: 10
+
+  # Default posting times (24h format, local timezone)
+  posting_times:
+    linkedin: "08:30"
+    x: "10:00"
+    instagram: "12:00"
+    discord: "09:00"
+    reddit: "14:00"
+    youtube: "11:00"
+    newsletter: "08:00"  # weekly only
+
+# ── Approval ─────────────────────────────────────────────────
+approval:
+  l1_auto_approve: true
+  l2_score_threshold: 70     # score out of 100 to auto-approve
+  l3_review_max_age_hours: 48
+  block_on_credentials: true
+  block_on_pii: true
+
+# ── Quality Scoring ──────────────────────────────────────────
+quality:
+  min_score_to_approve: 60   # content quality gate (0-100)
+  dimensions:
+    readability: 0.20
+    hook_strength: 0.20
+    cta_clarity: 0.15
+    platform_fit: 0.20
+    formatting: 0.10
+    uniqueness: 0.15
+
+# ── Rate Limits (per day) ────────────────────────────────────
+rate_limits:
+  linkedin: 2
+  x: 5
+  instagram: 2
+  facebook: 2
+  discord: 3
+  reddit: 1
+  medium: 1
+  substack: 1
+  youtube: 1
+  newsletter: 1
+
+# ── SocialFlow ───────────────────────────────────────────────
+socialflow:
+  url: "http://localhost:8000"
+  headless: false  # visible browser for first logins
+
+# ── Scheduling ───────────────────────────────────────────────
+scheduling:
+  method: "launchd"  # launchd for macOS (recommended), cron as fallback
+  daily_time: "06:00"
+  weekly_day: "monday"
+  weekly_time: "08:00"
+  monthly_day: 1
+  monthly_time: "09:00"
+
+# ── Paths ────────────────────────────────────────────────────
+paths:
+  data: "data"
+  queues: "queues"
+  approvals: "approvals"
+  reports: "reports"
+  logs: "logs"
+  exports: "exports"
+  scripts: "openclaw-engine/scripts"
+  skills: "openclaw-engine/skills"
+  policies: "openclaw-engine/policies"

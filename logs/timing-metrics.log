@@ -1,0 +1,12 @@
+[2026-03-23T19:48:36] stage=test-fast layer=fast model=qwen2.5-coder:7b elapsed_ms=2278
+[2026-03-23T19:48:37] stage=test-date layer=fast model=qwen2.5-coder:7b elapsed_ms=773
+[2026-03-23T19:49:54] stage=test-think layer=thinking model=qwen3:8b elapsed_ms=17129
+[2026-03-23T19:50:02] stage=test-route layer=fast model=qwen2.5-coder:7b elapsed_ms=7875
+[2026-03-23T19:53:46] stage=skill-discord-announcement-writer layer=fast model=qwen2.5-coder:7b elapsed_ms=9244
+[2026-03-23T19:54:47] stage=product-format layer=thinking model=qwen3:8b elapsed_ms=43647
+[2026-03-23T19:54:58] stage=product-website layer=fast model=qwen2.5-coder:7b elapsed_ms=11070
+[2026-03-23T19:55:08] stage=product-discord layer=fast model=qwen2.5-coder:7b elapsed_ms=9155
+[2026-03-23T19:55:26] stage=product-linkedin layer=fast model=qwen2.5-coder:7b elapsed_ms=18084
+[2026-03-23T19:55:31] stage=product-x layer=fast model=qwen2.5-coder:7b elapsed_ms=5533
+[2026-03-23T19:59:10] stage=approval-risk layer=fast model=qwen2.5-coder:7b elapsed_ms=3151
+[2026-03-23T19:59:12] stage=approval-risk layer=fast model=qwen2.5-coder:7b elapsed_ms=2285
