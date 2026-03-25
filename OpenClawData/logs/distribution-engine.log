@@ -1,0 +1,71 @@
+[2026-03-23 11:25:37] === Distribution Engine Started ===
+[2026-03-23 11:25:37] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 11:25:37] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 11:25:37] EXPORTED [linkedin]: linkedin-2026-03-23-test-product-update.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 11:25:37] EXPORTED [linkedin]: linkedin-2026-03-23-test-ai-news.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 11:25:37] EXPORTED [x]: x-update-2026-03-23-test-product-update.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-23 11:25:37] === Distribution Engine Complete ===
+[2026-03-23 11:25:37] Distributed: 5 | Skipped: 2
+[2026-03-23 13:09:17] === Distribution Engine Started ===
+[2026-03-23 13:09:17] [DRY RUN] No distribution will occur
+[2026-03-23 13:09:17] === Distribution Engine Complete ===
+[2026-03-23 13:09:17] Distributed: 0 | Skipped: 0
+[2026-03-23 14:18:34] === Distribution Engine Started ===
+[2026-03-23 14:18:34] [DRY RUN] No distribution will occur
+[2026-03-23 14:18:34] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 14:18:34] [DRY RUN] Would post/export linkedin: linkedin-update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 14:18:34] [DRY RUN] Would distribute website/updates: update-2026-03-23-audit-fresh-test-1774251726.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-23 14:18:34] === Distribution Engine Complete ===
+[2026-03-23 14:18:34] Distributed: 3 | Skipped: 1
+[2026-03-23 14:44:58] === Distribution Engine Started ===
+[2026-03-23 14:44:58] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 14:44:58] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 14:44:58] EXPORTED [linkedin]: linkedin-update-2026-03-23-audit-fresh-test-1774251726.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 14:44:58] EXPORTED [linkedin]: linkedin-update-2026-03-23-retest-product-1774256096.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 14:44:58] DISTRIBUTED [website/updates]: update-2026-03-23-audit-fresh-test-1774251726.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-23 14:44:58] EXPORTED [x]: x-update-2026-03-23-retest-product-1774256096.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-23 14:44:58] === Distribution Engine Complete ===
+[2026-03-23 14:44:58] Distributed: 6 | Skipped: 2
+[2026-03-23 16:01:01] === Distribution Engine Started ===
+[2026-03-23 16:01:01] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 16:01:01] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 16:01:01] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 16:01:01] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-23 16:01:01] EXPORTED [linkedin]: linkedin-2026-03-23-audit-test-note.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 16:01:01] EXPORTED [linkedin]: linkedin-2026-03-23-audit-fresh-test-1774251726.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 16:01:01] EXPORTED [linkedin]: linkedin-2026-03-23-retest-product-1774256096.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 16:01:01] EXPORTED [linkedin]: linkedin-2026-03-23-retest-product-1774256096-form.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-23 16:01:01] DISTRIBUTED [website/updates]: update-2026-03-23-audit-test-note.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-23 16:01:01] DISTRIBUTED [website/updates]: update-2026-03-23-audit-fresh-test-1774251726.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-23 16:01:01] DISTRIBUTED [website/updates]: update-2026-03-23-retest-product-1774256096-formatted.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-23 16:01:01] EXPORTED [x]: x-update-2026-03-23-e2e-test-1774259996.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-23 16:01:01] === Distribution Engine Complete ===
+[2026-03-23 16:01:01] Distributed: 12 | Skipped: 4
+[2026-03-25 18:16:55] === Distribution Engine Started ===
+[2026-03-25 18:16:55] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 18:16:55] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 18:16:55] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 18:16:55] EXPORTED [linkedin]: linkedin-2026-03-25-phase0-proof-feature-launch.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 18:16:55] EXPORTED [linkedin]: linkedin-2026-03-25-phase0-proof-build-log.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 18:16:55] EXPORTED [linkedin]: linkedin-2026-03-25-e2e-test-1774259996-formatted.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 18:16:55] DISTRIBUTED [website/updates]: update-2026-03-25-phase0-proof-build-log.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-25 18:16:55] DISTRIBUTED [website/updates]: content-2026-03-25-e2e-test-1774259996-formatted.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-25 18:16:55] === Distribution Engine Complete ===
+[2026-03-25 18:16:55] Distributed: 8 | Skipped: 3
+[2026-03-25 19:03:05] === Distribution Engine Started ===
+[2026-03-25 19:03:05] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 19:03:05] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 19:03:05] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 19:03:05] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 19:03:05] SKIP [discord]: No webhook configured at /Volumes/Expansion/CMO-10million/OpenClawData/policies/discord-webhook.json
+[2026-03-25 19:03:05] EXPORTED [linkedin]: linkedin-update-2026-03-25-phase0-proof-feature-launch.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 19:03:05] EXPORTED [linkedin]: linkedin-update-2026-03-25-phase0-proof-build-log.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 19:03:05] EXPORTED [linkedin]: linkedin-update-2026-03-25-phase0-e2e-product-v2.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 19:03:05] EXPORTED [linkedin]: linkedin-2026-03-25-phase0-e2e-product-v2.md → /Volumes/Expansion/CMO-10million/MarketingToolData/linkedin/
+[2026-03-25 19:03:05] DISTRIBUTED [website/updates]: update-2026-03-25-phase0-proof-feature-launch.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-25 19:03:05] DISTRIBUTED [website/updates]: update-2026-03-25-phase0-e2e-product-v2.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-03-25 19:03:05] EXPORTED [x]: x-update-2026-03-25-phase0-proof-feature-launch.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-25 19:03:05] EXPORTED [x]: x-update-2026-03-25-phase0-proof-build-log.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-25 19:03:05] EXPORTED [x]: x-update-2026-03-25-phase0-e2e-product-v2.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
+[2026-03-25 19:03:05] === Distribution Engine Complete ===
+[2026-03-25 19:03:05] Distributed: 14 | Skipped: 5

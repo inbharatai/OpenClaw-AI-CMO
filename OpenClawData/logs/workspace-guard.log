@@ -1,0 +1,10 @@
+[2026-03-22T21:38:00] INIT: Workspace guard initialized. Root: /Volumes/Expansion/CMO-10million/
+[2026-03-22 22:35:49] ALLOWED: /Volumes/Expansion/CMO-10million/OpenClawData/memory/test.md
+[2026-03-22 22:35:49] BLOCKED: Outside workspace. Path: /Users/reeturajgoswami/Documents/secret.txt
+[2026-03-22 22:35:49] BLOCKED: Read-only area. Path: /Volumes/Expansion/CMO-10million/OllamaModels/something
+[2026-03-22 22:36:19] ALLOWED: /Volumes/Expansion/CMO-10million/OpenClawData/memory/lessons-learned.md
+[2026-03-23 12:40:38] ALLOWED: /Volumes/Expansion/CMO-10million/OpenClawData/memory/test.md
+[2026-03-23 12:40:39] BLOCKED: Outside workspace. Path: /Users/reeturajgoswami/Documents/secret.txt
+[2026-03-23 12:40:39] BLOCKED: Read-only area. Path: /Volumes/Expansion/CMO-10million/OllamaModels/something
+[2026-03-23 12:40:39] BLOCKED: Outside workspace. Path: /System/Library/something
+[2026-03-23 14:24:27] ALLOWED: /Volumes/Expansion/CMO-10million/OpenClawData/memory/lessons-learned.md

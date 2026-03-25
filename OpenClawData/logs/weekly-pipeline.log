@@ -1,0 +1,29 @@
+[2026-03-23 15:29:24] === WEEKLY PIPELINE STARTED ===
+[2026-03-23 15:29:24] --- Build Next Week's Calendar ---
+[2026-03-23 15:29:24] [DRY RUN] Build Next Week's Calendar
+[2026-03-23 15:29:24] Build Next Week's Calendar: complete (0s)
+[2026-03-23 15:29:24] --- Write Weekly Roundup ---
+[2026-03-23 15:29:24] [DRY RUN] Write Weekly Roundup
+[2026-03-23 15:29:24] Write Weekly Roundup: complete (0s)
+[2026-03-23 15:29:24] --- Write Weekly Build Log ---
+[2026-03-23 15:29:24] [DRY RUN] Write Weekly Build Log
+[2026-03-23 15:29:24] Write Weekly Build Log: complete (0s)
+[2026-03-23 15:29:24] --- Compile Weekly Newsletter ---
+[2026-03-23 15:29:24] [DRY RUN] Compile Weekly Newsletter
+[2026-03-23 15:29:24] Compile Weekly Newsletter: complete (0s)
+[2026-03-23 15:29:24] --- Generate Video Brief ---
+[2026-03-23 15:29:24] [DRY RUN] Generate Video Brief
+[2026-03-23 15:29:24] Generate Video Brief: complete (0s)
+[2026-03-23 15:29:24] --- Generate Image Briefs ---
+[2026-03-23 15:29:24] [DRY RUN] Generate Image Briefs
+[2026-03-23 15:29:24] Generate Image Briefs: complete (0s)
+[2026-03-23 15:29:24] --- Weekly Performance Review ---
+[2026-03-23 15:29:24] [DRY RUN] Weekly Performance Review
+[2026-03-23 15:29:24] Weekly Performance Review: complete (0s)
+[2026-03-23 15:29:24] --- Approve Weekly Content ---
+[2026-03-23 15:29:24] [DRY RUN] Approve Weekly Content
+[2026-03-23 15:29:24] Approve Weekly Content: complete (0s)
+[2026-03-23 15:29:24] --- Generate Weekly Report ---
+[2026-03-23 15:29:24] [DRY RUN] Generate Weekly Report
+[2026-03-23 15:29:24] Generate Weekly Report: complete (0s)
+[2026-03-23 15:29:24] === WEEKLY PIPELINE COMPLETE ===
