@@ -9,7 +9,7 @@ LOG_FILE="$WORKSPACE_ROOT/OpenClawData/logs/model-routing.log"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 OLLAMA_URL="http://127.0.0.1:11434"
 
-CODING_MODEL="qwen2.5-coder:7b"
+CODING_MODEL="qwen3:8b"
 GENERAL_MODEL="qwen3:8b"
 
 if [ -z "$1" ]; then

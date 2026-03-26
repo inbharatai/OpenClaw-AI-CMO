@@ -50,7 +50,7 @@ if [ "$1" = "--system" ]; then
     fi
 
     # Models
-    for MODEL in "qwen3:8b" "qwen2.5-coder:7b"; do
+    for MODEL in "qwen3:8b" "qwen3:8b"; do
         TOTAL=$((TOTAL+1))
         if curl -s --max-time 5 http://127.0.0.1:11434/api/tags 2>/dev/null | grep -q "$MODEL"; then
             echo "✅ Model available: $MODEL"

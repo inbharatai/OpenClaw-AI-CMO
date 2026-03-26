@@ -46,7 +46,7 @@ bash inbharat-run.sh status
 ## Models Used
 
 - **qwen3:8b** — reasoning, analysis, writing, proposals
-- **qwen2.5-coder:7b** — coding, scripts, technical analysis
+- **qwen3:8b** — coding, scripts, technical analysis
 
 ## Key Paths
 

@@ -103,7 +103,7 @@ MONTH_BLOCKED=$(find "$APPROVALS_DIR/blocked" -type f -mtime -30 2>/dev/null | w
 run_task "Monthly Performance Summary" \
     "\"$SCRIPTS_DIR/skill-runner.sh\" content-performance-tracker \
     'Generate a monthly performance summary for $MONTH_TAG. This month: $MONTH_PRODUCED content pieces produced, $MONTH_POSTED posted/distributed, $MONTH_BLOCKED blocked. Analyze the numbers and recommend improvements for next month.' \
-    'qwen2.5-coder:7b' > '$MARKETING_DIR/research/performance-$MONTH_TAG-monthly.md' 2>/dev/null"
+    'qwen3:8b' > '$MARKETING_DIR/research/performance-$MONTH_TAG-monthly.md' 2>/dev/null"
 
 # ===== TASK 7: Next Month Plan =====
 run_task "Next Month Planning" \

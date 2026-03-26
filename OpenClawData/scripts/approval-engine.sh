@@ -93,7 +93,7 @@ for CHANNEL in "${CHANNELS[@]}"; do
         # --- CREDENTIAL SAFETY CHECK (always runs first) ---
         CRED_CHECK=$("$SCRIPTS_DIR/skill-runner.sh" credential-safety-policy \
             "Scan this content for credentials, API keys, personal data, and sensitive information. Content: $(echo "$CONTENT" | head -c 1000)" \
-            "qwen2.5-coder:7b" 2>/dev/null | tail -n +5)
+            "qwen3:8b" 2>/dev/null | tail -n +5)
 
         # Check if credential scan found critical issues
         # Parse the structured response: only block if "safe": false or "action": "block"
@@ -157,7 +157,7 @@ EOF
         # Get risk scores
         RISK_SCORES=$("$SCRIPTS_DIR/skill-runner.sh" risk-scorer \
             "Score this content on 6 risk dimensions (source_confidence, brand_voice, claim_sensitivity, duplication, platform_risk, data_safety). Return scores 0-100. Channel: $CHANNEL. Type: $CONTENT_TYPE. Content: $(echo "$CONTENT" | head -c 800)" \
-            "qwen2.5-coder:7b" 2>/dev/null | tail -n +5)
+            "qwen3:8b" 2>/dev/null | tail -n +5)
 
         # Try to extract weighted average and max dimension from LLM response
         WEIGHTED_AVG=$(echo "$RISK_SCORES" | grep -o '"weighted_average":\s*[0-9]*' | grep -o '[0-9]*' | head -1)

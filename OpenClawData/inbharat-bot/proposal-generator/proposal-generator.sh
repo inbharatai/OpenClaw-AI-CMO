@@ -45,7 +45,7 @@ For EACH proposal, provide exactly this structure:
 - **Acceptance criteria:** How to verify it is done
 - **Docs/release needs:** What documentation or release steps are needed
 - **Promotion angle:** How this could be communicated to users/community
-- **Recommended model:** qwen3:8b or qwen2.5-coder:7b and why
+- **Recommended model:** qwen3:8b or qwen3:8b and why
 - **Status:** proposed
 
 Be practical. These are for a solo founder building real AI products.

@@ -103,7 +103,7 @@ run_task "Generate Image Briefs" \
 run_task "Weekly Performance Review" \
     "\"$SCRIPTS_DIR/skill-runner.sh\" content-performance-tracker \
     'Generate a weekly content performance summary. Count files in the posted folder, check approval logs, and summarize what was published, blocked, and queued this week.' \
-    'qwen2.5-coder:7b' > '$MARKETING_DIR/research/performance-$DATE_TAG-weekly.md' 2>/dev/null"
+    'qwen3:8b' > '$MARKETING_DIR/research/performance-$DATE_TAG-weekly.md' 2>/dev/null"
 
 # ===== TASK 8: Run Approval on Weekly Content =====
 run_task "Approve Weekly Content" \

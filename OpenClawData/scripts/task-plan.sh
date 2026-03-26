@@ -52,7 +52,7 @@ Output the plan in EXACTLY this Markdown format:
 
 ### 1. <Task name>
 - **Depends on:** none
-- **Model:** qwen3:8b or qwen2.5-coder:7b (pick the right one)
+- **Model:** qwen3:8b or qwen3:8b (pick the right one)
 - **Output:** <what this produces>
 - **Done when:** <specific criteria>
 - **Status:** pending

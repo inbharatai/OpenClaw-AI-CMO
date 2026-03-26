@@ -7,7 +7,7 @@
   "ollama_url": "http://127.0.0.1:11434",
   "models": {
     "reasoning": "qwen3:8b",
-    "coding": "qwen2.5-coder:7b"
+    "coding": "qwen3:8b"
   },
   "scanner": {
     "repos": [
