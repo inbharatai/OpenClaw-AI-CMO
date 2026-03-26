@@ -57,3 +57,6 @@ socialflow/backend/openclaw_bridge_log.json
 
 # Playwright state
 socialflow/backend/playwright-report/
+_archive/OpenClaw-local-backup/
+_archive/SocialFlow-local-backup/
+_archive/

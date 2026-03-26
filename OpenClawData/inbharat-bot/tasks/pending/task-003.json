@@ -1,0 +1,9 @@
+{
+  "id": "task-003",
+  "title": "Organize Source Notes into Documentation",
+  "description": "Categorize and convert 36 source notes into structured documentation for easier reference.",
+  "risk": "safe",
+  "priority": "medium",
+  "category": "docs",
+  "estimated_minutes": 45
+}

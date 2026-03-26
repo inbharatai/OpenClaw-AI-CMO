@@ -1,0 +1,9 @@
+{
+  "id": "task-005",
+  "title": "Expand Community Maps",
+  "description": "Update and add new entries to existing community maps to reflect current data.",
+  "risk": "safe",
+  "priority": "low",
+  "category": "community",
+  "estimated_minutes": 15
+}

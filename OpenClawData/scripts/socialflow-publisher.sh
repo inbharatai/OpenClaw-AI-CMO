@@ -1,3 +1,4 @@
+# DEPRECATED — SocialFlow bypassed. Use distribution-engine.sh instead.
 #!/bin/bash
 # socialflow-publisher.sh — Bridge from OpenClaw distribution to SocialFlow API
 # Usage: ./socialflow-publisher.sh <platform> <content-file> [--dry-run]
