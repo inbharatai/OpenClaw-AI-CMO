@@ -66,7 +66,7 @@ RESPONSE=$(curl -s http://127.0.0.1:11434/api/generate \
   -d "{\"model\":\"qwen3:8b\",\"prompt\":$(echo "$PROMPT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))'),\"stream\":false,\"options\":{\"temperature\":0.3}}" 2>/dev/null)
 
 # Extract the response text
-TEXT=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('response',''))" 2>/dev/null)
+TEXT=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('response','') or d.get('thinking',''))" 2>/dev/null)
 
 # Extract JSON from response (handle markdown code blocks)
 JSON=$(echo "$TEXT" | python3 -c "

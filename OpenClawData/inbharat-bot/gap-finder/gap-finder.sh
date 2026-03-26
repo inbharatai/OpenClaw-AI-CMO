@@ -57,7 +57,7 @@ bot_log "gap-finder" "info" "Calling $MODEL for analysis..."
 
 RESPONSE=$(curl -s "$OLLAMA_URL/api/generate" \
   -d "$(jq -n --arg model "$MODEL" --arg prompt "$PROMPT" '{model: $model, prompt: $prompt, stream: false, options: {temperature: 0.3, num_predict: 4000}}')" \
-  | jq -r '.response // "ERROR: No response from model"')
+  | jq -r '(.response // .thinking) // "ERROR: No response from model"')
 
 if [ "$RESPONSE" = "ERROR: No response from model" ]; then
   bot_log "gap-finder" "error" "Ollama did not respond"

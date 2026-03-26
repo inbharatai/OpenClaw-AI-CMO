@@ -59,7 +59,7 @@ Output the adapted $LANG_NAME content ONLY. No explanations."
 RESPONSE=$(curl -s http://127.0.0.1:11434/api/generate \
   -d "{\"model\":\"qwen3:8b\",\"prompt\":$(echo "$PROMPT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))'),\"stream\":false,\"options\":{\"temperature\":0.5}}" 2>/dev/null)
 
-TEXT=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin).get('response',''))" 2>/dev/null)
+TEXT=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('response','') or d.get('thinking',''))" 2>/dev/null)
 
 if [ -z "$TEXT" ]; then
   log "ERROR: Empty response"
