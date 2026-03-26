@@ -1,0 +1,19 @@
+# InBharat Bot — Ecosystem Update
+source: inbharat-bot
+type: build-log
+date: 2026-03-26
+
+### [product-note] Enhancing Model Usage Documentation  
+We’re building better docs to help users unlock the model’s full potential. Right now, our docs are sparse, leading to confusion and support overload. By creating a structured repository with examples and API references, we’ll make it easier for everyone to use the model effectively. This isn’t just about fixing gaps—it’s about making our tools accessible. Expect updated release notes and community highlights soon.  
+
+### [product-note] Streamlining Onboarding for New Users  
+New users are getting lost in the app. To fix that, we’re rolling out a 5-minute interactive tutorial that walks them through key features and use cases. This won’t just reduce support requests—it’ll boost engagement from day one. We’re integrating it into the app and updating our onboarding guide. Think of it as your “Getting Started” cheat sheet.  
+
+### [build-log] Boosting Query Response Speed  
+We’re targeting a 50% faster response time for our top 10% most common queries. Slow answers are a pain point, and we’re fixing that by optimizing the inference pipeline. This change will improve user satisfaction and cut operational costs. Performance benchmarks will be in the next release notes—no fluff, just results.  
+
+### [community-update] Launching a Feature Suggestions Portal  
+Your ideas shape our roadmap. We’re building a portal where users can submit and vote on feature ideas. This isn’t just a checkbox—it’s a way to keep the community involved. We’ll launch with a “Your Voice Shapes the Future” campaign, and the portal will be linked in docs and marketing. Let’s make this a two-way conversation.  
+
+### [product-note] Unlocking Customization for Power Users  
+Advanced users want more control, and we’re giving it to them. Soon, they’ll be able to tweak parameters like temperature and top-p directly in the UI. This isn’t just a tweak—it’s a way to unlock advanced use cases. We’ll release a “Customization Guide” and position this as a Pro Mode upgrade for those who need it.

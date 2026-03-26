@@ -10,8 +10,25 @@
     "coding": "qwen2.5-coder:7b"
   },
   "scanner": {
-    "repos": [],
-    "websites": [],
+    "repos": [
+      {"name": "OpenClaw-AI-CMO", "url": "https://github.com/inbharatai/OpenClaw-AI-CMO", "type": "core-infra"},
+      {"name": "agent-arcade-gateway", "url": "https://github.com/inbharatai/agent-arcade-gateway", "type": "product"},
+      {"name": "claude-skills", "url": "https://github.com/inbharatai/claude-skills", "type": "product"},
+      {"name": "phoring", "url": "https://github.com/inbharatai/phoring", "type": "product"},
+      {"name": "SocialFlow", "url": "https://github.com/inbharatai/SocialFlow", "type": "tool"},
+      {"name": "inbharatai", "url": "https://github.com/inbharatai/inbharatai", "type": "org-profile"},
+      {"name": "sahaayak-ai-public", "url": "https://github.com/inbharatai/sahaayak-ai-public", "type": "product"},
+      {"name": "sahaayakseva-public", "url": "https://github.com/inbharatai/sahaayakseva-public", "type": "product"},
+      {"name": "testsprep.in", "url": "https://github.com/inbharatai/testsprep.in", "type": "product"},
+      {"name": "uniassist.ai", "url": "https://github.com/inbharatai/uniassist.ai", "type": "product"}
+    ],
+    "websites": [
+      {"name": "InBharat AI", "url": "https://inbharat.ai", "type": "main"},
+      {"name": "TestsPrep", "url": "https://testsprep.in", "type": "product"},
+      {"name": "UniAssist", "url": "https://uniassist.ai", "type": "product"},
+      {"name": "Sahaayak AI", "url": "https://sahaayak.ai", "type": "product"},
+      {"name": "Phoring", "url": "https://phoring.com", "type": "product"}
+    ],
     "local_projects": [
       "/Volumes/Expansion/CMO-10million"
     ]
