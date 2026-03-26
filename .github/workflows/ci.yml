@@ -14,13 +14,19 @@ jobs:
 
       - name: Check shell scripts syntax
         run: |
-          for f in openclaw-engine/scripts/*.sh; do
-            bash -n "$f" && echo "✓ $f" || echo "✗ $f"
+          FAIL=0
+          for f in OpenClawData/scripts/*.sh; do
+            bash -n "$f" && echo "✓ $f" || { echo "✗ $f"; FAIL=1; }
           done
+          for f in OpenClawData/inbharat-bot/*/*.sh OpenClawData/inbharat-bot/*.sh; do
+            [ -f "$f" ] || continue
+            bash -n "$f" && echo "✓ $f" || { echo "✗ $f"; FAIL=1; }
+          done
+          [ $FAIL -eq 0 ] || exit 1
 
       - name: Check all skills have SKILL.md
         run: |
-          for d in openclaw-engine/skills/*/; do
+          for d in OpenClawData/skills/*/; do
             if [ ! -f "$d/SKILL.md" ]; then
               echo "✗ Missing SKILL.md in $d"
               exit 1
@@ -30,25 +36,19 @@ jobs:
 
       - name: Check policies are valid JSON
         run: |
-          for f in openclaw-engine/policies/*.json; do
+          for f in OpenClawData/policies/*.json; do
             python3 -m json.tool "$f" > /dev/null && echo "✓ $f" || exit 1
           done
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Check SocialFlow syntax
-        run: |
-          cd socialflow/backend
-          python3 -m py_compile main.py && echo "✓ main.py"
-          python3 -m py_compile automation.py && echo "✓ automation.py"
-          python3 -m py_compile automation_extended.py && echo "✓ automation_extended.py"
-          python3 -m py_compile openclaw_bridge.py && echo "✓ openclaw_bridge.py"
-
       - name: Check directory structure
         run: |
-          for d in data/source-notes data/source-links openclaw-engine/scripts openclaw-engine/skills openclaw-engine/policies approvals/approved approvals/blocked reports/daily logs exports/posted; do
+          for d in OpenClawData/scripts OpenClawData/skills OpenClawData/policies OpenClawData/approvals/approved OpenClawData/approvals/blocked OpenClawData/reports/daily OpenClawData/logs OpenClawData/queues OpenClawData/memory OpenClawData/community/maps OpenClawData/revenue/leads OpenClawData/inbharat-bot; do
             [ -d "$d" ] && echo "✓ $d" || (echo "✗ Missing $d" && exit 1)
           done
+
+      - name: Check SKILL.md honest disclaimers
+        run: |
+          TOTAL=$(ls -d OpenClawData/skills/*/SKILL.md | wc -l)
+          WITH=$(grep -rl "HONEST CLASSIFICATION" OpenClawData/skills/*/SKILL.md | wc -l)
+          echo "Skills with disclaimer: $WITH / $TOTAL"
+          [ "$TOTAL" -eq "$WITH" ] || { echo "✗ Some skills missing disclaimer"; exit 1; }
