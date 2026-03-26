@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: offer-funnel-copy
 description: Write copy for offers, funnels, landing pages, sales emails, ad copy, CTAs, and conversion-focused content. Use when the user needs sales copy, offer structures, funnel sequences, ad headlines, email sequences, or any persuasion-focused writing. Triggers on "sales copy", "offer", "funnel", "landing page copy", "ad copy", "CTA", "email sequence", "conversion copy", or any sales/persuasion writing request.

@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: task-planner
 description: Convert goals into practical step-by-step plans with ordered subtasks, dependencies, outputs, and completion criteria. Use when the user states a goal, project, or multi-step objective. Triggers on "plan this", "break this down", "how should I approach", or any complex goal that needs decomposition.

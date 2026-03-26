@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: weekly-roundup-builder
 description: Create weekly roundup posts summarizing the week's product updates, content, news, and build progress. Use for "what we built this week" posts. Triggers on weekly roundup, weekly summary, or end-of-week content requests.

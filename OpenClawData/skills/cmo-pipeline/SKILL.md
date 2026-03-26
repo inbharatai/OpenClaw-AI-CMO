@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: cmo-pipeline
 description: Run the AI CMO daily pipeline end-to-end. Triggers intake, newsroom, product updates, content production, approval scoring, distribution, and reporting. Use when asked to "run pipeline", "run daily", "generate content", or "process source material".

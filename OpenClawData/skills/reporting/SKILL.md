@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: reporting
 description: Generate concise execution reports after completing work. Use after any significant task, session, or multi-step workflow. Triggers on "give me a report", "what did we do", "summarize the session", or automatically after completing a plan or major task.

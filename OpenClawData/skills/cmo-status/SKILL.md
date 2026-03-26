@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: cmo-status
 description: Show the current CMO pipeline status — queue counts, approval state, recent logs, last run time. Use when asked "what's the status", "show queues", "what was posted today", or "pipeline status".

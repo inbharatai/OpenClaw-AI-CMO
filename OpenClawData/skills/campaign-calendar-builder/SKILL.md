@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: campaign-calendar-builder
 description: Build editorial and campaign calendars for weekly and monthly content planning. Use for scheduling content across channels, planning themes, and coordinating multi-channel campaigns. Triggers on calendar creation, editorial planning, or campaign scheduling requests.

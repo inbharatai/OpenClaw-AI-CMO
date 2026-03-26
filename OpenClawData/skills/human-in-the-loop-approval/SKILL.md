@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: human-in-the-loop-approval
 description: Require explicit human approval before executing high-impact actions like publishing content, sending emails, deploying code, making purchases, or any irreversible action. Triggers on any action marked as requiring approval, or when the user says "check with me first", "I want to approve this", "don't do anything without my OK".

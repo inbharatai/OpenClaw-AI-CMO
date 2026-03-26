@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: duplicate-checker
 description: Check content for duplication or near-duplication against recently published content. Use when the approval engine needs to verify content uniqueness. Triggers on duplicate checking requests during content approval.

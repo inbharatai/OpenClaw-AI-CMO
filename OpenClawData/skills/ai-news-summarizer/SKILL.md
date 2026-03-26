@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: ai-news-summarizer
 description: Summarize AI industry news, tool launches, and market signals into concise, opinionated summaries for the website /news section and social channels. Use when processing AI news links or writing news commentary. Triggers on AI industry news, tool announcements, or market signal content.

@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: content-classifier
 description: Classify raw source material into content types, priority levels, and suggested channels. Use when intake-processor feeds new source notes, links, or product updates for classification. Triggers on any content classification request from the intake pipeline.

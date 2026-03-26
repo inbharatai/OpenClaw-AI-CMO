@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: research-synthesizer
 description: Synthesize research from multiple sources into clear, actionable summaries. Use when the user provides articles, data, notes, or documents to be combined into a coherent analysis. Triggers on "synthesize this research", "summarize these sources", "combine these findings", "what does the research say", or any multi-source analysis request.

@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: local-model-router
 description: Route tasks to the correct local Ollama model. Use when deciding which local LLM to use for a task. Routes strategy, writing, marketing, and planning to qwen3:8b. Routes coding, scripts, automation, and technical tasks to qwen2.5-coder:7b. Triggers on any task that needs local LLM inference.

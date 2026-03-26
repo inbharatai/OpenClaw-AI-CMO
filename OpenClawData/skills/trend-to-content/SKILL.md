@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: trend-to-content
 description: Convert trending topics, news, and cultural moments into timely content ideas. Use when the user wants to create content around trends, current events, viral moments, or industry news. Triggers on "trending", "what's happening", "newsjack", "turn this trend into content", "content from this news", or any trend-based content creation request.

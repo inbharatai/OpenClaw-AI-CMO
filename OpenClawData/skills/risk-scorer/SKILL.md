@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: risk-scorer
 description: Score content on 6 risk dimensions (source confidence, brand voice, claim sensitivity, duplication, platform risk, data safety) returning 0-100 scores for each. Use when the approval engine needs risk assessment. Triggers on content risk evaluation requests.
