@@ -149,13 +149,53 @@ run_outreach() {
         echo "outreach-drafter.sh not yet built. Coming in Phase 2."
       fi
       ;;
+    send)
+      local DRAFT_FILE="${1:-}"
+      local RECIPIENT="${2:-}"
+      if [ -z "$DRAFT_FILE" ] || [ -z "$RECIPIENT" ]; then
+        echo "Usage: outreach send <draft-file> <recipient-email>"
+        echo ""
+        bash "$BOT_ROOT/outreach/mail-sender.sh"
+        exit 1
+      fi
+      bot_log "orchestrator" "info" "→ Sending email: $DRAFT_FILE → $RECIPIENT"
+      bash "$BOT_ROOT/outreach/mail-sender.sh" "$DRAFT_FILE" "$RECIPIENT"
+      ;;
     track)
       local TRACK_MODE="${1:-today}"
       shift 2>/dev/null || true
       bash "$BOT_ROOT/outreach/outreach-tracker.sh" "$TRACK_MODE"
       ;;
+    setup)
+      echo "━━━ MAIL SETUP ━━━"
+      echo ""
+      if [ -f "$BOT_ROOT/config/.mail-credentials" ]; then
+        echo "✅ Credentials file exists"
+        source "$BOT_ROOT/config/.mail-credentials"
+        echo "   SMTP: ${SMTP_HOST:-not set}:${SMTP_PORT:-not set}"
+        echo "   User: ${SMTP_USER:-not set}"
+        echo "   From: ${FROM_NAME:-not set} <${FROM_EMAIL:-not set}>"
+      else
+        echo "❌ No credentials configured"
+        echo ""
+        echo "Run this to set up:"
+        echo "  cat > $BOT_ROOT/config/.mail-credentials << 'CREDS'"
+        echo '  SMTP_HOST="smtp.zoho.in"'
+        echo '  SMTP_PORT="587"'
+        echo '  SMTP_USER="your@zoho.com"'
+        echo '  SMTP_PASS="your-app-password"'
+        echo '  FROM_NAME="Reeturaj Goswami"'
+        echo '  FROM_EMAIL="your@zoho.com"'
+        echo "  CREDS"
+      fi
+      ;;
     *)
-      echo "Usage: outreach [draft <context>|track [today|week|all|stats]]"
+      echo "Usage: outreach [draft|send|track|setup]"
+      echo ""
+      echo "  draft <context>              Draft an email"
+      echo "  send <draft-file> <email>    Send a draft via SMTP"
+      echo "  track [today|week|stats]     View outreach activity"
+      echo "  setup                        Check mail credentials"
       exit 1
       ;;
   esac
@@ -322,7 +362,9 @@ case "$MODE" in
     echo ""
     echo "Outreach:"
     echo "  outreach draft <context>      Draft outreach email"
+    echo "  outreach send <file> <email>  Send a draft via SMTP"
     echo "  outreach track [today|week|all|stats]"
+    echo "  outreach setup                Check mail config"
     echo ""
     echo "World Scanner:"
     echo "  opportunities [all|government|corporate|global|grants|problems|projects|buildable]"

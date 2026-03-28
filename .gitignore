@@ -9,6 +9,7 @@ OllamaModels/
 .env
 configs/.env
 *.secret_key
+.mail-credentials
 socialflow/backend/.env
 socialflow/backend/.secret_key
 
