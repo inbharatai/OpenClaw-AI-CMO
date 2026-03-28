@@ -1,0 +1,14 @@
+{
+  "cmo_classified": true,
+  "classified_date": "2026-03-25",
+  "source_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/source-links/phase0-proof-ai-news.md",
+  "source_type": "link",
+  "content_type": "ai-news",
+  "priority": "medium",
+  "suggested_channels": " website-news, x, linkedin, discord",
+  "status": "content_produced",
+  "approval_level": "pending_scoring",
+  "output_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-25-phase0-proof-ai-news.md",
+  "queue_file": "/Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-03-25-phase0-proof-ai-news.md",
+  "produced_date": "2026-03-25"
+}

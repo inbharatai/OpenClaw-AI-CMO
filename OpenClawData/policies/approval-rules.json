@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-23",
+  "description": "4-level approval policy for AI CMO content pipeline",
+
+  "risk_dimensions": [
+    {
+      "id": "source_confidence",
+      "description": "Is source material first-party or verified?",
+      "weight": 0.25
+    },
+    {
+      "id": "brand_voice",
+      "description": "Does content match brand tone and voice?",
+      "weight": 0.15
+    },
+    {
+      "id": "claim_sensitivity",
+      "description": "Are there bold, legal, or risky claims?",
+      "weight": 0.25
+    },
+    {
+      "id": "duplication",
+      "description": "Similarity to content published in last 30 days",
+      "weight": 0.10
+    },
+    {
+      "id": "platform_risk",
+      "description": "Could this violate platform-specific rules?",
+      "weight": 0.10
+    },
+    {
+      "id": "data_safety",
+      "description": "Contains personal data, credentials, or private info?",
+      "weight": 0.15
+    }
+  ],
+
+  "levels": {
+    "L1_auto_approve": {
+      "label": "Auto-Approve",
+      "description": "Low-risk content from trusted sources, auto-approved and queued",
+      "conditions": {
+        "all_dimensions_below": 30,
+        "weighted_average_below": 25,
+        "content_type_in": [
+          "product-update",
+          "build-log",
+          "founder-update",
+          "discord-announcement",
+          "newsletter-snippet",
+          "repurposed-from-approved",
+          "simple-website-update"
+        ]
+      },
+      "action": "approve_and_queue"
+    },
+
+    "L2_score_gated": {
+      "label": "Score-Gated Auto-Approve",
+      "description": "Medium-risk content that passes if scores are acceptable",
+      "conditions": {
+        "max_single_dimension_below": 60,
+        "weighted_average_below": 45,
+        "data_safety_below": 30,
+        "content_type_in": [
+          "ai-news-summary",
+          "tool-comparison",
+          "industry-commentary",
+          "educational-post",
+          "seo-content",
+          "weekly-roundup",
+          "newsletter-draft",
+          "social-post"
+        ]
+      },
+      "action": "approve_if_pass_else_review"
+    },
+
+    "L3_review_queue": {
+      "label": "Review Queue",
+      "description": "Content requiring human review before approval",
+      "conditions": {
+        "any_dimension_above": 60,
+        "weighted_average_above": 45,
+        "or_content_type_in": [
+          "competitor-criticism",
+          "bold-claim",
+          "pr-sensitive",
+          "aggressive-sales",
+          "uncertain-news",
+          "platform-outreach",
+          "reddit-post",
+          "hackernews-post",
+          "product-hunt-launch"
+        ]
+      },
+      "action": "hold_for_review"
+    },
+
+    "L4_block": {
+      "label": "Block",
+      "description": "Content that must never be published",
+      "conditions": {
+        "any_dimension_above": 75,
+        "data_safety_above": 35,
+        "or_triggers": [
+          "unverifiable_claim",
+          "no_source_evidence",
+          "contains_credentials",
+          "contains_personal_data",
+          "policy_violation",
+          "mass_spam_pattern",
+          "outside_approved_channels",
+          "rumor_without_source"
+        ]
+      },
+      "action": "block_and_log"
+    }
+  },
+
+  "override_rules": [
+    {
+      "rule": "data_safety_above_35_always_blocks",
+      "description": "Any content with data safety score above 35 is blocked regardless of other scores"
+    },
+    {
+      "rule": "no_source_always_blocks",
+      "description": "Content with no source evidence attached is blocked"
+    },
+    {
+      "rule": "approved_source_reduces_risk_slightly",
+      "description": "If source material was previously approved, source_confidence score is reduced by 20% (NOT halved). Repurposed content must still pass all other checks independently."
+    },
+    {
+      "rule": "repurposed_content_still_requires_scoring",
+      "description": "Content tagged as repurposed-from-approved must still pass credential safety and duplication checks. Only source_confidence is reduced, not other dimensions."
+    },
+    {
+      "rule": "mass_spam_pattern_always_blocks",
+      "description": "Any content matching mass spam patterns is blocked immediately regardless of other scores"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "reddit-r-localllama",
+  "platform": "reddit",
+  "name": "r/LocalLLaMA",
+  "url": "https://reddit.com/r/LocalLLaMA",
+  "topic": "Local deployment and customization of LLaMA models",
+  "audience": "Developers, ML enthusiasts, and researchers interested in running LLaMA models on local hardware",
+  "estimated_size": "medium",
+  "rules": {
+    "self_promotion": "limited",
+    "links_allowed": true,
+    "flair_required": false,
+    "min_account_age": "none"
+  },
+  "tone": "technical",
+  "scores": {
+    "relevance": 7,
+    "education_openness": 8,
+    "founder_openness": 6,
+    "tool_openness": 7,
+    "risk_of_removal": 4,
+    "effort_required": 5
+  },
+  "recommended_posting_mode": "discussion",
+  "warmup_status": "observe",
+  "best_content_types": [
+    "tutorials",
+    "model comparisons"
+  ],
+  "avoid": [
+    "spam",
+    "off-topic discussions"
+  ],
+  "notes": "Engage with technical discussions about model optimization and hardware requirements. Avoid overt marketing or unrelated content."
+}

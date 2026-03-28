@@ -1,0 +1,15 @@
+[2026-03-28 12:08:38] [info] [world-scanner] Scanning category: GOVERNMENT-INDIA (8 queries)
+[2026-03-28 12:08:38] [info] [world-scanner]   Searching: India government AI tender 2026 education technology
+[2026-03-28 12:08:54] [info] [world-scanner]   Searching: GeM portal AI software procurement India 2026
+[2026-03-28 12:09:10] [info] [world-scanner]   Searching: ICDS Anganwadi digital technology tender RFP
+[2026-03-28 12:09:26] [info] [world-scanner]   Searching: Digital India AI projects education health 2026
+[2026-03-28 12:09:43] [info] [world-scanner]   Searching: Smart Cities Mission AI technology requirements India
+[2026-03-28 12:09:59] [info] [world-scanner]   Searching: India government startup scheme AI technology 2026
+[2026-03-28 12:10:15] [info] [world-scanner]   Searching: MeitY AI project funding India
+[2026-03-28 12:10:31] [info] [world-scanner]   Searching: National Education Policy NEP AI technology implementation[2026-03-28 12:10:47] [info] [world-scanner] Scanning category: GOVERNMENT-GLOBAL (6 queries)
+[2026-03-28 12:10:47] [info] [world-scanner]   Searching: UN UNICEF AI education developing countries 2026
+[2026-03-28 12:11:03] [info] [world-scanner]   Searching: World Bank technology education healthcare project 2026
+[2026-03-28 12:11:19] [info] [world-scanner]   Searching: USAID digital development AI education grant
+[2026-03-28 12:11:35] [info] [world-scanner]   Searching: Asian Development Bank AI technology project India
+[2026-03-28 12:11:51] [info] [world-scanner]   Searching: Bill Gates Foundation AI education India 2026
+[2026-03-28 12:12:07] [info] [world-scanner]   Searching: international development AI tools rural areas

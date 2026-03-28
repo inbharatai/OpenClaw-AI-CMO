@@ -1,0 +1,14 @@
+[2026-03-28 14:14:40] [info] [world-scanner] Scanning category: PROBLEMS-TO-SOLVE (8 queries)
+[2026-03-28 14:14:40] [info] [world-scanner]   Searching: site:github.com issues label:help-wanted AI education tools
+[2026-03-28 14:14:42] [info] [world-scanner]   Searching: site:github.com issues label:good-first-issue machine learning education
+[2026-03-28 14:14:58] [info] [world-scanner]   Searching: site:github.com issues AI agent platform bug open
+[2026-03-28 14:15:14] [info] [world-scanner]   Searching: education technology broken problem needs fixing 2026
+[2026-03-28 14:15:30] [info] [world-scanner]   Searching: AI chatbot problems users complaining bad experience
+[2026-03-28 14:15:46] [info] [world-scanner]   Searching: rural healthcare app issues bugs India technology
+[2026-03-28 14:16:02] [info] [world-scanner]   Searching: government portal usability problems India digital services
+[2026-03-28 14:16:18] [info] [world-scanner]   Searching: open source AI tools missing features requests
+
+--- Search: site:github.com issues label:help-wanted AI education tools ---
+Please complete the following challenge to confirm this search was made by a human.
+Select all squares containing a duck:
+<img class="anomaly-modal__image" alt=" " id="image-4d3fed4bed15427d868eb10de71242d5" src="../assets/anomal

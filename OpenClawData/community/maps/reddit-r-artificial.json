@@ -1,0 +1,35 @@
+{
+  "id": "reddit-r-artificial",
+  "platform": "reddit",
+  "name": "r/artificial",
+  "url": "https://reddit.com/r/artificial",
+  "topic": "Artificial Intelligence (AI) and related technologies",
+  "audience": "Tech enthusiasts, researchers, developers, and students interested in AI and related technologies",
+  "estimated_size": "large",
+  "rules": {
+    "self_promotion": "limited",
+    "links_allowed": true,
+    "flair_required": false,
+    "min_account_age": "none"
+  },
+  "tone": "mixed",
+  "scores": {
+    "relevance": 8,
+    "education_openness": 7,
+    "founder_openness": 6,
+    "tool_openness": 7,
+    "risk_of_removal": 4,
+    "effort_required": 6
+  },
+  "recommended_posting_mode": "discussion",
+  "warmup_status": "observe",
+  "best_content_types": [
+    "Discussion posts",
+    "Educational content"
+  ],
+  "avoid": [
+    "Spam",
+    "Low-effort posts"
+  ],
+  "notes": "Stay technical, engage in discussions, avoid self-promotion. Prioritize quality over quantity."
+}

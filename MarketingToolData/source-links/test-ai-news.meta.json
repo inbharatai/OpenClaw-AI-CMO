@@ -1,0 +1,14 @@
+{
+  "cmo_classified": true,
+  "classified_date": "2026-03-23",
+  "source_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md",
+  "source_type": "link",
+  "content_type": "launch",
+  "priority": "high",
+  "suggested_channels": " website-updates, discord, linkedin, x, email",
+  "status": "content_produced",
+  "approval_level": "pending_scoring",
+  "output_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-23-test-ai-news.md",
+  "queue_file": "/Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-23-test-ai-news.md",
+  "produced_date": "2026-03-23"
+}

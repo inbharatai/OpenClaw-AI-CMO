@@ -1,0 +1,2 @@
+[2026-03-28 12:03:48] [info] [world-scanner] Scanning category: CUSTOM (1 queries)
+[2026-03-28 12:03:48] [info] [world-scanner]   Searching: UNICEF AI tools for child welfare developing countries 2026

@@ -1,0 +1,28 @@
+# Large model files — DO NOT COMMIT
+OllamaModels/
+
+# macOS metadata
+._*
+.DS_Store
+__MACOSX/
+
+# Claude session data (contains conversation history)
+.claude/
+
+# OpenClaw local config (contains API keys)
+.openclaw/
+
+# Log files (regenerated on each run)
+OpenClawData/logs/
+OpenClawData/inbharat-bot/logging/*.log
+
+# Temporary/runtime files
+*.pid
+*.tmp
+
+# Node modules (if any)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc

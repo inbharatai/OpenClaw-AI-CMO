@@ -1,0 +1,9 @@
+{
+  "id": "task-004",
+  "title": "Audit Memory Files",
+  "description": "Review and archive 11 memory files to ensure they are up-to-date and relevant.",
+  "risk": "safe",
+  "priority": "medium",
+  "category": "infrastructure",
+  "estimated_minutes": 25
+}

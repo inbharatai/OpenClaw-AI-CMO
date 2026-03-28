@@ -1,0 +1,89 @@
+[2026-03-28 11:58:30] [info] [world-scanner] Scanning category: GOVERNMENT-INDIA (8 queries)
+[2026-03-28 11:58:30] [info] [world-scanner]   Searching: India government AI tender 2026 education technology
+[2026-03-28 11:58:32] [info] [world-scanner]   Searching: GeM portal AI software procurement India 2026
+[2026-03-28 11:58:34] [info] [world-scanner]   Searching: ICDS Anganwadi digital technology tender RFP
+[2026-03-28 11:58:35] [info] [world-scanner]   Searching: Digital India AI projects education health 2026
+[2026-03-28 11:58:37] [info] [world-scanner]   Searching: Smart Cities Mission AI technology requirements India
+[2026-03-28 11:58:39] [info] [world-scanner]   Searching: India government startup scheme AI technology 2026
+[2026-03-28 11:58:40] [info] [world-scanner]   Searching: MeitY AI project funding India
+[2026-03-28 11:58:42] [info] [world-scanner]   Searching: National Education Policy NEP AI technology implementation
+
+--- Search: India government AI tender 2026 education technology ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: GeM portal AI software procurement India 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: ICDS Anganwadi digital technology tender RFP ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: Digital India AI projects education health 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: Smart Cities Mission AI technology requirements India ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: India government startup scheme AI technology 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: MeitY AI project funding India ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: National Education Policy NEP AI technology implementation ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.[2026-03-28 11:58:44] [info] [world-scanner] Scanning category: GOVERNMENT-GLOBAL (6 queries)
+[2026-03-28 11:58:44] [info] [world-scanner]   Searching: UN UNICEF AI education developing countries 2026
+[2026-03-28 11:58:46] [info] [world-scanner]   Searching: World Bank technology education healthcare project 2026
+[2026-03-28 11:58:47] [info] [world-scanner]   Searching: USAID digital development AI education grant
+[2026-03-28 11:58:49] [info] [world-scanner]   Searching: Asian Development Bank AI technology project India
+[2026-03-28 11:58:51] [info] [world-scanner]   Searching: Bill Gates Foundation AI education India 2026
+[2026-03-28 11:58:52] [info] [world-scanner]   Searching: international development AI tools rural areas
+
+--- Search: UN UNICEF AI education developing countries 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: World Bank technology education healthcare project 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: USAID digital development AI education grant ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: Asian Development Bank AI technology project India ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: Bill Gates Foundation AI education India 2026 ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.
+
+--- Search: international development AI tools rural areas ---
+If this persists, please  email us .
+Our support email address includes an anonymized error code that helps us understand the context of your search.[2026-03-28 11:58:54] [info] [world-scanner] Scanning category: CORPORATE (6 queries)
+[2026-03-28 11:58:54] [info] [world-scanner]   Searching: Indian edtech company AI partnership 2026
+[2026-03-28 11:58:55] [info] [world-scanner]   Searching: India healthcare AI startup partnership opportunity
+[2026-03-28 11:59:11] [info] [world-scanner]   Searching: enterprise AI tools India company looking partner
+[2026-03-28 11:59:28] [info] [world-scanner]   Searching: Indian government contractor AI technology partner
+[2026-03-28 11:59:44] [info] [world-scanner]   Searching: education technology company India hiring AI
+[2026-03-28 12:00:00] [info] [world-scanner]   Searching: CSR AI education India rural development corporate[2026-03-28 12:00:16] [info] [world-scanner] Scanning category: GLOBAL-OPPORTUNITIES (6 queries)
+[2026-03-28 12:00:16] [info] [world-scanner]   Searching: open source AI education tools project 2026
+[2026-03-28 12:00:32] [info] [world-scanner]   Searching: AI agent platform open source community contribution
+[2026-03-28 12:00:48] [info] [world-scanner]   Searching: Google AI for Social Good grants 2026
+[2026-03-28 12:01:04] [info] [world-scanner]   Searching: Microsoft AI for Good education grant application
+[2026-03-28 12:01:20] [info] [world-scanner]   Searching: AI startup accelerator India application 2026
+[2026-03-28 12:01:36] [info] [world-scanner]   Searching: open source AI grants funding 2026[2026-03-28 12:01:52] [info] [world-scanner] Scanning category: GRANTS-FUNDING (6 queries)
+[2026-03-28 12:01:52] [info] [world-scanner]   Searching: startup India scheme AI company registration benefits
+[2026-03-28 12:02:08] [info] [world-scanner]   Searching: NASSCOM AI startup funding program 2026
+[2026-03-28 12:02:24] [info] [world-scanner]   Searching: Indian government grant AI startup 2026
+[2026-03-28 12:02:40] [info] [world-scanner]   Searching: Gates Foundation Grand Challenges AI health India
+[2026-03-28 12:02:57] [info] [world-scanner]   Searching: AI research grant developing countries 2026
+[2026-03-28 12:03:13] [info] [world-scanner]   Searching: social enterprise AI funding India

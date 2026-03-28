@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-23",
+  "description": "Brand voice rules for content consistency across all channels",
+
+  "voice_attributes": {
+    "primary": ["clear", "direct", "knowledgeable", "practical"],
+    "secondary": ["approachable", "builder-minded", "honest", "forward-thinking"],
+    "avoid": ["corporate jargon", "hype language", "buzzword salad", "empty promises", "aggressive sales", "clickbait"]
+  },
+
+  "tone_by_context": {
+    "product_updates": "confident, factual, helpful",
+    "thought_leadership": "insightful, opinionated-but-fair, educational",
+    "build_in_public": "authentic, personal, transparent",
+    "news_commentary": "informed, balanced, curated",
+    "social_posts": "engaging, concise, value-first",
+    "newsletters": "personal, subscriber-focused, useful",
+    "community": "friendly, supportive, direct"
+  },
+
+  "writing_rules": [
+    "Lead with value — what does the reader get from this?",
+    "Use active voice by default",
+    "Short sentences. Short paragraphs. Scannable.",
+    "No filler phrases: 'In today's fast-paced world...', 'It goes without saying...'",
+    "Specific over vague: numbers, examples, concrete details",
+    "Honest about limitations — never oversell",
+    "Builder perspective — we make things, we ship things, we learn things"
+  ],
+
+  "banned_phrases": [
+    "revolutionary",
+    "game-changing",
+    "synergy",
+    "leverage",
+    "disrupt",
+    "at the end of the day",
+    "move the needle",
+    "circle back",
+    "low-hanging fruit",
+    "best-in-class",
+    "world-class solution",
+    "cutting-edge",
+    "unlock the power of",
+    "supercharge your"
+  ],
+
+  "scoring": {
+    "pass_threshold": 70,
+    "check_for": [
+      "uses_active_voice",
+      "no_banned_phrases",
+      "appropriate_length",
+      "leads_with_value",
+      "matches_channel_tone",
+      "no_filler_phrases",
+      "specific_not_vague"
+    ]
+  }
+}

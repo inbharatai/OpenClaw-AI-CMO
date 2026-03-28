@@ -1,0 +1,106 @@
+{
+  "version": "1.0",
+  "updated": "2026-03-23",
+  "description": "Daily and weekly posting caps per channel for AI CMO",
+
+  "global": {
+    "max_total_posts_per_day": 15,
+    "max_total_emails_per_day": 3,
+    "min_hours_between_same_channel": 2,
+    "cooldown_after_block_hours": 24
+  },
+
+  "channels": {
+    "website": {
+      "daily_cap": 3,
+      "weekly_cap": 15,
+      "min_interval_hours": 4,
+      "auto_post_allowed": true,
+      "notes": "Website content is owned — higher cap acceptable"
+    },
+    "discord": {
+      "daily_cap": 3,
+      "weekly_cap": 15,
+      "min_interval_hours": 3,
+      "auto_post_allowed": true,
+      "notes": "Webhook posting enabled. Keep valuable, not spammy"
+    },
+    "linkedin": {
+      "daily_cap": 0,
+      "weekly_cap": 0,
+      "min_interval_hours": 0,
+      "auto_post_allowed": false,
+      "blocked": true,
+      "notes": "BLOCKED by owner. Do not generate, queue, or export LinkedIn content until unblocked."
+    },
+    "x": {
+      "daily_cap": 3,
+      "weekly_cap": 15,
+      "min_interval_hours": 3,
+      "auto_post_allowed": false,
+      "notes": "Queue/export only in V1. Higher frequency acceptable on X"
+    },
+    "facebook": {
+      "daily_cap": 1,
+      "weekly_cap": 5,
+      "min_interval_hours": 8,
+      "auto_post_allowed": false,
+      "notes": "Queue/export only. Low frequency, high quality"
+    },
+    "instagram": {
+      "daily_cap": 1,
+      "weekly_cap": 5,
+      "min_interval_hours": 8,
+      "auto_post_allowed": false,
+      "notes": "Captions + image briefs only. Requires manual image creation"
+    },
+    "reddit": {
+      "daily_cap": 1,
+      "weekly_cap": 3,
+      "min_interval_hours": 24,
+      "auto_post_allowed": false,
+      "notes": "Manual-first ALWAYS. Reddit communities detect and punish automation"
+    },
+    "medium": {
+      "daily_cap": 1,
+      "weekly_cap": 2,
+      "min_interval_hours": 24,
+      "auto_post_allowed": false,
+      "notes": "Draft/export only. Long-form, low frequency"
+    },
+    "substack": {
+      "daily_cap": 1,
+      "weekly_cap": 2,
+      "min_interval_hours": 24,
+      "auto_post_allowed": false,
+      "notes": "Draft/export only. Newsletter cadence"
+    },
+    "email": {
+      "daily_cap": 1,
+      "weekly_cap": 3,
+      "min_interval_hours": 24,
+      "auto_post_allowed": false,
+      "notes": "Newsletter sends only. No cold outreach. Manual send in V1"
+    },
+    "heygen": {
+      "daily_cap": 2,
+      "weekly_cap": 5,
+      "min_interval_hours": 4,
+      "auto_post_allowed": false,
+      "notes": "Brief generation only. Manual render in HeyGen"
+    }
+  },
+
+  "email_safeguards": {
+    "max_newsletters_per_day": 1,
+    "max_campaign_emails_per_day": 3,
+    "min_hours_between_sends_same_list": 24,
+    "allowed_sender_domains": [],
+    "no_cold_outreach": true,
+    "no_purchased_lists": true,
+    "no_scraped_contacts": true,
+    "require_unsubscribe": true,
+    "no_destructive_account_actions": true,
+    "no_password_changes": true
+  }
+}

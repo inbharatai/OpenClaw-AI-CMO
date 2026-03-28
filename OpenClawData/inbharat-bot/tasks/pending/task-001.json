@@ -1,0 +1,9 @@
+{
+  "id": "task-001",
+  "title": "Generate Weekly Reports",
+  "description": "Create and schedule weekly reports based on existing daily report data and additional analysis.",
+  "risk": "review",
+  "priority": "high",
+  "category": "content",
+  "estimated_minutes": 30
+}

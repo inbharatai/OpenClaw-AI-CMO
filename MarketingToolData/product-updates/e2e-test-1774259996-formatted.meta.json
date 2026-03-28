@@ -1,0 +1,14 @@
+{
+  "cmo_classified": true,
+  "classified_date": "2026-03-25",
+  "source_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/e2e-test-1774259996-formatted.md",
+  "source_type": "product-update",
+  "content_type": "launch",
+  "priority": "high",
+  "suggested_channels": " website-updates, discord, linkedin, x, email",
+  "status": "content_produced",
+  "approval_level": "pending_scoring",
+  "output_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-25-e2e-test-1774259996-formatted.md",
+  "queue_file": "/Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-25-e2e-test-1774259996-formatted.md",
+  "produced_date": "2026-03-25"
+}
