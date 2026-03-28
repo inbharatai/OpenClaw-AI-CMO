@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: image-brief-generator
 description: Create structured image briefs for visual content across channels. Use when content needs an accompanying image, graphic, or visual asset. Triggers on image brief requests, Instagram content, or any visual content production.

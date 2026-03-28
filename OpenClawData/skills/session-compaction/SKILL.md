@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: session-compaction
 description: Compact long sessions by summarizing completed work and archiving verbose outputs to keep context clean and focused. Use when a session becomes long, context feels cluttered, or the user says "clean up", "compact this session", "archive what we've done", or when conversation history exceeds practical working length.

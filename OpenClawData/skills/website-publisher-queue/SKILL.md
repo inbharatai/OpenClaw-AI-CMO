@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: website-publisher-queue
 description: Stage approved website content for publishing. Organizes content by section (updates, insights, build-log, news) and prepares it for manual or automated website deployment. Triggers on website publishing, content staging, or site update requests.

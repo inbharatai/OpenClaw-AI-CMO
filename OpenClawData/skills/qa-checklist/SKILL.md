@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: qa-checklist
 description: Generate and run quality assurance checklists for content, code, campaigns, and deliverables before publishing or deploying. Use when the user needs a pre-publish review, pre-launch check, quality gate, or final approval checklist. Triggers on "QA check", "checklist", "before we publish", "pre-launch", "quality check", "review before sending", or any quality gate request.

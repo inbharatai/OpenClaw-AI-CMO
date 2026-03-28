@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: daily-briefing
 description: Generate a daily briefing summarizing active tasks, pending items, recent changes, and priorities. Use at the start of a work session to get oriented, or when the user asks "what's going on", "status update", "daily summary", "what should I focus on today", or any session kickoff request.

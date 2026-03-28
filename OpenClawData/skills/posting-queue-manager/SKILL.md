@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: posting-queue-manager
 description: Manage the content posting queues — track what is pending, approved, posted, and archived across all channels. Use for queue status checks, cleanup, and archive operations. Triggers on queue management, status checks, or archive requests.

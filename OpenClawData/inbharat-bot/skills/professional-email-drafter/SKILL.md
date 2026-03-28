@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: professional-email-drafter
 description: Draft professional outreach emails for business development, partnerships, government outreach, institutional introductions, and follow-ups. Triggers on "draft email", "outreach", "introduce us to", "follow up with", "reach out to", or any email/outreach request.

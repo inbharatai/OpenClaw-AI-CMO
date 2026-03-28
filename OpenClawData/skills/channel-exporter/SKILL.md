@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: channel-exporter
 description: Format and export approved content into channel-ready packages for each distribution target. Use when moving approved content from queues to export-ready format. Triggers on content export or distribution preparation requests.

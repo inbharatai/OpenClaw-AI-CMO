@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: world-scanner
 description: Scan for global opportunities — government schemes, company partnerships, tenders, grants, open-source collaborations, and market gaps that align with InBharat AI's goals. Triggers on "scan opportunities", "find leads", "global scan", "government schemes", "company partnerships", "world scan", or any opportunity discovery request.

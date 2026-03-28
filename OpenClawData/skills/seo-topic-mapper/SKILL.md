@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: seo-topic-mapper
 description: Map SEO keyword opportunities and content topics that can drive organic traffic. Use for content planning, keyword research, and identifying high-value topics. Triggers on SEO research, keyword mapping, or content opportunity identification.

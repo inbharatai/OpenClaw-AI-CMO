@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: memory-writer
 description: Persist durable operating knowledge to organized workspace memory files. Use when saving brand voice rules, campaign preferences, prompt templates, recurring instructions, lessons learned, important decisions, or project context. Triggers when the user says "remember this", "save this for later", "store this", or when important reusable knowledge is identified during a session.

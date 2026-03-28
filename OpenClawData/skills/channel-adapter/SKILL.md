@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: channel-adapter
 description: Adapt a single piece of approved content into multiple channel-specific variants (LinkedIn, X, Facebook, Instagram, etc.). Use when repurposing one piece of content across multiple platforms. Triggers on multi-channel content adaptation or cross-platform repurposing requests.

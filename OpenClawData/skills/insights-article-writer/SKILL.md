@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: insights-article-writer
 description: Write long-form insight articles combining analysis, commentary, and expertise for the website /insights section, Medium, and Substack. Use for thought leadership, industry analysis, and deep-dive articles. Triggers on article writing, long-form content, or thought leadership requests.

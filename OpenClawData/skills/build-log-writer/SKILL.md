@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: build-log-writer
 description: Write founder build-in-public log entries from daily work notes, source notes, and accomplishments. Use for weekly build summaries and founder update posts destined for /build-log. Triggers on build-in-public content, founder updates, or weekly build summaries.

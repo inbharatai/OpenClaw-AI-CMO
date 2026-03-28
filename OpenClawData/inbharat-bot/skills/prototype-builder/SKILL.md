@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: prototype-builder
 description: Generate working prototype code from a problem description. Creates deployable mini-apps, tools, scripts, or demos that solve real problems. Triggers on "build prototype", "create demo", "make a tool for", "prototype", or any request to build a quick solution.

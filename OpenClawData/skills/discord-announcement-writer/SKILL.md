@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: discord-announcement-writer
 description: Write Discord-formatted announcements from product updates, news, and community updates. Use when producing content for Discord webhook posting. Triggers on Discord announcements, community updates, or any content targeted at Discord.

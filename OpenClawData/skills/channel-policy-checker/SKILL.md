@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 ---
 name: channel-policy-checker
 description: Verify content meets platform-specific rules and guidelines before publishing. Check character limits, hashtag counts, tone requirements, and content restrictions per channel. Triggers on channel compliance checks during approval.
