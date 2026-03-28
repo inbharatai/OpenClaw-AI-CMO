@@ -1,0 +1,179 @@
+#!/bin/bash
+# ============================================================
+# OpenClaw AI CMO — Main CLI
+# Usage: ./openclaw <command> [options]
+# ============================================================
+
+set -e
+
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPTS="$PROJECT_DIR/openclaw-engine/scripts"
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+show_banner() {
+    echo ""
+    echo -e "${CYAN}  ___                    ____ _                ${NC}"
+    echo -e "${CYAN} / _ \ _ __   ___ _ __  / ___| | __ ___      __${NC}"
+    echo -e "${CYAN}| | | | '_ \ / _ \ '_ \| |   | |/ _\` \ \ /\ / /${NC}"
+    echo -e "${CYAN}| |_| | |_) |  __/ | | | |___| | (_| |\ V  V / ${NC}"
+    echo -e "${CYAN} \___/| .__/ \___|_| |_|\____|_|\__,_| \_/\_/  ${NC}"
+    echo -e "${CYAN}      |_|            ${GREEN}AI CMO v1.0.0${NC}"
+    echo ""
+}
+
+show_help() {
+    show_banner
+    echo -e "  ${YELLOW}USAGE${NC}"
+    echo -e "    ./openclaw <command> [options]"
+    echo ""
+    echo -e "  ${YELLOW}PIPELINE COMMANDS${NC}"
+    echo -e "    ${GREEN}daily${NC}         Run the full daily pipeline"
+    echo -e "    ${GREEN}weekly${NC}        Run the weekly pipeline"
+    echo -e "    ${GREEN}monthly${NC}       Run the monthly pipeline"
+    echo ""
+    echo -e "  ${YELLOW}INDIVIDUAL STAGES${NC}"
+    echo -e "    ${GREEN}intake${NC}        Scan and classify source files"
+    echo -e "    ${GREEN}newsroom${NC}      Process AI news sources"
+    echo -e "    ${GREEN}product${NC}       Process product updates"
+    echo -e "    ${GREEN}content${NC}       Produce multi-channel content"
+    echo -e "    ${GREEN}approve${NC}       Run approval engine"
+    echo -e "    ${GREEN}distribute${NC}    Distribute approved content"
+    echo -e "    ${GREEN}report${NC}        Generate pipeline report"
+    echo ""
+    echo -e "  ${YELLOW}TOOLS${NC}"
+    echo -e "    ${GREEN}skill <name>${NC}  Run a specific skill"
+    echo -e "    ${GREEN}status${NC}        Show system status"
+    echo -e "    ${GREEN}socialflow${NC}    Start SocialFlow server"
+    echo -e "    ${GREEN}platforms${NC}     Check platform connection status"
+    echo ""
+    echo -e "  ${YELLOW}SETUP${NC}"
+    echo -e "    ${GREEN}setup${NC}         Run initial setup"
+    echo -e "    ${GREEN}help${NC}          Show this help message"
+    echo ""
+}
+
+check_ollama() {
+    if ! curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+        echo -e "${RED}Ollama is not running. Start with: ollama serve${NC}"
+        exit 1
+    fi
+}
+
+case "${1:-help}" in
+    daily)
+        check_ollama
+        echo -e "${BLUE}Running daily pipeline...${NC}"
+        bash "$SCRIPTS/daily-pipeline.sh"
+        ;;
+    weekly)
+        check_ollama
+        echo -e "${BLUE}Running weekly pipeline...${NC}"
+        bash "$SCRIPTS/weekly-pipeline.sh"
+        ;;
+    monthly)
+        check_ollama
+        echo -e "${BLUE}Running monthly pipeline...${NC}"
+        bash "$SCRIPTS/monthly-pipeline.sh"
+        ;;
+    intake)
+        check_ollama
+        bash "$SCRIPTS/intake-processor.sh"
+        ;;
+    newsroom)
+        check_ollama
+        bash "$SCRIPTS/newsroom-agent.sh"
+        ;;
+    product)
+        check_ollama
+        bash "$SCRIPTS/product-update-agent.sh"
+        ;;
+    content)
+        check_ollama
+        bash "$SCRIPTS/content-agent.sh"
+        ;;
+    approve)
+        bash "$SCRIPTS/approval-engine.sh"
+        ;;
+    distribute)
+        bash "$SCRIPTS/distribution-engine.sh"
+        ;;
+    report)
+        bash "$SCRIPTS/generate-report.sh"
+        ;;
+    skill)
+        check_ollama
+        if [ -z "$2" ]; then
+            echo -e "${RED}Usage: ./openclaw skill <skill-name>${NC}"
+            echo -e "Available skills:"
+            ls "$PROJECT_DIR/openclaw-engine/skills/" | grep -v "^\." | sort
+            exit 1
+        fi
+        bash "$SCRIPTS/skill-runner.sh" "$2"
+        ;;
+    status)
+        show_banner
+        echo -e "${YELLOW}System Status:${NC}"
+        echo ""
+        # Ollama
+        if curl -s http://localhost:11434/api/tags >/dev/null 2>&1; then
+            echo -e "  ${GREEN}✓${NC} Ollama running"
+            MODELS=$(curl -s http://localhost:11434/api/tags | python3 -c "import sys,json; [print(f'    - {m[\"name\"]}') for m in json.load(sys.stdin).get('models',[])]" 2>/dev/null)
+            echo "$MODELS"
+        else
+            echo -e "  ${RED}✗${NC} Ollama not running"
+        fi
+        echo ""
+        # SocialFlow
+        if curl -s http://localhost:8000/api/health >/dev/null 2>&1; then
+            echo -e "  ${GREEN}✓${NC} SocialFlow running"
+        else
+            echo -e "  ${YELLOW}○${NC} SocialFlow not running"
+        fi
+        echo ""
+        # Counts
+        echo -e "${YELLOW}Content Counts:${NC}"
+        echo "  Source notes: $(find "$PROJECT_DIR/data/source-notes" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo "  Source links: $(find "$PROJECT_DIR/data/source-links" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo "  Approved:     $(find "$PROJECT_DIR/approvals/approved" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo "  Blocked:      $(find "$PROJECT_DIR/approvals/blocked" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo "  In review:    $(find "$PROJECT_DIR/approvals/review" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo "  Posted:       $(find "$PROJECT_DIR/exports/posted" -name "*.md" 2>/dev/null | wc -l | tr -d ' ')"
+        echo ""
+        echo -e "  Skills: $(ls "$PROJECT_DIR/openclaw-engine/skills/" 2>/dev/null | grep -v "^\." | wc -l | tr -d ' ')"
+        echo -e "  Scripts: $(ls "$PROJECT_DIR/openclaw-engine/scripts/"*.sh 2>/dev/null | wc -l | tr -d ' ')"
+        ;;
+    socialflow)
+        echo -e "${BLUE}Starting SocialFlow...${NC}"
+        cd "$PROJECT_DIR/socialflow/backend"
+        if [ -d ".venv" ]; then
+            source .venv/bin/activate 2>/dev/null || . .venv/bin/activate
+        fi
+        python3 main.py
+        ;;
+    platforms)
+        if ! curl -s http://localhost:8000/api/health >/dev/null 2>&1; then
+            echo -e "${RED}SocialFlow is not running. Start with: ./openclaw socialflow${NC}"
+            exit 1
+        fi
+        echo -e "${YELLOW}Platform Status:${NC}"
+        curl -s http://localhost:8000/api/openclaw/status | python3 -m json.tool
+        ;;
+    setup)
+        bash "$PROJECT_DIR/setup.sh"
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        echo -e "${RED}Unknown command: $1${NC}"
+        show_help
+        exit 1
+        ;;
+esac

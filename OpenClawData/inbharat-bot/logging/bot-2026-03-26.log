@@ -1,0 +1,38 @@
+[2026-03-26 13:51:32] [info] [orchestrator] === InBharat Bot started — mode: scan ===
+[2026-03-26 13:51:32] [info] [orchestrator] → Running ecosystem scanner...
+[2026-03-26 13:51:32] [info] [scanner] === Ecosystem scan started ===
+[2026-03-26 13:51:32] [info] [scanner] Scanning workspace structure...
+[2026-03-26 13:51:32] [info] [scanner] Scan complete → /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/registry/ecosystem-scan-2026-03-26_13-51-32.md
+[2026-03-26 13:51:32] [evidence] [scanner] action=ecosystem-scan file=/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/registry/ecosystem-scan-2026-03-26_13-51-32.md status=success
+[2026-03-26 13:51:32] [info] [orchestrator] === InBharat Bot completed — mode: scan ===
+[2026-03-26 13:51:41] [info] [orchestrator] === InBharat Bot started — mode: analyze ===
+[2026-03-26 13:51:41] [info] [orchestrator] → Running gap finder...
+[2026-03-26 13:51:41] [info] [gap-finder] === Gap analysis started ===
+[2026-03-26 13:51:41] [info] [gap-finder] Using scan: /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/registry/ecosystem-scan-2026-03-26_13-51-32.md
+[2026-03-26 13:51:41] [info] [gap-finder] Calling qwen3:8b for analysis...
+[2026-03-26 13:55:34] [info] [gap-finder] Findings saved → /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/gap-finder/findings-2026-03-26_13-51-41.md
+[2026-03-26 13:55:34] [evidence] [gap-finder] action=gap-analysis file=/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/gap-finder/findings-2026-03-26_13-51-41.md status=success
+[2026-03-26 13:55:34] [info] [orchestrator] === InBharat Bot completed — mode: analyze ===
+[2026-03-26 13:58:04] [info] [orchestrator] === InBharat Bot started — mode: propose ===
+[2026-03-26 13:58:05] [info] [orchestrator] → Running proposal generator...
+[2026-03-26 13:58:05] [info] [proposal-gen] === Proposal generation started ===
+[2026-03-26 13:58:05] [info] [proposal-gen] Using findings: /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/gap-finder/findings-2026-03-26_13-51-41.md
+[2026-03-26 13:58:05] [info] [proposal-gen] Calling qwen3:8b for proposals...
+[2026-03-26 13:59:24] [info] [proposal-gen] 5 proposals generated → /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/proposal-generator/proposals-2026-03-26_13-58-05.md
+[2026-03-26 13:59:24] [evidence] [proposal-gen] action=proposal-generation file=/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/proposal-generator/proposals-2026-03-26_13-58-05.md status=success
+[2026-03-26 13:59:24] [info] [orchestrator] === InBharat Bot completed — mode: propose ===
+[2026-03-26 13:59:33] [info] [orchestrator] === InBharat Bot started — mode: bridge ===
+[2026-03-26 13:59:33] [info] [orchestrator] → Running CMO bridge...
+[2026-03-26 13:59:33] [info] [cmo-bridge] === CMO Bridge started ===
+[2026-03-26 13:59:33] [info] [cmo-bridge] Using proposals: /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/proposal-generator/proposals-2026-03-26_13-58-05.md
+[2026-03-26 13:59:33] [info] [cmo-bridge] Generating CMO source material...
+[2026-03-26 14:00:28] [info] [cmo-bridge] Bridge output → /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/cmo-bridge/bridge-output-2026-03-26_13-59-33.md
+[2026-03-26 14:00:28] [info] [cmo-bridge] CMO source note → /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md
+[2026-03-26 14:00:28] [evidence] [cmo-bridge] action=bridge-generation file=/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/cmo-bridge/bridge-output-2026-03-26_13-59-33.md status=success
+[2026-03-26 14:00:28] [evidence] [cmo-bridge] action=source-note-creation file=/Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md status=success
+[2026-03-26 14:00:28] [info] [orchestrator] === InBharat Bot completed — mode: bridge ===
+[2026-03-26 14:04:15] [info] [orchestrator] === InBharat Bot started — mode: status ===
+[2026-03-26 14:04:15] [info] [orchestrator] → Generating dashboard state...
+[2026-03-26 14:04:15] [info] [dashboard] Generating dashboard state...
+[2026-03-26 14:04:15] [info] [dashboard] State generated → /Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/dashboard/bot-state.json
+[2026-03-26 14:04:15] [info] [orchestrator] === InBharat Bot completed — mode: status ===

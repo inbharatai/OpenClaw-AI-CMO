@@ -1,0 +1,36 @@
+[2026-03-23 11:10:34] === Newsroom Agent Started ===
+[2026-03-23 11:10:34] PROCESSING NEWS: test-ai-news.md
+[2026-03-23 11:10:34] PRODUCED [discord news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-news-2026-03-23-test-ai-news.md
+[2026-03-23 11:10:34] PRODUCED [linkedin news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-news-2026-03-23-test-ai-news.md
+[2026-03-23 11:10:34] SUMMARIZED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-23-test-ai-news.md
+[2026-03-23 11:10:34] === Newsroom Agent Complete ===
+[2026-03-23 11:10:34] Processed: 1 | Skipped: 0
+[2026-03-23 13:09:16] === Newsroom Agent Started ===
+[2026-03-23 13:09:16] PROCESSING NEWS: audit-test-news.md
+[2026-03-23 13:09:16] [DRY RUN] Would process: audit-test-news.md
+[2026-03-23 13:09:16] === Newsroom Agent Complete ===
+[2026-03-23 13:09:16] Processed: 0 | Skipped: 0
+[2026-03-23 13:10:50] === Newsroom Agent Started ===
+[2026-03-23 13:10:50] === Newsroom Agent Complete ===
+[2026-03-23 13:10:50] Processed: 0 | Skipped: 0
+[2026-03-23 14:26:25] === Newsroom Agent Started ===
+[2026-03-23 14:26:25] PROCESSING NEWS: retest-news-1774256096.md
+[2026-03-23 14:26:25] PRODUCED [discord news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:26:25] PRODUCED [linkedin news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:26:25] SUMMARIZED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:26:25] === Newsroom Agent Complete ===
+[2026-03-23 14:26:25] Processed: 1 | Skipped: 0
+[2026-03-23 15:30:48] === Newsroom Agent Started ===
+[2026-03-23 15:30:48] === Newsroom Agent Complete ===
+[2026-03-23 15:30:48] Processed: 0 | Skipped: 0
+[2026-03-25 18:23:30] === Newsroom Agent Started ===
+[2026-03-25 18:23:30] PROCESSING NEWS: phase0-e2e-industry-trend.md
+[2026-03-25 18:23:30] PRODUCED [discord news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:23:30] PRODUCED [linkedin news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:23:30] SUMMARIZED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:23:30] PROCESSING NEWS: phase0-proof-ai-news.md
+[2026-03-25 18:23:30] PRODUCED [discord news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:23:30] PRODUCED [linkedin news]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:23:30] SUMMARIZED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:23:30] === Newsroom Agent Complete ===
+[2026-03-25 18:23:30] Processed: 2 | Skipped: 0

@@ -1,0 +1,35 @@
+INFO:     Will watch for changes in these directories: ['/Volumes/Expansion/CMO-10million/SocialFlow/backend']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [9132] using StatReload
+INFO:     Started server process [9139]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:50514 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50515 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50519 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50521 - "GET /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50515 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50526 - "OPTIONS /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50526 - "POST /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50526 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50528 - "GET /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50534 - "OPTIONS /api/accounts/instagram/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50534 - "POST /api/accounts/instagram/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50545 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50546 - "GET /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50549 - "POST /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50549 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50551 - "GET /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50553 - "OPTIONS /api/accounts/instagram HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50553 - "DELETE /api/accounts/instagram HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50553 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50555 - "GET /api/accounts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50559 - "OPTIONS /api/accounts/twitter HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50559 - "DELETE /api/accounts/twitter HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50559 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50561 - "GET /api/accounts HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in '/Volumes/Expansion/CMO-10million/SocialFlow/backend/automation.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [9139]

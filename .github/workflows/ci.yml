@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check shell scripts syntax
+        run: |
+          FAIL=0
+          for f in OpenClawData/scripts/*.sh; do
+            bash -n "$f" && echo "✓ $f" || { echo "✗ $f"; FAIL=1; }
+          done
+          for f in OpenClawData/inbharat-bot/*/*.sh OpenClawData/inbharat-bot/*.sh; do
+            [ -f "$f" ] || continue
+            bash -n "$f" && echo "✓ $f" || { echo "✗ $f"; FAIL=1; }
+          done
+          [ $FAIL -eq 0 ] || exit 1
+
+      - name: Check all skills have SKILL.md
+        run: |
+          for d in OpenClawData/skills/*/; do
+            if [ ! -f "$d/SKILL.md" ]; then
+              echo "✗ Missing SKILL.md in $d"
+              exit 1
+            fi
+          done
+          echo "✓ All skills have SKILL.md"
+
+      - name: Check policies are valid JSON
+        run: |
+          for f in OpenClawData/policies/*.json; do
+            python3 -m json.tool "$f" > /dev/null && echo "✓ $f" || exit 1
+          done
+
+      - name: Check directory structure
+        run: |
+          for d in OpenClawData/scripts OpenClawData/skills OpenClawData/policies OpenClawData/approvals/approved OpenClawData/approvals/blocked OpenClawData/reports/daily OpenClawData/logs OpenClawData/queues OpenClawData/memory OpenClawData/community/maps OpenClawData/revenue/leads OpenClawData/inbharat-bot; do
+            [ -d "$d" ] && echo "✓ $d" || (echo "✗ Missing $d" && exit 1)
+          done
+
+      - name: Check SKILL.md honest disclaimers
+        run: |
+          TOTAL=$(ls -d OpenClawData/skills/*/SKILL.md | wc -l)
+          WITH=$(grep -rl "HONEST CLASSIFICATION" OpenClawData/skills/*/SKILL.md | wc -l)
+          echo "Skills with disclaimer: $WITH / $TOTAL"
+          [ "$TOTAL" -eq "$WITH" ] || { echo "✗ Some skills missing disclaimer"; exit 1; }

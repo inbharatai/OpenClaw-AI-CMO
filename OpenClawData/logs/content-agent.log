@@ -1,0 +1,95 @@
+[2026-03-23 10:46:25] === Content Agent Started ===
+[2026-03-23 10:46:25] [DRY RUN] No content will be written
+[2026-03-23 10:46:25] === Content Agent Complete ===
+[2026-03-23 10:46:25] Produced: 0 | Skipped: 0
+[2026-03-23 10:47:30] === Content Agent Started ===
+[2026-03-23 10:47:30] PRODUCING: type=note from test-product-update.md
+[2026-03-23 10:47:30] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-23-test-product-update.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-23-test-product-update.md
+[2026-03-23 10:47:30] PRODUCING: type=link from test-ai-news.md
+[2026-03-23 10:47:30] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-23-test-ai-news.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-23-test-ai-news.md
+[2026-03-23 10:47:30] === Content Agent Complete ===
+[2026-03-23 10:47:30] Produced: 2 | Skipped: 0
+[2026-03-23 11:18:31] === Content Agent Started ===
+[2026-03-23 11:18:31] PRODUCING: type=product-update from test-product-update.md
+[2026-03-23 11:18:31] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-test-product-update.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-test-product-update.md
+[2026-03-23 11:18:31] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-test-product-update.md
+[2026-03-23 11:18:31] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-test-product-update.md
+[2026-03-23 11:18:31] PRODUCING: type=launch from test-ai-news.md
+[2026-03-23 11:18:31] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-23-test-ai-news.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-23-test-ai-news.md
+[2026-03-23 11:18:31] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-test-ai-news.md
+[2026-03-23 11:18:31] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-test-ai-news.md
+[2026-03-23 11:18:31] === Content Agent Complete ===
+[2026-03-23 11:18:31] Produced: 2 | Skipped: 0
+[2026-03-23 13:09:17] === Content Agent Started ===
+[2026-03-23 13:09:17] [DRY RUN] No content will be written
+[2026-03-23 13:09:17] === Content Agent Complete ===
+[2026-03-23 13:09:17] Produced: 0 | Skipped: 0
+[2026-03-23 15:35:35] === Content Agent Started ===
+[2026-03-23 15:35:35] PRODUCING: type=product-update from audit-test-note.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-audit-test-note.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-audit-test-note.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-audit-test-note.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-audit-test-note.md
+[2026-03-23 15:35:35] PRODUCING: type=product-update from audit-fresh-test-1774251726.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-audit-fresh-test-1774251726.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:35:35] PRODUCING: type=product-update from retest-product-1774256096.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-retest-product-1774256096.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:35:35] PRODUCING: type=launch from e2e-test-1774259996.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-23-e2e-test-1774259996.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:35:35] PRODUCING: type=ai-news from audit-test-news.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-23-audit-test-news.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-03-23-audit-test-news.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-audit-test-news.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-audit-test-news.md
+[2026-03-23 15:35:35] PRODUCING: type=ai-news from retest-news-1774256096.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-23-retest-news-1774256096.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:35:35] PRODUCING: type=product-update from test-product-update-formatted.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-test-product-update-formatted.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:35:35] PRODUCING: type=product-update from audit-fresh-test-1774251726-formatted.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-audit-fresh-test-1774251726-formatted.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-audit-fresh-test-1774251726-formatted.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-audit-fresh-test-1774251726-fo.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-audit-fresh-test-1774251726-fo.md
+[2026-03-23 15:35:35] PRODUCING: type=product-update from retest-product-1774256096-formatted.md
+[2026-03-23 15:35:35] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-23-retest-product-1774256096-formatted.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-23-retest-product-1774256096-formatted.md
+[2026-03-23 15:35:35] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-23-retest-product-1774256096-form.md
+[2026-03-23 15:35:35] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-23-retest-product-1774256096-form.md
+[2026-03-23 15:35:35] === Content Agent Complete ===
+[2026-03-23 15:35:35] Produced: 9 | Skipped: 0
+[2026-03-25 17:59:49] === Content Agent Started ===
+[2026-03-25 17:59:49] PRODUCING: type=product-update from phase0-proof-feature-launch.md
+[2026-03-25 17:59:49] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-25-phase0-proof-feature-launch.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 17:59:49] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 17:59:49] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 17:59:49] PRODUCING: type=product-update from phase0-proof-build-log.md
+[2026-03-25 17:59:49] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-25-phase0-proof-build-log.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 17:59:49] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 17:59:49] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 17:59:49] PRODUCING: type=ai-news from phase0-proof-ai-news.md
+[2026-03-25 17:59:49] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-25-phase0-proof-ai-news.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 17:59:49] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 17:59:49] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 17:59:49] PRODUCING: type=launch from e2e-test-1774259996-formatted.md
+[2026-03-25 17:59:49] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/content-2026-03-25-e2e-test-1774259996-formatted.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/content-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 17:59:49] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 17:59:49] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 17:59:49] === Content Agent Complete ===
+[2026-03-25 17:59:49] Produced: 4 | Skipped: 0
+[2026-03-25 18:54:14] === Content Agent Started ===
+[2026-03-25 18:54:14] PRODUCING: type=product-update from phase0-e2e-product-v2.md
+[2026-03-25 18:54:14] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/update-2026-03-25-phase0-e2e-product-v2.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/update-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 18:54:14] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 18:54:14] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 18:54:14] PRODUCING: type=ai-news from phase0-e2e-industry-trend.md
+[2026-03-25 18:54:14] PRODUCED: /Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-03-25-phase0-e2e-industry-trend.md → queued at /Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:54:14] PRODUCED [discord variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/discord/pending/discord-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:54:14] PRODUCED [linkedin variant]: /Volumes/Expansion/CMO-10million/OpenClawData/queues/linkedin/pending/linkedin-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 18:54:14] === Content Agent Complete ===
+[2026-03-25 18:54:14] Produced: 2 | Skipped: 0

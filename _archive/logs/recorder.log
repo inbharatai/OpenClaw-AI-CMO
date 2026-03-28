@@ -1,0 +1,58 @@
+[2026-03-23T19:48:17] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:48:34] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:48:34] [test-fast] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:48:36] [test-fast] FAST DONE in 2278ms
+[2026-03-23T19:48:36] [test-date] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:48:37] [test-date] FAST DONE in 773ms
+[2026-03-23T19:49:37] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:49:37] [test-think] THINKING LAYER → qwen3:8b
+[2026-03-23T19:49:54] [test-think] THINK DONE in 17129ms
+[2026-03-23T19:49:54] [test-route] ROUTED to FAST: task=discord-announcement
+[2026-03-23T19:49:54] [test-route] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:50:02] [test-route] FAST DONE in 7875ms
+[2026-03-23T19:53:36] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:53:37] [skill-discord-announcement-writer] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:53:46] [skill-discord-announcement-writer] FAST DONE in 9244ms
+[2026-03-23T19:53:46] [skill-runner] Skill=discord-announcement-writer Layer=fast Elapsed=9290ms
+[2026-03-23T19:54:04] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:54:04] [product-format] THINKING LAYER → qwen3:8b
+[2026-03-23T19:54:47] [product-format] THINK DONE in 43647ms
+[2026-03-23T19:54:47] [product-website] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:54:58] [product-website] FAST DONE in 11070ms
+[2026-03-23T19:54:58] [product-discord] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:55:08] [product-discord] FAST DONE in 9155ms
+[2026-03-23T19:55:08] [product-linkedin] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:55:26] [product-linkedin] FAST DONE in 18084ms
+[2026-03-23T19:55:26] [product-x] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:55:31] [product-x] FAST DONE in 5533ms
+[2026-03-23T19:59:07] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-23T19:59:07] [approval] APPROVED-L1 discord-update-2026-03-23-e2e-test-1774275843.md in 28ms
+[2026-03-23T19:59:07] [approval-risk] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:59:10] [approval-risk] FAST DONE in 3151ms
+[2026-03-23T19:59:10] [approval-risk] FAST LAYER → qwen2.5-coder:7b
+[2026-03-23T19:59:12] [approval-risk] FAST DONE in 2285ms
+[2026-03-23T19:59:12] [approval] APPROVED-L1 x-update-2026-03-23-e2e-test-1774275843.md in 30ms
+[2026-03-24T21:41:02] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:41:02] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=14ms
+[2026-03-24T21:41:58] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:41:59] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=19ms
+[2026-03-24T21:47:19] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:47:19] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=20ms
+[2026-03-24T21:48:31] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:48:31] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=19ms
+[2026-03-24T21:50:29] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:50:29] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=18ms
+[2026-03-24T21:52:34] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:52:34] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=20ms
+[2026-03-24T21:53:50] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:53:51] [skill-runner] Skill=carousel-builder Layer=qwen3:8b Elapsed=23ms
+[2026-03-24T21:54:30] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:54:30] [skill-runner] Skill=carousel-builder Layer=think Elapsed=44ms
+[2026-03-24T21:55:12] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:56:18] [skill-runner] Skill=carousel-builder Layer=think Elapsed=66461ms
+[2026-03-24T21:56:52] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:57:58] [skill-runner] Skill=carousel-builder Layer=think Elapsed=65900ms
+[2026-03-24T21:58:26] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T21:59:29] [skill-runner] Skill=quote-card-generator Layer=think Elapsed=62180ms
+[2026-03-24T21:59:29] [init] Layer router loaded. Fast=qwen2.5-coder:7b Think=qwen3:8b
+[2026-03-24T22:00:20] [skill-runner] Skill=thumbnail-generator Layer=think Elapsed=51228ms

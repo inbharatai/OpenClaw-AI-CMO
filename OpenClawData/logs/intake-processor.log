@@ -1,0 +1,75 @@
+[2026-03-23 10:46:24] === Intake Processor Started ===
+[2026-03-23 10:46:24] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md (source: note)
+[2026-03-23 10:46:24] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md
+[2026-03-23 10:46:24] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md (source: link)
+[2026-03-23 10:46:24] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md
+[2026-03-23 10:46:24] === Intake Processor Complete ===
+[2026-03-23 10:46:24] New files found: 2 | Classified: 0 | Skipped: 0
+[2026-03-23 10:46:48] === Intake Processor Started ===
+[2026-03-23 10:46:48] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md (source: note)
+[2026-03-23 10:46:48] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md → type=note, priority=medium, channels=website
+[2026-03-23 10:46:48] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md (source: link)
+[2026-03-23 10:46:48] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md → type=link, priority=medium, channels=website
+[2026-03-23 10:46:48] === Intake Processor Complete ===
+[2026-03-23 10:46:48] New files found: 2 | Classified: 2 | Skipped: 0
+[2026-03-23 11:08:26] === Intake Processor Started ===
+[2026-03-23 11:08:26] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md (source: note)
+[2026-03-23 11:08:26] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/test-product-update.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-03-23 11:08:26] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md (source: link)
+[2026-03-23 11:08:26] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/test-ai-news.md → type=launch, priority=high, channels= website-updates, discord, linkedin, x, email
+[2026-03-23 11:08:26] === Intake Processor Complete ===
+[2026-03-23 11:08:26] New files found: 2 | Classified: 2 | Skipped: 0
+[2026-03-23 13:09:16] === Intake Processor Started ===
+[2026-03-23 13:09:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-test-note.md (source: note)
+[2026-03-23 13:09:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-test-note.md
+[2026-03-23 13:09:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/audit-test-news.md (source: link)
+[2026-03-23 13:09:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/audit-test-news.md
+[2026-03-23 13:09:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/test-product-update-formatted.md (source: product-update)
+[2026-03-23 13:09:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/test-product-update-formatted.md
+[2026-03-23 13:09:16] === Intake Processor Complete ===
+[2026-03-23 13:09:16] New files found: 3 | Classified: 0 | Skipped: 0
+[2026-03-23 13:09:30] === Intake Processor Started ===
+[2026-03-23 13:09:30] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-test-note.md (source: note)
+[2026-03-23 13:09:30] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-test-note.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-03-23 13:09:30] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/audit-test-news.md (source: link)
+[2026-03-23 13:09:30] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/audit-test-news.md → type=ai-news, priority=high, channels= website-news, x, linkedin, discord
+[2026-03-23 13:09:30] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/test-product-update-formatted.md (source: product-update)
+[2026-03-23 13:09:30] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/test-product-update-formatted.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-03-23 13:09:30] === Intake Processor Complete ===
+[2026-03-23 13:09:30] New files found: 3 | Classified: 3 | Skipped: 0
+[2026-03-23 14:24:56] === Intake Processor Started ===
+[2026-03-23 14:24:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-fresh-test-1774251726.md (source: note)
+[2026-03-23 14:24:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/audit-fresh-test-1774251726.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-03-23 14:24:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/retest-product-1774256096.md (source: note)
+[2026-03-23 14:24:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/retest-product-1774256096.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-03-23 14:24:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/retest-news-1774256096.md (source: link)
+[2026-03-23 14:24:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/retest-news-1774256096.md → type=ai-news, priority=high, channels= website-news, x, linkedin, discord
+[2026-03-23 14:24:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/audit-fresh-test-1774251726-formatted.md (source: product-update)
+[2026-03-23 14:24:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/audit-fresh-test-1774251726-formatted.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-03-23 14:24:56] === Intake Processor Complete ===
+[2026-03-23 14:24:56] New files found: 4 | Classified: 4 | Skipped: 0
+[2026-03-23 15:29:56] === Intake Processor Started ===
+[2026-03-23 15:29:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/e2e-test-1774259996.md (source: note)
+[2026-03-23 15:29:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/e2e-test-1774259996.md → type=launch, priority=high, channels= website-updates, discord, linkedin, x, email, reddit
+[2026-03-23 15:29:56] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/retest-product-1774256096-formatted.md (source: product-update)
+[2026-03-23 15:29:56] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/retest-product-1774256096-formatted.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-03-23 15:29:56] === Intake Processor Complete ===
+[2026-03-23 15:29:56] New files found: 2 | Classified: 2 | Skipped: 0
+[2026-03-25 15:44:17] === Intake Processor Started ===
+[2026-03-25 15:44:17] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-proof-feature-launch.md (source: note)
+[2026-03-25 15:44:17] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-proof-feature-launch.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-03-25 15:44:17] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-proof-build-log.md (source: note)
+[2026-03-25 15:44:17] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-proof-build-log.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-03-25 15:44:17] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/phase0-proof-ai-news.md (source: link)
+[2026-03-25 15:44:17] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/phase0-proof-ai-news.md → type=ai-news, priority=medium, channels= website-news, x, linkedin, discord
+[2026-03-25 15:44:17] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/e2e-test-1774259996-formatted.md (source: product-update)
+[2026-03-25 15:44:17] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/e2e-test-1774259996-formatted.md → type=launch, priority=high, channels= website-updates, discord, linkedin, x, email
+[2026-03-25 15:44:17] === Intake Processor Complete ===
+[2026-03-25 15:44:17] New files found: 4 | Classified: 4 | Skipped: 0
+[2026-03-25 18:22:38] === Intake Processor Started ===
+[2026-03-25 18:22:38] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-e2e-product-v2.md (source: note)
+[2026-03-25 18:22:38] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/phase0-e2e-product-v2.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-03-25 18:22:38] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/phase0-e2e-industry-trend.md (source: link)
+[2026-03-25 18:22:38] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-links/phase0-e2e-industry-trend.md → type=ai-news, priority=medium, channels= website-news, x, linkedin, discord
+[2026-03-25 18:22:38] === Intake Processor Complete ===
+[2026-03-25 18:22:38] New files found: 2 | Classified: 2 | Skipped: 0

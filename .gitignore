@@ -1,10 +1,16 @@
+# ============================================================
+# OpenClaw AI CMO — .gitignore
+# ============================================================
+
 # Large model files — DO NOT COMMIT
 OllamaModels/
 
-# macOS metadata
-._*
-.DS_Store
-__MACOSX/
+# Environment and secrets
+.env
+configs/.env
+*.secret_key
+socialflow/backend/.env
+socialflow/backend/.secret_key
 
 # Claude session data (contains conversation history)
 .claude/
@@ -12,17 +18,53 @@ __MACOSX/
 # OpenClaw local config (contains API keys)
 .openclaw/
 
+# Database
+*.db
+*.sqlite3
+
+# Browser sessions (contain auth cookies)
+socialflow/backend/sessions/
+socialflow/sessions/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.egg
+
+# Node
+node_modules/
+package-lock.json
+
+# Uploads
+socialflow/backend/uploads/
+
+# macOS metadata
+._*
+.DS_Store
+Thumbs.db
+__MACOSX/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # Log files (regenerated on each run)
 OpenClawData/logs/
 OpenClawData/inbharat-bot/logging/*.log
 
-# Temporary/runtime files
+# Temp files
 *.pid
 *.tmp
+TempFiles/
 
-# Node modules (if any)
-node_modules/
+# Bridge logs
+socialflow/backend/openclaw_bridge_log.json
 
-# Python cache
-__pycache__/
-*.pyc
+# Playwright state
+socialflow/backend/playwright-report/
+_archive/

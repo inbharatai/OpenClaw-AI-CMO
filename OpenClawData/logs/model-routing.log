@@ -1,0 +1,12 @@
+[2026-03-22T21:38:00] INIT: Model router initialized. Models: qwen3:8b, qwen2.5-coder:7b
+[2026-03-22 22:36:00] Task: Write a social media caption for Instagram about summer sales → Model: qwen3:8b | Reason: Task contains marketing/strategy keywords
+[2026-03-22 22:36:00] Task: Write a Python script to parse CSV files and extract email addresses → Model: qwen2.5-coder:7b | Reason: Task contains coding/technical keywords
+[2026-03-22 22:36:00] Task: Help me with this project → Model: qwen3:8b | Reason: Default: no strong signal, routing to general model
+[2026-03-22 22:36:00] Task: Debug this JavaScript function that handles API endpoints → Model: qwen2.5-coder:7b | Reason: Task contains coding/technical keywords
+[2026-03-22 22:36:29] Task: Define a brand voice for a modern tech startup that sells productivity tools to  → Model: qwen3:8b | Reason: Task contains marketing/strategy keywords
+[2026-03-22 22:42:31] Task: Write a Python script that reads all CSV files in a folder and combines them int → Model: qwen2.5-coder:7b | Reason: Task contains coding/technical keywords
+[2026-03-23 12:40:51] Task: Write a social media caption for Instagram → Model: qwen3:8b | Reason: Task contains marketing/strategy keywords
+[2026-03-23 12:40:52] Task: Write a Python script to parse CSV → Model: qwen2.5-coder:7b | Reason: Task contains coding/technical keywords
+[2026-03-23 12:40:52] Task: Help me with this project → Model: qwen3:8b | Reason: Default: no strong signal, routing to general model
+[2026-03-23 14:22:31] Task: write a marketing email for product launch → Model: qwen3:8b | Reason: Task contains marketing/strategy keywords
+[2026-03-23 14:22:31] Task: write a python script to parse JSON → Model: qwen2.5-coder:7b | Reason: Task contains coding/technical keywords

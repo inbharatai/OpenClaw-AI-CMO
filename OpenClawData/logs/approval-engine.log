@@ -1,0 +1,207 @@
+[2026-03-23 10:46:25] === Approval Engine Started ===
+[2026-03-23 10:46:25] [DRY RUN] No files will be moved
+[2026-03-23 10:46:25] === Approval Engine Complete ===
+[2026-03-23 10:46:25] Processed: 0 | Approved: 0 | Review: 0 | Blocked: 0
+[2026-03-23 11:24:10] === Approval Engine Started ===
+[2026-03-23 11:24:10] EVALUATING: discord/discord-news-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] APPROVED [L1-AUTO]: discord/discord-news-2026-03-23-test-ai-news.md (type=discord-announcement)
+[2026-03-23 11:24:10] EVALUATING: discord/discord-update-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] APPROVED [L1-AUTO]: discord/discord-update-2026-03-23-test-product-update.md (type=product-update)
+[2026-03-23 11:24:10] EVALUATING: discord/discord-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-test-product-update.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: discord/discord-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-test-ai-news.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: linkedin/linkedin-news-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: linkedin/linkedin-news-2026-03-23-test-ai-news.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: linkedin/linkedin-update-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: linkedin/linkedin-update-2026-03-23-test-product-update.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: linkedin/linkedin-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-test-product-update.md (type=product-update)
+[2026-03-23 11:24:10] EVALUATING: linkedin/linkedin-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-test-ai-news.md (type=feature-release)
+[2026-03-23 11:24:10] EVALUATING: website/news-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] REVIEW [L3]: website/news-2026-03-23-test-ai-news.md — avg=56, max=85
+[2026-03-23 11:24:10] EVALUATING: website/update-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: website/update-2026-03-23-test-product-update.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: website/content-2026-03-23-test-ai-news.md
+[2026-03-23 11:24:10] BLOCKED [L4-SAFETY]: website/content-2026-03-23-test-ai-news.md — credential/data safety issue
+[2026-03-23 11:24:10] EVALUATING: x/x-update-2026-03-23-test-product-update.md
+[2026-03-23 11:24:10] APPROVED [L1-AUTO]: x/x-update-2026-03-23-test-product-update.md (type=product-update)
+[2026-03-23 11:24:10] === Approval Engine Complete ===
+[2026-03-23 11:24:10] Processed: 12 | Approved: 5 | Review: 1 | Blocked: 6
+[2026-03-23 12:46:56] === Approval Engine Started ===
+[2026-03-23 12:46:56] EVALUATING: website/test-dangerous-content.md
+[2026-03-23 12:46:56] BLOCKED [L4-SAFETY]: website/test-dangerous-content.md — credential/data safety issue
+[2026-03-23 12:46:56] === Approval Engine Complete ===
+[2026-03-23 12:46:56] Processed: 1 | Approved: 0 | Review: 0 | Blocked: 1
+[2026-03-23 13:09:17] === Approval Engine Started ===
+[2026-03-23 13:09:17] [DRY RUN] No files will be moved
+[2026-03-23 13:09:17] === Approval Engine Complete ===
+[2026-03-23 13:09:17] Processed: 0 | Approved: 0 | Review: 0 | Blocked: 0
+[2026-03-23 13:18:31] === Approval Engine Started ===
+[2026-03-23 13:18:31] EVALUATING: discord/discord-update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 13:18:31] APPROVED [L1-AUTO]: discord/discord-update-2026-03-23-audit-fresh-test-1774251726.md (type=product-update)
+[2026-03-23 13:18:31] EVALUATING: linkedin/linkedin-update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 13:18:31] APPROVED [L1-AUTO]: linkedin/linkedin-update-2026-03-23-audit-fresh-test-1774251726.md (type=product-update)
+[2026-03-23 13:18:31] EVALUATING: website/update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 13:18:31] APPROVED [L1-AUTO]: website/update-2026-03-23-audit-fresh-test-1774251726.md (type=product-update)
+[2026-03-23 13:18:31] EVALUATING: x/x-update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 13:18:31] BLOCKED [L4-SAFETY]: x/x-update-2026-03-23-audit-fresh-test-1774251726.md — credential/data safety issue
+[2026-03-23 13:18:31] === Approval Engine Complete ===
+[2026-03-23 13:18:31] Processed: 4 | Approved: 3 | Review: 0 | Blocked: 1
+[2026-03-23 14:40:18] === Approval Engine Started ===
+[2026-03-23 14:40:18] EVALUATING: discord/discord-news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:40:18] APPROVED [L1-AUTO]: discord/discord-news-2026-03-23-retest-news-1774256096.md (type=discord-announcement)
+[2026-03-23 14:40:18] EVALUATING: discord/discord-update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 14:40:18] APPROVED [L1-AUTO]: discord/discord-update-2026-03-23-retest-product-1774256096.md (type=discord-announcement)
+[2026-03-23 14:40:18] EVALUATING: linkedin/linkedin-news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:40:18] BLOCKED [L4-RISK]: linkedin/linkedin-news-2026-03-23-retest-news-1774256096.md — max_dim=85, data_safety=20
+[2026-03-23 14:40:18] EVALUATING: linkedin/linkedin-update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 14:40:18] APPROVED [L1-AUTO]: linkedin/linkedin-update-2026-03-23-retest-product-1774256096.md (type=product-update)
+[2026-03-23 14:40:18] EVALUATING: website/news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 14:40:18] BLOCKED [L4-RISK]: website/news-2026-03-23-retest-news-1774256096.md — max_dim=95, data_safety=40
+[2026-03-23 14:40:18] EVALUATING: website/update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 14:40:18] BLOCKED [L4-SAFETY]: website/update-2026-03-23-retest-product-1774256096.md — credential/data safety issue
+[2026-03-23 14:40:18] EVALUATING: x/x-update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 14:40:18] APPROVED [L1-AUTO]: x/x-update-2026-03-23-retest-product-1774256096.md (type=product-update)
+[2026-03-23 14:40:18] === Approval Engine Complete ===
+[2026-03-23 14:40:18] Processed: 7 | Approved: 4 | Review: 0 | Blocked: 3
+[2026-03-23 15:58:49] === Approval Engine Started ===
+[2026-03-23 15:58:49] EVALUATING: discord/discord-update-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-update-2026-03-23-e2e-test-1774259996.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-audit-test-note.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: discord/discord-2026-03-23-audit-test-note.md (type=discord-announcement)
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-audit-fresh-test-1774251726.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-retest-product-1774256096.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: discord/discord-2026-03-23-e2e-test-1774259996.md (type=discord-announcement)
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-audit-test-news.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-audit-test-news.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-retest-news-1774256096.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: discord/discord-2026-03-23-test-product-update-formatted.md (type=discord-announcement)
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-audit-fresh-test-1774251726-fo.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: discord/discord-2026-03-23-audit-fresh-test-1774251726-fo.md (type=discord-announcement)
+[2026-03-23 15:58:49] EVALUATING: discord/discord-2026-03-23-retest-product-1774256096-form.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: discord/discord-2026-03-23-retest-product-1774256096-form.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-update-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-update-2026-03-23-e2e-test-1774259996.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-audit-test-note.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-audit-test-note.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-audit-fresh-test-1774251726.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-retest-product-1774256096.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-2026-03-23-e2e-test-1774259996.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-audit-test-news.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-2026-03-23-audit-test-news.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-2026-03-23-retest-news-1774256096.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-2026-03-23-test-product-update-formatted.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-audit-fresh-test-1774251726-fo.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: linkedin/linkedin-2026-03-23-audit-fresh-test-1774251726-fo.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: linkedin/linkedin-2026-03-23-retest-product-1774256096-form.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-23-retest-product-1774256096-form.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/update-2026-03-23-e2e-test-1774259996.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-audit-test-note.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: website/update-2026-03-23-audit-test-note.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-audit-fresh-test-1774251726.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: website/update-2026-03-23-audit-fresh-test-1774251726.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-retest-product-1774256096.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/update-2026-03-23-retest-product-1774256096.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/content-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/content-2026-03-23-e2e-test-1774259996.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/news-2026-03-23-audit-test-news.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/news-2026-03-23-audit-test-news.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/news-2026-03-23-retest-news-1774256096.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/news-2026-03-23-retest-news-1774256096.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-test-product-update-formatted.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/update-2026-03-23-test-product-update-formatted.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-audit-fresh-test-1774251726-formatted.md
+[2026-03-23 15:58:49] BLOCKED [L4-SAFETY]: website/update-2026-03-23-audit-fresh-test-1774251726-formatted.md — credential/data safety issue
+[2026-03-23 15:58:49] EVALUATING: website/update-2026-03-23-retest-product-1774256096-formatted.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: website/update-2026-03-23-retest-product-1774256096-formatted.md (type=product-update)
+[2026-03-23 15:58:49] EVALUATING: x/x-update-2026-03-23-e2e-test-1774259996.md
+[2026-03-23 15:58:49] APPROVED [L1-AUTO]: x/x-update-2026-03-23-e2e-test-1774259996.md (type=product-update)
+[2026-03-23 15:58:49] === Approval Engine Complete ===
+[2026-03-23 15:58:49] Processed: 31 | Approved: 12 | Review: 0 | Blocked: 19
+[2026-03-25 18:12:16] === Approval Engine Started ===
+[2026-03-25 18:12:16] EVALUATING: discord/discord-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: discord/discord-2026-03-25-phase0-proof-feature-launch.md (type=discord-announcement)
+[2026-03-25 18:12:16] EVALUATING: discord/discord-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 18:12:16] BLOCKED [L4-SAFETY]: discord/discord-2026-03-25-phase0-proof-build-log.md — credential/data safety issue
+[2026-03-25 18:12:16] EVALUATING: discord/discord-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: discord/discord-2026-03-25-phase0-proof-ai-news.md (type=discord-announcement)
+[2026-03-25 18:12:16] EVALUATING: discord/discord-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: discord/discord-2026-03-25-e2e-test-1774259996-formatted.md (type=product-update)
+[2026-03-25 18:12:16] EVALUATING: linkedin/linkedin-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-25-phase0-proof-feature-launch.md (type=product-update)
+[2026-03-25 18:12:16] EVALUATING: linkedin/linkedin-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-25-phase0-proof-build-log.md (type=product-update)
+[2026-03-25 18:12:16] EVALUATING: linkedin/linkedin-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:12:16] BLOCKED [L4-RISK]: linkedin/linkedin-2026-03-25-phase0-proof-ai-news.md — max_dim=85, data_safety=60
+[2026-03-25 18:12:16] EVALUATING: linkedin/linkedin-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-25-e2e-test-1774259996-formatted.md (type=product-update)
+[2026-03-25 18:12:16] EVALUATING: website/update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 18:12:16] BLOCKED [L4-SAFETY]: website/update-2026-03-25-phase0-proof-feature-launch.md — credential/data safety issue
+[2026-03-25 18:12:16] EVALUATING: website/update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: website/update-2026-03-25-phase0-proof-build-log.md (type=product-update)
+[2026-03-25 18:12:16] EVALUATING: website/news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 18:12:16] BLOCKED [L4-SAFETY]: website/news-2026-03-25-phase0-proof-ai-news.md — credential/data safety issue
+[2026-03-25 18:12:16] EVALUATING: website/content-2026-03-25-e2e-test-1774259996-formatted.md
+[2026-03-25 18:12:16] APPROVED [L1-AUTO]: website/content-2026-03-25-e2e-test-1774259996-formatted.md (type=product-update)
+[2026-03-25 18:12:16] === Approval Engine Complete ===
+[2026-03-25 18:12:16] Processed: 12 | Approved: 8 | Review: 0 | Blocked: 4
+[2026-03-25 19:00:17] === Approval Engine Started ===
+[2026-03-25 19:00:17] EVALUATING: discord/discord-news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: discord/discord-news-2026-03-25-phase0-e2e-industry-trend.md (type=discord-announcement)
+[2026-03-25 19:00:17] EVALUATING: discord/discord-news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 19:00:17] BLOCKED [L4-RISK]: discord/discord-news-2026-03-25-phase0-proof-ai-news.md — max_dim=80, data_safety=80
+[2026-03-25 19:00:17] EVALUATING: discord/discord-update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: discord/discord-update-2026-03-25-phase0-proof-feature-launch.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: discord/discord-update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: discord/discord-update-2026-03-25-phase0-proof-build-log.md (type=discord-announcement)
+[2026-03-25 19:00:17] EVALUATING: discord/discord-update-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: discord/discord-update-2026-03-25-phase0-e2e-product-v2.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: discord/discord-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] BLOCKED [L4-RISK]: discord/discord-2026-03-25-phase0-e2e-product-v2.md — max_dim=80, data_safety=25
+[2026-03-25 19:00:17] EVALUATING: discord/discord-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: discord/discord-2026-03-25-phase0-e2e-industry-trend.md (type=discord-announcement)
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 19:00:17] BLOCKED [L4-RISK]: linkedin/linkedin-news-2026-03-25-phase0-e2e-industry-trend.md — max_dim=75, data_safety=50
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 19:00:17] REVIEW [L3]: linkedin/linkedin-news-2026-03-25-phase0-proof-ai-news.md — avg=41, max=70
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: linkedin/linkedin-update-2026-03-25-phase0-proof-feature-launch.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: linkedin/linkedin-update-2026-03-25-phase0-proof-build-log.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-update-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: linkedin/linkedin-update-2026-03-25-phase0-e2e-product-v2.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: linkedin/linkedin-2026-03-25-phase0-e2e-product-v2.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: linkedin/linkedin-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 19:00:17] BLOCKED [L4-RISK]: linkedin/linkedin-2026-03-25-phase0-e2e-industry-trend.md — max_dim=85, data_safety=50
+[2026-03-25 19:00:17] EVALUATING: website/news-2026-03-25-phase0-e2e-industry-trend.md
+[2026-03-25 19:00:17] BLOCKED [L4-SAFETY]: website/news-2026-03-25-phase0-e2e-industry-trend.md — credential/data safety issue
+[2026-03-25 19:00:17] EVALUATING: website/news-2026-03-25-phase0-proof-ai-news.md
+[2026-03-25 19:00:17] BLOCKED [L4-SAFETY]: website/news-2026-03-25-phase0-proof-ai-news.md — credential/data safety issue
+[2026-03-25 19:00:17] EVALUATING: website/update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: website/update-2026-03-25-phase0-proof-feature-launch.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: website/update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 19:00:17] BLOCKED [L4-SAFETY]: website/update-2026-03-25-phase0-proof-build-log.md — credential/data safety issue
+[2026-03-25 19:00:17] EVALUATING: website/update-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: website/update-2026-03-25-phase0-e2e-product-v2.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: x/x-update-2026-03-25-phase0-proof-feature-launch.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: x/x-update-2026-03-25-phase0-proof-feature-launch.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: x/x-update-2026-03-25-phase0-proof-build-log.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: x/x-update-2026-03-25-phase0-proof-build-log.md (type=product-update)
+[2026-03-25 19:00:17] EVALUATING: x/x-update-2026-03-25-phase0-e2e-product-v2.md
+[2026-03-25 19:00:17] APPROVED [L1-AUTO]: x/x-update-2026-03-25-phase0-e2e-product-v2.md (type=product-update)
+[2026-03-25 19:00:17] === Approval Engine Complete ===
+[2026-03-25 19:00:17] Processed: 22 | Approved: 14 | Review: 1 | Blocked: 7
