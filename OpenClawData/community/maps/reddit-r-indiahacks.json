@@ -1,0 +1,36 @@
+{
+  "id": "reddit-r-indiahacks",
+  "platform": "reddit",
+  "name": "r/IndiaHacks",
+  "url": "https://reddit.com/r/IndiaHacks",
+  "topic": "Indian tech, startups, and hacking culture",
+  "audience": "Indian developers, founders, tech enthusiasts",
+  "estimated_size": "medium",
+  "rules": {
+    "self_promotion": "allowed if genuine",
+    "links_allowed": true,
+    "flair_required": false,
+    "min_account_age": "none"
+  },
+  "tone": "casual, technical, India-specific",
+  "scores": {
+    "relevance": 10,
+    "education_openness": 9,
+    "founder_openness": 9,
+    "tool_openness": 9,
+    "risk_of_removal": 2,
+    "effort_required": 3
+  },
+  "recommended_posting_mode": "show-and-tell",
+  "warmup_status": "ready",
+  "best_content_types": [
+    "Indian AI/tech projects",
+    "Building for India-specific problems",
+    "Open source tools for Indian developers",
+    "Government tech opportunities"
+  ],
+  "avoid": [
+    "Non-India-specific content"
+  ],
+  "notes": "Perfect fit for InBharat AI. Share India-specific AI work, open source tools, and solving Indian problems with tech."
+}

@@ -78,6 +78,18 @@ When the user sends a message, map it to the appropriate command below and execu
 | "plan a podcast about X" | `podcast plan "X"` |
 | "generate a campaign for X" | `campaign generate "X"` |
 
+### Reddit
+
+| User says something like... | Command to run |
+|---|---|
+| "draft a Reddit post about X" | `reddit draft "X"` |
+| "draft a Reddit post about X for r/SaaS" | `reddit draft "X" --subreddit r/SaaS` |
+| "draft Reddit post about Phoring for r/startups" | `reddit draft "about Phoring" --subreddit r/startups --product phoring` |
+| "show Reddit drafts" | `reddit list` |
+| "show mapped subreddits" | `reddit subreddits` |
+
+**Note:** Reddit posts are ALWAYS L3 (manual review). The bot drafts, you post manually from your Reddit account. Never auto-post to Reddit.
+
 ### System
 
 | User says something like... | Command to run |

@@ -437,6 +437,184 @@ run_blog() {
   esac
 }
 
+run_reddit() {
+  local SUBCMD="${1:-draft}"
+  shift 2>/dev/null || true
+  case "$SUBCMD" in
+    draft)
+      local TOPIC="$*"
+      if [ -z "$TOPIC" ]; then
+        echo "Usage: reddit draft \"<topic>\" [--subreddit r/SaaS] [--product phoring]"
+        echo ""
+        echo "Examples:"
+        echo "  reddit draft \"AI-powered calling for India\" --subreddit r/SaaS --product phoring"
+        echo "  reddit draft \"building local-first AI tools\" --subreddit r/LocalLLaMA"
+        echo "  reddit draft \"solving rural education with AI\""
+        exit 1
+      fi
+
+      # Parse optional flags
+      local SUBREDDIT=""
+      local PRODUCT=""
+      local REMAINING_TOPIC=""
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          --subreddit) SUBREDDIT="$2"; shift ;;
+          --product)   PRODUCT="$2"; shift ;;
+          *)           REMAINING_TOPIC="$REMAINING_TOPIC $1" ;;
+        esac
+        shift
+      done
+      [ -n "$REMAINING_TOPIC" ] && TOPIC="$REMAINING_TOPIC"
+
+      # Load product truth if specified
+      local PRODUCT_CONTEXT=""
+      if [ -n "$PRODUCT" ]; then
+        local TRUTH_FILE="/Volumes/Expansion/CMO-10million/OpenClawData/strategy/product-truth/${PRODUCT}.md"
+        [ -f "$TRUTH_FILE" ] && PRODUCT_CONTEXT=$(cat "$TRUTH_FILE" | head -c 1500)
+      fi
+
+      # Load community maps for target subreddit
+      local COMMUNITY_CONTEXT=""
+      if [ -n "$SUBREDDIT" ]; then
+        local CLEAN_SUB=$(echo "$SUBREDDIT" | sed 's|^r/||')
+        local MAP_FILE="/Volumes/Expansion/CMO-10million/OpenClawData/community/maps/reddit-r-${CLEAN_SUB}.json"
+        [ -f "$MAP_FILE" ] && COMMUNITY_CONTEXT=$(cat "$MAP_FILE")
+      fi
+
+      # Load website context
+      local WEBSITE_CONTEXT=""
+      [ -f "/Volumes/Expansion/CMO-10million/OpenClawData/strategy/website-context.md" ] && WEBSITE_CONTEXT=$(cat "/Volumes/Expansion/CMO-10million/OpenClawData/strategy/website-context.md" | head -c 1500)
+
+      local OUTPUT_DIR="/Volumes/Expansion/CMO-10million/OpenClawData/queues/reddit/pending"
+      mkdir -p "$OUTPUT_DIR"
+      local DATE=$(date '+%Y-%m-%d')
+      local SLUG=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | cut -c1-40 | sed 's/-$//')
+      local SUB_SLUG=$(echo "${SUBREDDIT:-general}" | sed 's|^r/||' | tr '[:upper:]' '[:lower:]')
+      local OUTPUT_FILE="$OUTPUT_DIR/reddit-${DATE}-${SUB_SLUG}-${SLUG}.md"
+
+      local PROMPT="You are a Reddit post drafter for InBharat AI. Draft a genuine, value-first Reddit post.
+
+TOPIC: $TOPIC
+TARGET SUBREDDIT: ${SUBREDDIT:-choose the most appropriate subreddit}
+
+PRODUCT CONTEXT (use only if relevant, do NOT make it promotional):
+$PRODUCT_CONTEXT
+
+COMPANY CONTEXT:
+$WEBSITE_CONTEXT
+
+SUBREDDIT COMMUNITY PROFILE:
+$COMMUNITY_CONTEXT
+
+RULES — FOLLOW STRICTLY:
+1. VALUE FIRST — the post must provide genuine value to the community
+2. NO marketing language — Reddit communities hate promotional content
+3. Be authentic, conversational, share real insights or ask genuine questions
+4. If mentioning your own product, ALWAYS include disclosure: 'Disclosure: I built this'
+5. Match the subreddit's tone (technical subs = technical, startup subs = lessons-learned)
+6. Never use hashtags on Reddit
+7. Never say 'check it out' or use CTAs — let people discover organically
+8. Include specific details, numbers, technical insights — not vague claims
+9. Write as a person sharing knowledge, NOT as a brand posting content
+
+OUTPUT FORMAT — use this exact markdown structure:
+---
+title: '<reddit post title — specific, genuine, not clickbait>'
+date: '$DATE'
+type: reddit-post
+target_subreddit: '${SUBREDDIT:-r/recommended}'
+post_type: text
+approval_level: L3
+status: pending
+notes: 'MANUAL POST ONLY — copy and post from your Reddit account'
+---
+
+## Title
+<exact title to use>
+
+## Body
+<post body in Reddit markdown — authentic, value-first>
+
+## Self-Promotion Disclosure
+<if product is mentioned: 'Disclosure: I'm the builder of [product]'>
+
+## Pre-Post Checklist
+- [ ] Read subreddit rules
+- [ ] Check for recent similar posts
+- [ ] Verify tone matches community
+- [ ] Self-promotion disclosure included
+- [ ] 10:1 rule maintained (10 genuine contributions per 1 self-promo)
+
+## Suggested Subreddits
+<list 2-3 alternative subreddits where this could also work, with reasoning>"
+
+      bot_log "orchestrator" "info" "→ Drafting Reddit post: $TOPIC (subreddit: ${SUBREDDIT:-auto})"
+
+      local OLLAMA="http://127.0.0.1:11434"
+      local LLM_MODEL="qwen3:8b"
+
+      local RESPONSE
+      RESPONSE=$(curl -s --max-time 180 "$OLLAMA/api/generate" \
+        -d "$(jq -n --arg model "$LLM_MODEL" --arg prompt "$PROMPT" '{model: $model, prompt: $prompt, stream: false, options: {temperature: 0.7, num_predict: 2000}}')" \
+        | jq -r '(.response // empty) // "ERROR: No response"')
+
+      if [ "$RESPONSE" = "ERROR: No response" ] || [ -z "$RESPONSE" ]; then
+        echo "ERROR: Ollama did not respond"
+        exit 1
+      fi
+
+      # Strip thinking tags
+      RESPONSE=$(echo "$RESPONSE" | sed 's/<think>.*<\/think>//g; s/<\/?think>//g')
+
+      echo "$RESPONSE" > "$OUTPUT_FILE"
+
+      echo ""
+      echo "━━━ REDDIT POST DRAFTED ━━━"
+      echo "File: $OUTPUT_FILE"
+      echo "Target: ${SUBREDDIT:-see suggested subreddits in draft}"
+      echo "Approval: L3 (always requires your review)"
+      echo "Status: MANUAL POST ONLY"
+      echo ""
+      echo "--- Preview ---"
+      head -30 "$OUTPUT_FILE"
+      echo ""
+      echo "━━━"
+      echo "Next steps:"
+      echo "  1. Review: cat $OUTPUT_FILE"
+      echo "  2. Edit if needed"
+      echo "  3. Copy the title + body to Reddit manually"
+      echo "  4. Post from YOUR Reddit account (never auto-post)"
+      ;;
+
+    list)
+      echo "━━━ REDDIT DRAFTS ━━━"
+      echo ""
+      echo "Pending:"
+      ls -lt "/Volumes/Expansion/CMO-10million/OpenClawData/queues/reddit/pending"/*.md 2>/dev/null | head -10 | awk '{print "  " $NF}' || echo "  No pending drafts"
+      echo ""
+      echo "Posted (manually):"
+      ls -lt "/Volumes/Expansion/CMO-10million/OpenClawData/queues/reddit/posted"/*.md 2>/dev/null | head -10 | awk '{print "  " $NF}' || echo "  None yet"
+      ;;
+
+    subreddits)
+      echo "━━━ MAPPED SUBREDDITS ━━━"
+      for F in "/Volumes/Expansion/CMO-10million/OpenClawData/community/maps"/reddit-*.json; do
+        [ ! -f "$F" ] && continue
+        NAME=$(python3 -c "import json; print(json.load(open('$F')).get('name','?'))" 2>/dev/null)
+        RELEVANCE=$(python3 -c "import json; print(json.load(open('$F')).get('scores',{}).get('relevance','?'))" 2>/dev/null)
+        MODE=$(python3 -c "import json; print(json.load(open('$F')).get('recommended_posting_mode','?'))" 2>/dev/null)
+        echo "  $NAME (relevance: $RELEVANCE, mode: $MODE)"
+      done
+      ;;
+
+    *)
+      echo "Usage: reddit [draft \"<topic>\" [--subreddit r/X] [--product name] | list | subreddits]"
+      exit 1
+      ;;
+  esac
+}
+
 run_podcast() {
   local SUBCMD="${1:-plan}"
   shift 2>/dev/null || true
@@ -997,7 +1175,7 @@ run_media() {
       ;;
     validate)
       bot_log "orchestrator" "info" "→ Validating queue content..."
-      bash "$WORKSPACE_ROOT/OpenClawData/security/claim-validator.sh" --scan-queues
+      bash "/Volumes/Expansion/CMO-10million/OpenClawData/security/claim-validator.sh" --scan-queues
       ;;
     memory)
       local MEM_CMD="${1:-review}"
@@ -1094,6 +1272,7 @@ case "$MODE" in
   funding)          run_funding "$@" ;;
   stakeholders)     run_stakeholders "$@" ;;
   blog)             run_blog "$@" ;;
+  reddit)           run_reddit "$@" ;;
   podcast)          run_podcast "$@" ;;
   campaign)         run_campaign_brief "$@" ;;
   ecosystem)        run_ecosystem "$@" ;;

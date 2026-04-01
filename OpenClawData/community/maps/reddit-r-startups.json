@@ -1,0 +1,38 @@
+{
+  "id": "reddit-r-startups",
+  "platform": "reddit",
+  "name": "r/startups",
+  "url": "https://reddit.com/r/startups",
+  "topic": "Startup founders sharing experiences, advice, and feedback",
+  "audience": "Early-stage founders, aspiring entrepreneurs, startup operators",
+  "estimated_size": "very large",
+  "rules": {
+    "self_promotion": "strict — only in designated threads",
+    "links_allowed": false,
+    "flair_required": true,
+    "min_account_age": "30 days"
+  },
+  "tone": "serious, advice-oriented, no fluff",
+  "scores": {
+    "relevance": 8,
+    "education_openness": 7,
+    "founder_openness": 8,
+    "tool_openness": 4,
+    "risk_of_removal": 6,
+    "effort_required": 7
+  },
+  "recommended_posting_mode": "advice-seeking or lessons-learned",
+  "warmup_status": "observe first",
+  "best_content_types": [
+    "Lessons from building in India",
+    "Technical founder experiences",
+    "Bootstrapping vs funding discussions",
+    "Asking for genuine feedback"
+  ],
+  "avoid": [
+    "ANY product links outside designated threads",
+    "Show HN style posts (wrong sub)",
+    "Promotional language of any kind"
+  ],
+  "notes": "Very strict on self-promotion. Best approach: share genuine advice/experience, mention product only in context. Use Share Your Startup monthly thread for direct promotion."
+}

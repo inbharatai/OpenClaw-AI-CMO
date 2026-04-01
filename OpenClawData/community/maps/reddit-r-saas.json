@@ -1,0 +1,38 @@
+{
+  "id": "reddit-r-saas",
+  "platform": "reddit",
+  "name": "r/SaaS",
+  "url": "https://reddit.com/r/SaaS",
+  "topic": "Software as a Service — building, launching, growing SaaS products",
+  "audience": "SaaS founders, indie hackers, product builders, growth marketers",
+  "estimated_size": "large",
+  "rules": {
+    "self_promotion": "allowed with value — share lessons, not just links",
+    "links_allowed": true,
+    "flair_required": true,
+    "min_account_age": "none"
+  },
+  "tone": "authentic, lessons-learned, transparent about numbers",
+  "scores": {
+    "relevance": 9,
+    "education_openness": 8,
+    "founder_openness": 9,
+    "tool_openness": 7,
+    "risk_of_removal": 3,
+    "effort_required": 5
+  },
+  "recommended_posting_mode": "founder-story",
+  "warmup_status": "ready",
+  "best_content_types": [
+    "Building in public updates",
+    "Lessons learned from launching",
+    "Revenue/growth transparency posts",
+    "Technical architecture decisions"
+  ],
+  "avoid": [
+    "Pure product announcements without insight",
+    "Generic marketing language",
+    "Posts without specific numbers or lessons"
+  ],
+  "notes": "r/SaaS loves transparency. Share real numbers, failures, and lessons. 'I built X and here's what I learned' performs well."
+}
