@@ -177,16 +177,26 @@ Include all of these in your JSON:
 - approval_level: L1/L2/L3
 - created_date: $DATE
 
+PRODUCT LINKS (always include relevant links in content):
+- InBharat AI: https://inbharat.ai
+- Phoring: https://phoring.in
+- TestsPrep: https://testsprep.in
+- UniAssist: https://uniassist.ai
+- GitHub: https://github.com/inbharatai
+- OpenClaw repo: https://github.com/inbharatai/OpenClaw-AI-CMO
+
 RULES:
 - Content must be real, grounded, and based on actual product truth
 - Do NOT invent features, users, statistics, or testimonials
 - Do NOT make claims not supported by the product truth files
 - Match the tone and format to each platform's rules
+- ALWAYS include at least one relevant product link or GitHub link in every post
+- Every CTA must have a specific URL (never "Check it out →" without a link)
 - Instagram captions: engaging, visual-first, max 2200 chars, 5-10 hashtags
-- LinkedIn posts: professional, insight-led, max 3000 chars
-- X tweets: punchy, max 280 chars
+- LinkedIn posts: professional, insight-led, max 3000 chars, include link
+- X tweets: punchy, max 280 chars, include link
 - Shorts titles: curiosity-driven, max 100 chars
-- Discord: community-friendly, informative
+- Discord: community-friendly, informative, include GitHub or product link
 
 Output ONLY the JSON content package. No markdown wrapping."
 

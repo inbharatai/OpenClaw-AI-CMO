@@ -62,6 +62,9 @@ def extract_text(file_path):
         text = pc.get("discord_message", "")
         if not text:
             text = data.get("summary", data.get("hook", ""))
+        # Ensure product links are present
+        product = data.get("product", "").lower()
+        text = ensure_links(text, product)
         return text
 
     elif path.suffix == ".md":
@@ -75,11 +78,50 @@ def extract_text(file_path):
             if ":" in line and any(line.startswith(k) for k in ["title:", "date:", "type:", "category:", "approval_level:", "status:", "source_file:", "webhook_ready:"]):
                 continue
             body_lines.append(line)
-        return "\n".join(body_lines).strip()
+        text = "\n".join(body_lines).strip()
+        # Fix dangling CTAs like "Check it out →" with no link
+        text = ensure_links(text)
+        return text
 
     else:
         with open(path) as f:
             return f.read().strip()
+
+
+# Product URL mapping
+PRODUCT_LINKS = {
+    "inbharat": "https://inbharat.ai",
+    "phoring": "https://phoring.in",
+    "testsprep": "https://testsprep.in",
+    "uniassist": "https://uniassist.ai",
+    "openclaw": "https://github.com/inbharatai/OpenClaw-AI-CMO",
+    "sahaayak": "https://inbharat.ai",
+    "sahaayak-seva": "https://inbharat.ai",
+    "codein": "https://github.com/inbharatai",
+    "agent-arcade": "https://github.com/inbharatai",
+    "sahayak-os": "https://github.com/inbharatai",
+}
+
+
+def ensure_links(text, product=""):
+    """Fix content that has dangling CTAs without links."""
+    # If text already contains a URL, leave it alone
+    if "https://" in text or "http://" in text:
+        return text
+
+    # Get product link
+    link = PRODUCT_LINKS.get(product, "https://github.com/inbharatai/OpenClaw-AI-CMO")
+
+    # Fix "Check it out →" or similar with no link
+    import re
+    text = re.sub(r'Check it out\s*→?\s*$', f'Check it out → {link}', text, flags=re.MULTILINE)
+    text = re.sub(r'Learn more\s*→?\s*$', f'Learn more → {link}', text, flags=re.MULTILINE)
+
+    # If no link anywhere, append GitHub
+    if "https://" not in text:
+        text += f"\n\n🔗 {link}"
+
+    return text
 
 def post_to_discord(webhook_url, text, username="InBharat Bot"):
     """Send message via Discord webhook using curl (avoids Cloudflare blocks on urllib)."""
