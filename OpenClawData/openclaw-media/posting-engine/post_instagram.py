@@ -42,7 +42,6 @@ def ensure_session_dir():
 def launch_browser(pw, headless=False):
     """Launch browser with persistent context (reuses login session)."""
     ensure_session_dir()
-    # Instagram requires mobile viewport for post creation via web
     context = pw.chromium.launch_persistent_context(
         user_data_dir=str(SESSION_DIR),
         headless=headless,
