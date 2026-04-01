@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-04-01",
+  "description": "OpenClaw Video Format Library — 10 distinct repeatable short-form video formats for variety across platforms.",
+  "formats": [
+    {
+      "id": "talking-presenter-product-ui",
+      "name": "Presenter + Product UI Walkthrough",
+      "ideal_use_case": "Demonstrating a specific product feature or workflow by showing the real UI alongside the presenter. Best for product launches, feature announcements, and how-to content.",
+      "ideal_duration_seconds": { "min": 45, "max": 90 },
+      "scene_structure": [
+        { "type": "presenter-hook", "duration_seconds": 5, "description": "Avatar faces camera, delivers a one-line hook about the feature or problem it solves." },
+        { "type": "split-screen-ui", "duration_seconds": 25, "description": "Screen splits: presenter on the left third, product UI screenshot or recording on the right two-thirds. Presenter narrates as UI highlights animate." },
+        { "type": "fullscreen-ui", "duration_seconds": 15, "description": "UI takes full screen with zoomed callouts on key interactions. Voiceover continues." },
+        { "type": "presenter-recap", "duration_seconds": 10, "description": "Presenter returns full-frame, recaps the value delivered by the feature." },
+        { "type": "cta-endcard", "duration_seconds": 5, "description": "Branded endcard with URL, QR code, or call-to-action text overlay." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Split-screen and fullscreen scenes use real product screenshots or screen recordings. Screenshots must be current and match the narration exactly.",
+      "openai_graphics_allowed": false,
+      "subtitle_position": "bottom",
+      "cta_placement": "endcard",
+      "platforms": ["youtube-shorts", "linkedin", "instagram-reels"],
+      "variety_notes": "Vary which product and feature you showcase each time. Alternate between split-screen-left and split-screen-right layouts. Rotate hook styles: question, stat, or bold claim."
+    },
+    {
+      "id": "talking-presenter-feature-popins",
+      "name": "Presenter with Feature Pop-Ins",
+      "ideal_use_case": "Highlighting 3-5 key features or benefits in rapid succession. Great for product overviews, comparison posts, and listicle-style content.",
+      "ideal_duration_seconds": { "min": 30, "max": 60 },
+      "scene_structure": [
+        { "type": "presenter-hook", "duration_seconds": 5, "description": "Avatar opens with an attention-grabbing question or statement about the product category." },
+        { "type": "feature-popin-1", "duration_seconds": 8, "description": "Presenter continues speaking. A branded card or icon pops in from the side showing feature name and one-line benefit." },
+        { "type": "feature-popin-2", "duration_seconds": 8, "description": "Previous card exits, next feature card pops in from opposite side. Presenter gestures or shifts gaze." },
+        { "type": "feature-popin-3", "duration_seconds": 8, "description": "Third feature card pops in. Optionally include a mini screenshot thumbnail inside the card." },
+        { "type": "presenter-summary", "duration_seconds": 6, "description": "All three feature cards stack or tile on screen briefly, then exit. Presenter delivers closing line." },
+        { "type": "cta-lower-third", "duration_seconds": 5, "description": "Lower-third CTA bar with link and brand logo while presenter stays on screen." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Optional small screenshot thumbnails inside feature pop-in cards. Not required if the feature can be described with an icon and text.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "bottom",
+      "cta_placement": "lower-third",
+      "platforms": ["youtube-shorts", "instagram-reels", "x"],
+      "variety_notes": "Vary the number of pop-ins (3 to 5). Alternate pop-in directions (left, right, top). Use different card color schemes per product. Occasionally replace text cards with animated icons."
+    },
+    {
+      "id": "talking-presenter-proof-overlay",
+      "name": "Presenter with Proof/Result Overlays",
+      "ideal_use_case": "Showcasing traction, results, metrics, or social proof. Ideal for milestone announcements, user testimonials, and credibility-building content.",
+      "ideal_duration_seconds": { "min": 30, "max": 60 },
+      "scene_structure": [
+        { "type": "presenter-hook", "duration_seconds": 5, "description": "Avatar opens with a bold result statement or question: 'Here is what happened when we...' " },
+        { "type": "presenter-with-stat-overlay", "duration_seconds": 10, "description": "Large animated number or stat overlays beside the presenter. Counter animation or reveal effect." },
+        { "type": "presenter-with-screenshot-proof", "duration_seconds": 12, "description": "Real screenshot evidence (dashboard, tweet, review, GitHub stars) appears as a floating overlay. Presenter narrates context." },
+        { "type": "presenter-with-quote-overlay", "duration_seconds": 8, "description": "A user quote or testimonial text overlays on a branded background card beside the presenter." },
+        { "type": "presenter-closing", "duration_seconds": 5, "description": "Overlays clear. Presenter delivers the takeaway message." },
+        { "type": "cta-endcard", "duration_seconds": 5, "description": "Endcard with CTA." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Real screenshots of dashboards, analytics, tweets, reviews, or GitHub activity used as proof overlays. Must be genuine and current.",
+      "openai_graphics_allowed": false,
+      "subtitle_position": "bottom",
+      "cta_placement": "endcard",
+      "platforms": ["linkedin", "youtube-shorts", "instagram-reels"],
+      "variety_notes": "Rotate proof types: metrics one week, user quotes the next, GitHub activity after that. Vary overlay animation styles (slide-in, fade, zoom). Never repeat the same stat in consecutive videos."
+    },
+    {
+      "id": "talking-presenter-problem-solution",
+      "name": "Problem/Solution with Presenter",
+      "ideal_use_case": "Addressing a specific pain point and showing how the product solves it. Best for awareness-stage content, pain-point marketing, and objection handling.",
+      "ideal_duration_seconds": { "min": 40, "max": 75 },
+      "scene_structure": [
+        { "type": "problem-hook", "duration_seconds": 7, "description": "Presenter describes the problem with urgency. Background shifts to a muted or red-tinted tone to signal frustration." },
+        { "type": "problem-amplify", "duration_seconds": 10, "description": "Text overlays or icons amplify the problem: stats about the issue, common complaints, or relatable scenarios." },
+        { "type": "transition-pivot", "duration_seconds": 3, "description": "Visual transition: background shifts to bright/blue tone. Presenter says 'But here is the thing...' or similar pivot." },
+        { "type": "solution-reveal", "duration_seconds": 15, "description": "Presenter introduces the product as the solution. Product screenshot or logo appears alongside." },
+        { "type": "solution-proof", "duration_seconds": 10, "description": "Quick proof point: screenshot, stat, or user quote reinforcing the solution works." },
+        { "type": "cta-endcard", "duration_seconds": 5, "description": "Endcard with URL and call-to-action." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Product screenshot appears during solution-reveal scene. Optional proof screenshot in solution-proof scene.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "bottom",
+      "cta_placement": "endcard",
+      "platforms": ["youtube-shorts", "instagram-reels", "linkedin", "x"],
+      "variety_notes": "Rotate problems from different angles: cost, time, complexity, accessibility. Vary the transition style between problem and solution. Alternate between stat-based and story-based problem amplification."
+    },
+    {
+      "id": "talking-presenter-screenshot-explainer",
+      "name": "Screenshot-Led Explainer with Presenter",
+      "ideal_use_case": "Deep-dive walkthrough of a specific screen, page, or workflow. Best for tutorials, onboarding content, and detailed feature education.",
+      "ideal_duration_seconds": { "min": 45, "max": 90 },
+      "scene_structure": [
+        { "type": "presenter-intro", "duration_seconds": 5, "description": "Presenter introduces what the viewer will learn. Clean background." },
+        { "type": "screenshot-full-1", "duration_seconds": 15, "description": "Full-screen product screenshot with animated highlight boxes and arrows pointing to key areas. Voiceover explains step by step." },
+        { "type": "screenshot-full-2", "duration_seconds": 15, "description": "Second screenshot showing the next step or result. Zoom-in on important details." },
+        { "type": "presenter-pip-screenshot", "duration_seconds": 10, "description": "Picture-in-picture: small presenter circle in corner, screenshot fills rest of frame. Presenter adds context." },
+        { "type": "presenter-recap", "duration_seconds": 8, "description": "Presenter returns full-frame for a quick recap of what was covered." },
+        { "type": "cta-endcard", "duration_seconds": 5, "description": "Endcard with link to try the product or read documentation." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Primary content driver. Multiple real product screenshots with animated annotations (arrows, highlights, zoom). Screenshots must be high-resolution and current.",
+      "openai_graphics_allowed": false,
+      "subtitle_position": "top",
+      "cta_placement": "endcard",
+      "platforms": ["youtube-shorts", "linkedin", "instagram-reels"],
+      "variety_notes": "Cover different products and screens each time. Alternate between 2-step and 3-step walkthroughs. Vary annotation styles: arrows one time, highlight boxes the next, numbered circles after that."
+    },
+    {
+      "id": "talking-presenter-mission-vision",
+      "name": "Mission/Vision Short with Presenter",
+      "ideal_use_case": "Founder-voice content about why the company exists, its values, or its long-term vision. Best for brand building, hiring, and community engagement.",
+      "ideal_duration_seconds": { "min": 30, "max": 60 },
+      "scene_structure": [
+        { "type": "presenter-personal-hook", "duration_seconds": 7, "description": "Presenter opens with a personal or philosophical statement. Warm, conversational tone. Minimal background." },
+        { "type": "presenter-with-text-overlay", "duration_seconds": 12, "description": "Key mission phrase appears as large text beside or behind the presenter. Typography-driven visual." },
+        { "type": "presenter-story-beat", "duration_seconds": 15, "description": "Presenter tells a brief story or shares a specific moment that shaped the mission. Optional B-roll-style background images." },
+        { "type": "presenter-declaration", "duration_seconds": 8, "description": "Presenter states the mission clearly and directly. Text overlay reinforces the core statement." },
+        { "type": "brand-endcard", "duration_seconds": 5, "description": "Brand logo, tagline, and optional community link. No hard-sell CTA." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "None or minimal. This format is personality-driven, not product-driven. Optional use of product logos or website hero screenshots as subtle background elements.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "bottom",
+      "cta_placement": "brand-endcard",
+      "platforms": ["linkedin", "youtube-shorts", "instagram-reels"],
+      "variety_notes": "Rotate between mission, vision, values, and origin-story angles. Vary background styles: solid color, gradient, subtle texture. Never repeat the same core statement in consecutive videos."
+    },
+    {
+      "id": "product-first-presenter-bookend",
+      "name": "Product-First Reel with Presenter Bookends",
+      "ideal_use_case": "Leading with the product experience rather than the presenter. Best for visually impressive features, UI showcases, and demo-style content where the product speaks for itself.",
+      "ideal_duration_seconds": { "min": 30, "max": 60 },
+      "scene_structure": [
+        { "type": "presenter-intro", "duration_seconds": 5, "description": "Brief presenter intro: 'Watch this' or 'Check out what X can do.' Sets context in one sentence." },
+        { "type": "product-showcase-1", "duration_seconds": 12, "description": "Full-screen product UI or screen recording. No presenter visible. Voiceover optional. Music-driven pacing." },
+        { "type": "product-showcase-2", "duration_seconds": 10, "description": "Second product view: different screen, different angle, or result of the action shown in showcase-1." },
+        { "type": "product-showcase-3", "duration_seconds": 8, "description": "Third product view or final result. Quick zoom on the outcome." },
+        { "type": "presenter-outro", "duration_seconds": 5, "description": "Presenter returns: 'That is [product]. Link below.' Quick, punchy outro." },
+        { "type": "cta-endcard", "duration_seconds": 5, "description": "Endcard with link." }
+      ],
+      "heygen_usage": "intro-outro",
+      "screenshot_usage": "Primary content. Three or more full-screen product screenshots or screen recordings fill the middle of the video. These must be the hero visuals.",
+      "openai_graphics_allowed": false,
+      "subtitle_position": "bottom",
+      "cta_placement": "endcard",
+      "platforms": ["instagram-reels", "youtube-shorts", "x"],
+      "variety_notes": "Vary the product shown. Alternate between 2 and 4 product showcase scenes. Try different music tempos. Occasionally use a slow zoom instead of cuts between screenshots."
+    },
+    {
+      "id": "discord-insider-update",
+      "name": "Community / Devlog Insider Update",
+      "ideal_use_case": "Raw, casual development updates for the community. No avatar needed. Best for devlog-style updates, behind-the-scenes, changelog content, and community engagement.",
+      "ideal_duration_seconds": { "min": 20, "max": 45 },
+      "scene_structure": [
+        { "type": "text-hook-card", "duration_seconds": 4, "description": "Bold text card on branded background: 'Dev Update' or 'What we shipped this week'. No presenter." },
+        { "type": "screenshot-update-1", "duration_seconds": 8, "description": "Screenshot of the update: code diff, new UI, dashboard metric, or GitHub commit. Text overlay labels what changed." },
+        { "type": "screenshot-update-2", "duration_seconds": 8, "description": "Second update screenshot. Different product or different aspect of the same update." },
+        { "type": "screenshot-update-3", "duration_seconds": 8, "description": "Third update or community highlight: Discord message, user feedback, or upcoming roadmap item." },
+        { "type": "closing-card", "duration_seconds": 4, "description": "Closing card: 'Join the Discord' or 'Star us on GitHub' with link. Community-focused CTA." }
+      ],
+      "heygen_usage": "none",
+      "screenshot_usage": "Core content. Real screenshots of code changes, UI updates, GitHub activity, Discord conversations, or analytics dashboards. Raw and authentic feel.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "dynamic",
+      "cta_placement": "closing-card",
+      "platforms": ["x", "youtube-shorts", "instagram-reels"],
+      "variety_notes": "Vary between single-product deep updates and multi-product round-ups. Alternate color schemes. Rotate between 2 and 4 update items. Use different music tracks for energy variation."
+    },
+    {
+      "id": "linkedin-authority-clip",
+      "name": "LinkedIn Authority Clip",
+      "ideal_use_case": "Thought leadership and professional credibility content. Presenter delivers a sharp insight, opinion, or lesson. Best for LinkedIn native video, founder branding, and industry commentary.",
+      "ideal_duration_seconds": { "min": 30, "max": 60 },
+      "scene_structure": [
+        { "type": "presenter-bold-open", "duration_seconds": 7, "description": "Presenter opens with a bold, slightly contrarian statement or hard-won lesson. Direct eye contact. Clean professional background." },
+        { "type": "presenter-with-insight-card", "duration_seconds": 12, "description": "Key insight appears as a clean text card beside the presenter. Professional typography. One sentence maximum." },
+        { "type": "presenter-elaboration", "duration_seconds": 15, "description": "Presenter elaborates with a specific example, data point, or experience. Optional subtle data visualization overlay." },
+        { "type": "presenter-with-takeaway-card", "duration_seconds": 8, "description": "Takeaway statement appears as a second text card. Presenter reinforces it verbally." },
+        { "type": "presenter-close-with-question", "duration_seconds": 5, "description": "Presenter closes by asking the audience a question to drive comments. Lower-third shows name and title." },
+        { "type": "brand-lower-third", "duration_seconds": 3, "description": "Subtle brand bar at bottom: logo, website. No hard CTA." }
+      ],
+      "heygen_usage": "presenter-full",
+      "screenshot_usage": "Minimal. Optional use of a data chart, industry report screenshot, or product screenshot as supporting evidence during elaboration. Never the primary visual.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "bottom",
+      "cta_placement": "lower-third",
+      "platforms": ["linkedin"],
+      "variety_notes": "Rotate topics across: AI industry insights, founder lessons, India tech ecosystem, building in public. Vary text card styles: white-on-dark, dark-on-light, accent-colored. Alternate between question-close and statement-close."
+    },
+    {
+      "id": "x-teaser-cutdown",
+      "name": "X Teaser / Ultra-Short Cutdown",
+      "ideal_use_case": "Ultra-short teaser content for X (Twitter). Maximum impact in minimum time. Best for announcements, hype-building, feature teases, and driving traffic to longer content.",
+      "ideal_duration_seconds": { "min": 8, "max": 20 },
+      "scene_structure": [
+        { "type": "text-hook-flash", "duration_seconds": 3, "description": "Bold text on branded background flashes the hook. One line maximum. Fast-paced music or sound effect." },
+        { "type": "product-flash", "duration_seconds": 5, "description": "Quick product screenshot or key visual. Minimal or no narration. Text overlay states the one thing the viewer needs to know." },
+        { "type": "cta-flash", "duration_seconds": 3, "description": "CTA text: 'Try it now', 'Link in bio', or 'Full video on YouTube'. Brand logo. Fast exit." }
+      ],
+      "heygen_usage": "none",
+      "screenshot_usage": "One or two maximum-impact product screenshots. The screenshot must instantly communicate value with no explanation needed.",
+      "openai_graphics_allowed": true,
+      "subtitle_position": "dynamic",
+      "cta_placement": "cta-flash",
+      "platforms": ["x"],
+      "variety_notes": "Vary text colors and background patterns. Alternate between product screenshots and typographic-only teasers. Use different sound effects. Rotate between announcement, question, and stat hook styles."
+    }
+  ]
+}

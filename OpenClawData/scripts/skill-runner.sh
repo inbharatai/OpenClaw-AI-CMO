@@ -21,13 +21,20 @@ USER_PROMPT="$2"
 MODEL_OVERRIDE="$3"
 
 SKILL_FILE="$SKILLS_DIR/$SKILL_NAME/SKILL.md"
+BOT_SKILLS_DIR="$WORKSPACE_ROOT/OpenClawData/inbharat-bot/skills"
 
-# Check skill exists
+# Check skill exists — search CMO skills first, then bot skills
 if [ ! -f "$SKILL_FILE" ]; then
-    echo "ERROR: Skill '$SKILL_NAME' not found at $SKILL_FILE"
+    SKILL_FILE="$BOT_SKILLS_DIR/$SKILL_NAME/SKILL.md"
+fi
+if [ ! -f "$SKILL_FILE" ]; then
+    echo "ERROR: Skill '$SKILL_NAME' not found"
     echo ""
-    echo "Available skills:"
+    echo "Available CMO skills:"
     ls "$SKILLS_DIR" 2>/dev/null | sort
+    echo ""
+    echo "Available Bot skills:"
+    ls "$BOT_SKILLS_DIR" 2>/dev/null | sort
     exit 1
 fi
 

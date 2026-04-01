@@ -1,0 +1,167 @@
+{
+  "type": "companies-ai",
+  "description": "Top 20 AI companies for partnerships, collaboration, and API/infra deals",
+  "last_updated": "2026-04-01",
+  "leads": [
+    {
+      "company": "Google DeepMind",
+      "focus": "Foundational AI research, large language models, AI safety",
+      "website": "https://deepmind.google",
+      "partnership_url": "https://deepmind.google/about/partnerships/",
+      "location": "London, UK / Mountain View, CA",
+      "relevance": "AI research collaboration, Google Cloud AI credits, model access"
+    },
+    {
+      "company": "OpenAI",
+      "focus": "Large language models, GPT, DALL-E, AI safety",
+      "website": "https://openai.com",
+      "partnership_url": "https://openai.com/contact-sales",
+      "location": "San Francisco, CA",
+      "relevance": "API partnership, startup credits program, model fine-tuning"
+    },
+    {
+      "company": "Anthropic",
+      "focus": "AI safety, constitutional AI, Claude models",
+      "website": "https://anthropic.com",
+      "partnership_url": "https://anthropic.com/contact",
+      "location": "San Francisco, CA",
+      "relevance": "API access, AI safety collaboration, startup program"
+    },
+    {
+      "company": "Meta AI",
+      "focus": "Open-source LLMs (Llama), computer vision, AI research",
+      "website": "https://ai.meta.com",
+      "partnership_url": "https://ai.meta.com/partnerships/",
+      "location": "Menlo Park, CA",
+      "relevance": "Open-source model collaboration, Llama ecosystem"
+    },
+    {
+      "company": "Microsoft Research",
+      "focus": "AI research, Azure AI, Copilot, enterprise AI",
+      "website": "https://www.microsoft.com/en-us/research/",
+      "partnership_url": "https://www.microsoft.com/en-us/research/collaboration/",
+      "location": "Redmond, WA / Bangalore, India",
+      "relevance": "Azure credits, Microsoft for Startups, India research lab"
+    },
+    {
+      "company": "Hugging Face",
+      "focus": "Open-source ML models, model hosting, datasets",
+      "website": "https://huggingface.co",
+      "partnership_url": "https://huggingface.co/contact",
+      "location": "New York, NY / Paris, France",
+      "relevance": "Model hosting, community building, open-source collaboration"
+    },
+    {
+      "company": "Stability AI",
+      "focus": "Open-source generative AI, Stable Diffusion, audio/video models",
+      "website": "https://stability.ai",
+      "partnership_url": "https://stability.ai/contact",
+      "location": "London, UK",
+      "relevance": "Open-source model integration, India-language models"
+    },
+    {
+      "company": "Cohere",
+      "focus": "Enterprise LLMs, multilingual NLP, RAG",
+      "website": "https://cohere.com",
+      "partnership_url": "https://cohere.com/contact",
+      "location": "Toronto, Canada",
+      "relevance": "Multilingual model access, enterprise NLP, Aya multilingual project"
+    },
+    {
+      "company": "Mistral AI",
+      "focus": "Open-weight LLMs, efficient models, European AI",
+      "website": "https://mistral.ai",
+      "partnership_url": "https://mistral.ai/contact/",
+      "location": "Paris, France",
+      "relevance": "Open-weight model partnership, efficient inference"
+    },
+    {
+      "company": "Together AI",
+      "focus": "Open-source AI infrastructure, model serving, fine-tuning",
+      "website": "https://together.ai",
+      "partnership_url": "https://together.ai/contact",
+      "location": "San Francisco, CA",
+      "relevance": "Infrastructure partnership, model serving, startup credits"
+    },
+    {
+      "company": "Sarvam AI",
+      "focus": "India-first LLMs, Indic language models, voice AI",
+      "website": "https://sarvam.ai",
+      "partnership_url": "https://sarvam.ai/contact",
+      "location": "Bangalore, India",
+      "relevance": "Direct competitor and collaboration opportunity; Indic language models"
+    },
+    {
+      "company": "Krutrim (Ola)",
+      "focus": "India-first AI, multilingual LLM, consumer AI",
+      "website": "https://olakrutrim.com",
+      "partnership_url": "https://olakrutrim.com",
+      "location": "Bangalore, India",
+      "relevance": "India AI ecosystem; potential API/model partnership"
+    },
+    {
+      "company": "AI4Bharat",
+      "focus": "Open-source Indic language AI, NLP, speech, translation",
+      "website": "https://ai4bharat.iitm.ac.in",
+      "partnership_url": "https://ai4bharat.iitm.ac.in/contact",
+      "location": "Chennai, India (IIT Madras)",
+      "relevance": "Open-source Indic models, IndicTrans, IndicBERT, research collaboration"
+    },
+    {
+      "company": "Wadhwani AI",
+      "focus": "AI for social good, healthcare, agriculture, education",
+      "website": "https://wadhwaniai.org",
+      "partnership_url": "https://wadhwaniai.org/contact/",
+      "location": "Mumbai, India",
+      "relevance": "Social impact AI, government deployments, shared mission"
+    },
+    {
+      "company": "TCS Research",
+      "focus": "Enterprise AI, NLP, computer vision, industry solutions",
+      "website": "https://www.tcs.com/what-we-do/research",
+      "partnership_url": "https://www.tcs.com/contact-us",
+      "location": "Mumbai / Pune, India",
+      "relevance": "Enterprise AI partnership, India enterprise distribution"
+    },
+    {
+      "company": "Infosys AI (Infosys Topaz)",
+      "focus": "Enterprise AI, generative AI, digital transformation",
+      "website": "https://www.infosys.com/services/applied-ai.html",
+      "partnership_url": "https://www.infosys.com/contact.html",
+      "location": "Bangalore, India",
+      "relevance": "Enterprise AI distribution, Infosys Springboard education platform"
+    },
+    {
+      "company": "Wipro AI",
+      "focus": "Enterprise AI, ai360, industry AI solutions",
+      "website": "https://www.wipro.com/ai/",
+      "partnership_url": "https://www.wipro.com/contact-us/",
+      "location": "Bangalore, India",
+      "relevance": "Enterprise distribution, AI solutions partnership"
+    },
+    {
+      "company": "Tech Mahindra",
+      "focus": "Enterprise AI, telecom AI, digital transformation",
+      "website": "https://www.techmahindra.com",
+      "partnership_url": "https://www.techmahindra.com/en-in/contact-us/",
+      "location": "Pune, India",
+      "relevance": "Telecom AI, enterprise distribution, startup partnership program"
+    },
+    {
+      "company": "Fractal Analytics",
+      "focus": "AI/analytics consulting, enterprise AI solutions",
+      "website": "https://fractal.ai",
+      "partnership_url": "https://fractal.ai/contact-us/",
+      "location": "Mumbai, India / New York, NY",
+      "relevance": "AI consulting partnership, enterprise analytics, India AI ecosystem"
+    },
+    {
+      "company": "Ola Krutrim",
+      "focus": "India-first foundational AI, multilingual AI models",
+      "website": "https://olakrutrim.com",
+      "partnership_url": "https://olakrutrim.com",
+      "location": "Bangalore, India",
+      "relevance": "India AI model ecosystem, potential model/API partnership"
+    }
+  ]
+}

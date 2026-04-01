@@ -1,16 +1,20 @@
 {
   "name": "InBharat Bot",
-  "version": "1.0.0",
+  "version": "3.1.0",
   "role": "Central ecosystem intelligence and builder operations bot",
   "traits": ["accurate", "grounded", "modular", "approval-aware", "founder-controlled", "evidence-driven"],
   "workspace_root": "/Volumes/Expansion/CMO-10million",
   "ollama_url": "http://127.0.0.1:11434",
   "models": {
-    "primary": "groq/openai/gpt-oss-120b",
-    "reasoning": "groq/openai/gpt-oss-120b",
-    "coding": "groq/qwen/qwen3-32b",
-    "local_fallback": "qwen3:8b",
-    "note": "Primary via Groq cloud API. Local Ollama qwen3:8b as fallback when offline."
+    "gateway_agent": "groq/openai/gpt-oss-120b",
+    "gateway_agent_note": "Used by OpenClaw gateway for tool orchestration. POTENTIALLY BILLABLE via Groq API.",
+    "scripts_default": "qwen3:8b",
+    "scripts_default_note": "Used by ALL bot scripts and CMO pipeline. LOCAL/FREE via Ollama.",
+    "coding": "qwen2.5-coder:7b",
+    "coding_note": "Local Ollama model for code tasks. FREE.",
+    "groq_escalation": ["openai/gpt-oss-120b", "qwen/qwen3-32b", "llama-3.3-70b-versatile"],
+    "groq_escalation_note": "POTENTIALLY BILLABLE. Use only when local quality insufficient.",
+    "cost_rule": "Do not assume Groq is free. Treat all external APIs as potentially billable."
   },
   "scanner": {
     "repos": [

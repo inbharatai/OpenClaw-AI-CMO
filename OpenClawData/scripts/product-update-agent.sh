@@ -19,7 +19,7 @@ DRY_RUN=false
 [ "$1" = "--dry-run" ] && DRY_RUN=true
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 

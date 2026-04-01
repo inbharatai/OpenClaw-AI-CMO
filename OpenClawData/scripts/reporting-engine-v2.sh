@@ -40,9 +40,9 @@ count_today_files() {
 generate_daily_report() {
     local REPORT_FILE="$REPORTS_DIR/daily/daily-report-$DATE_TAG.md"
 
-    # Gather stats
-    local INTAKE_NEW=$(grep -c "CLASSIFYING" "$LOGS_DIR/intake-processor.log" 2>/dev/null || echo 0)
-    local CONTENT_PRODUCED=$(grep -c "PRODUCED:" "$LOGS_DIR/content-agent.log" 2>/dev/null || echo 0)
+    # Gather stats — count only today's entries, not cumulative
+    local INTAKE_NEW=$(grep "\[$DATE_TAG" "$LOGS_DIR/intake-processor.log" 2>/dev/null | grep -c "CLASSIFYING" || echo 0)
+    local CONTENT_PRODUCED=$(grep "\[$DATE_TAG" "$LOGS_DIR/content-agent.log" 2>/dev/null | grep -c "PRODUCED:" || echo 0)
 
     local TOTAL_PENDING=0
     local TOTAL_APPROVED=0

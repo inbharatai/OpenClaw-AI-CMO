@@ -17,7 +17,7 @@ DRY_RUN=false
 [ "$3" = "--dry-run" ] && DRY_RUN=true
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -59,20 +59,28 @@ case "$PLATFORM" in
     instagram) BODY=$(echo "$BODY" | head -c 2200) ;;
 esac
 
-# Build JSON payload safely via Python to prevent injection
+# Build JSON payload safely via Python using environment variables to prevent injection
 DRY_RUN_PY=$( [ "$DRY_RUN" = true ] && echo "True" || echo "False" )
 
-PAYLOAD=$(python3 << PYEOF
+PAYLOAD=$(SF_BODY="$BODY" \
+  SF_PLATFORM="$PLATFORM" \
+  SF_CONTENT_TYPE="${CONTENT_TYPE:-social-post}" \
+  SF_TITLE="${TITLE}" \
+  SF_APPROVAL="${APPROVAL_LEVEL:-L2}" \
+  SF_SOURCE="${CONTENT_FILE}" \
+  SF_DRY_RUN="$DRY_RUN_PY" \
+  SF_SUBREDDIT="${SUBREDDIT}" \
+  python3 << 'PYEOF'
 import json, sys, os
 
-content = """$BODY"""
-platform = "$PLATFORM"
-content_type = "${CONTENT_TYPE:-social-post}"
-title_val = "${TITLE}"
-approval = "${APPROVAL_LEVEL:-L2}"
-source = "${CONTENT_FILE}"
-dry = $DRY_RUN_PY
-subreddit = "${SUBREDDIT}"
+content = os.environ.get("SF_BODY", "")
+platform = os.environ.get("SF_PLATFORM", "")
+content_type = os.environ.get("SF_CONTENT_TYPE", "social-post")
+title_val = os.environ.get("SF_TITLE", "")
+approval = os.environ.get("SF_APPROVAL", "L2")
+source = os.environ.get("SF_SOURCE", "")
+dry = os.environ.get("SF_DRY_RUN", "False") == "True"
+subreddit = os.environ.get("SF_SUBREDDIT", "")
 
 payload = {
     "platform": platform,

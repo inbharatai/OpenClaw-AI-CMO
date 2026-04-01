@@ -23,7 +23,7 @@ while [ $# -gt 0 ]; do
 done
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -113,6 +113,10 @@ run_stage "product-updates" "2b" "\"$SCRIPTS_DIR/product-update-agent.sh\" $DRY_
 # Generate remaining content from classified source material
 run_stage "produce" "2c" "\"$SCRIPTS_DIR/content-agent.sh\" $DRY_RUN"
 
+# ===== STAGE 2D: CLAIM VALIDATION =====
+# Pre-approval content quality check — catches fabricated stats and LLM artifacts
+run_stage "validate" "2d" "\"$WORKSPACE_ROOT/OpenClawData/security/claim-validator.sh\" --scan-queues"
+
 # ===== STAGE 3: APPROVAL =====
 # Run all pending content through the approval engine
 run_stage "approve" "3" "\"$SCRIPTS_DIR/approval-engine.sh\" $DRY_RUN"
@@ -121,9 +125,18 @@ run_stage "approve" "3" "\"$SCRIPTS_DIR/approval-engine.sh\" $DRY_RUN"
 # Distribute approved content to channels
 run_stage "distribute" "4" "\"$SCRIPTS_DIR/distribution-engine.sh\" $DRY_RUN"
 
+# ===== STAGE 4B: PUBLISH =====
+# Autonomous publishing — post approved content to platforms via Playwright
+run_stage "publish" "4b" "\"$WORKSPACE_ROOT/OpenClawData/openclaw-media/posting-engine/publish.sh\" $DRY_RUN"
+
 # ===== STAGE 5: REPORT =====
 # Generate daily report
 run_stage "report" "5" "\"$SCRIPTS_DIR/reporting-engine-v2.sh\" $DRY_RUN"
+
+# ===== STAGE 6: HEALTH + BUDGET =====
+# Post-pipeline health check and budget status
+run_stage "health" "6a" "\"$SCRIPTS_DIR/health-check.sh\" --quiet"
+run_stage "budget" "6b" "\"$SCRIPTS_DIR/budget-governor.sh\" --status"
 
 # ===== SUMMARY =====
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -134,10 +147,10 @@ echo ""
 echo "  Quick status:"
 
 # Count queue states
-PENDING_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/queues" -path "*/pending/*" -type f -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
-APPROVED_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/queues" -path "*/approved/*" -type f -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
-REVIEW_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/approvals/review" -type f -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
-BLOCKED_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/approvals/blocked" -type f -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
+PENDING_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/queues" -path "*/pending/*" -type f \( -name "*.md" -o -name "*.json" \) ! -name ".gitkeep" ! -name "._*" 2>/dev/null | wc -l | tr -d ' ')
+APPROVED_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/queues" -path "*/approved/*" -type f \( -name "*.md" -o -name "*.json" \) ! -name ".gitkeep" ! -name "._*" 2>/dev/null | wc -l | tr -d ' ')
+REVIEW_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/approvals/review" -type f \( -name "*.md" -o -name "*.json" \) ! -name ".gitkeep" ! -name "._*" 2>/dev/null | wc -l | tr -d ' ')
+BLOCKED_COUNT=$(find "$WORKSPACE_ROOT/OpenClawData/approvals/blocked" -type f \( -name "*.md" -o -name "*.json" \) ! -name ".gitkeep" ! -name "._*" 2>/dev/null | wc -l | tr -d ' ')
 
 echo "  Pending:   $PENDING_COUNT items"
 echo "  Approved:  $APPROVED_COUNT items"

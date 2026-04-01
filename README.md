@@ -1,347 +1,292 @@
-# InBharat AI — Complete System Guide
+# OpenClaw + InBharat Bot — Complete System Guide
 
-**Everything you need to know to use your AI system, explained simply.**
+**Your AI-powered content engine, strategic brain, and autonomous publisher.**
 
-Last updated: 2026-03-28
+Last updated: 2026-04-01
 
 ---
 
 ## What Is This System?
 
-You have THREE connected systems that work together:
+You have ONE integrated system with specialized modules:
 
-| System | What it does | Where it lives |
-|--------|-------------|----------------|
-| **OpenClaw** | The "hands" — runs tools, sends messages, connects to WhatsApp | `~/.openclaw/` (config) |
-| **InBharat Bot** | The "brain" — scans for opportunities, drafts emails, builds prototypes | `/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/` |
-| **CMO Pipeline** | The "factory" — generates content (blogs, social posts, SEO) | `/Volumes/Expansion/CMO-10million/OpenClawData/scripts/` |
+| Module | Role | Where it lives |
+|--------|------|----------------|
+| **OpenClaw** | Runtime engine — runs tools, connects WhatsApp, executes commands | `~/.openclaw/` (config) |
+| **InBharat Bot** | Strategic brain — 12 intelligence lanes (scan, outreach, prototype, media, community, learning) | `OpenClawData/inbharat-bot/` |
+| **OpenClaw Media** | Content factory — 2 pipelines (Native Social + Amplification), video engine, posting engine | `OpenClawData/openclaw-media/` |
 
-**Think of it like this:**
-- OpenClaw = your phone (the device that runs things)
-- InBharat Bot = your business brain (finds opportunities, writes emails, builds apps)
-- CMO Pipeline = your content team (writes blogs, social posts, newsletters)
+**How it works:**
+- You text OpenClaw on WhatsApp → it maps your request to InBharat Bot commands → executes → shows you the output → you approve → it auto-publishes
+
+---
+
+## Quick Start
+
+### Option A: WhatsApp (recommended)
+Text your OpenClaw WhatsApp bot. Natural language works:
+- "create a LinkedIn post about Phoring"
+- "what's pending?"
+- "approve phoring-linkedin-2026-04-01.json"
+- "scan for opportunities"
+- "system status"
+
+### Option B: Terminal
+```bash
+cd /Volumes/Expansion/CMO-10million
+bash OpenClawData/inbharat-bot/inbharat-run.sh help
+```
 
 ---
 
 ## Before You Start (Checklist)
 
-1. **External HD connected?** Check that `/Volumes/Expansion/` exists
-   ```bash
-   ls /Volumes/Expansion/CMO-10million/
-   # Should show: OpenClawData, MarketingToolData, memory, etc.
-   ```
-
-2. **Ollama running?** This is the local AI engine
-   ```bash
-   curl -s http://127.0.0.1:11434/api/tags | python3 -c "import sys,json; print([m['name'] for m in json.load(sys.stdin)['models']])"
-   # Should show: ['qwen3:8b']
-   ```
-   If not running:
-   ```bash
-   ollama serve &
-   ```
-
-3. **OpenClaw gateway running?** (optional — only needed for WhatsApp)
-   ```bash
-   curl -s http://localhost:18789/health
-   ```
+1. **External HD connected?** `/Volumes/Expansion/` must exist
+2. **Ollama running?** `curl -s http://127.0.0.1:11434/api/tags | head -1`
+   - If not: `ollama serve &`
+3. **Health check:** `bash OpenClawData/scripts/health-check.sh`
 
 ---
 
-## How to Use InBharat Bot
+## InBharat Bot — 12 Lanes
 
-### Basic pattern: always start from the workspace
-
-```bash
-cd /Volumes/Expansion/CMO-10million
-bash OpenClawData/inbharat-bot/inbharat-run.sh <command>
-```
-
-### Most useful commands (start here)
-
+### Content Creation & Media
 | What you want | Command |
-|---------------|---------|
-| "Show me what's available" | `bash OpenClawData/inbharat-bot/inbharat-run.sh help` |
-| "Find me opportunities" | `bash OpenClawData/inbharat-bot/inbharat-run.sh opportunities all` |
-| "Find government tenders" | `bash OpenClawData/inbharat-bot/inbharat-run.sh opportunities government` |
-| "Find problems I can solve" | `bash OpenClawData/inbharat-bot/inbharat-run.sh opportunities problems` |
-| "Find companies needing AI" | `bash OpenClawData/inbharat-bot/inbharat-run.sh opportunities corporate` |
-| "Draft an email" | `bash OpenClawData/inbharat-bot/inbharat-run.sh outreach draft "introduce us to NITI Aayog"` |
-| "Build me an app" | `bash OpenClawData/inbharat-bot/inbharat-run.sh prototype build "attendance tracker"` |
-| "Find a problem and build a solution" | `bash OpenClawData/inbharat-bot/inbharat-run.sh prototype pipeline` |
-| "What's the system status?" | `bash OpenClawData/inbharat-bot/inbharat-run.sh status` |
-| "Record a new lead" | `bash OpenClawData/inbharat-bot/inbharat-run.sh leads capture "inquiry from XYZ about AI"` |
+|---|---|
+| Create content about a product | `media native --product phoring` |
+| Create a LinkedIn post | `media native --product sahaayak --platform linkedin` |
+| Create a video brief | `media native --product phoring --platform shorts` then `media video --file <output>` |
+| Generate a HeyGen avatar video | HeyGen brief via `generate-video.sh --heygen --file <package>` |
+| Create an image | `media image --brief "description"` |
+| Full media cycle | `media full --product phoring` |
+| Amplify a campaign | `media amplify --all` |
 
-### Step-by-step examples
+### Review & Publishing
+| What you want | Command |
+|---|---|
+| What's pending? | `media status` |
+| Show items needing review | `media review` |
+| Approve content (auto-publishes) | `media approve <filename>` |
+| Approve without publishing | `media approve <filename> --no-publish` |
+| Reject content | `media reject <filename>` |
+| Publish all approved | `media publish` |
+| Posting history | `media history` |
 
-#### Example 1: Find opportunities and act on them
+### Intelligence & Discovery
+| What you want | Command |
+|---|---|
+| Scan India problems | `india-problems scan` |
+| Find AI gaps | `ai-gaps scan` |
+| Scan for funding | `funding scan` |
+| Scan competitors | `competitor scan` |
+| Scan ecosystem | `ecosystem scan` |
+| Community intelligence | `community scan` |
+| Find all opportunities | `opportunities all` |
+| Government tenders | `government scan` |
 
+### Outreach
+| What you want | Command |
+|---|---|
+| Research a company | `outreach research "Blume Ventures"` |
+| Draft outreach campaign | `outreach campaign vc-cold-intro vc-india.json` |
+| Check outreach status | `outreach status` |
+| Follow up | `outreach followup` |
+
+### Prototypes & Building
+| What you want | Command |
+|---|---|
+| Build a prototype | `prototype build "attendance tracker"` |
+| Auto pipeline (scan→build→launch) | `prototype pipeline` |
+| Launch locally | `prototype launch <dir>` |
+
+### Revenue & Leads
+| What you want | Command |
+|---|---|
+| Capture a lead | `leads capture "inquiry from XYZ"` |
+| Lead pipeline status | `leads status` |
+| Process hot leads | `revenue process` |
+| Check follow-ups | `revenue followups` |
+
+### System
+| What you want | Command |
+|---|---|
+| Full health check | Run: `bash OpenClawData/scripts/health-check.sh` |
+| Dashboard status | `status` |
+| Learning review | `learning review` |
+
+---
+
+## Products
+
+| Product | Slug | Website |
+|---|---|---|
+| InBharat AI | `inbharat` | inbharat.ai |
+| Sahaayak | `sahaayak` | — |
+| Sahaayak Seva | `sahaayak-seva` | — |
+| Phoring | `phoring` | phoring.in |
+| TestsPrep | `testsprep` | testsprep.in |
+| UniAssist | `uniassist` | uniassist.ai |
+| CodeIn | `codein` | — |
+| Agent Arcade | `agent-arcade` | — |
+| Sahayak OS | `sahayak-os` | — |
+| OpenClaw | `openclaw` | — |
+
+---
+
+## Approval System
+
+**4-level approval pipeline:**
+
+| Level | Gate | What happens |
+|---|---|---|
+| L1 | Auto-approve | Internal updates, Discord posts → auto-approved |
+| L2 | Score-gated | AI scores content (0-100). Score ≥ 70 → approved |
+| L3 | Review-required | External outreach, claims → needs your approval |
+| L4 | Hard-block | Credential claims, unverified stats → blocked |
+
+**On approve:** claim validation → platform session check → post → archive → feedback loop
+
+Nothing auto-publishes without your explicit approval first.
+
+---
+
+## Publishing Platforms
+
+| Platform | Status | Poster |
+|---|---|---|
+| Discord | Working (webhook) | `post_discord.py` (curl) |
+| LinkedIn | Needs login | `post_linkedin.py` (Playwright) |
+| X/Twitter | Needs login | `post_x.py` (Playwright) |
+| Instagram | Needs login | `post_instagram.py` (Playwright) |
+
+**First-time platform login:**
 ```bash
-cd /Volumes/Expansion/CMO-10million
-
-# Step 1: Scan for opportunities
-bash OpenClawData/inbharat-bot/inbharat-run.sh opportunities all
-# → Wait 3-5 minutes. It searches DuckDuckGo and analyzes results.
-# → Output: a report in opportunities/reports/world-scan-DATE-all.md
-
-# Step 2: Read the report
-cat OpenClawData/inbharat-bot/opportunities/reports/world-scan-$(date +%Y-%m-%d)-all.md
-
-# Step 3: Found a government tender? Draft a proposal email
-bash OpenClawData/inbharat-bot/inbharat-run.sh government propose "Vidya Samiksha Kendra AI tender Assam"
-# → Output: email draft in outreach/drafts/
-
-# Step 4: Found a company partner? Draft intro email
-bash OpenClawData/inbharat-bot/inbharat-run.sh outreach draft "introduce InBharat AI to EdTech company ABC for AI tutoring partnership"
-# → Output: email draft ready to copy to Gmail
-```
-
-#### Example 2: Build and launch a prototype
-
-```bash
-cd /Volumes/Expansion/CMO-10million
-
-# Option A: Tell it what to build
-bash OpenClawData/inbharat-bot/inbharat-run.sh prototype build "student test prep quiz app with timer and scoring"
-# → Generates working HTML app in prototypes/builds/
-
-# Option B: Let it find a problem and build automatically
-bash OpenClawData/inbharat-bot/inbharat-run.sh prototype pipeline
-# → Scans web for problems → picks the best one → builds a prototype → launches it
-
-# Launch a prototype locally
-bash OpenClawData/inbharat-bot/inbharat-run.sh prototype launch prototypes/builds/2026-03-28-student-test-prep/
-# → Opens in your browser at localhost:8090
-
-# Package for deployment
-bash OpenClawData/inbharat-bot/inbharat-run.sh prototype package prototypes/builds/2026-03-28-student-test-prep/
-# → Creates a .zip file ready to upload to Vercel or Netlify
-```
-
-#### Example 3: Manage leads and revenue
-
-```bash
-cd /Volumes/Expansion/CMO-10million
-
-# Someone emailed you about AI tutoring? Capture it
-bash OpenClawData/inbharat-bot/inbharat-run.sh leads capture "LearnFlow EdTech asked about AI tutoring integration, CEO Priya"
-
-# Check your lead pipeline
-bash OpenClawData/inbharat-bot/inbharat-run.sh leads status
-
-# Process hot leads (auto-generates proposals)
-bash OpenClawData/inbharat-bot/inbharat-run.sh revenue process
-
-# Check what needs follow-up
-bash OpenClawData/inbharat-bot/inbharat-run.sh revenue followups
+cd /Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine
+python3 post_linkedin.py --login    # Opens browser, you log in once
+python3 post_x.py --login
+python3 post_instagram.py --login
 ```
 
 ---
 
-## How to Use OpenClaw
+## Video Engine
 
-OpenClaw is the platform that runs the bot. You mostly don't interact with it directly — it runs in the background and connects to WhatsApp.
+**10 distinct video formats** to prevent repetitive content:
+- Hook-Story-CTA, Problem-Solution, Quick Demo, Myth Buster, Before-After
+- Day in Life, Hot Take/Opinion, Tutorial Walkthrough, Social Proof, Announcement
 
-### Start OpenClaw
-
-```bash
-# It should auto-start via LaunchAgent. Check if it's running:
-curl -s http://localhost:18789/health
-
-# If not running, start manually:
-cd /Volumes/Expansion/CMO-10million
-npx openclaw gateway
-```
-
-### OpenClaw via WhatsApp
-
-Once OpenClaw is running and connected to WhatsApp, you can send commands via WhatsApp to your bot. The bot responds using the rules in `SOUL.md`.
-
-**WhatsApp commands:** Same as the command routing table — type `/status`, `/opportunities`, `/outreach draft ...` etc.
-
-### OpenClaw Configuration
-
-Config file: `~/.openclaw/openclaw.json`
-
-| Setting | Current value |
-|---------|--------------|
-| Workspace | `/Volumes/Expansion/CMO-10million` |
-| Primary model | GPT-OSS 120B via Groq (free) |
-| Local model | qwen3:8b via Ollama (free) |
-| WhatsApp | Enabled, DM only from your number |
-| Skills directory | `/Volumes/Expansion/CMO-10million/OpenClawData/skills` |
-| Gateway port | 18789 |
-
-### OpenClaw Workspace Files
-
-These files control how the bot behaves when you chat with it:
-
-| File | What it does |
-|------|-------------|
-| `~/.openclaw/workspace/SOUL.md` | Core rules — response format, command routing, truth layer |
-| `~/.openclaw/workspace/IDENTITY.md` | Bot identity — capabilities, known issues |
-| `~/.openclaw/workspace/TOOLS.md` | System reference — paths, models, crons |
-| `~/.openclaw/workspace/HEARTBEAT.md` | Health check protocol |
+**HeyGen avatar videos:** Browser-operated, production briefs generated automatically.
 
 ---
 
-## How to Use CMO Pipeline
+## Architecture
 
-The CMO pipeline auto-generates content. It runs on a schedule via LaunchAgents (cron jobs).
-
-### Automated schedule
-
-| When | What runs | Command |
-|------|-----------|---------|
-| Daily (6 AM) | Content generation, trend analysis | `bash OpenClawData/scripts/daily-pipeline.sh` |
-| Weekly (Monday 8 AM) | Performance report, strategy review | `bash OpenClawData/scripts/weekly-pipeline.sh` |
-| Monthly (1st, 9 AM) | Monthly report, content audit | `bash OpenClawData/scripts/monthly-pipeline.sh` |
-
-### Run manually
-
-```bash
-cd /Volumes/Expansion/CMO-10million
-
-# Daily pipeline
-bash OpenClawData/scripts/daily-pipeline.sh
-
-# Weekly
-bash OpenClawData/scripts/weekly-pipeline.sh
-
-# Monthly
-bash OpenClawData/scripts/monthly-pipeline.sh
 ```
+YOU (WhatsApp / Terminal)
+  │
+  ▼
+OpenClaw Gateway (:18789) → InBharat Bot Bridge (natural language → commands)
+  │
+  ▼
+inbharat-run.sh (master orchestrator — 12 lanes)
+  │
+  ├── Media Lane ──────────► openclaw-media/
+  │                          ├── native-pipeline/ (original content)
+  │                          ├── amplify-pipeline/ (campaign amplification)
+  │                          ├── video-engine/ (HeyGen, format library)
+  │                          └── posting-engine/ (Discord, LinkedIn, X, Instagram)
+  │
+  ├── Intelligence Lanes ──► opportunities/, competitors/, ecosystem/
+  ├── Outreach Lane ───────► outreach/ (email drafts, campaigns)
+  ├── Prototype Lane ──────► prototypes/ (scan → build → launch)
+  ├── Revenue Lane ────────► leads/, revenue/
+  ├── Community Lane ──────► community intelligence
+  ├── Learning Lane ───────► analytics/feedback-to-bot/ → weekly summaries
+  └── Government Lane ─────► government proposals
 
-### Where content goes
-
-| What | Path |
-|------|------|
-| Generated content | `OpenClawData/queues/ready/` |
-| Awaiting approval | `OpenClawData/approvals/pending/` |
-| Published | `OpenClawData/approvals/approved/` |
-| Reports | `OpenClawData/reports/` |
+Approval Engine (L1-L4) ← claim-validator.sh ← website-context.md
+  │
+  ▼
+Auto-Publish on Approve → posting-engine/ → archive → feedback loop
+```
 
 ---
 
-## Folder Structure (What Goes Where)
+## Folder Structure
 
 ```
-/Volumes/Expansion/CMO-10million/          ← YOUR WORKSPACE ROOT
+/Volumes/Expansion/CMO-10million/              ← WORKSPACE ROOT
 │
 ├── OpenClawData/
-│   ├── inbharat-bot/                      ← INBHARAT BOT (the brain)
-│   │   ├── inbharat-run.sh               ← Master command (run everything from here)
-│   │   ├── scanner/                       ← Ecosystem scanning
-│   │   ├── gap-finder/                    ← Gap analysis
-│   │   ├── proposal-generator/            ← Build proposals
-│   │   ├── cmo-bridge/                    ← Feed to CMO
-│   │   ├── dashboard/                     ← Health monitoring
-│   │   ├── opportunities/                 ← World scanner + reports
-│   │   ├── prototypes/                    ← Built prototypes
-│   │   ├── outreach/                      ← Email drafts + logs
-│   │   ├── leads/                         ← Business leads
-│   │   ├── revenue/                       ← Revenue pipeline
-│   │   ├── government/                    ← Government proposals
-│   │   ├── skills/                        ← AI prompt templates
-│   │   ├── logging/                       ← Bot logs
-│   │   ├── approval/                      ← Action classification
-│   │   └── config/                        ← Bot configuration
+│   ├── inbharat-bot/                          ← STRATEGIC BRAIN
+│   │   ├── inbharat-run.sh                   ← Master orchestrator
+│   │   ├── skills/                           ← Bot skill templates
+│   │   ├── opportunities/                    ← World scanner + reports
+│   │   ├── outreach/                         ← Email campaigns
+│   │   ├── prototypes/                       ← Built prototypes
+│   │   ├── leads/                            ← Business leads
+│   │   └── config/                           ← Bot config
 │   │
-│   ├── scripts/                           ← CMO PIPELINE (the factory)
-│   │   ├── daily-pipeline.sh
-│   │   ├── weekly-pipeline.sh
-│   │   ├── monthly-pipeline.sh
-│   │   ├── skill-runner.sh               ← Runs skills via Ollama
-│   │   └── ... (28 scripts total)
+│   ├── openclaw-media/                        ← CONTENT FACTORY
+│   │   ├── native-pipeline/                  ← Original content generation
+│   │   ├── amplify-pipeline/                 ← Campaign amplification
+│   │   ├── video-engine/                     ← HeyGen + video formats
+│   │   ├── posting-engine/                   ← Platform posters (Python/Playwright)
+│   │   ├── publishing/                       ← Post manager + archive
+│   │   └── analytics/                        ← Feedback loop + metrics
 │   │
-│   ├── skills/                            ← SHARED SKILLS (55 prompt templates)
-│   ├── queues/                            ← Content pipeline queues
-│   ├── approvals/                         ← Content approval system
-│   ├── reports/                           ← Generated reports
-│   └── memory/                            ← System memory
+│   ├── queues/                                ← Per-platform content queues
+│   │   ├── discord/{pending,approved,posted}
+│   │   ├── linkedin/{pending,approved,posted}
+│   │   ├── x/{pending,approved,posted}
+│   │   └── instagram/{pending,approved,posted}
+│   │
+│   ├── scripts/                               ← CMO pipeline scripts
+│   ├── skills/                                ← Shared prompt templates (70+)
+│   ├── security/                              ← Claim validator
+│   ├── strategy/                              ← Website context, video format library
+│   ├── policies/                              ← Approval rules, brand voice
+│   ├── reports/                               ← Generated reports
+│   ├── memory/                                ← System memory
+│   └── logs/                                  ← Execution logs
 │
-├── MarketingToolData/                     ← Research and marketing data
-├── memory/                                ← Build plans and decisions
-└── README.md                              ← THIS FILE
-```
-
----
-
-## Cleaning Up Confusion
-
-### Desktop `OpenClaw-AI-CMO` folder
-This is a **stale leftover** from initial setup. It only contains an empty `logs/` folder (4KB). **Safe to delete:**
-```bash
-rm -rf ~/Desktop/OpenClaw-AI-CMO
-```
-
-### Desktop `INBharat Ai` folder
-If empty, also safe to delete. The real InBharat Bot lives on the external HD.
-
-### Where is the REAL system?
-Everything lives on your **external hard drive** at:
-```
-/Volumes/Expansion/CMO-10million/
-```
-Make sure the external HD is plugged in before using any commands.
-
----
-
-## Troubleshooting
-
-### "Ollama not running"
-```bash
-ollama serve &
-# Wait 5 seconds, then retry your command
-```
-
-### "Bot root not found"
-Your external HD isn't mounted. Plug it in and check:
-```bash
-ls /Volumes/Expansion/CMO-10million/
-```
-
-### "No search results" / "Very few results"
-Check your internet connection. The world scanner uses DuckDuckGo.
-
-### "ERROR: No response from model"
-Ollama is running but the model isn't loaded:
-```bash
-ollama pull qwen3:8b
-```
-
-### "jq: command not found"
-Install jq:
-```bash
-brew install jq
-```
-
-### "Command not found: python3"
-Install Python:
-```bash
-brew install python3
+├── MarketingToolData/                         ← Research data
+└── README.md                                  ← THIS FILE
 ```
 
 ---
 
 ## Cost
 
-**Everything is free.**
-
 | Component | Cost |
-|-----------|------|
-| Ollama (local AI) | Free — runs on your Mac |
-| Groq API (GPT-OSS 120B) | Free tier |
+|---|---|
+| Ollama (qwen3:8b, local) | Free |
+| Groq (gateway agent) | Free tier |
+| OpenAI (images only) | Pay per image |
+| HeyGen (avatar videos) | Free tier / paid |
 | DuckDuckGo (web search) | Free |
-| OpenClaw gateway | Free (npm package) |
-| All scripts and skills | Free (your own code) |
+| Discord (webhook posting) | Free |
+| Playwright (browser posting) | Free |
 
 ---
 
-## Summary: The 5 Things You Actually Need to Remember
+## Troubleshooting
 
-1. **Always `cd /Volumes/Expansion/CMO-10million` first**
-2. **Make sure Ollama is running** (`ollama serve &`)
-3. **Use `bash OpenClawData/inbharat-bot/inbharat-run.sh help`** to see all commands
-4. **The Desktop CMO folder is junk** — delete it
-5. **Everything is free** — no API costs, no cloud fees
+| Issue | Fix |
+|---|---|
+| "Ollama not running" | `ollama serve &` |
+| "Bot root not found" | Plug in external HD, check `/Volumes/Expansion/` |
+| "No search results" | Check internet connection |
+| "No response from model" | `ollama pull qwen3:8b` |
+| "jq: command not found" | `brew install jq` |
+| "Session expired" on platform | Re-run `python3 post_<platform>.py --login` |
+
+---
+
+## 5 Things to Remember
+
+1. **Plug in the external HD** before using anything
+2. **Ollama must be running** (`ollama serve &`)
+3. **WhatsApp is the primary interface** — just text naturally
+4. **Nothing publishes without your approval** — approval-first system
+5. **Health check:** `bash OpenClawData/scripts/health-check.sh`

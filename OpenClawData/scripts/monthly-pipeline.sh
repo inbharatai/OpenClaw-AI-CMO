@@ -20,7 +20,7 @@ DRY_RUN=""
 [ "$1" = "--dry-run" ] && DRY_RUN="--dry-run"
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -86,12 +86,13 @@ run_task "Offer Positioning Review" \
 # ===== TASK 5: Archive Cleanup =====
 run_task "Archive Cleanup" \
     "echo 'Archiving old queue items...' && \
+    mkdir -p \"$EXPORTS_DIR/archive\" && \
     ARCHIVED=0 && \
-    for CH_DIR in '$QUEUES_DIR'/*/approved; do
-        [ -d \"\$CH_DIR\" ] || continue
-        while IFS= read -r -d '' f; do
-            mv \"\$f\" '$EXPORTS_DIR/archive/' 2>/dev/null && ARCHIVED=\$((ARCHIVED + 1))
-        done < <(find \"\$CH_DIR\" -type f -name '*.md' -mtime +14 -print0 2>/dev/null)
+    for CH_DIR in \"$QUEUES_DIR\"/*/approved; do \
+        [ -d \"\$CH_DIR\" ] || continue; \
+        while IFS= read -r -d '' f; do \
+            mv \"\$f\" \"$EXPORTS_DIR/archive/\" 2>/dev/null && ARCHIVED=\$((ARCHIVED + 1)); \
+        done < <(find \"\$CH_DIR\" -type f -name '*.md' -mtime +14 -print0 2>/dev/null); \
     done && \
     echo \"Archived \$ARCHIVED old items\""
 

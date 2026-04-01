@@ -13,7 +13,7 @@ DATE=$(date '+%Y-%m-%d')
 MONTH=$(date '+%Y-%m')
 
 mkdir -p "$BUDGET_DIR"
-log() { echo "[$TS] $1" >> "$LOG"; echo "$1"; }
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG"; echo "$1"; }
 
 # Budget caps
 DAILY_CAP=5.00
@@ -26,10 +26,10 @@ ACTION="${1:---status}"
 
 get_total() {
   local PERIOD_FILE="$1"
-  python3 -c "
+  BUDGET_FILE="$PERIOD_FILE" python3 -c "
+import json, os
 total = 0
-for line in open('$PERIOD_FILE'):
-    import json
+for line in open(os.environ['BUDGET_FILE']):
     try: total += json.loads(line.strip()).get('cost', 0)
     except: pass
 print(f'{total:.2f}')
@@ -40,28 +40,29 @@ case "$ACTION" in
   --status)
     MONTHLY_TOTAL=$(get_total "$SPEND_LOG")
     # Today's spend
-    TODAY_TOTAL=$(python3 -c "
-import json
+    TODAY_TOTAL=$(BUDGET_FILE="$SPEND_LOG" BUDGET_DATE="$DATE" python3 -c "
+import json, os
 total = 0
-for line in open('$SPEND_LOG'):
+for line in open(os.environ['BUDGET_FILE']):
     try:
         e = json.loads(line.strip())
-        if e.get('date','') == '$DATE': total += e.get('cost', 0)
+        if e.get('date','') == os.environ['BUDGET_DATE']: total += e.get('cost', 0)
     except: pass
 print(f'{total:.2f}')
 " 2>/dev/null || echo "0.00")
-    
+
     log "=== Budget Status ==="
     log "  Today: \$$TODAY_TOTAL / \$$DAILY_CAP"
     log "  Month: \$$MONTHLY_TOTAL / \$$MONTHLY_CAP"
     log "  Local models: \$0 (Ollama)"
     
     # Alerts
-    python3 -c "
-today = float('$TODAY_TOTAL')
-month = float('$MONTHLY_TOTAL')
-dcap = float('$DAILY_CAP')
-mcap = float('$MONTHLY_CAP')
+    BG_TODAY="$TODAY_TOTAL" BG_MONTH="$MONTHLY_TOTAL" BG_DCAP="$DAILY_CAP" BG_MCAP="$MONTHLY_CAP" python3 -c "
+import os
+today = float(os.environ['BG_TODAY'])
+month = float(os.environ['BG_MONTH'])
+dcap = float(os.environ['BG_DCAP'])
+mcap = float(os.environ['BG_MCAP'])
 if today >= dcap: print('  ⛔ DAILY CAP REACHED')
 elif today >= dcap * 0.8: print('  ⚠️ DAILY 80% WARNING')
 if month >= mcap: print('  ⛔ MONTHLY CAP REACHED')
@@ -79,17 +80,17 @@ if today == 0 and month == 0: print('  ✅ All local, zero cost')
 
   --check)
     AMOUNT="${2:?Missing amount to check}"
-    TODAY_TOTAL=$(python3 -c "
-import json
+    TODAY_TOTAL=$(BUDGET_FILE="$SPEND_LOG" BUDGET_DATE="$DATE" python3 -c "
+import json, os
 total = 0
-for line in open('$SPEND_LOG'):
+for line in open(os.environ['BUDGET_FILE']):
     try:
         e = json.loads(line.strip())
-        if e.get('date','') == '$DATE': total += e.get('cost', 0)
+        if e.get('date','') == os.environ['BUDGET_DATE']: total += e.get('cost', 0)
     except: pass
 print(f'{total:.2f}')
 " 2>/dev/null || echo "0.00")
-    
+
     WOULD_BE=$(python3 -c "print(f'{float(\"$TODAY_TOTAL\") + float(\"$AMOUNT\"):.2f}')" 2>/dev/null)
     if python3 -c "exit(0 if float('$WOULD_BE') <= float('$DAILY_CAP') else 1)" 2>/dev/null; then
       echo "APPROVED"

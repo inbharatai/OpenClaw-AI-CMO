@@ -19,7 +19,7 @@ DRY_RUN=false
 [ "$1" = "--dry-run" ] && DRY_RUN=true
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -92,8 +92,16 @@ while IFS= read -r -d '' FILE; do
         log "PRODUCED [discord news]: $DISCORD_FILE"
     fi
 
-    # Generate LinkedIn variant for news (BLOCKED — linkedin disabled by policy)
-    log "SKIP [linkedin news]: blocked by policy"
+    # Generate LinkedIn variant for news
+    LINKEDIN_NEWS=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
+        "Adapt this AI news summary for LinkedIn (max 3000 chars, professional tone). Content: $(echo "$NEWS_SUMMARY" | head -c 800)" \
+        "qwen3:8b" 2>/dev/null | tail -n +5)
+
+    if [ -n "$LINKEDIN_NEWS" ]; then
+        LI_FILE="$QUEUES_DIR/linkedin/pending/linkedin-news-$DATE_TAG-$SLUG.md"
+        echo "$LINKEDIN_NEWS" > "$LI_FILE"
+        log "PRODUCED [linkedin news]: $LI_FILE"
+    fi
 
     echo "$FILE" >> "$PROCESSED_LOG"
     TOTAL_PROCESSED=$((TOTAL_PROCESSED + 1))

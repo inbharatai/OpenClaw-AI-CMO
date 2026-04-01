@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenClaw Content Package",
+  "description": "Structured output from OpenClaw content generation",
+  "type": "object",
+  "required": ["content_id", "source_pipeline", "product", "bucket", "goal", "platforms", "status", "approval_level"],
+  "properties": {
+    "content_id": {
+      "type": "string",
+      "pattern": "^CP-\\d{4}-\\d{2}-\\d{2}-\\d{3}$"
+    },
+    "source_pipeline": {
+      "type": "string",
+      "enum": ["native", "amplify"]
+    },
+    "source_campaign_id": {
+      "type": ["string", "null"],
+      "description": "CAMP-ID if from amplification pipeline, null if native"
+    },
+    "product": { "type": "string" },
+    "bucket": { "type": "string" },
+    "goal": { "type": "string" },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["instagram", "shorts", "linkedin", "x", "discord"]
+      }
+    },
+    "hook": { "type": "string" },
+    "summary": { "type": "string" },
+    "platform_content": {
+      "type": "object",
+      "properties": {
+        "instagram_caption": { "type": "string" },
+        "shorts_title": { "type": "string" },
+        "shorts_description": { "type": "string" },
+        "linkedin_post": { "type": "string" },
+        "x_tweet": { "type": "string" },
+        "x_thread": { "type": "array", "items": { "type": "string" } },
+        "discord_message": { "type": "string" }
+      }
+    },
+    "image_brief": { "type": ["string", "null"] },
+    "video_brief": { "type": ["string", "null"] },
+    "cover_brief": { "type": ["string", "null"] },
+    "proof_requirements": { "type": "string" },
+    "cta": { "type": "string" },
+    "restricted_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "approved", "published", "blocked"]
+    },
+    "approval_level": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3"]
+    },
+    "created_date": { "type": "string", "format": "date" },
+    "published_date": { "type": ["string", "null"], "format": "date" }
+  }
+}

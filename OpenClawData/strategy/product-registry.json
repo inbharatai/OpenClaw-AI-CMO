@@ -1,0 +1,238 @@
+{
+  "products": [
+    {
+      "id": "inbharat",
+      "name": "InBharat AI",
+      "tagline": "India-first AI company building accessible, practical AI tools for Indian users, businesses, and institutions.",
+      "status": "live",
+      "category": "platform",
+      "website": "https://inbharat.ai",
+      "repo": "https://github.com/inbharatai/inbharatai",
+      "platforms": ["web"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "Building AI tools for India",
+        "Multiple products live and in development",
+        "Solo founder building real solutions",
+        "India-first approach to AI",
+        "Active development across 10+ GitHub repositories"
+      ],
+      "restricted_claims": [
+        "No specific user numbers without verification",
+        "No government partnerships unless signed",
+        "No 'largest' or 'first' claims without proof",
+        "No revenue figures unless verified",
+        "No direct competitor comparisons without evidence"
+      ],
+      "content_priority": "high",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "sahaayak",
+      "name": "Sahaayak",
+      "tagline": "AI-powered conversational assistant designed for Indian users with multilingual support.",
+      "status": "development",
+      "category": "consumer",
+      "website": "https://sahaayak.ai",
+      "repo": "https://github.com/inbharatai/sahaayak-ai-public",
+      "platforms": ["web"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "AI assistant with Indian language support",
+        "Designed for Indian users",
+        "Multilingual conversational AI"
+      ],
+      "restricted_claims": [
+        "No specific accuracy percentages without testing evidence",
+        "No 'better than ChatGPT' claims without benchmarks",
+        "No user adoption numbers without verification"
+      ],
+      "content_priority": "high",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "sahaayak-seva",
+      "name": "Sahaayak Seva",
+      "tagline": "AI-powered public service and welfare delivery assistant for Indian government schemes and citizen services.",
+      "status": "development",
+      "category": "government",
+      "website": null,
+      "repo": "https://github.com/inbharatai/sahaayakseva-public",
+      "platforms": ["web"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "AI assistant for Indian government scheme access",
+        "Designed for citizens and frontline workers",
+        "Multilingual public service delivery"
+      ],
+      "restricted_claims": [
+        "No claims of government adoption without formal agreements",
+        "No claims of deployment in specific states without evidence",
+        "No citizen count claims without verification",
+        "No accuracy claims for scheme eligibility without testing"
+      ],
+      "content_priority": "high",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "sahayak-os",
+      "name": "Sahayak OS",
+      "tagline": "Framework and operating layer for deploying and managing AI assistant instances.",
+      "status": "experimental",
+      "category": "developer",
+      "website": null,
+      "repo": null,
+      "platforms": ["api"],
+      "languages": ["en"],
+      "key_claims": [
+        "Framework for building AI assistants",
+        "Part of the InBharat AI ecosystem"
+      ],
+      "restricted_claims": [
+        "No enterprise adoption claims without evidence",
+        "No performance benchmarks without testing"
+      ],
+      "content_priority": "low",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "testsprep",
+      "name": "TestsPrep",
+      "tagline": "AI-powered test preparation platform for Indian competitive exams and assessments.",
+      "status": "development",
+      "category": "consumer",
+      "website": "https://testsprep.in",
+      "repo": "https://github.com/inbharatai/testsprep.in",
+      "platforms": ["web"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "AI-powered test prep for Indian exams",
+        "Practice questions aligned to Indian syllabus"
+      ],
+      "restricted_claims": [
+        "No 'guaranteed results' or score improvement percentages without data",
+        "No ranking claims without independent verification",
+        "No comparison to coaching institutes without evidence"
+      ],
+      "content_priority": "high",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "uniassist",
+      "name": "UniAssist",
+      "tagline": "AI-powered university and higher education assistant for Indian students.",
+      "status": "development",
+      "category": "consumer",
+      "website": "https://uniassist.ai",
+      "repo": "https://github.com/inbharatai/uniassist.ai",
+      "platforms": ["web"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "AI assistant for Indian university students",
+        "Guidance for Indian higher education"
+      ],
+      "restricted_claims": [
+        "No admission success rate claims without data",
+        "No specific university endorsements without verification"
+      ],
+      "content_priority": "medium",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "phoring",
+      "name": "Phoring",
+      "tagline": "AI-enhanced communication and calling platform.",
+      "status": "development",
+      "category": "consumer",
+      "website": "https://phoring.com",
+      "repo": "https://github.com/inbharatai/phoring",
+      "platforms": ["web", "mobile"],
+      "languages": ["en", "hi"],
+      "key_claims": [
+        "AI-enhanced communication tool",
+        "Smart calling with AI features"
+      ],
+      "restricted_claims": [
+        "No call quality guarantees without testing evidence",
+        "No telecom comparison claims without benchmarks"
+      ],
+      "content_priority": "medium",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "codein",
+      "name": "CodeIn",
+      "tagline": "AI-powered coding assistance and education platform designed for Indian developers and students.",
+      "status": "experimental",
+      "category": "developer",
+      "website": null,
+      "repo": null,
+      "platforms": ["web"],
+      "languages": ["en"],
+      "key_claims": [
+        "AI coding assistant designed for Indian developers",
+        "Programming education with AI support"
+      ],
+      "restricted_claims": [
+        "No accuracy or quality comparison claims without benchmarks",
+        "No adoption metrics without verification"
+      ],
+      "content_priority": "low",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "agent-arcade",
+      "name": "Agent Arcade",
+      "tagline": "Platform for building, testing, and showcasing AI agents in interactive scenarios.",
+      "status": "experimental",
+      "category": "developer",
+      "website": null,
+      "repo": "https://github.com/inbharatai/agent-arcade-gateway",
+      "platforms": ["web", "api"],
+      "languages": ["en"],
+      "key_claims": [
+        "Platform for experimenting with AI agents",
+        "Open source agent development environment"
+      ],
+      "restricted_claims": [
+        "No adoption or usage metrics without evidence"
+      ],
+      "content_priority": "medium",
+      "last_verified": "2026-04-01"
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "tagline": "Multi-channel AI gateway for content creation, approval, and distribution with built-in safety controls.",
+      "status": "development",
+      "category": "developer",
+      "website": null,
+      "repo": "https://github.com/inbharatai/OpenClaw-AI-CMO",
+      "platforms": ["api"],
+      "languages": ["en"],
+      "key_claims": [
+        "Open source AI content operations tool",
+        "Multi-channel content pipeline with approval controls",
+        "Local-first AI with optional cloud models",
+        "66+ content generation skills",
+        "4-level approval system with risk scoring",
+        "14 channel support with per-channel guardrails",
+        "Shell-script infrastructure (transparent, auditable, hackable)"
+      ],
+      "restricted_claims": [
+        "No user count claims without GitHub metrics",
+        "No 'production-ready for enterprise' without formal testing",
+        "No comparison to commercial tools without benchmarks"
+      ],
+      "content_priority": "high",
+      "last_verified": "2026-04-01"
+    }
+  ],
+  "meta": {
+    "parent_company": "InBharat AI",
+    "founder": "Reeturaj Goswami",
+    "version": "1.0.0",
+    "last_updated": "2026-04-01",
+    "total_products": 10
+  }
+}

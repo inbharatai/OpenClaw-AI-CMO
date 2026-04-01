@@ -89,3 +89,20 @@
 [2026-03-25 18:22:38] --- Stage 5: report ---
 [2026-03-25 18:22:38] Stage 5 (report): COMPLETE in 0s
 [2026-03-25 18:22:38] === DAILY PIPELINE COMPLETE — pending=0 approved=0 review=8 blocked=80 ===
+[2026-03-31 20:11:39] === DAILY PIPELINE STARTED — 2026-03-31 ===
+[2026-03-31 20:11:39] [DRY RUN MODE]
+[2026-03-31 20:11:39] --- Stage 1: intake ---
+[2026-03-31 20:11:39] Stage 1 (intake): COMPLETE in 1s
+[2026-03-31 20:11:39] --- Stage 2a: newsroom ---
+[2026-03-31 20:11:39] Stage 2a (newsroom): COMPLETE in 1s
+[2026-03-31 20:11:39] --- Stage 2b: product-updates ---
+[2026-03-31 20:11:39] Stage 2b (product-updates): COMPLETE in 0s
+[2026-03-31 20:11:39] --- Stage 2c: produce ---
+[2026-03-31 20:11:39] Stage 2c (produce): COMPLETE in 4s
+[2026-03-31 20:11:39] --- Stage 3: approve ---
+[2026-03-31 20:11:39] Stage 3 (approve): COMPLETE in 126s
+[2026-03-31 20:11:39] --- Stage 4: distribute ---
+[2026-03-31 20:11:39] Stage 4 (distribute): COMPLETE in 0s
+[2026-03-31 20:11:39] --- Stage 5: report ---
+[2026-03-31 20:11:39] Stage 5 (report): COMPLETE in 1s
+[2026-03-31 20:11:39] === DAILY PIPELINE COMPLETE — pending=10 approved=0 review=4 blocked=8 ===

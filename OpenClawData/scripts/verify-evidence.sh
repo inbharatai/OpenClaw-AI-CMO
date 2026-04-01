@@ -50,7 +50,7 @@ if [ "$1" = "--system" ]; then
     fi
 
     # Models
-    for MODEL in "qwen3:8b" "qwen3:8b"; do
+    for MODEL in "qwen3:8b" "qwen2.5-coder:7b"; do
         TOTAL=$((TOTAL+1))
         if curl -s --max-time 5 http://127.0.0.1:11434/api/tags 2>/dev/null | grep -q "$MODEL"; then
             echo "✅ Model available: $MODEL"
@@ -85,7 +85,7 @@ if [ "$1" = "--system" ]; then
 
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     echo "Result: $PASS/$TOTAL passed"
-    echo "[$TIMESTAMP] SYSTEM CHECK: $PASS/$TOTAL passed" >> "$LOG_FILE" 2>/dev/null
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] SYSTEM CHECK: $PASS/$TOTAL passed" >> "$LOG_FILE" 2>/dev/null
 
     if [ "$FAIL" -gt 0 ]; then
         exit 1
@@ -117,7 +117,7 @@ done
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Result: $PASS/$TOTAL verified"
-echo "[$TIMESTAMP] FILE CHECK: $PASS/$TOTAL verified. Files: $*" >> "$LOG_FILE" 2>/dev/null
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] FILE CHECK: $PASS/$TOTAL verified. Files: $*" >> "$LOG_FILE" 2>/dev/null
 
 if [ "$FAIL" -gt 0 ]; then
     exit 1

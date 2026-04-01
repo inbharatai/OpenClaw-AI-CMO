@@ -26,7 +26,7 @@ while [ $# -gt 0 ]; do
 done
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -216,7 +216,7 @@ json.dump(meta, open('$META_FILE','w'), indent=2)
         log "PRODUCED: $OUTPUT_FILE → queued at $QUEUE_FILE"
 
         # Also generate channel-adapted versions if multiple channels suggested
-        if echo "$CHANNELS" | grep -qE "linkedin|x |discord|instagram"; then
+        if echo "$CHANNELS" | grep -qE "linkedin|x$|x,|discord|instagram"; then
             # Generate Discord announcement if suggested
             if echo "$CHANNELS" | grep -qi "discord"; then
                 DISCORD_OUT=$("$SCRIPTS_DIR/skill-runner.sh" discord-announcement-writer \
@@ -229,8 +229,8 @@ json.dump(meta, open('$META_FILE','w'), indent=2)
                 fi
             fi
 
-            # Generate LinkedIn variant if suggested (BLOCKED — linkedin disabled by policy)
-            if false && echo "$CHANNELS" | grep -qi "linkedin"; then
+            # Generate LinkedIn variant if suggested
+            if echo "$CHANNELS" | grep -qi "linkedin"; then
                 LINKEDIN_OUT=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
                     "Adapt this content for LinkedIn (max 3000 chars, professional tone). Content: $(echo "$GENERATED" | head -c 800)" \
                     "qwen3:8b" 2>/dev/null | tail -n +5)

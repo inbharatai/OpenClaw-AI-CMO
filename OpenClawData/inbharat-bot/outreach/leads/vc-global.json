@@ -1,0 +1,187 @@
+{
+  "type": "vc-global",
+  "description": "Top 20 global VCs interested in AI and frontier technology",
+  "last_updated": "2026-04-01",
+  "leads": [
+    {
+      "firm": "Andreessen Horowitz (a16z)",
+      "focus": ["AI/ML", "Enterprise", "Consumer", "Crypto", "Bio"],
+      "website": "https://a16z.com",
+      "apply_url": "https://a16z.com/pitch/",
+      "stage": "Seed to Growth",
+      "location": "Menlo Park, CA",
+      "notes": "Dedicated AI fund; a16z Infra fund for AI/ML companies"
+    },
+    {
+      "firm": "Sequoia Capital",
+      "focus": ["AI/ML", "Enterprise", "Consumer", "FinTech"],
+      "website": "https://sequoiacap.com",
+      "apply_url": "https://www.sequoiacap.com/arc/",
+      "stage": "Seed to Growth",
+      "location": "Menlo Park, CA",
+      "notes": "Arc program for early stage; largest global VC"
+    },
+    {
+      "firm": "Y Combinator",
+      "focus": ["AI/ML", "All sectors", "Developer Tools"],
+      "website": "https://ycombinator.com",
+      "apply_url": "https://www.ycombinator.com/apply/",
+      "stage": "Pre-Seed, Seed",
+      "location": "San Francisco, CA",
+      "notes": "Batch applications; $500K standard deal; strong AI cohorts"
+    },
+    {
+      "firm": "Accel",
+      "focus": ["AI/ML", "SaaS", "Enterprise", "Cybersecurity"],
+      "website": "https://accel.com",
+      "apply_url": "https://accel.com/contact",
+      "stage": "Seed, Series A, Series B",
+      "location": "Palo Alto, CA",
+      "notes": "Global presence including India; backed Slack, Dropbox"
+    },
+    {
+      "firm": "Benchmark",
+      "focus": ["AI/ML", "Enterprise", "Consumer", "Marketplaces"],
+      "website": "https://benchmark.com",
+      "apply_url": "https://benchmark.com",
+      "stage": "Seed, Series A",
+      "location": "San Francisco, CA",
+      "notes": "Small partnership model; high-conviction bets"
+    },
+    {
+      "firm": "Greylock Partners",
+      "focus": ["AI/ML", "Enterprise", "Consumer", "Developer Tools"],
+      "website": "https://greylock.com",
+      "apply_url": "https://greylock.com/contact",
+      "stage": "Seed, Series A",
+      "location": "Menlo Park, CA",
+      "notes": "Incubation program; backed LinkedIn, Discord"
+    },
+    {
+      "firm": "Index Ventures",
+      "focus": ["AI/ML", "Enterprise", "FinTech", "Gaming"],
+      "website": "https://indexventures.com",
+      "apply_url": "https://indexventures.com/contact",
+      "stage": "Seed to Growth",
+      "location": "San Francisco, London",
+      "notes": "Europe + US focus; backed Figma, Notion"
+    },
+    {
+      "firm": "Founders Fund",
+      "focus": ["AI/ML", "DeepTech", "Space", "Biotech", "Defense"],
+      "website": "https://foundersfund.com",
+      "apply_url": "https://foundersfund.com/contact",
+      "stage": "Seed to Growth",
+      "location": "San Francisco, CA",
+      "notes": "Peter Thiel's fund; bets on transformative technology"
+    },
+    {
+      "firm": "Lightspeed Venture Partners",
+      "focus": ["AI/ML", "Enterprise", "Consumer", "Crypto"],
+      "website": "https://lsvp.com",
+      "apply_url": "https://lsvp.com/contact",
+      "stage": "Seed to Growth",
+      "location": "Menlo Park, CA",
+      "notes": "Multi-stage; global with India-dedicated team"
+    },
+    {
+      "firm": "GV (Google Ventures)",
+      "focus": ["AI/ML", "Enterprise", "HealthTech", "Life Science"],
+      "website": "https://gv.com",
+      "apply_url": "https://gv.com/contact",
+      "stage": "Seed, Series A, Series B",
+      "location": "Mountain View, CA",
+      "notes": "Google's venture arm; deep AI expertise and Google ecosystem access"
+    },
+    {
+      "firm": "Khosla Ventures",
+      "focus": ["AI/ML", "DeepTech", "Climate", "HealthTech"],
+      "website": "https://khoslaventures.com",
+      "apply_url": "https://khoslaventures.com/contact",
+      "stage": "Seed to Growth",
+      "location": "Menlo Park, CA",
+      "notes": "Vinod Khosla; strong India connection; thesis on AI transformation"
+    },
+    {
+      "firm": "NEA (New Enterprise Associates)",
+      "focus": ["AI/ML", "Enterprise", "HealthTech", "Consumer"],
+      "website": "https://nea.com",
+      "apply_url": "https://nea.com/contact",
+      "stage": "Seed to Growth",
+      "location": "Menlo Park, CA",
+      "notes": "One of the largest VC funds globally; broad tech coverage"
+    },
+    {
+      "firm": "Battery Ventures",
+      "focus": ["AI/ML", "Enterprise SaaS", "Infrastructure"],
+      "website": "https://battery.com",
+      "apply_url": "https://battery.com/contact",
+      "stage": "Series A to Growth",
+      "location": "Boston, MA / San Francisco, CA",
+      "notes": "Strong enterprise AI thesis; Batteryventures.com/contact"
+    },
+    {
+      "firm": "Insight Partners",
+      "focus": ["AI/ML", "Enterprise SaaS", "Data/Analytics"],
+      "website": "https://insightpartners.com",
+      "apply_url": "https://insightpartners.com/contact",
+      "stage": "Series A to Growth",
+      "location": "New York, NY",
+      "notes": "Growth-stage specialist; ScaleUp program for portfolio"
+    },
+    {
+      "firm": "Tiger Global Management",
+      "focus": ["AI/ML", "SaaS", "Consumer", "FinTech"],
+      "website": "https://tigerglobal.com",
+      "apply_url": "https://tigerglobal.com",
+      "stage": "Series A to Growth",
+      "location": "New York, NY",
+      "notes": "Aggressive growth investor; strong India portfolio"
+    },
+    {
+      "firm": "Coatue Management",
+      "focus": ["AI/ML", "Enterprise", "Consumer Tech"],
+      "website": "https://coatue.com",
+      "apply_url": "https://coatue.com/contact",
+      "stage": "Series A to Growth",
+      "location": "New York, NY",
+      "notes": "Tech hedge fund + VC; data-driven investment approach"
+    },
+    {
+      "firm": "General Catalyst",
+      "focus": ["AI/ML", "Enterprise", "HealthTech", "FinTech"],
+      "website": "https://generalcatalyst.com",
+      "apply_url": "https://generalcatalyst.com/contact",
+      "stage": "Seed to Growth",
+      "location": "Cambridge, MA / San Francisco, CA",
+      "notes": "Responsible Innovation thesis; backed Stripe, Snap"
+    },
+    {
+      "firm": "Bessemer Venture Partners",
+      "focus": ["AI/ML", "Cloud", "Enterprise SaaS", "Developer Tools"],
+      "website": "https://bvp.com",
+      "apply_url": "https://bvp.com/contact",
+      "stage": "Seed to Growth",
+      "location": "San Francisco, CA",
+      "notes": "Cloud index expertise; India team active in AI"
+    },
+    {
+      "firm": "First Round Capital",
+      "focus": ["AI/ML", "SaaS", "Consumer", "Developer Tools"],
+      "website": "https://firstround.com",
+      "apply_url": "https://firstround.com/contact",
+      "stage": "Pre-Seed, Seed",
+      "location": "San Francisco, CA",
+      "notes": "Early-stage specialist; strong community and platform support"
+    },
+    {
+      "firm": "Radical Ventures",
+      "focus": ["AI/ML", "DeepTech", "Responsible AI", "AI Infrastructure"],
+      "website": "https://radical.vc",
+      "apply_url": "https://radical.vc/contact",
+      "stage": "Seed, Series A",
+      "location": "Toronto, Canada",
+      "notes": "AI-only fund; backed by Geoffrey Hinton; focus on foundational AI"
+    }
+  ]
+}

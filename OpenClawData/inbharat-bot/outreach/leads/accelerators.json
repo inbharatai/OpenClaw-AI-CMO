@@ -1,0 +1,117 @@
+{
+  "type": "accelerators",
+  "description": "Top 10 AI/startup accelerators relevant to InBharat AI",
+  "last_updated": "2026-04-01",
+  "leads": [
+    {
+      "name": "Y Combinator",
+      "website": "https://ycombinator.com",
+      "apply_url": "https://www.ycombinator.com/apply/",
+      "focus": "All sectors, strong AI cohorts, global startups",
+      "location": "San Francisco, CA",
+      "deal": "$500K for 7% equity",
+      "batch_cycle": "Winter (Jan) and Summer (Jun) batches",
+      "deadline_info": "Applications typically close 2-3 months before batch starts",
+      "notes": "Best accelerator globally; strong India founder representation"
+    },
+    {
+      "name": "Techstars",
+      "website": "https://techstars.com",
+      "apply_url": "https://www.techstars.com/accelerators",
+      "focus": "Industry-specific programs, AI/ML, enterprise",
+      "location": "Multiple cities globally",
+      "deal": "$120K for 6% equity",
+      "batch_cycle": "Multiple programs throughout the year",
+      "deadline_info": "Varies by program; check individual accelerator pages",
+      "notes": "Multiple AI-specific programs; Techstars AI program"
+    },
+    {
+      "name": "500 Global",
+      "website": "https://500.co",
+      "apply_url": "https://500.co/accelerator",
+      "focus": "Emerging market startups, AI, FinTech",
+      "location": "San Francisco, CA / Singapore",
+      "deal": "$150K for equity",
+      "batch_cycle": "Rolling batches",
+      "deadline_info": "Rolling applications; regional programs in SE Asia and India",
+      "notes": "Strong emerging market focus; India and SE Asia programs"
+    },
+    {
+      "name": "Microsoft for Startups (Founders Hub)",
+      "website": "https://www.microsoft.com/en-us/startups",
+      "apply_url": "https://foundershub.startups.microsoft.com/signup",
+      "focus": "AI, cloud, enterprise SaaS, developer tools",
+      "location": "Global (virtual)",
+      "deal": "Up to $150K Azure credits, no equity",
+      "batch_cycle": "Rolling acceptance",
+      "deadline_info": "No deadline; apply anytime",
+      "notes": "Azure credits, OpenAI API credits, GitHub Copilot, mentorship"
+    },
+    {
+      "name": "Google for Startups Accelerator",
+      "website": "https://startup.google.com",
+      "apply_url": "https://startup.google.com/accelerator/",
+      "focus": "AI/ML, Cloud, India-specific programs",
+      "location": "Global / Bangalore for India program",
+      "deal": "Google Cloud credits, mentorship, no equity",
+      "batch_cycle": "Multiple programs per year",
+      "deadline_info": "India AI accelerator typically opens H1 each year",
+      "notes": "Google for Startups Accelerator: India specific AI/ML program"
+    },
+    {
+      "name": "NASSCOM DeepTech Club",
+      "website": "https://nasscom.in",
+      "apply_url": "https://nasscom.in/deeptech",
+      "focus": "DeepTech, AI/ML, IoT, Blockchain, India startups",
+      "location": "India (multiple cities)",
+      "deal": "Mentorship, ecosystem access, no equity",
+      "batch_cycle": "Annual cohorts",
+      "deadline_info": "Check NASSCOM website for current cohort applications",
+      "notes": "India's largest tech body; strong government and enterprise connections"
+    },
+    {
+      "name": "T-Hub",
+      "website": "https://t-hub.co",
+      "apply_url": "https://t-hub.co/programs/",
+      "focus": "AI, IoT, Enterprise Tech, Social Impact",
+      "location": "Hyderabad, India",
+      "deal": "Lab access, mentorship, corporate connects, no equity",
+      "batch_cycle": "Multiple programs per year",
+      "deadline_info": "Various programs; check T-Hub programs page",
+      "notes": "India's largest incubator; Telangana government backed"
+    },
+    {
+      "name": "IIM Bangalore NSRCEL",
+      "website": "https://nsrcel.org",
+      "apply_url": "https://nsrcel.org/programs",
+      "focus": "Social enterprise, AI for impact, EdTech, HealthTech",
+      "location": "Bangalore, India",
+      "deal": "Mentorship, grants up to INR 30L, workspace, no equity",
+      "batch_cycle": "Multiple programs per year",
+      "deadline_info": "Check NSRCEL programs page for current openings",
+      "notes": "Strong social impact focus; good for India-first AI products"
+    },
+    {
+      "name": "Antler India",
+      "website": "https://antler.co/location/india",
+      "apply_url": "https://antler.co/apply",
+      "focus": "AI/ML, SaaS, DeepTech, early-stage founders",
+      "location": "Bangalore, India",
+      "deal": "$250K for equity; co-founder matching",
+      "batch_cycle": "2-3 cohorts per year",
+      "deadline_info": "Rolling applications; Bangalore-based cohorts",
+      "notes": "Global VC + accelerator; strong in India; also invests at Day 0"
+    },
+    {
+      "name": "Plug and Play Tech Center",
+      "website": "https://plugandplaytechcenter.com",
+      "apply_url": "https://plugandplaytechcenter.com/join/",
+      "focus": "AI, Enterprise, FinTech, HealthTech, Supply Chain",
+      "location": "Sunnyvale, CA / global",
+      "deal": "Corporate partnership access, mentorship, optional investment",
+      "batch_cycle": "Industry-specific batches throughout the year",
+      "deadline_info": "Rolling applications for various verticals",
+      "notes": "Strong corporate innovation connections; 500+ corporate partners"
+    }
+  ]
+}

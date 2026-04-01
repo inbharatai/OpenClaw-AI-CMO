@@ -24,7 +24,7 @@ fi
 # Check 1: Is the external drive mounted?
 if [ ! -d "$WORKSPACE_ROOT" ]; then
     echo "BLOCKED: External drive not mounted at $WORKSPACE_ROOT"
-    echo "[$TIMESTAMP] BLOCKED: Drive not mounted. Attempted: $TARGET_PATH" >> "$LOG_FILE" 2>/dev/null
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] BLOCKED: Drive not mounted. Attempted: $TARGET_PATH" >> "$LOG_FILE" 2>/dev/null
     exit 1
 fi
 
@@ -35,19 +35,19 @@ case "$TARGET_PATH" in
         case "$TARGET_PATH" in
             "$WORKSPACE_ROOT"/OllamaModels/*)
                 echo "BLOCKED: OllamaModels is read-only (managed by Ollama)"
-                echo "[$TIMESTAMP] BLOCKED: Read-only area. Path: $TARGET_PATH" >> "$LOG_FILE"
+                echo "[$(date '+%Y-%m-%d %H:%M:%S')] BLOCKED: Read-only area. Path: $TARGET_PATH" >> "$LOG_FILE"
                 exit 1
                 ;;
             *)
                 echo "ALLOWED: $TARGET_PATH"
-                echo "[$TIMESTAMP] ALLOWED: $TARGET_PATH" >> "$LOG_FILE"
+                echo "[$(date '+%Y-%m-%d %H:%M:%S')] ALLOWED: $TARGET_PATH" >> "$LOG_FILE"
                 exit 0
                 ;;
         esac
         ;;
     *)
         echo "BLOCKED: Path is outside workspace root ($WORKSPACE_ROOT)"
-        echo "[$TIMESTAMP] BLOCKED: Outside workspace. Path: $TARGET_PATH" >> "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] BLOCKED: Outside workspace. Path: $TARGET_PATH" >> "$LOG_FILE"
         exit 1
         ;;
 esac

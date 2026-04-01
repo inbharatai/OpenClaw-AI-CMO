@@ -1,27 +1,40 @@
 {
   "bot": "InBharat Bot",
-  "version": "1.0.0",
-  "timestamp": "2026-03-28T05:32:47Z",
+  "version": "3.1.0",
+  "timestamp": "2026-04-01T09:40:49Z",
   "health": {
     "ollama": "running",
     "gateway": "running"
   },
-  "counts": {
-    "scans": 8,
-    "findings": 3,
-    "proposals": 3,
-    "cmo_bridges": 3,
-    "review_pending": 0,
-    "blocked": 0,
-    "approved": 0
+  "lanes": {
+    "india_problems": 2,
+    "ai_gaps": 1,
+    "blogs": 2,
+    "campaigns": 0,
+    "ecosystem": 0,
+    "outreach": 5,
+    "leads": 1,
+    "funding": 1,
+    "podcast": 0,
+    "learning": 1,
+    "reports": 0
   },
-  "last_activity": {
-    "scan": "2026-03-27 22:22",
-    "findings": "2026-03-27 22:24",
-    "proposals": "2026-03-27 22:27"
+  "queues": {
+    "pending": 7,
+    "approved": 4,
+    "publish_ready": 0,
+    "posted": 0
   },
-  "today_logs": {
-    "lines": 23,
-    "errors": 0
+  "approvals": {
+    "review": 2,
+    "blocked": 0
+  },
+  "handoffs": {
+    "pending": 1,
+    "processed": 1
+  },
+  "today": {
+    "log_lines": 453,
+    "errors": 5
   }
 }

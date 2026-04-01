@@ -1,0 +1,56 @@
+{
+  "brief_type": "heygen-production",
+  "generated_at": "20260401-185058",
+  "source_content_package": "OpenClawData/openclaw-media/native-pipeline/output/content-package-2026-04-01-sahaayak-product-proof.json",
+  "content_id": "CP-2026-04-01-123",
+  "product": "Sahaayak",
+  "bucket": "AI for Bharat",
+  "goal": "Educate professionals on India-specific AI applications and challenges",
+  "video_format": {
+    "name": "ig-reel-explainer",
+    "aspect_ratio": "9:16",
+    "duration_target": {
+      "min_seconds": 30,
+      "max_seconds": 60
+    },
+    "layout": "presenter-fullscreen",
+    "scene_type": "single"
+  },
+  "script_text": "India's digital transformation is accelerating, but how is AI adapting to our unique needs?\n\nSahaayak is an AI assistant designed for Indian users, offering multilingual support and practical task completion. It bridges the gap between global AI trends and local requirements, making technology accessible to all.\n\nFollow for insights on how AI is reshaping India's digital future.",
+  "scene_breakdown": [
+    {
+      "scene_number": 1,
+      "description": "Full video — single scene",
+      "script_segment": "India's digital transformation is accelerating, but how is AI adapting to our unique needs?\n\nSahaayak is an AI assistant designed for Indian users, offering multilingual support and practical task completion. It bridges the gap between global AI trends and local requirements, making technology accessible to all.\n\nFollow for insights on how AI is reshaping India's digital future.",
+      "layout_notes": "Use ig-reel-explainer layout as documented in heygen-workflow.md",
+      "background": "As specified in assets_needed"
+    }
+  ],
+  "assets_needed": [
+    {
+      "type": "branded_gradient",
+      "description": "Default branded gradient background",
+      "required": false,
+      "recommended_resolution": "1920x1080"
+    }
+  ],
+  "avatar_instructions": {
+    "gestures": "enthusiastic",
+    "expression": "friendly",
+    "position": "center",
+    "size": "70%",
+    "eye_contact": "camera"
+  },
+  "output_filename": "heygen-ig-reel-explainer-CP-2026-04-01-123-2026-04-01.mp4",
+  "cta": "Follow for insights on how AI is reshaping India's digital future.",
+  "restricted_claims": [
+    "No specific accuracy percentages without testing evidence",
+    "No 'better than ChatGPT' claims without benchmarks"
+  ],
+  "safety": {
+    "script_reviewed": false,
+    "review_note": "REVIEW REQUIRED: Read the script_text and restricted_claims before generating in HeyGen."
+  },
+  "status": "pending",
+  "heygen_status": "brief-generated"
+}

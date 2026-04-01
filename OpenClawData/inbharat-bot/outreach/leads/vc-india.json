@@ -1,0 +1,227 @@
+{
+  "type": "vc-india",
+  "description": "Top 20 Indian VCs/investors focused on AI, DeepTech, and India-first startups",
+  "last_updated": "2026-04-01",
+  "leads": [
+    {
+      "firm": "Blume Ventures",
+      "focus": ["AI/ML", "SaaS", "DeepTech", "Consumer Tech"],
+      "website": "https://blume.vc",
+      "contact_email": "info@blume.vc",
+      "apply_url": "https://blume.vc/contact",
+      "check_size": "$250K - $3M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Mumbai",
+      "notes": "India-focused early stage; strong AI portfolio"
+    },
+    {
+      "firm": "Kalaari Capital",
+      "focus": ["AI/ML", "Consumer Tech", "Enterprise", "HealthTech"],
+      "website": "https://kalaari.com",
+      "contact_email": "info@kalaari.com",
+      "apply_url": "https://kalaari.com/contact-us",
+      "check_size": "$1M - $10M",
+      "stage": "Seed, Series A",
+      "location": "Bangalore",
+      "notes": "Strong focus on India-first companies; active in AI/ML"
+    },
+    {
+      "firm": "Lightspeed India (Lightspeed Venture Partners)",
+      "focus": ["AI/ML", "Enterprise SaaS", "Consumer", "FinTech"],
+      "website": "https://lsvp.com",
+      "contact_email": "india@lsvp.com",
+      "apply_url": "https://lsvp.com/contact",
+      "check_size": "$1M - $15M",
+      "stage": "Seed, Series A, Series B",
+      "location": "Bangalore, Delhi",
+      "notes": "Global fund with dedicated India team; backed Udaan, Byju's early"
+    },
+    {
+      "firm": "Peak XV Partners (formerly Sequoia India)",
+      "focus": ["AI/ML", "SaaS", "Consumer", "FinTech", "HealthTech"],
+      "website": "https://peakxv.com",
+      "contact_email": "info@peakxv.com",
+      "apply_url": "https://peakxv.com/partner-with-us",
+      "check_size": "$500K - $100M",
+      "stage": "Seed to Growth",
+      "location": "Bangalore, Mumbai",
+      "notes": "Surge program for early stage; largest India-SEA fund"
+    },
+    {
+      "firm": "Accel India",
+      "focus": ["AI/ML", "SaaS", "Consumer", "FinTech"],
+      "website": "https://accel.com",
+      "contact_email": "india@accel.com",
+      "apply_url": "https://accel.com/contact",
+      "check_size": "$500K - $15M",
+      "stage": "Seed, Series A",
+      "location": "Bangalore",
+      "notes": "Backed Flipkart, Swiggy; strong in enterprise AI"
+    },
+    {
+      "firm": "Matrix Partners India (Z47)",
+      "focus": ["AI/ML", "SaaS", "Consumer Tech", "FinTech"],
+      "website": "https://matrixpartners.in",
+      "contact_email": "info@matrixpartners.in",
+      "apply_url": "https://matrixpartners.in/contact",
+      "check_size": "$1M - $10M",
+      "stage": "Seed, Series A",
+      "location": "Mumbai, Bangalore",
+      "notes": "Early-stage focused; strong in consumer AI and SaaS"
+    },
+    {
+      "firm": "Nexus Venture Partners",
+      "focus": ["AI/ML", "Enterprise", "DevTools", "DeepTech"],
+      "website": "https://nexusvp.com",
+      "contact_email": "info@nexusvp.com",
+      "apply_url": "https://nexusvp.com/contact",
+      "check_size": "$500K - $10M",
+      "stage": "Seed, Series A",
+      "location": "Mumbai, Bangalore",
+      "notes": "India-US focused; backed Postman, Unacademy"
+    },
+    {
+      "firm": "3one4 Capital",
+      "focus": ["AI/ML", "DeepTech", "SaaS", "Climate Tech"],
+      "website": "https://3one4.com",
+      "contact_email": "pitch@3one4.com",
+      "apply_url": "https://3one4.com/pitch",
+      "check_size": "$500K - $5M",
+      "stage": "Pre-Seed, Seed, Series A",
+      "location": "Bangalore",
+      "notes": "Thesis-driven; dedicated DeepTech and AI focus"
+    },
+    {
+      "firm": "Chiratae Ventures",
+      "focus": ["AI/ML", "Enterprise SaaS", "HealthTech", "FinTech"],
+      "website": "https://chiratae.com",
+      "contact_email": "info@chiratae.com",
+      "apply_url": "https://chiratae.com/contact-us",
+      "check_size": "$1M - $10M",
+      "stage": "Seed, Series A, Series B",
+      "location": "Bangalore",
+      "notes": "20+ year India track record; backed Manthan, Lenskart"
+    },
+    {
+      "firm": "pi Ventures",
+      "focus": ["AI/ML", "DeepTech", "Data Science", "Robotics"],
+      "website": "https://piventures.in",
+      "contact_email": "info@piventures.in",
+      "apply_url": "https://piventures.in/pitch-to-us",
+      "check_size": "$500K - $3M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Bangalore",
+      "notes": "AI-first fund; specifically invests in AI/ML startups"
+    },
+    {
+      "firm": "Stellaris Venture Partners",
+      "focus": ["AI/ML", "SaaS", "Consumer Tech", "D2C"],
+      "website": "https://stellarisvp.com",
+      "contact_email": "hello@stellarisvp.com",
+      "apply_url": "https://stellarisvp.com/contact",
+      "check_size": "$500K - $5M",
+      "stage": "Seed, Series A",
+      "location": "Bangalore",
+      "notes": "Founded by ex-Helion partners; active in early-stage AI"
+    },
+    {
+      "firm": "Speciale Invest",
+      "focus": ["DeepTech", "AI/ML", "Hardware", "Robotics", "Space"],
+      "website": "https://speciale.in",
+      "contact_email": "info@speciale.in",
+      "apply_url": "https://speciale.in/contact",
+      "check_size": "$200K - $2M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Bangalore",
+      "notes": "Pure DeepTech fund; strong technical evaluation"
+    },
+    {
+      "firm": "Inflection Point Ventures",
+      "focus": ["AI/ML", "EdTech", "HealthTech", "FinTech", "D2C"],
+      "website": "https://ipventures.in",
+      "contact_email": "info@ipventures.in",
+      "apply_url": "https://ipventures.in/pitch",
+      "check_size": "$100K - $2M",
+      "stage": "Angel, Pre-Seed, Seed",
+      "location": "Noida, Delhi NCR",
+      "notes": "Angel network + VC; large syndicate of 400+ members"
+    },
+    {
+      "firm": "AngelList India",
+      "focus": ["AI/ML", "SaaS", "General Tech"],
+      "website": "https://angellist.in",
+      "contact_email": "india@angellist.co",
+      "apply_url": "https://angellist.in/raise",
+      "check_size": "$100K - $1M",
+      "stage": "Angel, Pre-Seed",
+      "location": "Bangalore",
+      "notes": "Platform for rolling funds and syndicates; easy access to angel investors"
+    },
+    {
+      "firm": "India Quotient",
+      "focus": ["AI/ML", "Vernacular", "India-first Consumer", "SaaS"],
+      "website": "https://indiaquotient.in",
+      "contact_email": "hello@indiaquotient.in",
+      "apply_url": "https://indiaquotient.in/get-funded",
+      "check_size": "$250K - $3M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Mumbai, Bangalore",
+      "notes": "India-first thesis; loves vernacular/Bharat-focused products"
+    },
+    {
+      "firm": "Omnivore",
+      "focus": ["AgriTech", "FoodTech", "Climate Tech", "Rural AI"],
+      "website": "https://omnivore.vc",
+      "contact_email": "info@omnivore.vc",
+      "apply_url": "https://omnivore.vc/contact",
+      "check_size": "$500K - $5M",
+      "stage": "Seed, Series A",
+      "location": "Mumbai, Bangalore",
+      "notes": "Focus on Bharat/rural; good fit for AI-for-agriculture/rural-India products"
+    },
+    {
+      "firm": "WaterBridge Ventures",
+      "focus": ["AI/ML", "SaaS", "Consumer", "FinTech"],
+      "website": "https://waterbridge.in",
+      "contact_email": "contact@waterbridge.in",
+      "apply_url": "https://waterbridge.in/contact",
+      "check_size": "$500K - $5M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Delhi NCR",
+      "notes": "Early-stage focused; thesis-driven with strong founder support"
+    },
+    {
+      "firm": "Athera Venture Partners",
+      "focus": ["AI/ML", "Enterprise", "FinTech", "HealthTech"],
+      "website": "https://athera.vc",
+      "contact_email": "contact@athera.vc",
+      "apply_url": "https://athera.vc/contact",
+      "check_size": "$500K - $5M",
+      "stage": "Seed, Series A",
+      "location": "Bangalore",
+      "notes": "Formerly Inventus Capital; strong enterprise AI thesis"
+    },
+    {
+      "firm": "Together Fund",
+      "focus": ["AI/ML", "Consumer", "SaaS", "Creator Economy"],
+      "website": "https://together.fund",
+      "contact_email": "hello@together.fund",
+      "apply_url": "https://together.fund/apply",
+      "check_size": "$100K - $1M",
+      "stage": "Pre-Seed, Seed",
+      "location": "Bangalore",
+      "notes": "Operator-angels with startup experience; hands-on support"
+    },
+    {
+      "firm": "Elevation Capital",
+      "focus": ["AI/ML", "SaaS", "Consumer", "FinTech", "EdTech"],
+      "website": "https://elevationcapital.com",
+      "contact_email": "info@elevationcapital.com",
+      "apply_url": "https://elevationcapital.com/contact",
+      "check_size": "$1M - $25M",
+      "stage": "Seed, Series A, Series B",
+      "location": "Gurgaon, Bangalore",
+      "notes": "Formerly SAIF Partners India; backed Meesho, ShareChat, Unacademy"
+    }
+  ]
+}

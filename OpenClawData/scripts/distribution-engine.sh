@@ -28,7 +28,7 @@ while [ $# -gt 0 ]; do
 done
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -234,7 +234,8 @@ else
 fi
 
 # Blocked channels — skip entirely
-BLOCKED_CHANNELS="linkedin"
+# LinkedIn unblocked for posting (2026-03-31). Re-add "linkedin" to block again.
+BLOCKED_CHANNELS=""
 
 for CHANNEL in "${CHANNELS[@]}"; do
     if echo "$BLOCKED_CHANNELS" | grep -qw "$CHANNEL"; then
@@ -259,7 +260,7 @@ for CHANNEL in "${CHANNELS[@]}"; do
         case "$CHANNEL" in
             website) distribute_website "$FILE" ;;
             discord) distribute_discord "$FILE" ;;
-            linkedin|x|facebook|instagram) distribute_social "$CHANNEL" "$FILE" ;;
+            linkedin|x|facebook|instagram|shorts) distribute_social "$CHANNEL" "$FILE" ;;
             email|substack) distribute_email "$FILE" ;;
             heygen) distribute_heygen "$FILE" ;;
             medium|reddit) distribute_social "$CHANNEL" "$FILE" ;;
@@ -268,7 +269,7 @@ for CHANNEL in "${CHANNELS[@]}"; do
 
         TOTAL_DISTRIBUTED=$((TOTAL_DISTRIBUTED + 1))
 
-    done < <(find "$APPROVED_DIR" -maxdepth 1 -type f \( -name "*.md" -o -name "*.txt" \) -print0 2>/dev/null)
+    done < <(find "$APPROVED_DIR" -maxdepth 1 -type f \( -name "*.md" -o -name "*.txt" -o -name "*.json" \) ! -name "._*" -print0 2>/dev/null)
 done
 
 log "=== Distribution Engine Complete ==="

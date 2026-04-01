@@ -1,0 +1,27 @@
+{
+  "content_id": "CP-2026-04-01-123",
+  "source_pipeline": "native",
+  "product": "Sahaayak",
+  "bucket": "AI for Bharat",
+  "goal": "Educate professionals on India-specific AI applications and challenges",
+  "platforms": [
+    "linkedin"
+  ],
+  "hook": "India's digital transformation is accelerating, but how is AI adapting to our unique needs?",
+  "summary": "Sahaayak is an AI assistant designed for Indian users, offering multilingual support and practical task completion. It bridges the gap between global AI trends and local requirements, making technology accessible to all.",
+  "platform_content": {
+    "linkedin_post": "India's digital transformation is accelerating, but how is AI adapting to our unique needs? At InBharat, we're building Sahaayak — an AI assistant tailored for Indian users with multilingual support, practical task completion, and communication patterns rooted in our culture. This isn't just about technology; it's about creating tools that resonate with our diverse linguistic and contextual landscape. 🌟 Join us in redefining AI for Bharat. #AIForBharat #IndiaTech #Sahaayak #AIAssistant #MultilingualAI"
+  },
+  "image_brief": null,
+  "video_brief": null,
+  "cover_brief": null,
+  "proof_requirements": "Include screenshots of Sahaayak's Hindi interface and user testimonials from small businesses.",
+  "cta": "Follow for insights on how AI is reshaping India's digital future.",
+  "restricted_claims": [
+    "No specific accuracy percentages without testing evidence",
+    "No 'better than ChatGPT' claims without benchmarks"
+  ],
+  "heygen_status": "brief-generated",
+  "heygen_brief_path": "/Volumes/Expansion/CMO-10million/OpenClawData/queues/heygen/pending/heygen-brief-CP-2026-04-01-123-20260401-185058.json",
+  "heygen_video_format": "ig-reel-explainer"
+}

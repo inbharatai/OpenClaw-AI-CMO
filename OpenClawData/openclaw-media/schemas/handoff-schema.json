@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InBharat Bot Campaign Handoff",
+  "description": "Structured handoff from InBharat Bot to OpenClaw for content amplification",
+  "type": "object",
+  "required": ["campaign_id", "source_system", "source_lane", "product", "campaign_bucket", "reason", "goal", "priority", "approval_level"],
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "pattern": "^CAMP-\\d{4}-\\d{2}-\\d{2}-\\d{3}$",
+      "description": "Unique campaign identifier"
+    },
+    "source_system": {
+      "type": "string",
+      "enum": ["inbharat-bot"],
+      "description": "Always inbharat-bot for bot-originated campaigns"
+    },
+    "source_lane": {
+      "type": "string",
+      "enum": ["discovery", "india-problems", "ai-gaps", "outreach", "funding", "community", "blogs", "podcast", "build-gaps", "ecosystem-intelligence", "learning"],
+      "description": "Which bot lane generated this campaign"
+    },
+    "product": {
+      "type": "string",
+      "enum": ["InBharat", "Sahaayak", "TestsPrep", "UniAssist", "Phoring", "SahaayakSeva", "OpenClaw", "AgentArcade", "CodeIn", "SahayakOS"],
+      "description": "Primary product this campaign promotes"
+    },
+    "campaign_bucket": {
+      "type": "string",
+      "description": "Must match an approved bucket from content-buckets.md"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Why this campaign matters now"
+    },
+    "goal": {
+      "type": "string",
+      "description": "Specific measurable campaign goal"
+    },
+    "india_relevance": {
+      "type": "string",
+      "description": "Why this matters for India specifically"
+    },
+    "target_stakeholders": {
+      "type": "string",
+      "description": "Who should see this content"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "urgent"]
+    },
+    "proof_required": {
+      "type": "boolean",
+      "default": true
+    },
+    "proof_assets_needed": {
+      "type": "string",
+      "description": "screenshots/demo/data/testimonial/none"
+    },
+    "platform_priority": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["linkedin", "x", "instagram", "shorts", "discord"]
+      }
+    },
+    "founder_presence": {
+      "type": "string",
+      "enum": ["required", "preferred", "optional", "none"]
+    },
+    "heygen_needed": {
+      "type": "boolean",
+      "default": false
+    },
+    "image_needed": {
+      "type": "boolean",
+      "default": false
+    },
+    "video_needed": {
+      "type": "boolean",
+      "default": false
+    },
+    "approval_level": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3"]
+    },
+    "cta": {
+      "type": "string"
+    },
+    "restricted_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "key_messages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "supporting_evidence": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

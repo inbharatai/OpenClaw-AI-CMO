@@ -69,3 +69,8 @@
 [2026-03-25 19:03:05] EXPORTED [x]: x-update-2026-03-25-phase0-e2e-product-v2.md → /Volumes/Expansion/CMO-10million/MarketingToolData/x/
 [2026-03-25 19:03:05] === Distribution Engine Complete ===
 [2026-03-25 19:03:05] Distributed: 14 | Skipped: 5
+[2026-03-31 20:13:51] === Distribution Engine Started ===
+[2026-03-31 20:13:51] [DRY RUN] No distribution will occur
+[2026-03-31 20:13:51] BLOCKED CHANNEL: linkedin — skipping (blocked by policy)
+[2026-03-31 20:13:51] === Distribution Engine Complete ===
+[2026-03-31 20:13:51] Distributed: 0 | Skipped: 0

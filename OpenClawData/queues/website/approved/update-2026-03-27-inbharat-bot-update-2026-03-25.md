@@ -632,7 +632,7 @@ Transparent release notes help users understand changes and contribute to qualit
 ## What's Next
 Additional beta features will be released to expand testing opportunities.
 ````
-</think>
+
 
 Here's a structured summary of the updates and features for **InBharat Bot**, presented in a clear and organized format:
 

@@ -24,7 +24,7 @@ TASK_LOWER=$(echo "$TASK" | tr '[:upper:]' '[:lower:]')
 # Check Ollama is running
 if ! curl -s --max-time 3 "$OLLAMA_URL/api/tags" > /dev/null 2>&1; then
     echo "ERROR: Ollama is not running at $OLLAMA_URL"
-    echo "[$TIMESTAMP] ERROR: Ollama not running. Task: $TASK" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: Ollama not running. Task: $TASK" >> "$LOG_FILE"
     exit 1
 fi
 
@@ -61,4 +61,4 @@ if ! curl -s --max-time 5 "$OLLAMA_URL/api/tags" | grep -q "\"$SELECTED\""; then
 fi
 
 echo "$SELECTED"
-echo "[$TIMESTAMP] Task: $(echo "$TASK" | head -c 80) → Model: $SELECTED | Reason: $REASON" >> "$LOG_FILE"
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] Task: $(echo "$TASK" | head -c 80) → Model: $SELECTED | Reason: $REASON" >> "$LOG_FILE"

@@ -1,108 +1,58 @@
-# InBharat Bot v2.0
+# InBharat Bot v3.0
 
-**Your AI-powered right-hand operator.** Scans the world for opportunities, drafts outreach, builds prototypes, and launches them — all from one command.
+**Your AI-powered strategic operator.** 12 intelligence lanes: scan opportunities, create content, draft outreach, build prototypes, manage leads, monitor communities, and auto-publish — all from one orchestrator.
+
+Last updated: 2026-04-01
 
 ---
 
-## Quick Start (for beginners)
-
-### Step 1: Make sure Ollama is running
-
-```bash
-# Check if Ollama is running
-curl -s http://127.0.0.1:11434/api/tags | head -1
-
-# If it shows nothing, start Ollama:
-ollama serve &
-# Then pull the model (first time only):
-ollama pull qwen3:8b
-```
-
-### Step 2: Run InBharat Bot
+## Quick Start
 
 ```bash
 cd /Volumes/Expansion/CMO-10million
 bash OpenClawData/inbharat-bot/inbharat-run.sh help
 ```
 
-That's it. You're in.
+Or text OpenClaw on WhatsApp: "create a LinkedIn post about Phoring"
 
 ---
 
-## What Can It Do?
+## 12 Lanes
 
-| Command | What happens |
-|---------|-------------|
-| `inbharat-run.sh help` | Show all available commands |
-| `inbharat-run.sh status` | System health dashboard |
-| `inbharat-run.sh full` | Full intelligence cycle |
-| `inbharat-run.sh opportunities all` | Scan the ENTIRE web for opportunities |
-| `inbharat-run.sh prototype pipeline` | Find a problem → build a solution → launch it |
-| `inbharat-run.sh outreach draft "intro to NITI Aayog"` | Draft a professional email |
-| `inbharat-run.sh leads capture "got inquiry from XYZ"` | Capture a business lead |
+| Lane | Command prefix | What it does |
+|------|---------------|--------------|
+| Media | `media native/video/image/amplify/full` | Create platform-native content |
+| Review | `media status/review/approve/reject/publish` | Approve and publish content |
+| India Problems | `india-problems scan` | Scan real problems to solve |
+| AI Gaps | `ai-gaps scan` | Find gaps in AI market |
+| Funding | `funding scan` | Find grants and funding |
+| Competitors | `competitor scan` | Analyze AI competitors |
+| Ecosystem | `ecosystem scan` | Scan workspace and repos |
+| Community | `community scan/engagement/suggest` | Community intelligence |
+| Outreach | `outreach research/campaign/status/followup` | Email campaigns |
+| Government | `government scan/propose` | Government tenders and proposals |
+| Learning | `learning review` | Review feedback, improve quality |
+| Prototype | `prototype build/pipeline/launch/package` | Build and ship solutions |
+
+Plus: `opportunities all`, `leads capture/status`, `revenue process/followups`, `status`
 
 ---
 
-## All Commands
+## Content Creation Flow
 
-### Intelligence (understand your ecosystem)
-
-```bash
-bash inbharat-run.sh full       # Scan → Analyze → Propose → Bridge → Status
-bash inbharat-run.sh scan       # Scan your workspace/ecosystem
-bash inbharat-run.sh analyze    # Find gaps and opportunities
-bash inbharat-run.sh propose    # Generate build proposals
-bash inbharat-run.sh bridge     # Feed proposals to CMO content pipeline
-bash inbharat-run.sh status     # System health dashboard
+```
+1. You say: "create a LinkedIn post about Phoring"
+2. Bot runs: media native --product phoring --platform linkedin
+3. Bot generates content package (JSON) with hook, body, hashtags, CTA
+4. Content lands in queues/linkedin/pending/
+5. You say: "approve phoring-linkedin-2026-04-01.json"
+6. Bot validates claims → checks platform session → posts → archives → logs feedback
 ```
 
-### World Scanner (find opportunities globally)
-
-```bash
-bash inbharat-run.sh opportunities all         # Scan everything
-bash inbharat-run.sh opportunities government  # Government schemes, tenders, RFPs
-bash inbharat-run.sh opportunities corporate   # Company partnerships
-bash inbharat-run.sh opportunities global      # International opportunities
-bash inbharat-run.sh opportunities grants      # Grants and funding
-bash inbharat-run.sh opportunities problems    # GitHub issues, broken tools, unmet needs
-bash inbharat-run.sh opportunities projects    # Small company projects needing help
-bash inbharat-run.sh opportunities buildable   # All buildable opportunities combined
-bash inbharat-run.sh opportunities custom "AI education rural India"  # Custom search
-bash inbharat-run.sh competitors               # AI competitor analysis
-bash inbharat-run.sh government scan           # Government-specific scan
-bash inbharat-run.sh government propose "scheme name"  # Draft government proposal
-```
-
-### Prototypes (build and ship solutions)
-
-```bash
-bash inbharat-run.sh prototype build "attendance tracker for Anganwadi workers"
-bash inbharat-run.sh prototype launch <build-directory>
-bash inbharat-run.sh prototype package <build-directory>    # Zip for deployment
-bash inbharat-run.sh prototype pipeline                     # FULL: scan → pick → build → launch
-bash inbharat-run.sh prototype pipeline problems            # Scan problems, build best one
-bash inbharat-run.sh prototype pipeline custom "query"      # Custom scan, then build
-bash inbharat-run.sh prototype list                         # Show all prototypes
-```
-
-### Outreach (emails and communication)
-
-```bash
-bash inbharat-run.sh outreach draft "introduce InBharat to ICDS for Anganwadi AI"
-bash inbharat-run.sh outreach track            # Today's outreach activity
-bash inbharat-run.sh outreach track week       # Last 7 days
-bash inbharat-run.sh outreach track stats      # Overall outreach stats
-```
-
-### Revenue (leads and pipeline)
-
-```bash
-bash inbharat-run.sh leads status              # Show lead pipeline
-bash inbharat-run.sh leads capture "got inquiry from LearnFlow EdTech about AI tutoring"
-bash inbharat-run.sh revenue status            # Revenue pipeline state
-bash inbharat-run.sh revenue process           # Process hot leads → generate proposals
-bash inbharat-run.sh revenue followups         # Check follow-up queue
-```
+**Video flow adds steps:**
+- After content package, bot generates video brief or HeyGen production brief
+- 10 distinct video formats prevent repetitive content
+- HeyGen avatar videos for professional talking-head content
 
 ---
 
@@ -111,82 +61,78 @@ bash inbharat-run.sh revenue followups         # Check follow-up queue
 ```
 inbharat-run.sh (master orchestrator)
 │
-├── Intelligence
-│   ├── scanner/ecosystem-scanner.sh      → reads workspace, produces registry
-│   ├── gap-finder/gap-finder.sh          → analyzes scan, finds gaps
-│   ├── proposal-generator/proposal-generator.sh  → creates build proposals
-│   ├── cmo-bridge/cmo-bridge.sh          → feeds proposals to CMO
-│   └── dashboard/generate-state.sh       → health dashboard
+├── Media ──────────────► openclaw-media/native-pipeline/ → generate-content.sh
+│                        ► openclaw-media/amplify-pipeline/ → amplify-handoff.sh
+│                        ► openclaw-media/video-engine/ → generate-video.sh
+│                        ► openclaw-media/posting-engine/ → post_{platform}.py
 │
-├── World Scanner
-│   └── opportunities/world-scanner.sh    → web search → Ollama analysis
-│       ├── Government (India + Global)
-│       ├── Corporate partnerships
-│       ├── Open source / grants
-│       ├── Problems to solve (GitHub, forums)
-│       └── Small company projects
+├── Intelligence ───────► opportunities/world-scanner.sh (DuckDuckGo + Ollama)
+│                        ► gap-finder/gap-finder.sh
+│                        ► scanner/ecosystem-scanner.sh
 │
-├── Prototypes
-│   ├── prototypes/prototype-builder.sh   → problem → working code
-│   ├── prototypes/launcher.sh            → local server / packaging
-│   └── prototypes/scout-build-launch.sh  → full pipeline
+├── Outreach ───────────► outreach/outreach-engine.sh (research, campaign, followup)
 │
-├── Outreach
-│   ├── outreach/outreach-drafter.sh      → AI email drafting
-│   └── outreach/outreach-tracker.sh      → activity tracking
+├── Prototype ──────────► prototypes/prototype-builder.sh → scout-build-launch.sh
 │
-├── Revenue
-│   ├── leads/lead-capture.sh             → qualify and store leads
-│   ├── revenue/revenue-engine.sh         → pipeline management
-│   └── revenue/proposal-builder.sh       → generate sales proposals
+├── Revenue ────────────► leads/lead-capture.sh → revenue/revenue-engine.sh
 │
-├── Skills (prompt templates)
-│   ├── world-scanner/SKILL.md
-│   ├── prototype-builder/SKILL.md
-│   ├── professional-email-drafter/SKILL.md
-│   ├── opportunity-miner/SKILL.md
-│   ├── competitor-monitor/SKILL.md
-│   └── lead-research/SKILL.md
+├── Community ──────────► skills/community-intelligence/ (scan, engagement, suggest)
+│
+├── Learning ───────────► analytics/feedback-collector.sh → weekly summaries
+│
+├── Government ─────────► government/government-scanner.sh → proposal builder
 │
 └── Shared
-    ├── logging/bot-logger.sh             → unified logging
-    ├── approval/approval-gate.sh         → action classification
-    └── config/bot-config.json            → model configuration
+    ├── approval/approval-gate.sh (action classification)
+    ├── logging/bot-logger.sh (timestamped logs)
+    ├── config/bot-config.json (model config)
+    └── skills/ (prompt templates per lane)
 ```
 
-## How It Works (for non-technical users)
+## Approval Pipeline
 
-1. **You type a command** → InBharat Bot runs it
-2. **Bot searches the web** using DuckDuckGo (free, no API key needed)
-3. **Bot feeds search results to AI** (qwen3:8b running locally on your Mac via Ollama)
-4. **AI analyzes and produces output** — reports, emails, code, proposals
-5. **Everything is saved locally** — drafts, logs, prototypes, reports
+| Level | Gate | Examples |
+|---|---|---|
+| L1 Auto | Type-based bypass | Internal updates, Discord announcements |
+| L2 Score | AI scores 0-100, threshold 70 | Blog posts, social content |
+| L3 Review | Requires your approval | External emails, partnership outreach |
+| L4 Block | Hard-blocked | Credential claims, unverified statistics |
 
-No cloud costs. No API fees. Everything runs on your machine.
+**On approve:** claim validation → session check → post → archive → feedback loop
 
-## Models Used
+---
 
-| Model | Where | Cost |
-|-------|-------|------|
-| qwen3:8b (Ollama) | All scripts — scanning, drafting, building | Free (local) |
-| GPT-OSS 120B (Groq) | OpenClaw agent conversations | Free (Groq API) |
+## Models
+
+| Model | Used for | Cost |
+|---|---|---|
+| qwen3:8b (Ollama) | All content generation, analysis, drafting | Free (local) |
+| GPT-OSS 120B (Groq) | Gateway agent conversations | Free tier |
+| OpenAI | Image generation only | Per-image |
+| HeyGen | Avatar video creation (browser-operated) | Free tier / paid |
+
+---
 
 ## Key Paths
 
 | What | Where |
 |------|-------|
-| Bot root | `/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/` |
-| Scan reports | `opportunities/reports/world-scan-*.md` |
-| Email drafts | `outreach/drafts/email-*.md` |
-| Prototypes | `prototypes/builds/*/` |
-| Lead data | `leads/data/*.json` |
-| Logs | `logging/bot-YYYY-MM-DD.log` |
-| Config | `config/bot-config.json` |
+| Master orchestrator | `inbharat-run.sh` |
+| Scan reports | `opportunities/reports/` |
+| Email drafts | `outreach/drafts/` |
+| Prototypes | `prototypes/builds/` |
+| Lead data | `leads/data/` |
+| Content queues | `../queues/{platform}/{state}/` |
+| Video format library | `../strategy/video-format-library.json` |
+| Website context | `../strategy/website-context.md` |
+| Logs | `logging/bot-*.log` |
+
+---
 
 ## Important Notes
 
-- **Always `cd /Volumes/Expansion/CMO-10million` before running commands**
-- **Ollama must be running** for any AI features to work
-- **External HD must be connected** — the entire system lives on `/Volumes/Expansion/`
-- The Desktop `OpenClaw-AI-CMO` folder is a stale leftover — safe to delete
-- The real workspace is on the external HD at `/Volumes/Expansion/CMO-10million/`
+- **External HD must be connected** — everything lives on `/Volumes/Expansion/`
+- **Ollama must be running** — powers all AI features
+- **Nothing auto-publishes without approval** — approval-first system
+- **WhatsApp is the primary interface** — natural language mapping to commands
+- **Platform logins needed once** — LinkedIn, X, Instagram via Playwright browser sessions

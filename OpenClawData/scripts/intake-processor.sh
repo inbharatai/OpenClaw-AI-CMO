@@ -29,7 +29,7 @@ PROCESSED_LOG="$WORKSPACE_ROOT/OpenClawData/logs/intake-processed-files.log"
 touch "$PROCESSED_LOG"
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 

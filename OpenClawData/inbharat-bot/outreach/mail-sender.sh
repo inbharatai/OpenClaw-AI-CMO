@@ -38,31 +38,37 @@ if [ ! -f "$DRAFT_FILE" ]; then
   exit 1
 fi
 
-# Load credentials
-if [ ! -f "$CREDS_FILE" ]; then
+# Load credentials — try Keychain first, fall back to file
+SMTP_HOST="smtp.zoho.in"
+SMTP_PORT="587"
+FROM_NAME="Reeturaj Goswami"
+
+# Try macOS Keychain
+SMTP_USER=$(security find-generic-password -s "openclaw" -a "openclaw-smtp-user" -w 2>/dev/null)
+SMTP_PASS=$(security find-generic-password -s "openclaw" -a "openclaw-smtp-pass" -w 2>/dev/null)
+FROM_EMAIL="${SMTP_USER:-}"
+
+# Fall back to credentials file
+if [ -z "$SMTP_USER" ] || [ -z "$SMTP_PASS" ]; then
+  if [ -f "$CREDS_FILE" ]; then
+    source "$CREDS_FILE"
+  fi
+fi
+
+if [ -z "${SMTP_USER:-}" ] || [ -z "${SMTP_PASS:-}" ]; then
   echo "━━━ MAIL CREDENTIALS NOT CONFIGURED ━━━"
   echo ""
-  echo "Create the credentials file:"
-  echo "  $CREDS_FILE"
+  echo "Option 1 (recommended): Store in macOS Keychain:"
+  echo "  bash OpenClawData/security/credential-vault.sh store smtp-user your-email@zoho.com"
+  echo "  bash OpenClawData/security/credential-vault.sh store smtp-pass your-app-password"
   echo ""
-  echo "With contents:"
-  echo '  SMTP_HOST="smtp.zoho.in"'
-  echo '  SMTP_PORT="587"'
-  echo '  SMTP_USER="your-email@zoho.com"'
-  echo '  SMTP_PASS="your-app-password"'
-  echo '  FROM_NAME="Reeturaj Goswami"'
-  echo '  FROM_EMAIL="your-email@zoho.com"'
+  echo "Option 2: Create credentials file at $CREDS_FILE"
   echo ""
   echo "Get app password from: accounts.zoho.com → Security → App Passwords"
   exit 1
 fi
 
-source "$CREDS_FILE"
-
-if [ -z "${SMTP_USER:-}" ] || [ -z "${SMTP_PASS:-}" ]; then
-  bot_log "mail-sender" "error" "SMTP credentials incomplete in $CREDS_FILE"
-  exit 1
-fi
+FROM_EMAIL="${FROM_EMAIL:-$SMTP_USER}"
 
 # Parse draft frontmatter
 SUBJECT=$(grep "^subject:" "$DRAFT_FILE" | head -1 | sed 's/subject: *//')
@@ -87,32 +93,40 @@ fi
 
 bot_log "mail-sender" "info" "Sending email: $SUBJECT → $RECIPIENT"
 
-# Send via Python smtplib
-python3 << PYEOF
+# Send via Python smtplib (all values passed via environment variables — no shell injection)
+export MAIL_SMTP_HOST="$SMTP_HOST"
+export MAIL_SMTP_PORT="$SMTP_PORT"
+export MAIL_SMTP_USER="$SMTP_USER"
+export MAIL_SMTP_PASS="$SMTP_PASS"
+export MAIL_FROM_NAME="$FROM_NAME"
+export MAIL_FROM_EMAIL="$FROM_EMAIL"
+export MAIL_TO="$RECIPIENT"
+export MAIL_SUBJECT="$SUBJECT"
+export MAIL_BODY="$BODY"
+
+python3 << 'PYEOF'
 import smtplib
 import ssl
+import os
+import sys
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import sys
 
-smtp_host = "${SMTP_HOST:-smtp.zoho.in}"
-smtp_port = int("${SMTP_PORT:-587}")
-smtp_user = "${SMTP_USER}"
-smtp_pass = "${SMTP_PASS}"
-from_name = "${FROM_NAME:-Reeturaj Goswami}"
-from_email = "${FROM_EMAIL:-$SMTP_USER}"
-to_email = "${RECIPIENT}"
-subject = """${SUBJECT}"""
+smtp_host = os.environ.get("MAIL_SMTP_HOST", "smtp.zoho.in")
+smtp_port = int(os.environ.get("MAIL_SMTP_PORT", "587"))
+smtp_user = os.environ["MAIL_SMTP_USER"]
+smtp_pass = os.environ["MAIL_SMTP_PASS"]
+from_name = os.environ.get("MAIL_FROM_NAME", "Reeturaj Goswami")
+from_email = os.environ.get("MAIL_FROM_EMAIL", smtp_user)
+to_email = os.environ["MAIL_TO"]
+subject = os.environ.get("MAIL_SUBJECT", "Message from InBharat AI")
+body = os.environ.get("MAIL_BODY", "")
 
-body = """${BODY}"""
-
-# Build email
 msg = MIMEMultipart("alternative")
 msg["Subject"] = subject
 msg["From"] = f"{from_name} <{from_email}>"
 msg["To"] = to_email
 
-# Plain text version
 msg.attach(MIMEText(body, "plain"))
 
 try:

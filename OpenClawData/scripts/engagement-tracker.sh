@@ -13,7 +13,7 @@ TS=$(date '+%Y-%m-%d %H:%M:%S')
 DATE=$(date '+%Y-%m-%d')
 
 mkdir -p "$ENGAGEMENT"
-log() { echo "[$TS] $1" >> "$LOG"; echo "$1"; }
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG"; echo "$1"; }
 
 ACTION="${1:---report}"
 
@@ -35,10 +35,10 @@ case "$ACTION" in
     log "Total events tracked: $TOTAL_EVENTS"
     
     if [ "$TOTAL_EVENTS" -gt 0 ]; then
-      python3 -c "
-import json, glob, collections
+      ENGAGEMENT_DIR="$ENGAGEMENT" python3 -c "
+import json, glob, collections, os
 events = []
-for f in glob.glob('$ENGAGEMENT/events-*.jsonl'):
+for f in glob.glob(os.path.join(os.environ['ENGAGEMENT_DIR'], 'events-*.jsonl')):
     for line in open(f):
         try: events.append(json.loads(line.strip()))
         except: pass
@@ -58,10 +58,10 @@ for m, c in by_metric.most_common(): print(f'  {m}: {c} events')
 
   --best)
     log "=== Best Performing Content ==="
-    python3 -c "
-import json, glob, collections
+    ENGAGEMENT_DIR="$ENGAGEMENT" python3 -c "
+import json, glob, collections, os
 events = []
-for f in glob.glob('$ENGAGEMENT/events-*.jsonl'):
+for f in glob.glob(os.path.join(os.environ['ENGAGEMENT_DIR'], 'events-*.jsonl')):
     for line in open(f):
         try: events.append(json.loads(line.strip()))
         except: pass

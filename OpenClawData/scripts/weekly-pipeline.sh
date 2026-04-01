@@ -17,7 +17,7 @@ DRY_RUN=""
 [ "$1" = "--dry-run" ] && DRY_RUN="--dry-run"
 
 log() {
-    echo "[$TIMESTAMP] $1" >> "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
     echo "$1"
 }
 
@@ -28,6 +28,20 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 log "=== WEEKLY PIPELINE STARTED ==="
+
+# Ensure output directories exist
+mkdir -p "$MARKETING_DIR/calendars"
+mkdir -p "$MARKETING_DIR/weekly-roundups"
+mkdir -p "$MARKETING_DIR/build-logs"
+mkdir -p "$MARKETING_DIR/newsletters"
+mkdir -p "$MARKETING_DIR/video-briefs"
+mkdir -p "$MARKETING_DIR/image-briefs"
+mkdir -p "$MARKETING_DIR/research"
+mkdir -p "$REPORTS_DIR/daily"
+mkdir -p "$REPORTS_DIR/weekly"
+mkdir -p "$QUEUES_DIR/website/pending"
+mkdir -p "$QUEUES_DIR/email/pending"
+mkdir -p "$QUEUES_DIR/heygen/pending"
 
 # Pre-flight
 if ! curl -s --max-time 3 "$OLLAMA_URL/api/tags" > /dev/null 2>&1; then
