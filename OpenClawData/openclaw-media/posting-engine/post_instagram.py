@@ -62,7 +62,7 @@ def do_login(pw):
 
     context = launch_browser(pw, headless=False)
     page = context.pages[0] if context.pages else context.new_page()
-    page.goto("https://www.instagram.com/accounts/login/", wait_until="networkidle", timeout=60000)
+    page.goto("https://www.instagram.com/accounts/login/", wait_until="domcontentloaded", timeout=60000)
 
     # Dismiss cookie/app banners if present
     try:
@@ -73,16 +73,20 @@ def do_login(pw):
     except Exception:
         pass
 
-    # Wait for user to log in — detect home feed
-    print("Waiting for login... (navigate to your feed)")
+    # Wait for user to log in — detect leaving the login page
+    print("Waiting for login... (log in and navigate to your feed)")
     try:
-        page.wait_for_url("**/instagram.com/**", timeout=300000)  # 5 min timeout
-        # Wait for feed indicators to confirm login
-        time.sleep(5)
-        if "/accounts/login" not in page.url:
-            print("Login successful! Session saved.")
+        # Poll until URL no longer contains /accounts/login
+        deadline = time.time() + 300  # 5 min
+        while time.time() < deadline:
+            current_url = page.url
+            if "/accounts/login" not in current_url and "instagram.com" in current_url:
+                time.sleep(3)
+                print("Login successful! Session saved.")
+                break
+            time.sleep(2)
         else:
-            print("Still on login page. Please complete login and try again.")
+            print("Login timeout. Try again with: python3 post_instagram.py --login")
     except Exception:
         print("Login timeout or cancelled. Try again with: python3 post_instagram.py --login")
 
@@ -94,7 +98,7 @@ def check_session(pw):
     page = context.pages[0] if context.pages else context.new_page()
 
     try:
-        page.goto("https://www.instagram.com/", wait_until="networkidle", timeout=30000)
+        page.goto("https://www.instagram.com/", wait_until="domcontentloaded", timeout=30000)
         time.sleep(3)
         url = page.url
         if "/accounts/login" in url:
@@ -182,7 +186,7 @@ def post_to_instagram(pw, caption, image_path, headless=True):
 
     try:
         # Navigate to Instagram
-        page.goto("https://www.instagram.com/", wait_until="networkidle", timeout=30000)
+        page.goto("https://www.instagram.com/", wait_until="domcontentloaded", timeout=30000)
         time.sleep(3)
 
         # Check if logged in

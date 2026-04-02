@@ -54,7 +54,7 @@ def do_login(pw):
 
     context = launch_browser(pw, headless=False)
     page = context.pages[0] if context.pages else context.new_page()
-    page.goto("https://www.linkedin.com/login", wait_until="networkidle", timeout=60000)
+    page.goto("https://www.linkedin.com/login", wait_until="domcontentloaded", timeout=60000)
 
     # Wait for user to log in — detect feed page
     print("Waiting for login... (navigate to your feed)")
@@ -72,7 +72,8 @@ def check_session(pw):
     page = context.pages[0] if context.pages else context.new_page()
 
     try:
-        page.goto("https://www.linkedin.com/feed/", wait_until="networkidle", timeout=30000)
+        page.goto("https://www.linkedin.com/feed/", wait_until="domcontentloaded", timeout=30000)
+        page.wait_for_timeout(3000)
         url = page.url
         if "/login" in url or "/authwall" in url:
             print("SESSION EXPIRED: Need to re-login. Run: python3 post_linkedin.py --login")
@@ -138,7 +139,7 @@ def post_to_linkedin(pw, text, headless=True):
 
     try:
         # Navigate to feed
-        page.goto("https://www.linkedin.com/feed/", wait_until="networkidle", timeout=30000)
+        page.goto("https://www.linkedin.com/feed/", wait_until="domcontentloaded", timeout=30000)
 
         # Check if logged in
         if "/login" in page.url or "/authwall" in page.url:
@@ -148,38 +149,109 @@ def post_to_linkedin(pw, text, headless=True):
 
         time.sleep(2)
 
-        # Click "Start a post" button
-        start_post = page.locator("button:has-text('Start a post'), div.share-box-feed-entry__trigger")
-        start_post.first.click()
-        time.sleep(2)
+        # Click "Start a post" area — try multiple selectors for LinkedIn's changing UI
+        start_selectors = [
+            "div.share-box-feed-entry__trigger",
+            "button:has-text('Start a post')",
+            "text='Start a post'",
+            ".share-box-feed-entry__closed-share-box",
+            "[data-control-name='share.sharebox_feed']",
+        ]
+        clicked = False
+        for sel in start_selectors:
+            try:
+                loc = page.locator(sel).first
+                if loc.is_visible(timeout=2000):
+                    loc.click()
+                    clicked = True
+                    break
+            except Exception:
+                continue
 
-        # Wait for the post editor modal
-        editor = page.locator("div.ql-editor[contenteditable='true'], div[role='textbox'][contenteditable='true']")
-        editor.first.wait_for(state="visible", timeout=10000)
+        if not clicked:
+            # Fallback: click coordinates near "Start a post" text
+            start_text = page.get_by_text("Start a post")
+            if start_text.first.is_visible(timeout=3000):
+                start_text.first.click()
+                clicked = True
+
+        if not clicked:
+            print("ERROR: Could not find 'Start a post' button")
+            context.close()
+            return False
+
+        time.sleep(3)
+
+        # Wait for the post editor modal — try multiple selectors
+        editor_selectors = [
+            "div.ql-editor[contenteditable='true']",
+            "div[role='textbox'][contenteditable='true']",
+            "[contenteditable='true'][data-placeholder]",
+            ".editor-content [contenteditable='true']",
+        ]
+        editor = None
+        for sel in editor_selectors:
+            try:
+                loc = page.locator(sel).first
+                loc.wait_for(state="visible", timeout=5000)
+                editor = loc
+                break
+            except Exception:
+                continue
+
+        if not editor:
+            print("ERROR: Post editor did not appear")
+            context.close()
+            return False
+
         time.sleep(1)
 
         # Type the post content
-        editor.first.click()
-        # Use keyboard to type (more reliable than fill for rich text editors)
-        page.keyboard.type(text, delay=5)
+        editor.click()
+        time.sleep(0.5)
+        page.keyboard.type(text, delay=3)
         time.sleep(2)
 
-        # Click the Post button
-        post_button = page.locator("button:has-text('Post'):not(:has-text('Repost'))")
-        post_button.first.click()
-        time.sleep(3)
+        # Click the Post button — find the submit button in the modal
+        post_selectors = [
+            "button.share-actions__primary-action",
+            "button:has-text('Post'):not(:has-text('Repost'))",
+            "button[data-control-name='share.post']",
+        ]
+        posted = False
+        for sel in post_selectors:
+            try:
+                btn = page.locator(sel).first
+                if btn.is_visible(timeout=3000):
+                    btn.click()
+                    posted = True
+                    break
+            except Exception:
+                continue
 
-        # Verify — wait for the modal to close
+        if not posted:
+            # Last resort: find any enabled Post button in modal
+            try:
+                btn = page.get_by_role("button", name="Post").first
+                btn.click()
+                posted = True
+            except Exception:
+                print("ERROR: Could not find Post button")
+                context.close()
+                return False
+
+        time.sleep(5)
+
+        # Verify — check if modal closed
         try:
-            editor.first.wait_for(state="hidden", timeout=10000)
+            editor.wait_for(state="hidden", timeout=15000)
             print("POSTED: LinkedIn post published successfully")
             context.close()
             return True
         except Exception:
-            # Check if there's an error or the post was still sent
-            print("WARNING: Could not confirm post. Check LinkedIn manually.")
+            print("WARNING: Could not confirm modal closed. Post may have been sent — check LinkedIn.")
             context.close()
-            return True  # Optimistic — log it and verify later
+            return True
 
     except Exception as e:
         print(f"ERROR: Failed to post to LinkedIn: {e}")

@@ -52,7 +52,7 @@ def do_login(pw):
 
     context = launch_browser(pw, headless=False)
     page = context.pages[0] if context.pages else context.new_page()
-    page.goto("https://x.com/login", wait_until="networkidle", timeout=60000)
+    page.goto("https://x.com/login", wait_until="domcontentloaded", timeout=60000)
 
     print("Waiting for login... (navigate to your home feed)")
     try:
@@ -68,7 +68,7 @@ def check_session(pw):
     page = context.pages[0] if context.pages else context.new_page()
 
     try:
-        page.goto("https://x.com/home", wait_until="networkidle", timeout=30000)
+        page.goto("https://x.com/home", wait_until="domcontentloaded", timeout=30000)
         url = page.url
         if "/login" in url or "/i/flow" in url:
             print("SESSION EXPIRED: Run: python3 post_x.py --login")
@@ -131,7 +131,7 @@ def post_tweet(pw, text, headless=True):
     page = context.pages[0] if context.pages else context.new_page()
 
     try:
-        page.goto("https://x.com/compose/post", wait_until="networkidle", timeout=30000)
+        page.goto("https://x.com/compose/post", wait_until="domcontentloaded", timeout=30000)
         time.sleep(2)
 
         if "/login" in page.url or "/i/flow" in page.url:
@@ -178,7 +178,7 @@ def post_thread(pw, tweets, headless=True):
     page = context.pages[0] if context.pages else context.new_page()
 
     try:
-        page.goto("https://x.com/compose/post", wait_until="networkidle", timeout=30000)
+        page.goto("https://x.com/compose/post", wait_until="domcontentloaded", timeout=30000)
         time.sleep(2)
 
         if "/login" in page.url:

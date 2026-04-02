@@ -317,14 +317,49 @@ Auto-Publish on Approve → posting-engine/ → archive → feedback loop
 
 ---
 
+## Image & Video Generation
+
+| Type | Tool | Cost | Autonomous? |
+|---|---|---|---|
+| Images (posts, carousels, cards) | DALL-E 3 via OpenAI API | ~$0.04/image | Yes (Tier 0, 10/day cap) |
+| Basic video (text animations, slideshows) | ffmpeg (local) | Free | Yes (Tier 0) |
+| Ken Burns / quote card video | ffmpeg (local) | Free | Yes (Tier 0) |
+| Avatar videos (Shorts/Reels) | HeyGen | Paid | No (Tier 3, founder-gated) |
+
+**Scripts:**
+- `scripts/generate-image.sh "prompt" --size square` — DALL-E 3 image
+- `scripts/generate-video-local.sh text "Title" --size 1080x1920` — text animation
+- `scripts/generate-video-local.sh slideshow img1.png img2.png` — slideshow
+- `scripts/generate-video-local.sh quote "Quote" --author "Name"` — quote card
+- `scripts/generate-video-local.sh kenburns image.png` — Ken Burns zoom
+
+**Budget:** 10 images/day max (~$0.40/day). Check with `generate-image.sh --budget`
+
+---
+
+## Platform Sessions
+
+| Platform | Status | Engine |
+|---|---|---|
+| LinkedIn | Connected | `post_linkedin.py` (Playwright) |
+| X/Twitter | Connected | `post_x.py` (Playwright) |
+| Instagram | Connected | `post_instagram.py` (Playwright) |
+| Discord | Connected | `post_discord.py` (webhook) |
+| Reddit | Draft-only | Manual posting (L3 gated) |
+
+Session keepalive runs every 6h. Re-login: `python3 post_<platform>.py --login`
+
+---
+
 ## Cost
 
 | Component | Cost |
 |---|---|
 | Ollama (qwen3:8b, local) | Free |
 | Groq (gateway agent) | Free tier |
-| OpenAI (images only) | Pay per image |
-| HeyGen (avatar videos) | Free tier / paid |
+| DALL-E 3 (images) | ~$0.04/image, capped 10/day |
+| ffmpeg (local video) | Free |
+| HeyGen (avatar videos) | Paid / founder-gated |
 | DuckDuckGo (web search) | Free |
 | Discord (webhook posting) | Free |
 | Playwright (browser posting) | Free |
