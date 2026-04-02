@@ -5,6 +5,9 @@
 # Writes: Adds YAML frontmatter classification to files, copies to appropriate staging folders
 # Logs: OpenClawData/logs/intake-processor.log
 
+# Ignore SIGPIPE — prevents exit code 141 from head|grep patterns on macOS
+trap '' PIPE
+
 WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"
 LOG_FILE="$WORKSPACE_ROOT/OpenClawData/logs/intake-processor.log"
@@ -66,7 +69,7 @@ for DIR in "${SOURCE_DIRS[@]}"; do
         fi
 
         # Skip files that already have frontmatter classification
-        if head -5 "$FILE" | grep -q "^cmo-classified:" 2>/dev/null; then
+        if grep -q "^cmo-classified:" <(head -5 "$FILE") 2>/dev/null; then
             continue
         fi
 

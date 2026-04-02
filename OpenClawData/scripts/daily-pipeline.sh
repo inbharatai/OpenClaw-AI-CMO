@@ -4,6 +4,9 @@
 # Runs the full pipeline: intake → classify → produce → approve → distribute → report
 # This is the ONE script you run daily to keep the AI CMO operating.
 
+# Ignore SIGPIPE — prevents exit code 141 from pipe patterns on macOS
+trap '' PIPE
+
 WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"
 LOG_FILE="$WORKSPACE_ROOT/OpenClawData/logs/daily-pipeline.log"

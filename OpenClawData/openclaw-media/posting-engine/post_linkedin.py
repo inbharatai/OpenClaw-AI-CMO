@@ -209,7 +209,7 @@ def post_to_linkedin(pw, text, headless=True):
         # Type the post content
         editor.click()
         time.sleep(0.5)
-        page.keyboard.type(text, delay=3)
+        page.keyboard.type(text, delay=10)
         time.sleep(2)
 
         # Click the Post button — find the submit button in the modal

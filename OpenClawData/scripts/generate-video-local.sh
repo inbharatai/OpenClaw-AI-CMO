@@ -82,14 +82,14 @@ slideshow)
     fi
 
     # Build ffmpeg filter for crossfade
-    INPUTS=""
-    FILTER=""
     N=${#ARGS[@]}
     SLIDE_DUR=3  # seconds per slide
     FADE_DUR=1   # crossfade duration
 
+    # Build input array safely (handles spaces in filenames)
+    INPUT_ARGS=()
     for i in "${!ARGS[@]}"; do
-        INPUTS="$INPUTS -loop 1 -t $SLIDE_DUR -i ${ARGS[$i]}"
+        INPUT_ARGS+=(-loop 1 -t "$SLIDE_DUR" -i "${ARGS[$i]}")
     done
 
     # Simple concat with fade
@@ -104,7 +104,7 @@ slideshow)
     done
     FILTER="${FILTER_PARTS}${CONCAT}concat=n=$N:v=1:a=0[outv]"
 
-    eval $FFMPEG -y $INPUTS -filter_complex "\"$FILTER\"" -map '"[outv]"' -c:v libx264 -pix_fmt yuv420p -r 30 "\"$OUTPUT\"" 2>/dev/null
+    "$FFMPEG" -y "${INPUT_ARGS[@]}" -filter_complex "$FILTER" -map '[outv]' -c:v libx264 -pix_fmt yuv420p -r 30 "$OUTPUT" 2>/dev/null
     echo "SAVED: $OUTPUT (slideshow, ${N} slides)"
     ;;
 
@@ -112,6 +112,9 @@ text)
     # Text animation — text fades in on colored background
     # Args: "Text to display"
     TEXT="${ARGS[0]:?Provide text as first argument}"
+
+    # Escape special characters for ffmpeg drawtext
+    TEXT=$(echo "$TEXT" | sed "s/'/'\\\\\\''/g; s/:/\\\\:/g; s/%/%%/g")
 
     # Calculate font size based on text length
     TEXT_LEN=${#TEXT}
@@ -155,12 +158,16 @@ quote)
     # Args: "Quote text" --author "Name"
     QUOTE="${ARGS[0]:?Provide quote text}"
 
+    # Escape special characters for ffmpeg drawtext
+    QUOTE=$(echo "$QUOTE" | sed "s/'/'\\\\\\''/g; s/:/\\\\:/g; s/%/%%/g")
+
     W=$(echo "$VSIZE" | cut -dx -f1)
     H=$(echo "$VSIZE" | cut -dx -f2)
 
     AUTHOR_TEXT=""
     if [ -n "$AUTHOR" ]; then
-        AUTHOR_TEXT="— $AUTHOR"
+        AUTHOR_ESCAPED=$(echo "$AUTHOR" | sed "s/'/'\\\\\\''/g; s/:/\\\\:/g; s/%/%%/g")
+        AUTHOR_TEXT="— $AUTHOR_ESCAPED"
     fi
 
     $FFMPEG -y -f lavfi -i "color=c=0x1a1a2e:s=${VSIZE}:d=${DURATION}:r=30" \
