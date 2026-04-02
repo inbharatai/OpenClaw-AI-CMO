@@ -289,7 +289,7 @@ Content Generated
 ├── CLAUDE.md                              ← System operating instructions
 ├── README.md                              ← THIS FILE
 ├── OpenClawData/
-│   ├── directives/                        ← Operating directives (7 files)
+│   ├── directives/                        ← Operating directives (8 files)
 │   ├── inbharat-bot/                      ← Intelligence layer
 │   │   ├── inbharat-run.sh              ← Master orchestrator (13 lanes)
 │   │   ├── skills/                      ← 13 prompt skill templates
@@ -301,17 +301,22 @@ Content Generated
 │   │   ├── native-pipeline/             ← Content generation (Ollama)
 │   │   ├── image-engine/                ← DALL-E 3 + fallbacks
 │   │   ├── video-engine/                ← ffmpeg + HeyGen briefs
-│   │   ├── posting-engine/              ← Platform posters (5 scripts)
+│   │   ├── posting-engine/              ← Platform posters (6 scripts)
 │   │   ├── publishing/                  ← Queue manager + archive
 │   │   ├── analytics/                   ← Post logs + feedback
 │   │   └── generated-images/            ← DALL-E 3 output
-│   ├── queues/                            ← Per-platform content queues
+│   ├── queues/                            ← Per-platform content queues (12)
 │   │   ├── linkedin/                    ← pending → approved → posted
 │   │   ├── x/
 │   │   ├── discord/
 │   │   ├── instagram/
 │   │   ├── reddit/
 │   │   ├── website/
+│   │   ├── email/
+│   │   ├── shorts/
+│   │   ├── facebook/
+│   │   ├── medium/
+│   │   ├── substack/
 │   │   └── heygen/                      ← Avatar video briefs (gated)
 │   ├── scripts/                           ← Pipeline scripts
 │   ├── skills/                            ← 69 skill templates (all with honest disclaimers)
@@ -339,7 +344,7 @@ Content Generated
 | Discord posting | Webhook (curl) | Free |
 | Web search | DuckDuckGo | Free |
 | Secrets | macOS Keychain | Free |
-| Scheduling | crontab (6 jobs) | Free |
+| Scheduling | crontab (7 jobs + caffeinate) | Free |
 | CI/CD | GitHub Actions (5 checks) | Free |
 
 ### AI Model Usage
