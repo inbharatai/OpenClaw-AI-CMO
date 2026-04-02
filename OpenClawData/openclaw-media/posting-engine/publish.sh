@@ -57,14 +57,15 @@ get_poster() {
     x)         echo "python3 $ENGINE_DIR/post_x.py" ;;
     discord)   echo "python3 $ENGINE_DIR/post_discord.py" ;;
     instagram) echo "python3 $ENGINE_DIR/post_instagram.py --confirm" ;;
+    email)     echo "python3 $ENGINE_DIR/email_zoho.py --visible" ;;
     # shorts requires video upload — manual for now
-    # website/email handled differently
+    # website handled by distribution-engine.sh
     *)         echo "" ;;
   esac
 }
 
 # Platforms with posting scripts
-POSTABLE_PLATFORMS=(linkedin x discord instagram)
+POSTABLE_PLATFORMS=(linkedin x discord instagram email)
 
 # ── Help ──
 if [ "$ACTION" = "help" ]; then

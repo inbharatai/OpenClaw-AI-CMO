@@ -233,13 +233,21 @@ else
     done
 fi
 
+# Playwright-handled platforms — skip here, publish.sh handles these via browser automation
+# These platforms have active Playwright sessions at ~/.openclaw/browser-sessions/
+PLAYWRIGHT_PLATFORMS="linkedin x instagram"
+
 # Blocked channels — skip entirely
-# LinkedIn unblocked for posting (2026-03-31). Re-add "linkedin" to block again.
 BLOCKED_CHANNELS=""
 
 for CHANNEL in "${CHANNELS[@]}"; do
     if echo "$BLOCKED_CHANNELS" | grep -qw "$CHANNEL"; then
         log "BLOCKED CHANNEL: $CHANNEL — skipping (blocked by policy)"
+        continue
+    fi
+    # Skip platforms handled by publish.sh via Playwright browser automation
+    if echo "$PLAYWRIGHT_PLATFORMS" | grep -qw "$CHANNEL"; then
+        log "PLAYWRIGHT CHANNEL: $CHANNEL — skipping (handled by publish.sh)"
         continue
     fi
     APPROVED_DIR="$QUEUES_DIR/$CHANNEL/approved"

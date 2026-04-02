@@ -124,13 +124,15 @@ run_stage "validate" "2d" "\"$WORKSPACE_ROOT/OpenClawData/security/claim-validat
 # Run all pending content through the approval engine
 run_stage "approve" "3" "\"$SCRIPTS_DIR/approval-engine.sh\" $DRY_RUN"
 
-# ===== STAGE 4: DISTRIBUTION =====
-# Distribute approved content to channels
-run_stage "distribute" "4" "\"$SCRIPTS_DIR/distribution-engine.sh\" $DRY_RUN"
+# ===== STAGE 4: PUBLISH =====
+# Autonomous publishing — post approved content to platforms via Playwright browser automation
+# Runs FIRST so it posts linkedin/x/instagram before distribution-engine moves files
+run_stage "publish" "4" "\"$WORKSPACE_ROOT/OpenClawData/openclaw-media/posting-engine/publish.sh\" $DRY_RUN"
 
-# ===== STAGE 4B: PUBLISH =====
-# Autonomous publishing — post approved content to platforms via Playwright
-run_stage "publish" "4b" "\"$WORKSPACE_ROOT/OpenClawData/openclaw-media/posting-engine/publish.sh\" $DRY_RUN"
+# ===== STAGE 4B: DISTRIBUTION =====
+# Distribute remaining content to non-Playwright channels (website, discord webhook, email export, heygen)
+# Skips linkedin/x/instagram — those were already posted by publish.sh above
+run_stage "distribute" "4b" "\"$SCRIPTS_DIR/distribution-engine.sh\" $DRY_RUN"
 
 # ===== STAGE 5: REPORT =====
 # Generate daily report
