@@ -2,7 +2,7 @@
 
 **Your AI-powered content engine, strategic brain, and autonomous publisher.**
 
-Last updated: 2026-04-01
+Last updated: 2026-04-02
 
 ---
 
@@ -84,6 +84,13 @@ bash OpenClawData/inbharat-bot/inbharat-run.sh help
 | Find all opportunities | `opportunities all` |
 | Government tenders | `government scan` |
 
+### Reddit
+| What you want | Command |
+|---|---|
+| Draft a Reddit post | `reddit draft --subreddit r/SaaS` |
+| List Reddit drafts | `reddit list` |
+| Show subreddit map | `reddit subreddits` |
+
 ### Outreach
 | What you want | Command |
 |---|---|
@@ -158,6 +165,7 @@ Nothing auto-publishes without your explicit approval first.
 | LinkedIn | Needs login | `post_linkedin.py` (Playwright) |
 | X/Twitter | Needs login | `post_x.py` (Playwright) |
 | Instagram | Needs login | `post_instagram.py` (Playwright) |
+| Reddit | Draft-only (L3 manual) | `inbharat-run.sh reddit` |
 
 **First-time platform login:**
 ```bash
@@ -166,6 +174,48 @@ python3 post_linkedin.py --login    # Opens browser, you log in once
 python3 post_x.py --login
 python3 post_instagram.py --login
 ```
+
+## Session Management
+
+Browser sessions are managed automatically:
+- **Chrome cookie sync**: `sync-chrome-sessions.sh` copies Chrome cookies to Playwright sessions
+- **Session keepalive**: Runs every 6h — refreshes platform sessions, alerts via WhatsApp if any expire
+- **No manual login needed**: Sessions sync from your Chrome browser automatically
+
+## Hourly WhatsApp Reports
+
+Every hour, you receive a WhatsApp summary:
+- Queue counts (pending/approved/posted per platform)
+- Posts published this hour
+- Lane runs and scans completed
+- System health status
+- Pending actions needing attention
+
+## Daily Auto-Content Engine
+
+Runs every day at 9:00 AM automatically:
+- **LinkedIn**: 1 post/day (product rotation across 7 products)
+- **X/Twitter**: 1 tweet/day
+- **Discord**: 1 community update/day
+- **Instagram Reels**: 1 reel brief/day (HeyGen avatar)
+- **YouTube Shorts**: 1 short brief/day (HeyGen avatar)
+- **Blog article**: Every 3 days
+- **Reddit draft**: Every 5 days (L3 manual posting)
+- **Intelligence scan**: Daily rotation (india-problems, ai-gaps, funding, competitors, ecosystem)
+- **WhatsApp summary**: Sent after each daily run
+
+## Autonomous Operating Directives
+
+System directives stored in `OpenClawData/directives/`:
+| File | Purpose |
+|------|---------|
+| `00-master-system-prompt.md` | Full operating identity and rules |
+| `01-founder-standing-directives.md` | 20 standing founder orders |
+| `02-internal-qa-chain.md` | 7-role review chain before publishing |
+| `03-outreach-contact-policy.md` | Public contact research rules |
+| `04-credential-resolution.md` | Secret lookup order |
+| `05-daily-schedule.md` | Morning/midday/evening/weekly cycles |
+| `06-self-correction.md` | Anti-intern behavior rules |
 
 ---
 
@@ -209,6 +259,17 @@ Approval Engine (L1-L4) ← claim-validator.sh ← website-context.md
   ▼
 Auto-Publish on Approve → posting-engine/ → archive → feedback loop
 ```
+
+## Cron Schedule
+
+| Time | Job | Script |
+|------|-----|--------|
+| Every hour (:00) | WhatsApp report | `hourly-whatsapp-report.sh` |
+| Every 6h (0/6/12/18) | Session keepalive | `session-keepalive.sh` |
+| 8:07 AM daily | CMO pipeline | `daily-pipeline.sh` |
+| 9:00 AM daily | Auto-content engine | `daily-auto-content.sh` |
+| Mon 7:53 AM | Weekly pipeline | `weekly-pipeline.sh` |
+| 1st of month 7:42 AM | Monthly pipeline | `monthly-pipeline.sh` |
 
 ---
 
@@ -288,5 +349,5 @@ Auto-Publish on Approve → posting-engine/ → archive → feedback loop
 1. **Plug in the external HD** before using anything
 2. **Ollama must be running** (`ollama serve &`)
 3. **WhatsApp is the primary interface** — just text naturally
-4. **Nothing publishes without your approval** — approval-first system
+4. **Standard content auto-publishes; gated items (video, Reddit) need approval**
 5. **Health check:** `bash OpenClawData/scripts/health-check.sh`

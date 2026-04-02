@@ -1,8 +1,8 @@
-# OpenClaw Media System v2.0
+# OpenClaw Media System v2.1
 
 **Two content pipelines, a video engine, and an autonomous posting engine.**
 
-Last updated: 2026-04-01
+Last updated: 2026-04-02
 
 ---
 
@@ -62,6 +62,7 @@ bot-handoff → campaign-brief
 | LinkedIn | `post_linkedin.py` | Playwright browser automation |
 | X/Twitter | `post_x.py` | Playwright browser automation |
 | Instagram | `post_instagram.py` | Playwright browser automation (mobile viewport) |
+| Reddit | (draft-only) | L3 manual approval — no auto-publish |
 
 ### Commands
 ```bash
@@ -160,3 +161,23 @@ openclaw-media/
 ├── templates/                ← Shared content templates
 └── schemas/                  ← JSON schemas
 ```
+
+---
+
+## Session Management
+
+- Chrome cookies auto-synced to Playwright sessions via `sync-chrome-sessions.sh`
+- Session keepalive runs every 6h, alerts via WhatsApp on expiry
+- No manual `--login` needed — sessions maintained from Chrome browser
+- One-time setup still available as fallback (see Session Setup above)
+
+---
+
+## Daily Auto-Content
+
+The daily auto-content engine (`scripts/daily-auto-content.sh`) runs at 9 AM:
+- Rotates through 7 products and 7 content buckets daily
+- Generates content for LinkedIn, X, Discord, Instagram Reels, YouTube Shorts
+- Blog articles every 3 days, Reddit drafts every 5 days
+- Runs intelligence scan (rotating: india-problems, ai-gaps, funding, competitors, ecosystem)
+- Sends WhatsApp summary after completion

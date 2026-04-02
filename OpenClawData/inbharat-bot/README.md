@@ -1,8 +1,8 @@
-# InBharat Bot v3.0
+# InBharat Bot v3.1
 
-**Your AI-powered strategic operator.** 12 intelligence lanes: scan opportunities, create content, draft outreach, build prototypes, manage leads, monitor communities, and auto-publish — all from one orchestrator.
+**Your AI-powered strategic operator.** 13 intelligence lanes: scan opportunities, create content, draft outreach, build prototypes, manage leads, monitor communities, and auto-publish — all from one orchestrator.
 
-Last updated: 2026-04-01
+Last updated: 2026-04-02
 
 ---
 
@@ -17,7 +17,7 @@ Or text OpenClaw on WhatsApp: "create a LinkedIn post about Phoring"
 
 ---
 
-## 12 Lanes
+## 13 Lanes
 
 | Lane | Command prefix | What it does |
 |------|---------------|--------------|
@@ -33,8 +33,21 @@ Or text OpenClaw on WhatsApp: "create a LinkedIn post about Phoring"
 | Government | `government scan/propose` | Government tenders and proposals |
 | Learning | `learning review` | Review feedback, improve quality |
 | Prototype | `prototype build/pipeline/launch/package` | Build and ship solutions |
+| Reddit | `reddit draft/list/subreddits` | Draft Reddit posts for manual posting |
 
 Plus: `opportunities all`, `leads capture/status`, `revenue process/followups`, `status`
+
+---
+
+## Operating Directives
+
+Bot now runs with autonomous operating directives from `OpenClawData/directives/`:
+- Full system prompt with autonomy tiers (Tier 0-3)
+- 20 standing founder orders
+- 7-role QA chain before publishing
+- Self-correction rules (anti-intern behavior)
+
+`bot-config.json` now includes `autonomy_tiers` defining what's fully autonomous vs founder-gated.
 
 ---
 
@@ -136,3 +149,20 @@ inbharat-run.sh (master orchestrator)
 - **Nothing auto-publishes without approval** — approval-first system
 - **WhatsApp is the primary interface** — natural language mapping to commands
 - **Platform logins needed once** — LinkedIn, X, Instagram via Playwright browser sessions
+
+---
+
+## Daily Auto-Content
+
+The daily auto-content engine (`scripts/daily-auto-content.sh`) runs at 9 AM:
+- Rotates through 7 products and 7 content buckets daily
+- Generates content for LinkedIn, X, Discord, Instagram Reels, YouTube Shorts
+- Blog articles every 3 days, Reddit drafts every 5 days
+- Runs intelligence scan (rotating: india-problems, ai-gaps, funding, competitors, ecosystem)
+- Sends WhatsApp summary after completion
+
+## Session Management
+
+- Chrome cookies auto-synced to Playwright sessions (`sync-chrome-sessions.sh`)
+- Session keepalive runs every 6h, alerts via WhatsApp on expiry
+- No manual `--login` needed — sessions maintained from Chrome browser

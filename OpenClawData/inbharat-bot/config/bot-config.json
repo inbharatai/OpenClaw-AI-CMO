@@ -40,12 +40,40 @@
       "/Volumes/Expansion/CMO-10million"
     ]
   },
+  "operating_mode": "autonomous-founder-operator",
+  "directives_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/directives",
+  "autonomy_tiers": {
+    "tier_0_fully_autonomous": [
+      "ai-news-monitoring", "trend-identification", "content-calendar",
+      "text-posts", "image-posts", "carousels", "basic-animations",
+      "community-updates", "outreach-prep", "research", "drafting",
+      "categorization", "scheduling", "standard-publishing",
+      "public-contact-collection", "internal-reports", "scorecards"
+    ],
+    "tier_1_approved_connectors": [
+      "browser-automation", "browser-sessions", "stored-credentials",
+      "email-drafts", "analytics-read", "scheduling-systems"
+    ],
+    "tier_2_ask_if_needed": [
+      "missing-secret", "new-domain-action", "threshold-exceeded",
+      "new-integration", "cost-threshold", "security-sensitive"
+    ],
+    "tier_3_always_gated": [
+      "heygen-avatar-video", "founder-face-voice", "high-cost-media",
+      "new-skill-install", "critical-data-deletion", "secret-rotation",
+      "legal-political-sensitive", "major-security-changes"
+    ]
+  },
   "approval_levels": {
     "observe": "auto",
     "infer": "auto",
     "propose": "auto",
-    "act": "review_required",
-    "publish": "review_required"
+    "draft": "auto",
+    "schedule": "auto",
+    "act_standard": "auto",
+    "act_gated": "review_required",
+    "publish_standard": "auto",
+    "publish_gated": "review_required"
   },
   "logging": {
     "dir": "/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/logging",
