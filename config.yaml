@@ -1,0 +1,118 @@
+## OpenClaw / InBharat Bot — Master Configuration
+# This file is read by automation scripts and Claude/bot sessions.
+# IMPORTANT: All social media posting uses Playwright browser automation.
+# Do NOT ask for API tokens. Browser sessions are already logged in.
+
+# ── Posting Engine ──
+# All posting goes through the Playwright-based posting engine.
+# Never use API tokens, Chrome browser, or manual posting.
+posting:
+  engine: playwright_browser_automation
+  publish_script: /Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine/publish.sh
+  scripts_dir: /Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine
+  sessions_dir: ~/.openclaw/browser-sessions
+
+  platforms:
+    linkedin:
+      script: post_linkedin.py
+      session: ~/.openclaw/browser-sessions/linkedin/
+      status: active
+      post_command: "python3 post_linkedin.py --text 'YOUR CONTENT'"
+    x:
+      script: post_x.py
+      session: ~/.openclaw/browser-sessions/x/
+      status: active
+      post_command: "python3 post_x.py --text 'YOUR CONTENT'"
+    instagram:
+      script: post_instagram.py
+      session: ~/.openclaw/browser-sessions/instagram/
+      status: active
+      post_command: "python3 post_instagram.py --file <queue-file> --image <path>"
+    email:
+      script: email_zoho.py
+      session: ~/.openclaw/browser-sessions/zoho/
+      status: active
+      post_command: "python3 email_zoho.py --to <addr> --subject <subj> --body <body> --visible"
+    discord:
+      script: post_discord.py
+      method: webhook
+      status: active
+
+  how_to_post: |
+    Option A (pipeline): Place content in OpenClawData/queues/<platform>/approved/ then run publish.sh
+    Option B (direct):   python3 <scripts_dir>/post_x.py --text "your content"
+    Option C (full):     Run daily-pipeline.sh which calls publish.sh at Stage 4
+
+# ── Social Handles ──
+social:
+  x:
+    handle: "@reeturaj"
+    posting_method: browser_automation
+    api_token: ""  # NOT NEEDED — browser session is active
+  linkedin:
+    handle: ""
+    posting_method: browser_automation
+    api_token: ""  # NOT NEEDED — browser session is active
+  instagram:
+    posting_method: browser_automation
+  discord:
+    posting_method: webhook
+
+# ── Repos to Monitor ──
+repos:
+  - https://github.com/inbharatai/OpenClaw-AI-CMO
+  - https://github.com/inbharatai/agent-arcade-gateway
+  - https://github.com/inbharatai/claude-skills
+  - https://github.com/inbharatai/phoring
+  - https://github.com/inbharatai/SocialFlow
+  - https://github.com/inbharatai/sahaayak-ai-public
+  - https://github.com/inbharatai/sahaayakseva-public
+  - https://github.com/inbharat-ai/testsprep.in
+  - https://github.com/inbharat-ai/uniassist.ai
+
+# ── Posting Schedule (IST 24h) ──
+posting_schedule:
+  x:
+    - "10:00"
+    - "14:00"
+    - "18:00"
+  linkedin:
+    - "09:30"
+    - "13:00"
+  instagram:
+    - "11:00"
+    - "17:00"
+  discord:
+    - "10:30"
+    - "15:00"
+
+# ── Research Schedule ──
+research:
+  ai_news:
+    day: 1  # Monday
+    hour: 9
+  market_trends:
+    day: 4  # Thursday
+    hour: 15
+  repo_summary:
+    hour: 23  # Every night
+
+# ── Image Generation ──
+images:
+  model: dall-e-3
+  api_key_location: "macOS Keychain — service: openai-api-key, account: openclaw"
+  budget_cap: 10  # images per day
+  script: /Volumes/Expansion/CMO-10million/OpenClawData/scripts/generate-image.sh
+
+# ── Video Generation ──
+video:
+  local_script: /Volumes/Expansion/CMO-10million/OpenClawData/scripts/generate-video-local.sh
+  ffmpeg_path: ~/local/bin/ffmpeg
+  heygen: gated  # Tier 3 — requires founder approval
+
+# ── Models ──
+models:
+  default: "qwen3:8b"  # Local Ollama — FREE
+  coding: "qwen2.5-coder:7b"  # Local Ollama — FREE
+  escalation: "groq"  # POTENTIALLY BILLABLE
+  images: "dall-e-3"  # Pay per image

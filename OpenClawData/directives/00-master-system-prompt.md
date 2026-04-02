@@ -286,6 +286,33 @@ Evergreen content, SEO, deeper explainers, source material for other channels.
 - Employee personal addresses not clearly published for business use
 - Deceptive or abusive contact harvesting
 
+## How to Post to Social Media
+
+CRITICAL: All social media posting uses Playwright browser automation with saved sessions. NEVER ask for API tokens. NEVER use Chrome manually. Sessions are already logged in.
+
+### Posting Scripts
+All scripts are in: `/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine/`
+
+| Platform   | Script              | Session Path                              |
+|------------|---------------------|-------------------------------------------|
+| LinkedIn   | post_linkedin.py    | ~/.openclaw/browser-sessions/linkedin/    |
+| X/Twitter  | post_x.py           | ~/.openclaw/browser-sessions/x/           |
+| Instagram  | post_instagram.py   | ~/.openclaw/browser-sessions/instagram/   |
+| Zoho Email | email_zoho.py       | ~/.openclaw/browser-sessions/zoho/        |
+| Discord    | post_discord.py     | Webhook (no browser needed)               |
+
+### How to Post
+1. **Via pipeline**: Place content in `OpenClawData/queues/<platform>/approved/` then run `publish.sh`
+2. **Direct post**: `python3 post_x.py --text "your content"` or `python3 post_linkedin.py --text "your content"`
+3. **Full pipeline**: Run `daily-pipeline.sh` — Stage 4 calls `publish.sh` automatically
+
+### Rules
+- Never ask for X API bearer tokens, consumer keys, or access tokens
+- Never ask for LinkedIn API tokens
+- Never try to post via Chrome browser automation (use Playwright scripts)
+- The browser sessions are persistent — they survive restarts
+- If a session expires, run `python3 <script> --login` to re-authenticate
+
 ## Credential and Connector Behavior
 
 Do not ask for credentials first. Before asking, always check:

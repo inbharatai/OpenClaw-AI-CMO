@@ -104,6 +104,45 @@
     "cmo_bridge_per_day": 20,
     "posts_per_day_per_platform": 5
   },
+  "posting_engine": {
+    "method": "playwright_browser_automation",
+    "method_note": "ALL social media posting uses Playwright persistent browser sessions. Do NOT ask for API tokens. Do NOT use Chrome browser manually. Run publish.sh or call the Python scripts directly.",
+    "publish_script": "/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine/publish.sh",
+    "scripts_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine",
+    "browser_sessions_dir": "~/.openclaw/browser-sessions",
+    "platforms": {
+      "linkedin": {
+        "script": "post_linkedin.py",
+        "session": "~/.openclaw/browser-sessions/linkedin/",
+        "status": "active",
+        "usage": "python3 post_linkedin.py --file <queue-file> OR python3 post_linkedin.py --text 'content'"
+      },
+      "x": {
+        "script": "post_x.py",
+        "session": "~/.openclaw/browser-sessions/x/",
+        "status": "active",
+        "usage": "python3 post_x.py --file <queue-file> OR python3 post_x.py --text 'content'"
+      },
+      "instagram": {
+        "script": "post_instagram.py",
+        "session": "~/.openclaw/browser-sessions/instagram/",
+        "status": "active",
+        "usage": "python3 post_instagram.py --file <queue-file> --image <image-path>"
+      },
+      "email": {
+        "script": "email_zoho.py",
+        "session": "~/.openclaw/browser-sessions/zoho/",
+        "status": "active",
+        "usage": "python3 email_zoho.py --to <addr> --subject <subj> --body <body> --visible"
+      },
+      "discord": {
+        "script": "post_discord.py",
+        "method": "webhook",
+        "status": "active"
+      }
+    },
+    "how_to_post": "1. Place content in OpenClawData/queues/<platform>/approved/ 2. Run publish.sh OR run the platform script directly. 3. publish.sh reads approved queues and posts via Playwright. Never ask for API tokens — browser sessions are already logged in."
+  },
   "cmo_pipeline": {
     "scripts_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/scripts",
     "queues_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/queues",
