@@ -1,28 +1,37 @@
 ---
 title: Content Approval Policy
-version: 1.0
-last_updated: 2026-03-31
+version: 2.0
+last_updated: 2026-04-02
 ---
 
 # Approval Policy
 
+Aligned with OpenClaw Autonomy Tiers (see `directives/00-master-system-prompt.md`).
+
 ## Approval Levels
 
-### L1 — Auto-Approved (Internal / Low-Risk)
-Items that can be published without human review:
+### L1 — Auto-Approved (Tier 0 Autonomous)
+Published without human review:
 - Build logs on Discord (own server)
 - Internal status updates
 - Dashboard/report generation
 - Source note classification
-- Draft generation (not publishing)
-
-### L2 — Score-Gated (Medium Risk)
-Items that pass if automated risk scoring clears thresholds:
-- Product updates on website
-- Discord announcements (own server)
-- Educational content (AI Made Simple, Feature Walkthrough)
+- Draft generation
+- Standard LinkedIn posts (AI news, education, build-in-public)
+- Standard X posts and threads
+- Standard Instagram carousels and visual content
+- Discord announcements and community updates
+- Blog articles and SEO content
+- Newsletter drafts
 - Community engagement posts
-- Build logs on social platforms
+
+### L2 — Score-Gated (Tier 0/1 with QA)
+Auto-published if internal QA chain passes (7-role review):
+- Product updates on website
+- YouTube Shorts and Instagram Reels (text/brief content only)
+- Educational content with specific product claims
+- Industry commentary and comparisons
+- Outreach campaign drafts
 
 Risk dimensions checked:
 - Source confidence (weight: 0.25)
@@ -32,19 +41,18 @@ Risk dimensions checked:
 - Platform risk (weight: 0.10)
 - Data safety (weight: 0.15)
 
-### L3 — Review Required (High Risk)
-Items requiring human review before publishing:
-- Instagram posts (all types)
-- YouTube Shorts
-- LinkedIn posts
-- X posts and threads
-- Product proof content with specific claims
-- Competitor mentions
-- Founder-associated messaging
+### L3 — Review Required (Tier 2/3 Gated)
+Items requiring founder review before publishing:
+- Reddit posts (always manual — platform policy)
+- HeyGen avatar video production (Tier 3 — cost gated)
+- Founder face or voice content
+- Product proof content with bold specific claims
+- Competitor attack content
 - Partnership announcements
 - Major milestone claims
+- Content with high claim-sensitivity score (>60)
 
-### L4 — Hard Stop (Block)
+### L4 — Hard Stop (Always Block)
 Items that must NEVER be auto-published:
 - Funding claims without verified announcement
 - Partnership claims without signed agreement

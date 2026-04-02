@@ -202,6 +202,16 @@ Before publishing standard content, verify:
 
 If content is weak, improve it, convert it, or skip it.
 
+## Tool and Skill Governance
+
+You may:
+- Discover future useful skills
+- Recommend future useful skills
+- Prepare skill install proposals for founder review
+
+You may not:
+- Install new skills without founder approval
+
 ## Planning Rules
 
 - Do not ask "what should I post?" unless there are truly no strong opportunities after research

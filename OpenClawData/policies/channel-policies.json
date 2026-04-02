@@ -1,7 +1,7 @@
 {
-  "version": "1.0",
-  "updated": "2026-03-23",
-  "description": "Per-channel content policies, format requirements, and guardrails",
+  "version": "2.0",
+  "updated": "2026-04-02",
+  "description": "Per-channel content policies aligned with OpenClaw Autonomy Tiers",
 
   "channels": {
     "website_updates": {
@@ -54,8 +54,8 @@
       "max_length_chars": 3000,
       "min_length_chars": 200,
       "tone": "professional, insightful, conversational",
-      "approval_level": "L2",
-      "posting_mode": "queue_export",
+      "approval_level": "L1",
+      "posting_mode": "auto_publish",
       "guardrails": ["no hashtag spam (max 5)", "no aggressive sales", "no competitor attacks", "include call-to-action"]
     },
     "x": {
@@ -64,8 +64,8 @@
       "max_length_chars": 280,
       "thread_max_posts": 8,
       "tone": "sharp, direct, engaging",
-      "approval_level": "L2",
-      "posting_mode": "queue_export",
+      "approval_level": "L1",
+      "posting_mode": "auto_publish",
       "guardrails": ["no hashtag spam (max 3)", "no controversial hot takes without review", "threads need clear narrative"]
     },
     "facebook": {
@@ -82,8 +82,8 @@
       "format": "caption_with_image_brief",
       "max_length_chars": 2200,
       "tone": "visual-first, engaging, story-driven",
-      "approval_level": "L2",
-      "posting_mode": "queue_export",
+      "approval_level": "L1",
+      "posting_mode": "auto_publish",
       "guardrails": ["max 30 hashtags (aim for 10-15)", "include image brief", "caption must stand alone without image"]
     },
     "discord": {

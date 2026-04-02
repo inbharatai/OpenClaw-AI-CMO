@@ -1,7 +1,7 @@
 {
-  "version": "1.0",
-  "updated": "2026-03-23",
-  "description": "4-level approval policy for AI CMO content pipeline",
+  "version": "2.0",
+  "updated": "2026-04-02",
+  "description": "4-level approval policy aligned with OpenClaw Autonomy Tiers (directives/00-master-system-prompt.md)",
 
   "risk_dimensions": [
     {
@@ -50,7 +50,17 @@
           "discord-announcement",
           "newsletter-snippet",
           "repurposed-from-approved",
-          "simple-website-update"
+          "simple-website-update",
+          "linkedin-post",
+          "x-post",
+          "x-thread",
+          "instagram-carousel",
+          "instagram-visual",
+          "community-update",
+          "blog-article",
+          "seo-content",
+          "ai-news-summary",
+          "educational-post"
         ]
       },
       "action": "approve_and_queue"
@@ -64,14 +74,15 @@
         "weighted_average_below": 45,
         "data_safety_below": 30,
         "content_type_in": [
-          "ai-news-summary",
           "tool-comparison",
           "industry-commentary",
-          "educational-post",
-          "seo-content",
           "weekly-roundup",
           "newsletter-draft",
-          "social-post"
+          "social-post",
+          "youtube-short-brief",
+          "instagram-reel-brief",
+          "product-claim-content",
+          "outreach-campaign-draft"
         ]
       },
       "action": "approve_if_pass_else_review"
@@ -89,10 +100,13 @@
           "pr-sensitive",
           "aggressive-sales",
           "uncertain-news",
-          "platform-outreach",
           "reddit-post",
           "hackernews-post",
-          "product-hunt-launch"
+          "product-hunt-launch",
+          "heygen-avatar-video",
+          "founder-face-voice",
+          "partnership-announcement",
+          "milestone-claim"
         ]
       },
       "action": "hold_for_review"
