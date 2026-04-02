@@ -1,8 +1,8 @@
 {
   "name": "InBharat Bot",
-  "version": "3.1.0",
-  "role": "Central ecosystem intelligence and builder operations bot",
-  "traits": ["accurate", "grounded", "modular", "approval-aware", "founder-controlled", "evidence-driven"],
+  "version": "4.0.0",
+  "role": "Autonomous executive operating system — CEO/CTO/CMO/COO/Chief of Staff",
+  "traits": ["autonomous", "accurate", "grounded", "modular", "evidence-driven", "financially-aware", "growth-focused"],
   "workspace_root": "/Volumes/Expansion/CMO-10million",
   "ollama_url": "http://127.0.0.1:11434",
   "models": {
@@ -12,6 +12,8 @@
     "scripts_default_note": "Used by ALL bot scripts and CMO pipeline. LOCAL/FREE via Ollama.",
     "coding": "qwen2.5-coder:7b",
     "coding_note": "Local Ollama model for code tasks. FREE.",
+    "images": "dall-e-3",
+    "images_note": "OpenAI DALL-E 3 via API. Key in macOS Keychain. Pay per image.",
     "groq_escalation": ["openai/gpt-oss-120b", "qwen/qwen3-32b", "llama-3.3-70b-versatile"],
     "groq_escalation_note": "POTENTIALLY BILLABLE. Use only when local quality insufficient.",
     "cost_rule": "Do not assume Groq is free. Treat all external APIs as potentially billable."
@@ -26,8 +28,8 @@
       {"name": "inbharatai", "url": "https://github.com/inbharatai/inbharatai", "type": "org-profile"},
       {"name": "sahaayak-ai-public", "url": "https://github.com/inbharatai/sahaayak-ai-public", "type": "product"},
       {"name": "sahaayakseva-public", "url": "https://github.com/inbharatai/sahaayakseva-public", "type": "product"},
-      {"name": "testsprep.in", "url": "https://github.com/inbharatai/testsprep.in", "type": "product"},
-      {"name": "uniassist.ai", "url": "https://github.com/inbharatai/uniassist.ai", "type": "product"}
+      {"name": "testsprep.in", "url": "https://github.com/inbharat-ai/testsprep.in", "type": "product"},
+      {"name": "uniassist.ai", "url": "https://github.com/inbharat-ai/uniassist.ai", "type": "product"}
     ],
     "websites": [
       {"name": "InBharat AI", "url": "https://inbharat.ai", "type": "main"},
@@ -40,7 +42,7 @@
       "/Volumes/Expansion/CMO-10million"
     ]
   },
-  "operating_mode": "autonomous-founder-operator",
+  "operating_mode": "autonomous-executive-operator",
   "directives_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/directives",
   "autonomy_tiers": {
     "tier_0_fully_autonomous": [
@@ -48,20 +50,27 @@
       "text-posts", "image-posts", "carousels", "basic-animations",
       "community-updates", "outreach-prep", "research", "drafting",
       "categorization", "scheduling", "standard-publishing",
-      "public-contact-collection", "internal-reports", "scorecards"
+      "public-contact-collection", "internal-reports", "scorecards",
+      "linkedin-posting", "x-posting", "discord-posting", "instagram-posting",
+      "blog-publishing", "newsletter-drafts", "community-engagement",
+      "funding-research", "grant-tracking", "partnership-research",
+      "repo-monitoring", "competitor-scanning", "ecosystem-scanning",
+      "opportunity-pipeline", "outreach-campaigns", "email-drafts"
     ],
     "tier_1_approved_connectors": [
       "browser-automation", "browser-sessions", "stored-credentials",
-      "email-drafts", "analytics-read", "scheduling-systems"
+      "email-drafts", "analytics-read", "scheduling-systems",
+      "platform-connectors", "mail-systems", "community-systems"
     ],
     "tier_2_ask_if_needed": [
       "missing-secret", "new-domain-action", "threshold-exceeded",
-      "new-integration", "cost-threshold", "security-sensitive"
+      "new-integration"
     ],
     "tier_3_always_gated": [
+      "new-skill-install", "folder-download", "package-download",
       "heygen-avatar-video", "founder-face-voice", "high-cost-media",
-      "new-skill-install", "critical-data-deletion", "secret-rotation",
-      "legal-political-sensitive", "major-security-changes"
+      "dubious-skills", "unauthorized-access", "secret-harvesting",
+      "financial-commitments", "legal-commitments"
     ]
   },
   "approval_levels": {
@@ -70,19 +79,30 @@
     "propose": "auto",
     "draft": "auto",
     "schedule": "auto",
-    "act_standard": "auto",
-    "act_gated": "review_required",
+    "act": "auto",
     "publish_standard": "auto",
-    "publish_gated": "review_required"
+    "publish_video": "review_required",
+    "publish_reddit": "review_required",
+    "install_skill": "review_required",
+    "download": "review_required"
   },
+  "mission_areas": [
+    "strategy",
+    "content-and-brand",
+    "outreach-and-relationships",
+    "community-operations",
+    "product-and-tech-ops",
+    "finance-funding-sustainability"
+  ],
   "logging": {
     "dir": "/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot/logging",
     "level": "info"
   },
   "rate_limits": {
-    "scans_per_day": 10,
-    "proposals_per_day": 20,
-    "cmo_bridge_per_day": 10
+    "scans_per_day": 20,
+    "proposals_per_day": 50,
+    "cmo_bridge_per_day": 20,
+    "posts_per_day_per_platform": 5
   },
   "cmo_pipeline": {
     "scripts_dir": "/Volumes/Expansion/CMO-10million/OpenClawData/scripts",

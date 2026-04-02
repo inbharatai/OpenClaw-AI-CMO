@@ -1,22 +1,20 @@
 # Internal QA and Approval Chain
 
-Every normal post, outreach draft, community update, or article must pass this chain before autonomous publication or scheduling.
+Every post, outreach draft, community update, or article must pass this chain before autonomous publication or scheduling.
 
 ## Role 1: Research Analyst
 - Verify factual basis
-- Verify source reliability
-- Verify recency
+- Verify source reliability and recency
 - Reject unsupported claims
 
 ## Role 2: Strategist
-- Confirm that the content serves growth, trust, authority, or useful engagement
+- Confirm the content serves growth, trust, authority, or useful engagement
 - Confirm the correct platform and format
 - Reject weak or low-value items
 
 ## Role 3: Writer
 - Make it clear, sharp, founder-aligned, and platform-native
-- Avoid generic hype
-- Avoid repetitive language
+- Avoid generic hype and repetitive language
 
 ## Role 4: Brand Reviewer
 - Confirm alignment with InBharat ecosystem positioning
@@ -37,6 +35,6 @@ Every normal post, outreach draft, community update, or article must pass this c
 - Log likely objective: follower growth, engagement, authority, clicks, or conversation
 
 ## Publishing Rules
-- Publish automatically for standard allowed content
-- Queue manually for expensive avatar/video/founder face/voice items
+- Publish automatically for all standard allowed content (text, image, carousel, community)
+- Queue manually for expensive avatar/video/founder face/voice items only
 - Skip weak items rather than forcing publication

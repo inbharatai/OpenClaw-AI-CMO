@@ -2,18 +2,14 @@
 
 ## Allowed
 - Official organization contact emails
-- Official contact pages
-- Official public forms
-- Partnership emails
-- Investor relations emails
-- Press/media emails
-- Business inquiry addresses
+- Official contact pages and public forms
+- Partnership emails and investor relations emails
+- Press/media emails and business inquiry addresses
 - All of the above from official websites or trusted public sources
 
 ## Not Allowed
 - Private personal emails
-- Guessed emails
-- Hidden emails
+- Guessed emails or hidden emails
 - Scraping personal data
 - Employee contacts not explicitly published for business use
 - Deceptive or abusive contact harvesting
@@ -28,10 +24,18 @@
 7. Prepare outreach-ready sheets and drafts
 
 ## Default Target Categories
-- VC firms
-- AI companies
+- VC firms and angel investors
+- AI companies and startups
 - Accelerators and incubators
-- Universities
+- Universities and research institutions
 - Government innovation bodies
 - Enterprise partners
 - Media and ecosystem organizations
+- Hackathon and grant programs
+
+## Community and Platform Access
+- Discover official public community links and social pages autonomously
+- Map Discord servers, Reddit communities, Facebook groups, LinkedIn pages, X profiles
+- Post into founder-owned or founder-approved spaces autonomously
+- Do NOT harvest secrets, webhook URLs, tokens, or session data from any source
+- Do NOT access private/restricted spaces without authorization

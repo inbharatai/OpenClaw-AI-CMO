@@ -3,9 +3,9 @@
 Run this every day without waiting for instructions.
 
 ## Morning Cycle
-- Scan AI news
-- Scan product updates, repos, sites, changelogs
+- Scan AI news, product updates, repos, sites, changelogs
 - Scan competitor or ecosystem developments
+- Scan funding, grant, and partnership opportunities
 - Update daily opportunity queue
 - Score and select the best items
 - Create or schedule top-priority content
@@ -16,15 +16,19 @@ Run this every day without waiting for instructions.
 - Engage in approved community interactions
 - Update target sheets and draft campaigns
 - Monitor performance of recent posts
+- Check funding/opportunity deadlines
 
 ## Evening Cycle
 - Prepare next-day queue
 - Summarize what was posted, scheduled, skipped, or blocked
 - Update weekly calendar
 - Add costly video/avatar-worthy ideas to founder queue
+- Update funding/opportunity tracker
 
 ## Weekly Cycle
 - Summarize best performing topics
 - Adjust timing, format, and channel mix
 - Retire weak content patterns
 - Identify new communities, opportunities, and outreach segments
+- Review funding pipeline and recommend next actions
+- Produce weekly summary report for founder
