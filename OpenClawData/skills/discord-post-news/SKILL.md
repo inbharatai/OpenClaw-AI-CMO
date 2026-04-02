@@ -1,0 +1,26 @@
+# Discord Post News Skill
+
+**Trigger:** `/discord-post-news`
+
+When this skill runs, it should post the *current* AI‑industry brief (the same short 6‑line version you receive on WhatsApp) to the Discord webhook you supplied.
+
+**Steps the model should follow**
+1. **Locate the latest newsletter file** in `memory/approval/` whose name matches the pattern `ai-news-*-newsletter.md`. (The most recent file is the one with the latest date prefix.)
+2. **Read** that file and extract its first 6‑line summary (the concise bullet list). If the file already contains a short “📰 AI‑Industry Brief” block, use that whole block as the message.
+3. **POST** the extracted text to the webhook using `curl`:
+   ```bash
+   curl -X POST -H "Content-Type: application/json" \
+        -d "{\"content\":\"<MESSAGE_TEXT>\"}" \
+        https://discord.com/api/webhooks/1488846529346408458/rpIXdEotEjkFJaDw0Vwt5Ij2HmbdwA_3XT8RjXhOburn7lbm9poEZxLtHlznpfG3OQri
+   ```
+   Replace `<MESSAGE_TEXT>` with the text you extracted in step 2 (properly escaped for JSON).
+
+**Safety notes:**
+- The webhook URL is hard‑coded (it’s the one you gave me). It will only be used for this single POST.
+- No personal or private data is included; only the public brief that you already receive on WhatsApp.
+- The `exec` call runs `curl` with a known safe URL, so it’s allowed.
+
+**Response:** After the POST succeeds, send a WhatsApp confirmation such as:
+```
+✅ Discord post sent for the AI‑news brief (8 AM / 11 PM).
+```

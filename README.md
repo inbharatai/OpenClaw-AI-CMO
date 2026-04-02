@@ -1,368 +1,367 @@
-# OpenClaw + InBharat Bot — Complete System Guide
+# OpenClaw — Autonomous Executive Operating System
 
-**Your AI-powered content engine, strategic brain, and autonomous publisher.**
+**The AI-powered operating system that runs InBharat's entire growth, content, outreach, and intelligence operation.**
 
-Last updated: 2026-04-02
-
----
-
-## What Is This System?
-
-You have ONE integrated system with specialized modules:
-
-| Module | Role | Where it lives |
-|--------|------|----------------|
-| **OpenClaw** | Runtime engine — runs tools, connects WhatsApp, executes commands | `~/.openclaw/` (config) |
-| **InBharat Bot** | Strategic brain — 12 intelligence lanes (scan, outreach, prototype, media, community, learning) | `OpenClawData/inbharat-bot/` |
-| **OpenClaw Media** | Content factory — 2 pipelines (Native Social + Amplification), video engine, posting engine | `OpenClawData/openclaw-media/` |
-
-**How it works:**
-- You text OpenClaw on WhatsApp → it maps your request to InBharat Bot commands → executes → shows you the output → you approve → it auto-publishes
+Version 4.1 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
 
 ---
 
-## Quick Start
+## System Architecture
 
-### Option A: WhatsApp (recommended)
-Text your OpenClaw WhatsApp bot. Natural language works:
-- "create a LinkedIn post about Phoring"
-- "what's pending?"
-- "approve phoring-linkedin-2026-04-01.json"
-- "scan for opportunities"
-- "system status"
-
-### Option B: Terminal
-```bash
-cd /Volumes/Expansion/CMO-10million
-bash OpenClawData/inbharat-bot/inbharat-run.sh help
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                     FOUNDER (WhatsApp / Terminal)                     │
+│  "create a LinkedIn post about Phoring" / "scan for funding"         │
+└──────────────────────────┬──────────────────────────────────────────┘
+                           ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  OPENCLAW RUNTIME                                                    │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────────┐   │
+│  │ Gateway      │  │ WhatsApp     │  │ Browser Automation       │   │
+│  │ Port :18789  │→ │ Baileys      │  │ Playwright Sessions      │   │
+│  │ Agent Router │  │ Provider     │  │ LinkedIn│X│Insta│Zoho    │   │
+│  └──────────────┘  └──────────────┘  └──────────────────────────┘   │
+│                           │                                          │
+│  ┌────────────────────────▼─────────────────────────────────────┐   │
+│  │  INBHARAT BOT — Internal Intelligence Layer                   │   │
+│  │  (NOT a separate platform — runs inside OpenClaw)             │   │
+│  │                                                               │   │
+│  │  13 Intelligence Lanes:                                       │   │
+│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
+│  │  │ Media   │ │ India    │ │ AI Gaps   │ │ Funding      │    │   │
+│  │  │ Engine  │ │ Problems │ │ Discovery │ │ & Grants     │    │   │
+│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
+│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
+│  │  │Compete  │ │Ecosystem │ │ Community │ │ Outreach     │    │   │
+│  │  │Monitor  │ │ Scanner  │ │ Intel     │ │ & Campaigns  │    │   │
+│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
+│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
+│  │  │Gov &    │ │ Learning │ │ Prototype │ │ Reddit       │    │   │
+│  │  │Tenders  │ │ & Review │ │ Builder   │ │ Drafting     │    │   │
+│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
+│  │                         ↕ Revenue & Lead Pipeline             │   │
+│  └───────────────────────────────────────────────────────────────┘   │
+│                           │                                          │
+│  ┌────────────────────────▼─────────────────────────────────────┐   │
+│  │  CONTENT FACTORY (openclaw-media/)                            │   │
+│  │                                                               │   │
+│  │  Generation:          Publishing:          Analytics:         │   │
+│  │  ┌──────────────┐    ┌──────────────┐    ┌───────────────┐   │   │
+│  │  │Native Pipeline│    │Approval Gate │    │Post Logging   │   │   │
+│  │  │(Ollama qwen3) │    │L1→L2→L3→L4  │    │Feedback Loop  │   │   │
+│  │  ├──────────────┤    ├──────────────┤    │Performance    │   │   │
+│  │  │DALL-E 3      │    │Claim Validate│    └───────────────┘   │   │
+│  │  │Image Engine  │    │Brand Check   │                        │   │
+│  │  ├──────────────┤    ├──────────────┤                        │   │
+│  │  │ffmpeg Video  │    │Queue Manager │                        │   │
+│  │  │(local, free) │    │pending→post  │                        │   │
+│  │  ├──────────────┤    ├──────────────┤                        │   │
+│  │  │HeyGen Briefs │    │Platform Post │                        │   │
+│  │  │(gated queue) │    │LinkedIn│X│IG │                        │   │
+│  │  └──────────────┘    └──────────────┘                        │   │
+│  └───────────────────────────────────────────────────────────────┘   │
+│                                                                      │
+│  ┌───────────────────────────────────────────────────────────────┐   │
+│  │  OPERATING DIRECTIVES (directives/)                            │   │
+│  │  Autonomy Tiers │ QA Chain │ Credential Rules │ Self-Correct  │   │
+│  └───────────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│  LIVE PLATFORM CONNECTIONS                                           │
+│  ┌──────────┐ ┌────────┐ ┌───────────┐ ┌─────────┐ ┌────────────┐ │
+│  │ LinkedIn │ │   X    │ │ Instagram │ │ Discord │ │ Zoho Mail  │ │
+│  │ ✅ Live  │ │ ✅ Live│ │ ✅ Live   │ │ ✅ Live │ │ ✅ Live    │ │
+│  │Playwright│ │Playwrt │ │Playwright │ │ Webhook │ │ Playwright │ │
+│  └──────────┘ └────────┘ └───────────┘ └─────────┘ └────────────┘ │
+│  ┌──────────┐                                                       │
+│  │ Reddit   │  Draft-only (L3 manual) — no auto-posting             │
+│  │ 📝 Draft │                                                       │
+│  └──────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Before You Start (Checklist)
+## Products in Ecosystem
 
-1. **External HD connected?** `/Volumes/Expansion/` must exist
-2. **Ollama running?** `curl -s http://127.0.0.1:11434/api/tags | head -1`
-   - If not: `ollama serve &`
-3. **Health check:** `bash OpenClawData/scripts/health-check.sh`
+| Product | What it does | Website | Status |
+|---|---|---|---|
+| **InBharat.ai** | AI tools company — parent brand | [inbharat.ai](https://inbharat.ai) | Live |
+| **Phoring** | Smart communication layer | [phoring.in](https://phoring.in) | Live |
+| **TestsPrep** | AI-powered test preparation | [testsprep.in](https://testsprep.in) | Live |
+| **UniAssist** | University application assistant | [uniassist.ai](https://uniassist.ai) | Live |
+| **Sahaayak** | AI helper for everyday tasks | [sahaayak.ai](https://sahaayak.ai) | Live |
+| **CodeIn** | Code learning platform | — | In development |
+| **OpenClaw** | This system — autonomous ops engine | [GitHub](https://github.com/inbharatai/OpenClaw-AI-CMO) | Live |
+| **Agent Arcade** | AI agent gateway | [GitHub](https://github.com/inbharatai/agent-arcade-gateway) | In development |
 
----
-
-## InBharat Bot — 12 Lanes
-
-### Content Creation & Media
-| What you want | Command |
-|---|---|
-| Create content about a product | `media native --product phoring` |
-| Create a LinkedIn post | `media native --product sahaayak --platform linkedin` |
-| Create a video brief | `media native --product phoring --platform shorts` then `media video --file <output>` |
-| Generate a HeyGen avatar video | HeyGen brief via `generate-video.sh --heygen --file <package>` |
-| Create an image | `media image --brief "description"` |
-| Full media cycle | `media full --product phoring` |
-| Amplify a campaign | `media amplify --all` |
-
-### Review & Publishing
-| What you want | Command |
-|---|---|
-| What's pending? | `media status` |
-| Show items needing review | `media review` |
-| Approve content (auto-publishes) | `media approve <filename>` |
-| Approve without publishing | `media approve <filename> --no-publish` |
-| Reject content | `media reject <filename>` |
-| Publish all approved | `media publish` |
-| Posting history | `media history` |
-
-### Intelligence & Discovery
-| What you want | Command |
-|---|---|
-| Scan India problems | `india-problems scan` |
-| Find AI gaps | `ai-gaps scan` |
-| Scan for funding | `funding scan` |
-| Scan competitors | `competitor scan` |
-| Scan ecosystem | `ecosystem scan` |
-| Community intelligence | `community scan` |
-| Find all opportunities | `opportunities all` |
-| Government tenders | `government scan` |
-
-### Reddit
-| What you want | Command |
-|---|---|
-| Draft a Reddit post | `reddit draft --subreddit r/SaaS` |
-| List Reddit drafts | `reddit list` |
-| Show subreddit map | `reddit subreddits` |
-
-### Outreach
-| What you want | Command |
-|---|---|
-| Research a company | `outreach research "Blume Ventures"` |
-| Draft outreach campaign | `outreach campaign vc-cold-intro vc-india.json` |
-| Check outreach status | `outreach status` |
-| Follow up | `outreach followup` |
-
-### Prototypes & Building
-| What you want | Command |
-|---|---|
-| Build a prototype | `prototype build "attendance tracker"` |
-| Auto pipeline (scan→build→launch) | `prototype pipeline` |
-| Launch locally | `prototype launch <dir>` |
-
-### Revenue & Leads
-| What you want | Command |
-|---|---|
-| Capture a lead | `leads capture "inquiry from XYZ"` |
-| Lead pipeline status | `leads status` |
-| Process hot leads | `revenue process` |
-| Check follow-ups | `revenue followups` |
-
-### System
-| What you want | Command |
-|---|---|
-| Full health check | Run: `bash OpenClawData/scripts/health-check.sh` |
-| Dashboard status | `status` |
-| Learning review | `learning review` |
+### GitHub Repositories (Monitored)
+- [inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
+- [inbharatai/phoring](https://github.com/inbharatai/phoring)
+- [inbharatai/agent-arcade-gateway](https://github.com/inbharatai/agent-arcade-gateway)
+- [inbharat-ai/uniassist.ai](https://github.com/inbharat-ai/uniassist.ai)
+- [inbharat-ai/testsprep.in](https://github.com/inbharat-ai/testsprep.in)
+- [inbharatai/sahaayak-ai-public](https://github.com/inbharatai/sahaayak-ai-public)
 
 ---
 
-## Products
+## How It Works
 
-| Product | Slug | Website |
+### Content Flow
+```
+Signal Discovered → Scored → Content Generated → QA Chain (7 roles) → Queued → Approved → Posted
+```
+
+### Autonomy Tiers
+
+| Tier | What | Examples |
 |---|---|---|
-| InBharat AI | `inbharat` | inbharat.ai |
-| Sahaayak | `sahaayak` | — |
-| Sahaayak Seva | `sahaayak-seva` | — |
-| Phoring | `phoring` | phoring.in |
-| TestsPrep | `testsprep` | testsprep.in |
-| UniAssist | `uniassist` | uniassist.ai |
-| CodeIn | `codein` | — |
-| Agent Arcade | `agent-arcade` | — |
-| Sahayak OS | `sahayak-os` | — |
-| OpenClaw | `openclaw` | — |
+| **T0 — Fully Autonomous** | No approval needed | Text posts, images, carousels, research, drafts, scheduling, community updates, outreach prep |
+| **T1 — Approved Connectors** | Uses saved sessions/keys | Browser posting, email drafts, analytics reads |
+| **T2 — Ask If Needed** | Real blockers only | Missing secrets, new integrations, threshold exceeded |
+| **T3 — Always Gated** | Founder must approve | HeyGen avatar videos, new skill installs, downloads, financial/legal commitments |
+
+### Internal QA Chain (7 Roles)
+Every piece of content passes through:
+1. **Research Analyst** — verify facts and sources
+2. **Strategist** — confirm growth/trust value
+3. **Writer** — make it sharp and platform-native
+4. **Brand Reviewer** — ecosystem alignment check
+5. **Accuracy Reviewer** — reject hallucinations
+6. **Publisher** — publish, schedule, or skip
+7. **Performance Analyst** — log objectives and compare
+
+---
+
+## Platform Publishing
+
+### Live Connections
+
+| Platform | Engine | How it posts | Session |
+|---|---|---|---|
+| **LinkedIn** | `post_linkedin.py` | Playwright browser automation | `~/.openclaw/browser-sessions/linkedin/` |
+| **X/Twitter** | `post_x.py` | Playwright browser automation | `~/.openclaw/browser-sessions/x/` |
+| **Instagram** | `post_instagram.py` | Playwright (mobile UA, image required) | `~/.openclaw/browser-sessions/instagram/` |
+| **Discord** | `post_discord.py` | Webhook (curl, no browser) | Keychain: `discord-webhook` |
+| **Zoho Mail** | `email_zoho.py` | Playwright (visible mode, Zoho blocks headless) | `~/.openclaw/browser-sessions/zoho/` |
+| **Reddit** | Draft only | `inbharat-run.sh reddit draft` | Manual posting (L3) |
+
+### Platform Content Rules
+
+| Platform | Tone | Format | Max Length |
+|---|---|---|---|
+| **LinkedIn** | Professional, insightful | Text + line breaks, 5 hashtags max | 3000 chars |
+| **X** | Sharp, fast, direct | Plain text, 3 hashtags max | 280 chars / 8-tweet threads |
+| **Instagram** | Visual-first, engaging | Caption + image/carousel, 10-15 hashtags | 2200 chars |
+| **Discord** | Community-friendly | Markdown, embed-friendly | 2000 chars |
+| **Reddit** | Genuine, non-promotional | Reddit markdown, value-first | 10000 chars |
+
+### Session Management
+- **Keepalive cron**: Every 6 hours — refreshes all sessions
+- **Cookie sync**: Chrome cookies → Playwright sessions
+- **Re-login**: `python3 post_<platform>.py --login`
+
+---
+
+## Image & Video Generation
+
+```
+Content Package
+      │
+      ├──► DALL-E 3 ──► Post Image (autonomous, $0.04/image, 10/day cap)
+      │
+      ├──► ffmpeg ────► Text Animation / Slideshow / Quote Card (free, local)
+      │
+      └──► HeyGen ───► Avatar Video Brief → Founder Queue (Tier 3 gated)
+```
+
+| Type | Tool | Cost | Autonomous? |
+|---|---|---|---|
+| Post images, cards, covers | DALL-E 3 (OpenAI API) | ~$0.04/image | Yes — 10/day budget cap |
+| Text animations | ffmpeg (local) | Free | Yes |
+| Slideshows with transitions | ffmpeg (local) | Free | Yes |
+| Ken Burns zoom | ffmpeg (local) | Free | Yes |
+| Quote card videos | ffmpeg (local) | Free | Yes |
+| Avatar presenter videos | HeyGen | Paid | No — founder-gated (Tier 3) |
+
+### Commands
+```bash
+# Images
+generate-image.sh "AI brain connected to India map" --size square
+generate-image.sh "Educational carousel slide" --size portrait
+generate-image.sh --budget  # Check today's spend
+
+# Videos
+generate-video-local.sh text "Building AI for India" --size 1080x1920
+generate-video-local.sh slideshow img1.png img2.png img3.png
+generate-video-local.sh quote "Think like an owner" --author "Reeturaj Goswami"
+generate-video-local.sh kenburns photo.png --duration 8
+```
 
 ---
 
 ## Approval System
 
-**4-level approval pipeline:**
-
-| Level | Gate | What happens |
-|---|---|---|
-| L1 | Auto-approve | Internal updates, Discord posts → auto-approved |
-| L2 | Score-gated | AI scores content (0-100). Score ≥ 70 → approved |
-| L3 | Review-required | External outreach, claims → needs your approval |
-| L4 | Hard-block | Credential claims, unverified stats → blocked |
-
-**On approve:** claim validation → platform session check → post → archive → feedback loop
-
-Nothing auto-publishes without your explicit approval first.
-
----
-
-## Publishing Platforms
-
-| Platform | Status | Poster |
-|---|---|---|
-| Discord | Working (webhook) | `post_discord.py` (curl) |
-| LinkedIn | Needs login | `post_linkedin.py` (Playwright) |
-| X/Twitter | Needs login | `post_x.py` (Playwright) |
-| Instagram | Needs login | `post_instagram.py` (Playwright) |
-| Reddit | Draft-only (L3 manual) | `inbharat-run.sh reddit` |
-
-**First-time platform login:**
-```bash
-cd /Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine
-python3 post_linkedin.py --login    # Opens browser, you log in once
-python3 post_x.py --login
-python3 post_instagram.py --login
+```
+Content Generated
+      │
+      ▼
+┌─────────────────┐
+│ Claim Validator  │──► Blocks: fabricated stats, unverified claims, credentials
+└────────┬────────┘
+         ▼
+┌─────────────────┐     ┌──────────────────────┐
+│ L1: Auto-Approve│────►│ Standard posts,       │
+│                 │     │ Discord, community     │
+└─────────────────┘     └──────────────────────┘
+┌─────────────────┐     ┌──────────────────────┐
+│ L2: Score-Gated │────►│ Product claims,       │
+│                 │     │ industry commentary    │
+└─────────────────┘     └──────────────────────┘
+┌─────────────────┐     ┌──────────────────────┐
+│ L3: Review Queue│────►│ Reddit, HeyGen video, │
+│                 │     │ bold claims, outreach  │
+└─────────────────┘     └──────────────────────┘
+┌─────────────────┐     ┌──────────────────────┐
+│ L4: Hard Block  │────►│ Unverified funding,   │
+│                 │     │ credentials, legal     │
+└─────────────────┘     └──────────────────────┘
 ```
 
-## Session Management
-
-Browser sessions are managed automatically:
-- **Chrome cookie sync**: `sync-chrome-sessions.sh` copies Chrome cookies to Playwright sessions
-- **Session keepalive**: Runs every 6h — refreshes platform sessions, alerts via WhatsApp if any expire
-- **No manual login needed**: Sessions sync from your Chrome browser automatically
-
-## Hourly WhatsApp Reports
-
-Every hour, you receive a WhatsApp summary:
-- Queue counts (pending/approved/posted per platform)
-- Posts published this hour
-- Lane runs and scans completed
-- System health status
-- Pending actions needing attention
-
-## Daily Auto-Content Engine
-
-Runs every day at 9:00 AM automatically:
-- **LinkedIn**: 1 post/day (product rotation across 7 products)
-- **X/Twitter**: 1 tweet/day
-- **Discord**: 1 community update/day
-- **Instagram Reels**: 1 reel brief/day (HeyGen avatar)
-- **YouTube Shorts**: 1 short brief/day (HeyGen avatar)
-- **Blog article**: Every 3 days
-- **Reddit draft**: Every 5 days (L3 manual posting)
-- **Intelligence scan**: Daily rotation (india-problems, ai-gaps, funding, competitors, ecosystem)
-- **WhatsApp summary**: Sent after each daily run
-
-## Autonomous Operating Directives
-
-System directives stored in `OpenClawData/directives/`:
-| File | Purpose |
-|------|---------|
-| `00-master-system-prompt.md` | Full operating identity and rules |
-| `01-founder-standing-directives.md` | 20 standing founder orders |
-| `02-internal-qa-chain.md` | 7-role review chain before publishing |
-| `03-outreach-contact-policy.md` | Public contact research rules |
-| `04-credential-resolution.md` | Secret lookup order |
-| `05-daily-schedule.md` | Morning/midday/evening/weekly cycles |
-| `06-self-correction.md` | Anti-intern behavior rules |
-
 ---
-
-## Video Engine
-
-**10 distinct video formats** to prevent repetitive content:
-- Hook-Story-CTA, Problem-Solution, Quick Demo, Myth Buster, Before-After
-- Day in Life, Hot Take/Opinion, Tutorial Walkthrough, Social Proof, Announcement
-
-**HeyGen avatar videos:** Browser-operated, production briefs generated automatically.
-
----
-
-## Architecture
-
-```
-YOU (WhatsApp / Terminal)
-  │
-  ▼
-OpenClaw Gateway (:18789) → InBharat Bot Bridge (natural language → commands)
-  │
-  ▼
-inbharat-run.sh (master orchestrator — 12 lanes)
-  │
-  ├── Media Lane ──────────► openclaw-media/
-  │                          ├── native-pipeline/ (original content)
-  │                          ├── amplify-pipeline/ (campaign amplification)
-  │                          ├── video-engine/ (HeyGen, format library)
-  │                          └── posting-engine/ (Discord, LinkedIn, X, Instagram)
-  │
-  ├── Intelligence Lanes ──► opportunities/, competitors/, ecosystem/
-  ├── Outreach Lane ───────► outreach/ (email drafts, campaigns)
-  ├── Prototype Lane ──────► prototypes/ (scan → build → launch)
-  ├── Revenue Lane ────────► leads/, revenue/
-  ├── Community Lane ──────► community intelligence
-  ├── Learning Lane ───────► analytics/feedback-to-bot/ → weekly summaries
-  └── Government Lane ─────► government proposals
-
-Approval Engine (L1-L4) ← claim-validator.sh ← website-context.md
-  │
-  ▼
-Auto-Publish on Approve → posting-engine/ → archive → feedback loop
-```
 
 ## Cron Schedule
 
 | Time | Job | Script |
-|------|-----|--------|
-| Every hour (:00) | WhatsApp report | `hourly-whatsapp-report.sh` |
+|---|---|---|
+| Every hour (:00) | WhatsApp status report | `hourly-whatsapp-report.sh` |
 | Every 6h (0/6/12/18) | Session keepalive | `session-keepalive.sh` |
-| 8:07 AM daily | CMO pipeline | `daily-pipeline.sh` |
-| 9:00 AM daily | Auto-content engine | `daily-auto-content.sh` |
-| Mon 7:53 AM | Weekly pipeline | `weekly-pipeline.sh` |
-| 1st of month 7:42 AM | Monthly pipeline | `monthly-pipeline.sh` |
+| 8:07 AM daily | Full CMO pipeline | `daily-pipeline.sh` |
+| 9:00 AM daily | Auto-content generation | `daily-auto-content.sh` |
+| Monday 7:53 AM | Weekly review | `weekly-pipeline.sh` |
+| 1st of month 7:42 AM | Monthly review | `monthly-pipeline.sh` |
+
+---
+
+## Intelligence Commands
+
+### Content & Media
+| Command | What it does |
+|---|---|
+| `media native --product phoring` | Generate content package for Phoring |
+| `media native --product sahaayak --platform linkedin` | LinkedIn-specific post |
+| `media image --brief "description"` | Generate DALL-E 3 image |
+| `media video --file <package>` | Generate video from content package |
+| `media status` | Show queue counts |
+| `media review` | Show items needing review |
+| `media approve <file>` | Approve and publish |
+| `media publish` | Publish all approved items |
+
+### Intelligence & Discovery
+| Command | What it does |
+|---|---|
+| `india-problems scan` | Scan for problems AI can solve in India |
+| `ai-gaps scan` | Find gaps in AI market |
+| `funding scan` | Find grants, programs, funding |
+| `competitor scan` | Competitive intelligence |
+| `ecosystem scan` | Ecosystem developments |
+| `community scan` | Community intelligence |
+| `opportunities all` | All opportunity types |
+
+### Outreach & Revenue
+| Command | What it does |
+|---|---|
+| `outreach research "Company"` | Research a target organization |
+| `outreach campaign <type> <list>` | Draft outreach campaign |
+| `leads capture "inquiry"` | Log a business lead |
+| `revenue process` | Process hot leads |
 
 ---
 
 ## Folder Structure
 
 ```
-/Volumes/Expansion/CMO-10million/              ← WORKSPACE ROOT
-│
+/Volumes/Expansion/CMO-10million/
+├── CLAUDE.md                              ← System operating instructions
+├── README.md                              ← THIS FILE
 ├── OpenClawData/
-│   ├── inbharat-bot/                          ← STRATEGIC BRAIN
-│   │   ├── inbharat-run.sh                   ← Master orchestrator
-│   │   ├── skills/                           ← Bot skill templates
-│   │   ├── opportunities/                    ← World scanner + reports
-│   │   ├── outreach/                         ← Email campaigns
-│   │   ├── prototypes/                       ← Built prototypes
-│   │   ├── leads/                            ← Business leads
-│   │   └── config/                           ← Bot config
-│   │
-│   ├── openclaw-media/                        ← CONTENT FACTORY
-│   │   ├── native-pipeline/                  ← Original content generation
-│   │   ├── amplify-pipeline/                 ← Campaign amplification
-│   │   ├── video-engine/                     ← HeyGen + video formats
-│   │   ├── posting-engine/                   ← Platform posters (Python/Playwright)
-│   │   ├── publishing/                       ← Post manager + archive
-│   │   └── analytics/                        ← Feedback loop + metrics
-│   │
-│   ├── queues/                                ← Per-platform content queues
-│   │   ├── discord/{pending,approved,posted}
-│   │   ├── linkedin/{pending,approved,posted}
-│   │   ├── x/{pending,approved,posted}
-│   │   └── instagram/{pending,approved,posted}
-│   │
-│   ├── scripts/                               ← CMO pipeline scripts
-│   ├── skills/                                ← Shared prompt templates (70+)
-│   ├── security/                              ← Claim validator
-│   ├── strategy/                              ← Website context, video format library
-│   ├── policies/                              ← Approval rules, brand voice
-│   ├── reports/                               ← Generated reports
-│   ├── memory/                                ← System memory
-│   └── logs/                                  ← Execution logs
-│
-├── MarketingToolData/                         ← Research data
-└── README.md                                  ← THIS FILE
+│   ├── directives/                        ← Operating directives (7 files)
+│   ├── inbharat-bot/                      ← Intelligence layer
+│   │   ├── inbharat-run.sh              ← Master orchestrator (13 lanes)
+│   │   ├── skills/                      ← 13 prompt skill templates
+│   │   ├── config/bot-config.json       ← Bot configuration
+│   │   ├── opportunities/               ← Scanner output
+│   │   ├── outreach/                    ← Campaign drafts
+│   │   └── leads/                       ← Lead pipeline
+│   ├── openclaw-media/                    ← Content factory
+│   │   ├── native-pipeline/             ← Content generation (Ollama)
+│   │   ├── image-engine/                ← DALL-E 3 + fallbacks
+│   │   ├── video-engine/                ← ffmpeg + HeyGen briefs
+│   │   ├── posting-engine/              ← Platform posters (5 scripts)
+│   │   ├── publishing/                  ← Queue manager + archive
+│   │   ├── analytics/                   ← Post logs + feedback
+│   │   └── generated-images/            ← DALL-E 3 output
+│   ├── queues/                            ← Per-platform content queues
+│   │   ├── linkedin/                    ← pending → approved → posted
+│   │   ├── x/
+│   │   ├── discord/
+│   │   ├── instagram/
+│   │   ├── reddit/
+│   │   ├── website/
+│   │   └── heygen/                      ← Avatar video briefs (gated)
+│   ├── scripts/                           ← Pipeline scripts
+│   ├── skills/                            ← 67+ shared skill templates
+│   ├── security/                          ← Claim validator
+│   ├── strategy/                          ← Product truth, platform rules
+│   ├── policies/                          ← Approval rules, brand voice
+│   ├── reports/                           ← Generated reports
+│   └── logs/                              ← Execution logs
+└── MarketingToolData/                     ← Research data
 ```
 
 ---
 
-## Image & Video Generation
+## Tech Stack & Cost
 
-| Type | Tool | Cost | Autonomous? |
-|---|---|---|---|
-| Images (posts, carousels, cards) | DALL-E 3 via OpenAI API | ~$0.04/image | Yes (Tier 0, 10/day cap) |
-| Basic video (text animations, slideshows) | ffmpeg (local) | Free | Yes (Tier 0) |
-| Ken Burns / quote card video | ffmpeg (local) | Free | Yes (Tier 0) |
-| Avatar videos (Shorts/Reels) | HeyGen | Paid | No (Tier 3, founder-gated) |
-
-**Scripts:**
-- `scripts/generate-image.sh "prompt" --size square` — DALL-E 3 image
-- `scripts/generate-video-local.sh text "Title" --size 1080x1920` — text animation
-- `scripts/generate-video-local.sh slideshow img1.png img2.png` — slideshow
-- `scripts/generate-video-local.sh quote "Quote" --author "Name"` — quote card
-- `scripts/generate-video-local.sh kenburns image.png` — Ken Burns zoom
-
-**Budget:** 10 images/day max (~$0.40/day). Check with `generate-image.sh --budget`
-
----
-
-## Platform Sessions
-
-| Platform | Status | Engine |
+| Component | Technology | Cost |
 |---|---|---|
-| LinkedIn | Connected | `post_linkedin.py` (Playwright) |
-| X/Twitter | Connected | `post_x.py` (Playwright) |
-| Instagram | Connected | `post_instagram.py` (Playwright) |
-| Discord | Connected | `post_discord.py` (webhook) |
-| Reddit | Draft-only | Manual posting (L3 gated) |
+| LLM (content gen) | Ollama qwen3:8b (local) | Free |
+| LLM (coding) | Ollama qwen2.5-coder:7b (local) | Free |
+| LLM (escalation) | Groq API | Free tier |
+| Images | DALL-E 3 (OpenAI API) | ~$0.04/image, 10/day cap |
+| Video (local) | ffmpeg v7.0 | Free |
+| Video (avatar) | HeyGen | Paid, founder-gated |
+| Browser posting | Playwright | Free |
+| Discord posting | Webhook (curl) | Free |
+| Web search | DuckDuckGo | Free |
+| Secrets | macOS Keychain | Free |
+| Scheduling | crontab (6 jobs) | Free |
 
-Session keepalive runs every 6h. Re-login: `python3 post_<platform>.py --login`
+**Estimated daily cost**: ~$0.40 (10 DALL-E images) + $0 everything else = **< $15/month**
 
 ---
 
-## Cost
+## System Maturity (Honest Assessment)
 
-| Component | Cost |
-|---|---|
-| Ollama (qwen3:8b, local) | Free |
-| Groq (gateway agent) | Free tier |
-| DALL-E 3 (images) | ~$0.04/image, capped 10/day |
-| ffmpeg (local video) | Free |
-| HeyGen (avatar videos) | Paid / founder-gated |
-| DuckDuckGo (web search) | Free |
-| Discord (webhook posting) | Free |
-| Playwright (browser posting) | Free |
+| Component | Status | Maturity |
+|---|---|---|
+| LinkedIn posting | Tested — posted real content | **Fully verified** |
+| X/Twitter posting | Session valid, logic complete | **Integrated, not tested** |
+| Instagram posting | Session valid, requires image | **Integrated, not tested** |
+| Discord posting | Webhook operational | **Fully verified** |
+| Zoho Mail | Session valid (visible mode) | **Integrated, not tested** |
+| DALL-E 3 images | Generated real image | **Fully verified** |
+| ffmpeg video | Generated real video | **Fully verified** |
+| Content generation (Ollama) | Produces JSON packages | **Fully verified** |
+| Queue system | Directories populated | **Fully verified** |
+| Approval engine | Runs but uses hardcoded types | **Tested, partial** |
+| Daily pipeline | Last run failed (Ollama issue) | **Tested, blocker** |
+| Strategy/product-truth | Complete reference docs | **Fully verified** |
+| Analytics/learning | Logs exist, no engagement data | **Scaffolding** |
+| Amplify pipeline | Stub only | **Not implemented** |
+| Policy JSON enforcement | Defined but not consumed | **Not integrated** |
 
 ---
 
@@ -370,19 +369,38 @@ Session keepalive runs every 6h. Re-login: `python3 post_<platform>.py --login`
 
 | Issue | Fix |
 |---|---|
-| "Ollama not running" | `ollama serve &` |
-| "Bot root not found" | Plug in external HD, check `/Volumes/Expansion/` |
-| "No search results" | Check internet connection |
-| "No response from model" | `ollama pull qwen3:8b` |
-| "jq: command not found" | `brew install jq` |
-| "Session expired" on platform | Re-run `python3 post_<platform>.py --login` |
+| Ollama not running | `ollama serve &` |
+| External HD not found | Plug in, check `/Volumes/Expansion/` |
+| Session expired | `python3 post_<platform>.py --login` |
+| DALL-E budget exceeded | Wait for next day or `--force` |
+| Pipeline intake fails (141) | Restart Ollama: `ollama serve &` |
+| ffmpeg not found | Already at `~/local/bin/ffmpeg` |
+| Zoho headless blocked | Runs visible mode only (by design) |
 
 ---
 
-## 5 Things to Remember
+## Quick Start
 
-1. **Plug in the external HD** before using anything
-2. **Ollama must be running** (`ollama serve &`)
-3. **WhatsApp is the primary interface** — just text naturally
-4. **Standard content auto-publishes; gated items (video, Reddit) need approval**
-5. **Health check:** `bash OpenClawData/scripts/health-check.sh`
+```bash
+# 1. Ensure external HD is connected
+ls /Volumes/Expansion/CMO-10million
+
+# 2. Start Ollama
+ollama serve &
+
+# 3. Health check
+bash OpenClawData/scripts/health-check.sh
+
+# 4. Generate content
+bash OpenClawData/openclaw-media/native-pipeline/generate-content.sh --product phoring --platform linkedin
+
+# 5. Check queues
+bash OpenClawData/openclaw-media/publishing/post-manager.sh --status
+
+# 6. Publish approved content
+bash OpenClawData/openclaw-media/posting-engine/publish.sh
+```
+
+---
+
+**Built by [Reeturaj Goswami](https://linkedin.com/in/reeturaj-goswami/) | [InBharat.ai](https://inbharat.ai)**

@@ -21,9 +21,17 @@ WORKSPACE="/Volumes/Expansion/CMO-10million"
 OUTPUT_DIR="$WORKSPACE/OpenClawData/openclaw-media/generated-videos"
 mkdir -p "$OUTPUT_DIR"
 
-# Check ffmpeg
-if ! command -v ffmpeg &>/dev/null; then
-    echo "ERROR: ffmpeg not installed. Run: brew install ffmpeg"
+# Find ffmpeg
+if command -v ffmpeg &>/dev/null; then
+    FFMPEG="ffmpeg"
+elif [ -x "$HOME/local/bin/ffmpeg" ]; then
+    FFMPEG="$HOME/local/bin/ffmpeg"
+elif [ -x "/usr/local/bin/ffmpeg" ]; then
+    FFMPEG="/usr/local/bin/ffmpeg"
+elif [ -x "/opt/homebrew/bin/ffmpeg" ]; then
+    FFMPEG="/opt/homebrew/bin/ffmpeg"
+else
+    echo "ERROR: ffmpeg not found"
     exit 1
 fi
 
@@ -96,7 +104,7 @@ slideshow)
     done
     FILTER="${FILTER_PARTS}${CONCAT}concat=n=$N:v=1:a=0[outv]"
 
-    eval ffmpeg -y $INPUTS -filter_complex "\"$FILTER\"" -map '"[outv]"' -c:v libx264 -pix_fmt yuv420p -r 30 "\"$OUTPUT\"" 2>/dev/null
+    eval $FFMPEG -y $INPUTS -filter_complex "\"$FILTER\"" -map '"[outv]"' -c:v libx264 -pix_fmt yuv420p -r 30 "\"$OUTPUT\"" 2>/dev/null
     echo "SAVED: $OUTPUT (slideshow, ${N} slides)"
     ;;
 
@@ -120,7 +128,7 @@ text)
     W=$(echo "$VSIZE" | cut -dx -f1)
     H=$(echo "$VSIZE" | cut -dx -f2)
 
-    ffmpeg -y -f lavfi -i "color=c=${BG_COLOR}:s=${VSIZE}:d=${DURATION}:r=30" \
+    $FFMPEG -y -f lavfi -i "color=c=${BG_COLOR}:s=${VSIZE}:d=${DURATION}:r=30" \
         -vf "drawtext=text='${TEXT}':fontsize=${FONTSIZE}:fontcolor=${FONT_COLOR}:x=(w-text_w)/2:y=(h-text_h)/2:alpha='if(lt(t,1),t,if(lt(t,${DURATION}-1),1,(${DURATION}-t)))'" \
         -c:v libx264 -pix_fmt yuv420p "$OUTPUT" 2>/dev/null
 
@@ -135,7 +143,7 @@ kenburns)
     W=$(echo "$VSIZE" | cut -dx -f1)
     H=$(echo "$VSIZE" | cut -dx -f2)
 
-    ffmpeg -y -loop 1 -i "$IMAGE" -t "$DURATION" \
+    $FFMPEG -y -loop 1 -i "$IMAGE" -t "$DURATION" \
         -vf "scale=2*${W}:2*${H},zoompan=z='min(zoom+0.0015,1.5)':d=$((DURATION*30)):s=${VSIZE}:fps=30" \
         -c:v libx264 -pix_fmt yuv420p "$OUTPUT" 2>/dev/null
 
@@ -155,7 +163,7 @@ quote)
         AUTHOR_TEXT="— $AUTHOR"
     fi
 
-    ffmpeg -y -f lavfi -i "color=c=0x1a1a2e:s=${VSIZE}:d=${DURATION}:r=30" \
+    $FFMPEG -y -f lavfi -i "color=c=0x1a1a2e:s=${VSIZE}:d=${DURATION}:r=30" \
         -vf "drawtext=text='${QUOTE}':fontsize=48:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2-40:alpha='if(lt(t,1),t,1)',drawtext=text='${AUTHOR_TEXT}':fontsize=32:fontcolor=0xaaaaaa:x=(w-text_w)/2:y=(h/2)+60:alpha='if(lt(t,1.5),t/1.5,1)'" \
         -c:v libx264 -pix_fmt yuv420p "$OUTPUT" 2>/dev/null
 
