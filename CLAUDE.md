@@ -123,26 +123,6 @@ Before asking for any credential, check in order:
 
 Report what was posted, scheduled, drafted, skipped, and what's in founder video queue. Report true blockers. Do NOT repeatedly ask "should I do this?"
 
-## How to Post to Social Media — CRITICAL
-
-All social media posting uses **Playwright browser automation** with persistent sessions. NEVER ask for API tokens. NEVER use Chrome. Sessions are already logged in.
-
-### Posting Scripts (all in `OpenClawData/openclaw-media/posting-engine/`)
-- **LinkedIn**: `python3 post_linkedin.py --text "content"` (session: `~/.openclaw/browser-sessions/linkedin/`)
-- **X/Twitter**: `python3 post_x.py --text "content"` (session: `~/.openclaw/browser-sessions/x/`)
-- **Instagram**: `python3 post_instagram.py --file <queue-file> --image <path>` (session: `~/.openclaw/browser-sessions/instagram/`)
-- **Zoho Email**: `python3 email_zoho.py --to <addr> --subject <subj> --body <body> --visible` (session: `~/.openclaw/browser-sessions/zoho/`)
-- **Discord**: `python3 post_discord.py` (webhook, no browser)
-
-### Pipeline Publishing
-- Place content in `OpenClawData/queues/<platform>/approved/` → run `publish.sh`
-- Or run `daily-pipeline.sh` (Stage 4 calls publish.sh)
-
-### Rules
-- NEVER ask for X API bearer tokens, consumer keys, or access tokens
-- NEVER ask for LinkedIn API tokens
-- If session expired: `python3 <script> --login`
-
 ## Key Paths
 - Workspace: `/Volumes/Expansion/CMO-10million`
 - OpenClawData: `/Volumes/Expansion/CMO-10million/OpenClawData`
