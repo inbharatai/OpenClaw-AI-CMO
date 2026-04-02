@@ -45,7 +45,9 @@ if ! curl -s --max-time 3 "$OLLAMA_URL/api/tags" > /dev/null 2>&1; then
 fi
 
 # Load L1 auto-approve content types from policy
-L1_TYPES="product-update build-log founder-update discord-announcement newsletter-snippet repurposed-from-approved simple-website-update"
+# L1 auto-approve types — aligned with autonomy tiers (directives/00-master-system-prompt.md)
+# Standard content across all platforms is Tier 0 (fully autonomous)
+L1_TYPES="product-update build-log founder-update discord-announcement newsletter-snippet repurposed-from-approved simple-website-update linkedin-post x-post x-thread instagram-carousel instagram-visual community-update blog-article seo-content ai-news-summary educational-post"
 
 TOTAL_PROCESSED=0
 TOTAL_APPROVED=0
