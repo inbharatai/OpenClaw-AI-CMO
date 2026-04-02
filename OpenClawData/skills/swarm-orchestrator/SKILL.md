@@ -1,3 +1,7 @@
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
+
 # Swarm Orchestrator Skill
 
 This skill provides high‑level commands that let you run autonomous, sub‑agent‑driven workflows for outreach, content creation, and periodic summaries. All heavy‑lifting is delegated to short‑lived sub‑agents, while the orchestrator handles coordination, validation, and human approval.

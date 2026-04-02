@@ -2,7 +2,9 @@
 
 **The AI-powered operating system that runs InBharat's entire growth, content, outreach, and intelligence operation.**
 
-Version 4.1 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
+Version 4.2 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
+
+[![CI](https://github.com/inbharatai/OpenClaw-AI-CMO/actions/workflows/ci.yml/badge.svg)](https://github.com/inbharatai/OpenClaw-AI-CMO/actions/workflows/ci.yml)
 
 ---
 
@@ -312,7 +314,7 @@ Content Generated
 │   │   ├── website/
 │   │   └── heygen/                      ← Avatar video briefs (gated)
 │   ├── scripts/                           ← Pipeline scripts
-│   ├── skills/                            ← 67+ shared skill templates
+│   ├── skills/                            ← 69 skill templates (all with honest disclaimers)
 │   ├── security/                          ← Claim validator
 │   ├── strategy/                          ← Product truth, platform rules
 │   ├── policies/                          ← Approval rules, brand voice
@@ -327,19 +329,30 @@ Content Generated
 
 | Component | Technology | Cost |
 |---|---|---|
-| LLM (content gen) | Ollama qwen3:8b (local) | Free |
-| LLM (coding) | Ollama qwen2.5-coder:7b (local) | Free |
-| LLM (escalation) | Groq API | Free tier |
+| LLM (content gen) | Ollama qwen3:8b (local, 8.2B params) | Free |
+| LLM (coding) | Ollama qwen2.5-coder:7b (local, 7.6B params) | Free |
+| LLM (escalation) | Groq API (referenced, not wired) | Free tier |
 | Images | DALL-E 3 (OpenAI API) | ~$0.04/image, 10/day cap |
-| Video (local) | ffmpeg v7.0 | Free |
+| Video (local) | ffmpeg v7.0 at `~/local/bin/ffmpeg` | Free |
 | Video (avatar) | HeyGen | Paid, founder-gated |
-| Browser posting | Playwright | Free |
+| Browser posting | Playwright persistent sessions | Free |
 | Discord posting | Webhook (curl) | Free |
 | Web search | DuckDuckGo | Free |
 | Secrets | macOS Keychain | Free |
 | Scheduling | crontab (6 jobs) | Free |
+| CI/CD | GitHub Actions (5 checks) | Free |
 
-**Estimated daily cost**: ~$0.40 (10 DALL-E images) + $0 everything else = **< $15/month**
+### AI Model Usage
+
+| Model | Used By | Cost |
+|---|---|---|
+| **qwen3:8b** | Content gen, classification, scans, approvals, intelligence lanes | **FREE** (local) |
+| **qwen2.5-coder:7b** | Code tasks via model-router | **FREE** (local) |
+| **DALL-E 3** | Image gen via `generate-image.sh` (10/day budget cap) | **~$0.04/img** |
+| **ffmpeg** | Video gen (slideshow, text, kenburns, quote) | **FREE** (local) |
+| **HeyGen** | Avatar video briefs only (Tier 3 gated) | **Paid** |
+
+**Estimated monthly cost**: ~$12 (DALL-E at max usage) + $0 everything else = **< $15/month**
 
 ---
 
@@ -356,9 +369,11 @@ Content Generated
 | ffmpeg video | Generated real video | **Fully verified** |
 | Content generation (Ollama) | Produces JSON packages | **Fully verified** |
 | Queue system | Directories populated | **Fully verified** |
-| Approval engine | Runs but uses hardcoded types | **Tested, partial** |
-| Daily pipeline | Last run failed (Ollama issue) | **Tested, blocker** |
+| Approval engine | Runs, L1-L4 routing active | **Tested, partial** |
+| Daily pipeline | All stages pass (dry-run verified) | **Fully verified** |
+| Model routing | qwen3:8b general + qwen2.5-coder:7b code | **Fully verified** |
 | Strategy/product-truth | Complete reference docs | **Fully verified** |
+| CI/CD | Shell syntax, JSON, skill disclaimers | **Fully verified** |
 | Analytics/learning | Logs exist, no engagement data | **Scaffolding** |
 | Amplify pipeline | Stub only | **Not implemented** |
 | Policy JSON enforcement | Defined but not consumed | **Not integrated** |
@@ -373,7 +388,7 @@ Content Generated
 | External HD not found | Plug in, check `/Volumes/Expansion/` |
 | Session expired | `python3 post_<platform>.py --login` |
 | DALL-E budget exceeded | Wait for next day or `--force` |
-| Pipeline intake fails (141) | Restart Ollama: `ollama serve &` |
+| Pipeline intake fails (141) | Fixed — SIGPIPE trap added. If persists: `ollama serve &` |
 | ffmpeg not found | Already at `~/local/bin/ffmpeg` |
 | Zoho headless blocked | Runs visible mode only (by design) |
 
