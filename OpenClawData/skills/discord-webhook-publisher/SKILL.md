@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: discord-webhook-publisher
 description: Post approved content to Discord via webhook. Use when distributing approved Discord announcements. Triggers on Discord posting, webhook publishing, or Discord distribution requests.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Discord Webhook Publisher
 
 Post approved Discord announcements via webhook.

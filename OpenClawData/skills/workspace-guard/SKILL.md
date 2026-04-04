@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: workspace-guard
 description: Enforce workspace safety boundaries. Use before any file operation to verify the target path is inside the approved workspace. Prevents accidental edits, deletions, or writes outside the designated external drive folder. Triggers on file create, edit, delete, move, or any destructive action.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Workspace Guard
 
 Enforce strict workspace boundaries for all file operations. This is the safety foundation for the entire local AI workspace.

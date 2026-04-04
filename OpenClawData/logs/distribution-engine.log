@@ -74,3 +74,45 @@
 [2026-03-31 20:13:51] BLOCKED CHANNEL: linkedin — skipping (blocked by policy)
 [2026-03-31 20:13:51] === Distribution Engine Complete ===
 [2026-03-31 20:13:51] Distributed: 0 | Skipped: 0
+[2026-04-02 22:01:33] === Distribution Engine Started ===
+[2026-04-02 22:01:33] [DRY RUN] No distribution will occur
+[2026-04-02 22:01:34] [DRY RUN] Would distribute website/updates: update-2026-03-27-inbharat-bot-update-2026-03-25.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-04-02 22:01:34] [DRY RUN] Would post/export x: x-update-2026-03-27-inbharat-bot-update-2026-03-25.md
+[2026-04-02 22:01:34] === Distribution Engine Complete ===
+[2026-04-02 22:01:34] Distributed: 2 | Skipped: 0
+[2026-04-02 23:13:20] === Distribution Engine Started ===
+[2026-04-02 23:13:20] [DRY RUN] No distribution will occur
+[2026-04-02 23:13:20] [DRY RUN] Would distribute website/updates: update-2026-03-27-inbharat-bot-update-2026-03-25.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-04-02 23:13:20] [DRY RUN] Would post/export x: x-update-2026-03-27-inbharat-bot-update-2026-03-25.md
+[2026-04-02 23:13:20] === Distribution Engine Complete ===
+[2026-04-02 23:13:20] Distributed: 2 | Skipped: 0
+[2026-04-02 23:59:27] === Distribution Engine Started ===
+[2026-04-02 23:59:27] [DRY RUN] No distribution will occur
+[2026-04-02 23:59:27] PLAYWRIGHT CHANNEL: instagram — skipping (handled by publish.sh)
+[2026-04-02 23:59:27] PLAYWRIGHT CHANNEL: linkedin — skipping (handled by publish.sh)
+[2026-04-02 23:59:27] [DRY RUN] Would distribute website/updates: update-2026-03-27-inbharat-bot-update-2026-03-25.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-04-02 23:59:27] PLAYWRIGHT CHANNEL: x — skipping (handled by publish.sh)
+[2026-04-02 23:59:27] === Distribution Engine Complete ===
+[2026-04-02 23:59:27] Distributed: 1 | Skipped: 0
+[2026-04-03 23:07:48] === Distribution Engine Started ===
+[2026-04-03 23:07:48] [DRY RUN] No distribution will occur
+[2026-04-03 23:07:48] SKIP [discord]: Handled by publish.sh (canonical Playwright path)
+[2026-04-03 23:07:48] SKIP [instagram]: Handled by publish.sh (canonical Playwright path)
+[2026-04-03 23:07:48] SKIP [linkedin]: Handled by publish.sh (canonical Playwright path)
+[2026-04-03 23:07:48] POLICY BLOCK [shorts]: BLOCKED: POLICY BLOCK [shorts]: No policy defined for 'shorts' in rate-limits.json — posting denied (source: /Volumes/Expansion/CMO-10million/OpenClawData/policies/rate-limits.json)
+[2026-04-03 23:07:48] SKIP [x]: Handled by publish.sh (canonical Playwright path)
+[2026-04-03 23:07:48] === Distribution Engine Complete ===
+[2026-04-03 23:07:48] Distributed: 0 | Skipped: 0 | Policy-blocked: 1
+[2026-04-04 13:39:58] === Distribution Engine Started ===
+[2026-04-04 13:39:59] SKIP [discord]: Handled by publish.sh (canonical Playwright path)
+[2026-04-04 13:39:59] SKIP [instagram]: Handled by publish.sh (canonical Playwright path)
+[2026-04-04 13:39:59] SKIP [linkedin]: Handled by publish.sh (canonical Playwright path)
+[2026-04-04 13:39:59] POLICY BLOCK [shorts]: BLOCKED: POLICY BLOCK [shorts]: No policy defined for 'shorts' in rate-limits.json — posting denied (source: /Volumes/Expansion/CMO-10million/OpenClawData/policies/rate-limits.json)
+[2026-04-04 13:39:59] SANITIZE WARNING [website]: update-2026-04-04-inbharat-bot-update-2026-03-25-formatted.md — ISSUES (3):
+  - internal_field:^\s*approval_level\b
+  - internal_field:^\s*source_file\b
+  - internal_field:^\s*status\s*:\s*["\']?(pending|approved|draft|blocked)["\']?\b
+[2026-04-04 13:39:59] DISTRIBUTED [website/updates]: update-2026-04-04-inbharat-bot-update-2026-03-25-formatted.md → /Volumes/Expansion/CMO-10million/MarketingToolData/website-posts/
+[2026-04-04 13:39:59] SKIP [x]: Handled by publish.sh (canonical Playwright path)
+[2026-04-04 13:39:59] === Distribution Engine Complete ===
+[2026-04-04 13:39:59] Distributed: 1 | Skipped: 0 | Policy-blocked: 1

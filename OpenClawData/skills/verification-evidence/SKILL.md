@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: verification-evidence
 description: Prevent false completion claims by requiring evidence for every completed task. Use after any task execution to verify results. Triggers when marking a task as done, generating a completion report, or when the user asks "did that work?" or "prove it". No task is complete without at least one form of evidence.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Verification and Evidence
 
 No task is marked complete without proof. This skill enforces evidence-based completion for all work.

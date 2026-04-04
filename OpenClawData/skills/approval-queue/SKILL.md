@@ -1,7 +1,11 @@
+---
+name: approval-queue
+description: JSON-based approval queue for the CMO pipeline. Use when managing content approval workflows.
+---
+
 > **HONEST CLASSIFICATION:** This is a **utility skill**.
 > It provides a simple JSON-based approval queue for the CMO pipeline.
 > Real enforcement happens in `OpenClawData/scripts/approval-engine.sh`.
-
 # Approval‑Queue Skill
 
 This skill provides a very simple JSON‑based approval queue for the CMO pipeline.

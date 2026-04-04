@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: social-queue-packager
 description: Package approved social media content with all metadata needed for manual posting or future API integration. Creates ready-to-post packages for LinkedIn, X, Facebook, and Instagram. Triggers on social media distribution preparation.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Social Queue Packager
 
 Package approved social content into ready-to-post format per channel.

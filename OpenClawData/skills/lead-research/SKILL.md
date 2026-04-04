@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: lead-research
 description: Research potential leads, partners, collaborators, and target accounts. Use when building prospect lists, researching companies or individuals, preparing for outreach, or qualifying leads. Triggers on "research this lead", "find prospects", "who should we reach out to", "lead list", "prospect research", or any lead/partnership research request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Lead Research
 
 Research and qualify potential leads, partners, and collaboration targets.

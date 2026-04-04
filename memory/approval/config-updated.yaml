@@ -1,0 +1,41 @@
+# Updated config with full repo list (canonical mapping noted in comments)
+repos:
+  # Canonical repositories (preferred for monitoring)
+  - "https://github.com/inbharatai/InBharat.ai"
+  - "https://github.com/inbharatai/OpenClaw-AI-CMO"
+  - "https://github.com/inbharatai/agent-arcade-gateway"
+  - "https://github.com/inbharatai/openclawfix.pro"
+  - "https://github.com/inbharatai/sahaayak-ai"
+  - "https://github.com/inbharatai/SocialFlow"
+  - "https://github.com/inbharatai/uniassist.ai"
+  - "https://github.com/inbharatai/SahaayakSeva"
+  - "https://github.com/inbharatai/sahaayakseva-public"
+  - "https://github.com/inbharatai/phoring"
+  - "https://github.com/inbharatai/inbharatai"
+  - "https://github.com/inbharatai/sahaayak-ai-public"
+  - "https://github.com/inbharatai/claude-skills"
+  # Duplicate / redirect candidates (keep for reference, will be marked as redirects)
+  - "https://github.com/inbharat-ai/testsprep.in"  # duplicate of inbharatai/testsprep.in
+  - "https://github.com/inbharat-ai/uniassist.ai"  # duplicate of inbharatai/uniassist.ai
+  - "https://github.com/inbharat-ai/codein.pro"   # separate repo, keep as distinct product
+  - "https://github.com/inbharat-ai/testsprep.in"  # duplicate entry (same as above)
+
+social:
+  x:
+    api_token: ""
+    handle: "@reeturaj"
+  reddit: {}
+  linkedin: {}
+  instagram: {}
+  youtube: {}
+  discord: {}
+
+posting_schedule:
+  x:
+    - "10:00"
+    - "14:00"
+    - "18:00"
+  reddit:
+    - "12:00"
+  blog:
+    - "09:00"

@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: brand-voice
 description: Define, maintain, and apply consistent brand voice and tone across all content. Use when creating brand guidelines, reviewing content for voice consistency, or adjusting tone for different audiences/platforms. Triggers on "brand voice", "tone of voice", "how should this sound", "voice guidelines", "make this sound like our brand", or any tone/style consistency request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Brand Voice
 
 Define and enforce a consistent brand personality across all content.

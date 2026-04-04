@@ -92,3 +92,78 @@
 [2026-03-31 20:11:40] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md
 [2026-03-31 20:11:40] === Intake Processor Complete ===
 [2026-03-31 20:11:40] New files found: 8 | Classified: 0 | Skipped: 0
+[2026-04-02 13:39:01] === Intake Processor Started ===
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md (source: note)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md (source: note)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md (source: note)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md (source: product-update)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md (source: product-update)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md (source: product-update)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md (source: product-update)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md
+[2026-04-02 13:39:01] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md (source: product-update)
+[2026-04-02 13:39:01] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md
+[2026-04-02 13:39:01] === Intake Processor Complete ===
+[2026-04-02 21:57:16] === Intake Processor Started ===
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md (source: note)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md (source: note)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md (source: note)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md (source: product-update)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md (source: product-update)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md (source: product-update)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md (source: product-update)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md
+[2026-04-02 21:57:16] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md (source: product-update)
+[2026-04-02 21:57:16] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md
+[2026-04-02 21:57:16] === Intake Processor Complete ===
+[2026-04-02 21:57:16] New files found: 8 | Classified: 0 | Skipped: 0
+[2026-04-02 23:09:23] === Intake Processor Started ===
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md (source: note)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md (source: note)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md (source: note)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md (source: product-update)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md (source: product-update)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md (source: product-update)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md (source: product-update)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md
+[2026-04-02 23:09:23] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md (source: product-update)
+[2026-04-02 23:09:23] [DRY RUN] Would classify: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md
+[2026-04-02 23:09:23] === Intake Processor Complete ===
+[2026-04-02 23:09:23] New files found: 8 | Classified: 0 | Skipped: 0
+[2026-04-04 13:29:05] === Intake Processor Started ===
+[2026-04-04 13:29:05] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md (source: note)
+[2026-04-04 13:30:03] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-25.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:30:03] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md (source: note)
+[2026-04-04 13:30:18] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-26.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:30:18] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md (source: note)
+[2026-04-04 13:30:48] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/inbharat-bot-update-2026-03-27.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:30:48] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md (source: product-update)
+[2026-04-04 13:31:05] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-e2e-product-v2-formatted.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:31:05] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md (source: product-update)
+[2026-04-04 13:31:20] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-build-log-formatted.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x, website-build-log
+[2026-04-04 13:31:20] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md (source: product-update)
+[2026-04-04 13:31:32] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/phase0-proof-feature-launch-formatted.md → type=product-update, priority=high, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:31:32] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md (source: product-update)
+[2026-04-04 13:31:51] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-25-formatted.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:31:51] CLASSIFYING: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md (source: product-update)
+[2026-04-04 13:32:05] CLASSIFIED: /Volumes/Expansion/CMO-10million/MarketingToolData/product-updates/inbharat-bot-update-2026-03-26-formatted.md → type=product-update, priority=medium, channels= website-updates, discord, linkedin, x
+[2026-04-04 13:32:05] === Intake Processor Complete ===
+[2026-04-04 13:32:05] New files found: 8 | Classified: 8 | Skipped: 0

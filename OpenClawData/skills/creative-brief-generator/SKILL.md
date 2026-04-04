@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: creative-brief-generator
 description: Generate creative briefs for campaigns, content pieces, ads, and marketing projects. Use when starting a new campaign, ad set, content series, or any creative project that needs a structured brief. Triggers on "creative brief", "campaign brief", "write a brief", "brief for", or when starting any new marketing initiative.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Creative Brief Generator
 
 Produce concise, actionable creative briefs that align teams on what to make and why.

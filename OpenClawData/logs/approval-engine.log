@@ -219,3 +219,51 @@
 [2026-03-31 20:11:45] APPROVED [L1-AUTO]: x/x-update-2026-03-27-inbharat-bot-update-2026-03-25.md (type=product-update)
 [2026-03-31 20:11:45] === Approval Engine Complete ===
 [2026-03-31 20:11:45] Processed: 5 | Approved: 5 | Review: 0 | Blocked: 0
+[2026-04-02 21:57:22] === Approval Engine Started ===
+[2026-04-02 21:57:22] [DRY RUN] No files will be moved
+[2026-04-02 21:57:22] EVALUATING: heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json
+[2026-04-02 21:57:55] CLAIM-CHECK PASSED: heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json
+[2026-04-02 21:59:47] REVIEW [L3-SCORE-FAIL]: heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json — avg=29, max=60 (scores did not pass L2 gate)
+[2026-04-02 21:59:47] EVALUATING: linkedin/native-2026-04-01-sahaayak-product-proof.json
+[2026-04-02 22:00:28] BLOCKED [CLAIM-VALIDATOR]: linkedin/native-2026-04-01-sahaayak-product-proof.json — fabricated/invalid claims detected
+[2026-04-02 22:00:28] EVALUATING: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md
+[2026-04-02 22:01:03] CLAIM-CHECK PASSED: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md
+[2026-04-02 22:01:03] REVIEW [L3-EXPLICIT]: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md — approval_level=L3 (review required)
+[2026-04-02 22:01:03] EVALUATING: website/update-2026-03-27-inbharat-bot-update-2026-03-26.md
+[2026-04-02 22:01:33] BLOCKED [CLAIM-VALIDATOR]: website/update-2026-03-27-inbharat-bot-update-2026-03-26.md — fabricated/invalid claims detected
+[2026-04-02 22:01:33] === Approval Engine Complete ===
+[2026-04-02 22:01:33] Processed: 4 | Approved: 0 | Review: 2 | Blocked: 2
+[2026-04-02 23:09:26] === Approval Engine Started ===
+[2026-04-02 23:09:26] [DRY RUN] No files will be moved
+[2026-04-02 23:09:26] EVALUATING: heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json
+[2026-04-02 23:10:23] CLAIM-CHECK PASSED: heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json
+[2026-04-02 23:11:50] auto-approved (L2): heygen/heygen-brief-CP-2026-04-01-123-20260401-185058.json — score-gated pass (avg=0, max=0)
+[2026-04-02 23:11:50] EVALUATING: linkedin/native-2026-04-01-sahaayak-product-proof.json
+[2026-04-02 23:12:20] BLOCKED [CLAIM-VALIDATOR]: linkedin/native-2026-04-01-sahaayak-product-proof.json — fabricated/invalid claims detected
+[2026-04-02 23:12:20] EVALUATING: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md
+[2026-04-02 23:12:42] CLAIM-CHECK PASSED: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md
+[2026-04-02 23:12:42] REVIEW [L3-EXPLICIT]: reddit/reddit-2026-04-01-saas--building-ai-tools-for-india-specific-pr.md — approval_level=L3 (review required)
+[2026-04-02 23:12:42] EVALUATING: website/update-2026-03-27-inbharat-bot-update-2026-03-26.md
+[2026-04-02 23:13:20] BLOCKED [CLAIM-VALIDATOR]: website/update-2026-03-27-inbharat-bot-update-2026-03-26.md — fabricated/invalid claims detected
+[2026-04-02 23:13:20] === Approval Engine Complete ===
+[2026-04-02 23:13:20] Processed: 4 | Approved: 1 | Review: 1 | Blocked: 2
+[2026-04-04 13:37:16] === Approval Engine Started ===
+[2026-04-04 13:37:16] EVALUATING: discord/discord-2026-04-04-inbharat-bot-update-2026-03-25.md
+[2026-04-04 13:37:50] CLAIM-CHECK PASSED: discord/discord-2026-04-04-inbharat-bot-update-2026-03-25.md
+[2026-04-04 13:37:50] auto-approved (L1): discord/discord-2026-04-04-inbharat-bot-update-2026-03-25.md (type=discord-announcement)
+[2026-04-04 13:37:50] EVALUATING: discord/discord-2026-04-04-inbharat-bot-update-2026-03-26.md
+[2026-04-04 13:38:21] CLAIM-CHECK PASSED: discord/discord-2026-04-04-inbharat-bot-update-2026-03-26.md
+[2026-04-04 13:38:21] auto-approved (L1): discord/discord-2026-04-04-inbharat-bot-update-2026-03-26.md (type=discord-announcement)
+[2026-04-04 13:38:21] EVALUATING: linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-25.md
+[2026-04-04 13:38:49] CLAIM-CHECK PASSED: linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-25.md
+[2026-04-04 13:38:49] auto-approved (L1): linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-25.md (type=product-update)
+[2026-04-04 13:38:49] EVALUATING: linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-26.md
+[2026-04-04 13:39:08] CLAIM-CHECK PASSED: linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-26.md
+[2026-04-04 13:39:08] auto-approved (L1): linkedin/linkedin-2026-04-04-inbharat-bot-update-2026-03-26.md (type=product-update)
+[2026-04-04 13:39:08] EVALUATING: website/update-2026-04-04-inbharat-bot-update-2026-03-25-formatted.md
+[2026-04-04 13:39:34] CLAIM-CHECK PASSED: website/update-2026-04-04-inbharat-bot-update-2026-03-25-formatted.md
+[2026-04-04 13:39:34] auto-approved (L1): website/update-2026-04-04-inbharat-bot-update-2026-03-25-formatted.md (type=product-update)
+[2026-04-04 13:39:34] EVALUATING: website/update-2026-04-04-inbharat-bot-update-2026-03-26-formatted.md
+[2026-04-04 13:39:57] BLOCKED [CLAIM-VALIDATOR]: website/update-2026-04-04-inbharat-bot-update-2026-03-26-formatted.md — fabricated/invalid claims detected
+[2026-04-04 13:39:57] === Approval Engine Complete ===
+[2026-04-04 13:39:57] Processed: 6 | Approved: 5 | Review: 0 | Blocked: 1

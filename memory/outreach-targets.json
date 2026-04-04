@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Google for Startups Accelerator – India",
+    "type": "accelerator",
+    "contact": "accelerator-india@google.com",
+    "relevance": "high",
+    "note": "AI‑first cohort, equity‑free, ideal for Phoring & CodeIn."
+  },
+  {
+    "name": "Blume Ventures",
+    "type": "investor",
+    "contact": "deals@blume.vc",
+    "relevance": "high",
+    "note": "Recent AI‑focused seed fund, interested in education & enterprise AI."
+  },
+  {
+    "name": "IndiaAI Mission (Ministry of Electronics & IT)",
+    "type": "government",
+    "contact": "indiaai@meity.gov.in",
+    "relevance": "high",
+    "note": "Funding for multilingual, offline AI solutions – matches SahaayakSeva & CodeIn."
+  },
+  {
+    "name": "NASSCOM AI Forum",
+    "type": "community",
+    "contact": "ai.forum@nasscom.in",
+    "relevance": "medium",
+    "note": "Platform for thought‑leadership talks; good for Phoring demos."
+  },
+  {
+    "name": "Pratham Education Foundation",
+    "type": "ngo",
+    "contact": "partnerships@pratham.org",
+    "relevance": "medium",
+    "note": "Needs scholarship‑matching for rural students – UniAssist fits."
+  }
+]

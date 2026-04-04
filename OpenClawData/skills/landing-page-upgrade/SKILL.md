@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: landing-page-upgrade
 description: Improve landing pages for better conversion, design, copy, and user experience. Use when the user wants to optimize a landing page, improve conversion rates, rewrite page copy, restructure page layout, or audit a landing page. Triggers on "landing page", "improve this page", "optimize for conversion", "page audit", or any landing page improvement request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Landing Page Upgrade
 
 Audit and improve landing pages for better conversion, clarity, and user experience.

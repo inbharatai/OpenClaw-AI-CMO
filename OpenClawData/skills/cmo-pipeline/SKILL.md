@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: cmo-pipeline
 description: Run the AI CMO daily pipeline end-to-end. Triggers intake, newsroom, product updates, content production, approval scoring, distribution, and reporting. Use when asked to "run pipeline", "run daily", "generate content", or "process source material".
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # CMO Daily Pipeline
 
 Runs the full AI CMO pipeline from the shell.
@@ -46,4 +45,4 @@ Uses qwen3:8b for content and qwen2.5-coder:7b for technical scoring.
 - External drive must be mounted
 - Ollama must be running
 - Takes ~30-40 minutes for a full run
-- LinkedIn is currently BLOCKED by policy
+- LinkedIn is L1 auto-publish (channel-policies.json)

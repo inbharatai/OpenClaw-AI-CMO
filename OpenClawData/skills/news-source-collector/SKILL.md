@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: news-source-collector
 description: Collect, organize, and prioritize AI industry news sources and links for the newsroom pipeline. Use when gathering news for summarization or tracking industry signals. Triggers on news collection, source curation, or industry monitoring requests.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # News Source Collector
 
 Collect and organize AI industry news sources for the newsroom pipeline.

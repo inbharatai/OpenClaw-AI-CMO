@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: content-calendar
 description: Create and manage content calendars for social media, blogs, email, and marketing campaigns. Use when planning what to post, when to post, and organizing content across platforms and dates. Triggers on "content calendar", "posting schedule", "plan my posts", "weekly schedule", "monthly calendar", or any content scheduling request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Content Calendar
 
 Plan and organize content across platforms, dates, and formats.

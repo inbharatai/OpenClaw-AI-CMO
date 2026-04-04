@@ -31,8 +31,8 @@ def get_api_key():
         result = subprocess.run(
             [
                 "security", "find-generic-password",
-                "-s", "openclaw",
-                "-a", "openclaw-openai-api-key",
+                "-s", "openai-api-key",
+                "-a", "openclaw",
                 "-w",
             ],
             capture_output=True, text=True, timeout=10,

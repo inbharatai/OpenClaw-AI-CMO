@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: social-repurposing
 description: Repurpose content across platforms and formats. Convert blog posts to social threads, videos to captions, podcasts to carousels, long-form to short-form, and vice versa. Triggers on "repurpose this", "turn this into", "adapt for Instagram/LinkedIn/X/TikTok", or any cross-platform content conversion request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Social Repurposing
 
 Transform one piece of content into multiple platform-optimized formats.

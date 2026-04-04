@@ -73,7 +73,7 @@
 | **newsroom-agent** | AI news processing | ✅ Working |
 | **product-update-agent** | Product update content | ✅ Fixed (SIGPIPE) |
 | **approval-engine** | 4-level approval pipeline | ✅ Working |
-| **distribution-engine** | Multi-channel distribution | ⚠️ 0 channels active |
+| **distribution-engine** | Multi-channel distribution | ✅ 5 channels active (LinkedIn/X/Instagram/Discord/Zoho) |
 | **reporting-engine-v2** | Daily/weekly/monthly reports | ✅ Working |
 | **skill-runner** | Ollama skill execution bridge | ✅ Working |
 | **model-router** | Model selection (currently no-op) | ⚠️ Both models same |

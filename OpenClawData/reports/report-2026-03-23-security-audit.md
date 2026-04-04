@@ -161,8 +161,8 @@ type: "api_key", snippet: "sk-abc123...", severity: "critical"
 
 ## 6. WHAT THIS SYSTEM CANNOT DO (by design)
 
-- Cannot send emails (no SMTP configured, draft/export only)
-- Cannot post to LinkedIn, X, Facebook, Instagram (export only, manual copy)
+- CAN send emails via Zoho Mail Playwright automation (email_zoho.py)
+- CAN post to LinkedIn, X, Instagram via Playwright browser automation (publish.sh)
 - Cannot post to Reddit or Hacker News (manual-first always)
 - Cannot scrape the internet for contacts or content
 - Cannot access files outside the workspace

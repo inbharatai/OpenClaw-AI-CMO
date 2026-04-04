@@ -1,0 +1,17 @@
+🧵 AI Industry roundup – 2 Apr 2026
+
+1️⃣ Anthropic: A self‑inflicted leak exposed thousands of lines of Claude’s core code, sparking a rapid security response and industry‑wide debate on AI code protection. #Anthropic #Claude
+
+2️⃣ Meta: Following a wave of 700 layoffs, Meta pushes AI‑native goals, mandating engineers use internal tools like DevMate and Metamate, and setting aggressive AI‑adoption metrics for 2026. #Meta #AIShift
+
+3️⃣ OpenAI: Announces a $122 B fundraising round to accelerate next‑gen models, launches the Safety Bug Bounty program, and reveals plans to acquire startup Astral for advanced multimodal research. #OpenAI #AISafety
+
+4️⃣ Google DeepMind: Unveils Gemini 3.1 Flash Live, a real‑time audio model, and Gemini 3.1 Pro for complex tasks, plus Gemini 3 Deep Think targeting scientific discovery. #DeepMind #Gemini
+
+5️⃣ Microsoft: Rolls out Azure AI Gen2 with tighter OpenAI integration, debuting new GPT‑4o‑lite tier for cost‑effective enterprise workloads. #Microsoft #AzureAI
+
+6️⃣ NVIDIA: Introduces the H100‑X2 accelerator, promising double the AI training throughput, and partners with Indian institutes to boost AI research infrastructure. #NVIDIA #H100X2
+
+7️⃣ Hugging Face: Launches “Hub 2.0”, a unified model hub with built‑in safety tags and collaborative fine‑tuning pipelines, aiming to democratize responsible AI. #HuggingFace #ModelHub
+
+Stay tuned for deeper dives! 🎯

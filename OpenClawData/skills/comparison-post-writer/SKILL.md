@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: comparison-post-writer
 description: Write tool comparison and "X vs Y" posts for the website /insights section. Use when comparing tools, approaches, frameworks, or products. Triggers on comparison requests, "versus" posts, or tool evaluation content.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Comparison Post Writer
 
 Write balanced, useful comparison posts that help readers make informed decisions.

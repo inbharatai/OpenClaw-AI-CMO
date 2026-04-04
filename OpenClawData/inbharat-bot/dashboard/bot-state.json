@@ -1,10 +1,11 @@
 {
   "bot": "InBharat Bot",
-  "version": "3.1.0",
-  "timestamp": "2026-04-01T09:40:49Z",
+  "version": "3.3.0",
+  "timestamp": "2026-04-03T14:03:00Z",
   "health": {
     "ollama": "running",
-    "gateway": "running"
+    "gateway": "running",
+    "health_check": "13 green, 2 yellow, 0 red"
   },
   "lanes": {
     "india_problems": 2,
@@ -20,21 +21,39 @@
     "reports": 0
   },
   "queues": {
-    "pending": 7,
-    "approved": 4,
+    "pending": 5,
+    "approved": 2,
     "publish_ready": 0,
-    "posted": 0
+    "posted": 2
+  },
+  "posting_engine": {
+    "method": "playwright_browser_automation",
+    "status": "active",
+    "platforms": ["linkedin", "x", "instagram", "discord", "zoho-email"],
+    "publish_script": "/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/posting-engine/publish.sh",
+    "anti_detection": "user-agent spoofing + webdriver flag removal",
+    "x_posting": "fixed — insertText + Escape for hashtag dropdown, force click, post verification",
+    "note": "ALL posting uses Playwright persistent browser sessions. NEVER ask for API tokens or passwords."
+  },
+  "image_engine": {
+    "method": "DALL-E 3 via OpenAI API",
+    "api_key": "macOS Keychain (service: openai-api-key, account: openclaw)",
+    "fallback": "placeholder_generate.py (offline branded cards)",
+    "script": "generate-image.sh --brief \"prompt\" --size square",
+    "status": "active"
   },
   "approvals": {
     "review": 2,
-    "blocked": 0
+    "blocked": 2
   },
-  "handoffs": {
-    "pending": 1,
-    "processed": 1
-  },
-  "today": {
-    "log_lines": 453,
-    "errors": 5
+  "skills_loaded": 69,
+  "scripts_available": 36,
+  "cron_jobs": 7,
+  "launch_agents": 4,
+  "models": {
+    "agent_brain": "groq/openai/gpt-oss-120b",
+    "pipeline_local": "qwen3:8b via Ollama",
+    "coding_local": "qwen2.5-coder:7b via Ollama",
+    "image": "DALL-E 3 via OpenAI API"
   }
 }

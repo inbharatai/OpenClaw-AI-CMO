@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: repo-review
 description: Review code repositories for quality, structure, issues, and improvement opportunities. Use when the user wants a code review, project audit, dependency check, or architecture assessment. Triggers on "review this repo", "code review", "audit this project", "check the codebase", or any repository quality assessment request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Repo Review
 
 Perform structured code repository reviews with actionable findings.

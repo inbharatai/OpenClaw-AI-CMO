@@ -99,12 +99,13 @@ All 17 scripts pass `bash -n` syntax check.
 - **This is tunable** — adjust the prompt in credential-safety-policy/SKILL.md
 - Better to over-block than under-block for safety
 
-### 4. No real API integrations yet
-- LinkedIn, X, Facebook, Instagram: queue/export only (you copy-paste)
-- Discord: webhook ready, but requires your webhook URL in config
-- Email/Newsletter: draft export only, manual send
+### 4. Platform integrations — ACTIVE (updated 2026-04-03)
+- LinkedIn, X, Instagram: ACTIVE via Playwright browser automation (publish.sh + post_*.py)
+- Discord: webhook ACTIVE and posting
+- Zoho Email: ACTIVE via Playwright browser automation (email_zoho.py)
+- DALL-E 3: ACTIVE (API key in macOS Keychain)
 - Medium/Substack: draft export only
-- **This is V1/V2 design** — V3 adds API integrations
+- **V3 integrations are live** — Playwright browser sessions at ~/.openclaw/browser-sessions/
 
 ### 5. Weekly and monthly pipelines are untested
 - Built and syntax-verified, but haven't been run with live models yet

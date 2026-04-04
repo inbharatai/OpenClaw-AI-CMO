@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: automation-script-builder
 description: Build automation scripts for repetitive tasks like file processing, data transformation, scheduling, API calls, and workflow automation. Use when the user needs a script to automate something, process files in batch, schedule tasks, or connect tools. Triggers on "automate this", "write a script for", "batch process", "schedule this", "connect these tools", or any automation request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Automation Script Builder
 
 Build practical automation scripts for repetitive tasks. Keep scripts simple, readable, and reliable.

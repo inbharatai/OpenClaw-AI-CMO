@@ -1,0 +1,20 @@
+[
+  {
+    "organization": "AlphaVC",
+    "category": "VC",
+    "country": "India",
+    "contactType": "official_email",
+    "publicContact": "partners@alphavc.in",
+    "sourceUrl": "https://alphavc.in/contact",
+    "verificationStatus": "official_source_verified"
+  },
+  {
+    "organization": "BetaTech",
+    "category": "Company",
+    "country": "USA",
+    "contactType": "official_email",
+    "publicContact": "info@betatech.com",
+    "sourceUrl": "https://betatech.com/contact",
+    "verificationStatus": "official_source_verified"
+  }
+]

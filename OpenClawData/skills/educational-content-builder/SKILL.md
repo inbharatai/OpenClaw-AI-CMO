@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: educational-content-builder
 description: Write how-to guides, tutorials, explainers, and educational posts for the website /insights section. Use for teaching, explaining concepts, or creating step-by-step guides. Triggers on educational content, how-to, tutorial, or explainer requests.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Educational Content Builder
 
 Create clear, actionable educational content that teaches and builds authority.

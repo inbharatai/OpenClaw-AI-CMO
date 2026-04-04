@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: content-strategy
 description: Develop content strategies for social media, blogs, email, and marketing campaigns. Use when the user needs a content plan, pillar strategy, audience targeting, messaging framework, or channel strategy. Triggers on "content strategy", "what should I post about", "content pillars", "messaging framework", or any strategic content planning request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Content Strategy
 
 Develop practical, actionable content strategies rooted in business goals.

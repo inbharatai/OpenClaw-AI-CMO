@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: competitor-monitor
 description: Track and analyze competitor activity including content, positioning, offers, and strategy. Use when the user wants to monitor competitors, compare strategies, analyze competitor content, or identify competitive advantages. Triggers on "competitor", "competition", "what are they doing", "competitive analysis", "compare with", or any competitor-related research request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Competitor Monitor
 
 Track competitor activity and extract actionable intelligence.

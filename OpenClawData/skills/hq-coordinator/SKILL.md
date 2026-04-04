@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: hq-coordinator
 description: Top-level AI CMO coordinator that prioritizes tasks, routes work to agents, and maintains the overall content strategy. Use when deciding what to work on, prioritizing across channels, or coordinating multi-agent workflows. Triggers on planning, prioritization, or "what should we focus on" requests.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # HQ Coordinator
 
 Top-level AI CMO brain — prioritizes, routes, and coordinates all content operations.

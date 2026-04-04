@@ -106,3 +106,91 @@
 [2026-03-31 20:11:39] --- Stage 5: report ---
 [2026-03-31 20:11:39] Stage 5 (report): COMPLETE in 1s
 [2026-03-31 20:11:39] === DAILY PIPELINE COMPLETE — pending=10 approved=0 review=4 blocked=8 ===
+[2026-04-02 13:39:00] === DAILY PIPELINE STARTED — 2026-04-02 ===
+[2026-04-02 13:39:00] [DRY RUN MODE]
+[2026-04-02 13:39:00] --- Stage 1: intake ---
+[2026-04-02 13:39:01] Stage 1 (intake): FAILED (exit code 141) after 1s
+[2026-04-02 21:57:16] === DAILY PIPELINE STARTED — 2026-04-02 ===
+[2026-04-02 21:57:16] [DRY RUN MODE]
+[2026-04-02 21:57:16] --- Stage 1: intake ---
+[2026-04-02 21:57:16] Stage 1 (intake): COMPLETE in 0s
+[2026-04-02 21:57:16] --- Stage 2a: newsroom ---
+[2026-04-02 21:57:17] Stage 2a (newsroom): COMPLETE in 1s
+[2026-04-02 21:57:17] --- Stage 2b: product-updates ---
+[2026-04-02 21:57:18] Stage 2b (product-updates): COMPLETE in 1s
+[2026-04-02 21:57:18] --- Stage 2c: produce ---
+[2026-04-02 21:57:21] Stage 2c (produce): COMPLETE in 3s
+[2026-04-02 21:57:21] --- Stage 2d: validate ---
+[2026-04-02 21:57:21] Stage 2d (validate): COMPLETE in 0s
+[2026-04-02 21:57:21] --- Stage 3: approve ---
+[2026-04-02 22:01:33] Stage 3 (approve): COMPLETE in 252s
+[2026-04-02 22:01:33] --- Stage 4: distribute ---
+[2026-04-02 22:01:34] Stage 4 (distribute): COMPLETE in 1s
+[2026-04-02 22:01:34] --- Stage 4b: publish ---
+[2026-04-02 22:01:35] Stage 4b (publish): COMPLETE in 1s
+[2026-04-02 22:01:35] --- Stage 5: report ---
+[2026-04-02 22:01:35] Stage 5 (report): COMPLETE in 0s
+[2026-04-02 22:01:35] --- Stage 6a: health ---
+[2026-04-02 22:01:38] Stage 6a (health): FAILED (exit code 1) after 3s
+[2026-04-02 22:01:38] --- Stage 6b: budget ---
+[2026-04-02 22:01:39] Stage 6b (budget): COMPLETE in 1s
+[2026-04-02 22:01:39] === DAILY PIPELINE COMPLETE — pending=4 approved=2 review=2 blocked=2 ===
+[2026-04-02 23:09:23] === DAILY PIPELINE STARTED — 2026-04-02 ===
+[2026-04-02 23:09:23] [DRY RUN MODE]
+[2026-04-02 23:09:23] --- Stage 1: intake ---
+[2026-04-02 23:09:23] Stage 1 (intake): COMPLETE in 0s
+[2026-04-02 23:09:23] --- Stage 2a: newsroom ---
+[2026-04-02 23:09:24] Stage 2a (newsroom): COMPLETE in 1s
+[2026-04-02 23:09:24] --- Stage 2b: product-updates ---
+[2026-04-02 23:09:24] Stage 2b (product-updates): COMPLETE in 0s
+[2026-04-02 23:09:24] --- Stage 2c: produce ---
+[2026-04-02 23:09:26] Stage 2c (produce): COMPLETE in 2s
+[2026-04-02 23:09:26] --- Stage 2d: validate ---
+[2026-04-02 23:09:26] Stage 2d (validate): COMPLETE in 0s
+[2026-04-02 23:09:26] --- Stage 3: approve ---
+[2026-04-02 23:13:20] Stage 3 (approve): COMPLETE in 234s
+[2026-04-02 23:13:20] --- Stage 4: distribute ---
+[2026-04-02 23:13:20] Stage 4 (distribute): COMPLETE in 0s
+[2026-04-02 23:13:20] --- Stage 4b: publish ---
+[2026-04-02 23:13:21] Stage 4b (publish): COMPLETE in 1s
+[2026-04-02 23:13:21] --- Stage 5: report ---
+[2026-04-02 23:13:21] Stage 5 (report): COMPLETE in 0s
+[2026-04-02 23:13:21] --- Stage 6a: health ---
+[2026-04-02 23:13:23] Stage 6a (health): FAILED (exit code 1) after 2s
+[2026-04-02 23:13:23] --- Stage 6b: budget ---
+[2026-04-02 23:13:23] Stage 6b (budget): COMPLETE in 0s
+[2026-04-02 23:13:23] === DAILY PIPELINE COMPLETE — pending=4 approved=2 review=2 blocked=2 ===
+[2026-04-02 23:59:27] === DAILY PIPELINE STARTED — 2026-04-02 ===
+[2026-04-02 23:59:27] [DRY RUN MODE]
+[2026-04-02 23:59:27] --- Stage 4b: distribute ---
+[2026-04-02 23:59:27] Stage 4b (distribute): COMPLETE in 0s
+  Pending:   4 items
+  Approved:  2 items
+  In Review: 2 items
+  Blocked:   2 items
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[2026-04-02 23:59:27] === DAILY PIPELINE COMPLETE — pending=4 approved=2 review=2 blocked=2 ===
+[2026-04-04 13:29:05] === DAILY PIPELINE STARTED — 2026-04-04 ===
+[2026-04-04 13:29:05] --- Stage 1: intake ---
+[2026-04-04 13:32:05] Stage 1 (intake): COMPLETE in 180s
+[2026-04-04 13:32:05] --- Stage 2a: newsroom ---
+[2026-04-04 13:32:06] Stage 2a (newsroom): COMPLETE in 1s
+[2026-04-04 13:32:06] --- Stage 2b: product-updates ---
+[2026-04-04 13:32:06] Stage 2b (product-updates): COMPLETE in 0s
+[2026-04-04 13:32:06] --- Stage 2c: produce ---
+[2026-04-04 13:37:16] Stage 2c (produce): COMPLETE in 310s
+[2026-04-04 13:37:16] --- Stage 2d: validate ---
+[2026-04-04 13:37:16] Stage 2d (validate): COMPLETE in 0s
+[2026-04-04 13:37:16] --- Stage 3: approve ---
+[2026-04-04 13:39:57] Stage 3 (approve): COMPLETE in 161s
+[2026-04-04 13:39:57] --- Stage 4: publish ---
+[2026-04-04 13:39:58] Stage 4 (publish): COMPLETE in 1s
+[2026-04-04 13:39:58] --- Stage 4b: distribute ---
+[2026-04-04 13:39:59] Stage 4b (distribute): COMPLETE in 1s
+[2026-04-04 13:39:59] --- Stage 5: report ---
+[2026-04-04 13:39:59] Stage 5 (report): COMPLETE in 0s
+[2026-04-04 13:39:59] --- Stage 6a: health ---
+[2026-04-04 13:40:04] Stage 6a (health): FAILED (exit code 1) after 5s
+[2026-04-04 13:40:04] --- Stage 6b: budget ---
+[2026-04-04 13:40:04] Stage 6b (budget): COMPLETE in 0s
+[2026-04-04 13:40:04] === DAILY PIPELINE COMPLETE — pending=0 approved=0 review=2 blocked=4 ===

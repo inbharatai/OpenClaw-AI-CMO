@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: opportunity-miner
 description: Identify business opportunities from market signals, customer feedback, competitor gaps, trends, and data. Use when looking for new revenue streams, underserved markets, content gaps, product ideas, or partnership opportunities. Triggers on "find opportunities", "what are we missing", "market gaps", "where can we grow", "untapped", or any opportunity discovery request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Opportunity Miner
 
 Discover actionable business opportunities from available signals and data.

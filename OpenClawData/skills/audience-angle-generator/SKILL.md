@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: audience-angle-generator
 description: Generate audience-specific angles and hooks for content. Takes a topic and produces multiple angles tailored to different audience segments. Use when adapting content for different audiences or brainstorming hooks. Triggers on angle generation, hook brainstorming, or audience targeting requests.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Audience Angle Generator
 
 Generate multiple audience-specific angles for a single topic.

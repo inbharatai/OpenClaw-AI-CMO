@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: reddit-post-drafter
 description: Draft Reddit-appropriate posts that match subreddit culture and rules. ALWAYS manual-first — never auto-post to Reddit. Use when preparing content for Reddit communities. Triggers on Reddit content preparation or community post drafting.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Reddit Post Drafter
 
 Draft authentic, community-appropriate Reddit posts. NEVER auto-posted.

@@ -1,0 +1,9 @@
+🧵 AI Industry Pulse – Apr 2024
+1️⃣ Anthropic: Accidental GitHub takedown of thousands of repos while pulling leaked Claude source. Highlights security fragility.
+2️⃣ Meta: Major layoff of 700 staff; pushes AI‑native tools (DevMate, Metamate, Gemini) across teams.
+3️⃣ OpenAI: Raises $122B, launches Sora video model and Codex pay‑as‑you‑go pricing. Expanding developer tooling.
+4️⃣ DeepMind: Releases Gemma 4 – the most capable open‑source model to date, targeting on‑device AI.
+5️⃣ Microsoft: Rolls out Azure AI Copilot updates, integrating new large‑scale reasoning models for enterprise.
+6️⃣ NVIDIA: Announces "From RTX to Spark" – accelerates Gemma 4 on‑device via RTX GPUs.
+7️⃣ Hugging Face: Highlights Gemma 4 on‑device multimodal capabilities; new storage buckets for model assets.
+#AI #TechNews

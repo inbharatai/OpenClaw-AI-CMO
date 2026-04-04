@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: newsletter-exporter
 description: Export approved newsletter drafts into platform-ready format for Substack, beehiiv, MailerLite, or Brevo. Prepares the newsletter for manual send or API integration. Triggers on newsletter export or email distribution preparation.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Newsletter Exporter
 
 Export approved newsletter content into platform-ready format.
@@ -62,7 +61,7 @@ Similar HTML format with Brevo-specific template markers.
 
 ## Rules
 
-1. Never auto-send in V1 — export only, manual send
+1. Email sending available via Zoho Mail Playwright automation (email_zoho.py --visible)
 2. Subject line must be under 60 characters
 3. Always include the original approval record reference
 4. Check rate limits before export (max 1 newsletter/day)

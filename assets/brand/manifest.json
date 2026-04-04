@@ -1,0 +1,18 @@
+{
+  "logo": {
+    "png": "assets/brand/logo.png",
+    "svg": "assets/brand/logo.svg"
+  },
+  "primaryColor": "#0A74DA",
+  "secondaryColor": "#F5A623",
+  "font": "Roboto",
+  "palette": {
+    "background": "#FFFFFF",
+    "text": "#222222",
+    "accent": "#0A74DA"
+  },
+  "voiceAvatar": {
+    "name": "Reet",
+    "heygenId": "YOUR_HEYGEN_AVATAR_ID"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "task-002",
+  "title": "Configure Discord Webhook",
+  "description": "Set up and test the Discord webhook integration for real-time notifications.",
+  "risk": "review",
+  "priority": "high",
+  "category": "infrastructure",
+  "estimated_minutes": 20,
+  "status": "done",
+  "completed": "2026-04-03",
+  "notes": "Discord webhook already configured in macOS Keychain. post_discord.py uses it."
+}

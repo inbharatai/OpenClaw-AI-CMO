@@ -28,7 +28,7 @@
 | No dependency checks | Orchestrator doesn't check jq/curl/bash | ✅ Fixed: added checks |
 | Logger doesn't create dir | bot-logger.sh assumes LOG_DIR exists | ✅ Fixed: mkdir -p |
 | 80 items blocked in approval | Growing from 58 (Mar 25) → 80 (Mar 27) | ❌ Needs owner review |
-| 0 items distributed | No channel auth configured | ❌ Needs owner setup |
+| Distribution channels | LinkedIn/X/Instagram/Discord/Zoho all ACTIVE via Playwright | ✅ Fixed 2026-04-03 |
 
 ### Why it's not world-class:
 1. **Reliability** — Scripts hung indefinitely without curl timeouts (now fixed). Pipeline crashed from SIGPIPE (now fixed). JSON output was malformed (now fixed).
@@ -176,7 +176,7 @@ LAYER 3: CMO PIPELINE (Content Factory)
 | CMO intake | ✅ | ✅ | ✅ | ✅ | ✅ | Classifies source material |
 | CMO content gen | ✅ | ✅ | ✅ | ✅ | ✅ | Generates via skills |
 | CMO approval | ✅ | ✅ | ✅ | ✅ | ✅ | 4-level pipeline |
-| CMO distribution | ✅ | ✅ | ✅ | ✅ | ❌ | No channel auth configured |
+| CMO distribution | ✅ | ✅ | ✅ | ✅ | ✅ | 5 channels active via Playwright (fixed 2026-04-03) |
 | Daily cron | ✅ | ✅ | ✅ | ✅ | ⚠️ | Loaded, runs with stage failures |
 | Weekly cron | ✅ | ✅ | ✅ | ✅ | ⚠️ | Loaded, untested in production |
 | Monthly cron | ✅ | ✅ | ✅ | ✅ | ⚠️ | Loaded, untested in production |
@@ -346,7 +346,7 @@ Stage 2a newsroom: 120s ✅
 Stage 2b product-updates: 89s ✅
 Stage 2c content: 62s ✅
 Stage 3 approval: 18s ✅
-Stage 4 distribution: 2s (0 channels active)
+Stage 4 distribution: 2s (5 channels active: LinkedIn/X/Instagram/Discord/Zoho)
 Stage 5 report: 11s ✅
 Pending: 3 | Approved: 5 | Blocked: 2
 ```

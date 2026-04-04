@@ -9,4 +9,4 @@ It tracks developer communities, user groups, Discord activity, and partnership 
 - Partnership and collaboration proposals
 - Community feedback summaries
 
-Insights from community engagement feed into blogs/, podcast/, and campaign-briefs/.
+Insights from community engagement feed into blogs/ and campaign-briefs/.

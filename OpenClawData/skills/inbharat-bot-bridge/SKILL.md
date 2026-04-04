@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **command bridge** skill.
-> It maps natural language requests to InBharat Bot commands and executes them.
-> The actual work happens in shell scripts at `OpenClawData/inbharat-bot/inbharat-run.sh`.
-
 ---
 name: inbharat-bot-bridge
 description: Bridge to InBharat Bot orchestrator. Use this when the user asks you to create content, generate videos, scan for opportunities, research leads, run outreach, check status, approve/reject content, or any InBharat Bot operation. This is the primary command interface. Triggers on any content creation, media generation, publishing, outreach, or intelligence request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **command bridge** skill.
+> It maps natural language requests to InBharat Bot commands and executes them.
+> The actual work happens in shell scripts at `OpenClawData/inbharat-bot/inbharat-run.sh`.
 # InBharat Bot Bridge
 
 This skill lets you execute InBharat Bot and OpenClaw Media commands from WhatsApp or any channel.

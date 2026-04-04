@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: video-brief-generator
 description: Create structured video briefs for HeyGen avatar videos and short-form video content. Use when producing video scripts, talking-head outlines, or HeyGen production briefs. Triggers on video brief requests, HeyGen content planning, or short-form video production.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Video Brief Generator
 
 Create production-ready video briefs for HeyGen avatar videos and short-form content.

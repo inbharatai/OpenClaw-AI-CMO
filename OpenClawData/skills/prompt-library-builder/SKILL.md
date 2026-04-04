@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: prompt-library-builder
 description: Build, organize, and maintain a library of tested prompts for marketing, coding, and operations. Use when saving effective prompts, creating prompt templates, organizing prompts by category, or building a reusable prompt collection. Triggers on "save this prompt", "prompt library", "prompt template", "add to prompts", or any prompt management request.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Prompt Library Builder
 
 Build and maintain an organized library of tested, reusable prompts.

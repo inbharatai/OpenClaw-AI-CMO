@@ -1,0 +1,24 @@
+🧵 Daily AI Industry Update – April 3, 2026
+
+1️⃣ Anthropic – Source Code Leak
+Anthropic confirmed a leak of Claude Code’s internal source via an npm packaging error, exposing ~2,000 TypeScript files. No customer data was compromised; the package was quickly removed and security measures tightened.
+
+2️⃣ Meta – AI‑Native Push & Layoffs
+Meta announced an aggressive AI‑native transformation. Internal targets require 55% of code changes to be AI‑assisted by late‑2025. The move follows a 700‑person layoff wave, emphasizing AI tools like DevMate, Metamate, and Google Gemini.
+
+3️⃣ OpenAI – $852B Valuation Funding Round
+OpenAI closed a record‑breaking $122 B financing round, valuing the company at $852 B. Investors cite its expanding ecosystem of ChatGPT, Whisper, and new multimodal models as growth drivers.
+
+4️⃣ DeepMind – Gemma 4 Release
+DeepMind unveiled Gemma 4, its most capable open‑source model yet, optimized for advanced reasoning and agentic workflows. The model promises higher intelligence per parameter, targeting autonomous AI agents.
+
+5️⃣ Microsoft – Azure AI Copilot Expansion
+Microsoft rolled out Azure AI Copilot across its cloud suite, adding real‑time code generation, data analysis, and Power Platform integration. Early adopters report a 30% boost in developer productivity.
+
+6️⃣ NVIDIA – H100 X GPU Launch
+NVIDIA introduced the H100 X accelerator, delivering up to 2× the AI performance of the H100. The launch includes new software stack improvements for transformer training.
+
+7️⃣ Hugging Face – Hub 2.0 Revamp
+Hugging Face launched Hub 2.0, featuring versioned model repositories, community‑curated datasets, and integrated inference endpoints, aiming to streamline AI deployment.
+
+#AI #TechNews #Anthropic #Meta #OpenAI #DeepMind #Microsoft #NVIDIA #HuggingFace

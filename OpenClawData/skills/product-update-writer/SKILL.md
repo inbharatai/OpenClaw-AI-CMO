@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: product-update-writer
 description: Format raw product notes, changelogs, and feature descriptions into structured product update material that can be used across channels. Use when processing internal product notes into publishable content. Triggers on product changes, releases, or internal development notes.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Product Update Writer
 
 Transform raw internal product notes into structured, publishable product update material.

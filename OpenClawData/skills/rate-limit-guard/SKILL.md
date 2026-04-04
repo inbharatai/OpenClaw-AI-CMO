@@ -1,12 +1,11 @@
-> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
-> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
-> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
-
 ---
 name: rate-limit-guard
 description: Enforce daily and weekly posting caps per channel. Check current posting counts against rate-limits.json before allowing new posts. Use before any distribution action to verify rate limits. Triggers on rate limit checks during content distribution.
 ---
 
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
+> Real enforcement requires the shell scripts in `OpenClawData/scripts/`.
 # Rate Limit Guard
 
 Enforce posting frequency caps to prevent over-posting and spam behavior.
