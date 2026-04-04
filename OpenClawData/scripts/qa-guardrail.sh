@@ -129,7 +129,18 @@ except Exception as e:
         fi
       fi
 
-      # ── Check 6: Excessive hashtags ──
+      # ── Check 6: Raw markdown syntax ──
+      if echo "$RENDERED" | grep -q '```'; then
+        ISSUES+=("MARKDOWN: Raw code fence (\`\`\`) found in rendered content")
+      fi
+      if echo "$RENDERED" | grep -qE '^#{1,6} '; then
+        ISSUES+=("MARKDOWN: Raw heading marker (###) found in rendered content")
+      fi
+      if echo "$RENDERED" | grep -qE '\*\*[^*]+\*\*'; then
+        ISSUES+=("MARKDOWN: Raw bold markers (**text**) found in rendered content")
+      fi
+
+      # ── Check 7: Excessive hashtags ──
       HASHTAG_COUNT=$(echo "$RENDERED" | grep -oE '#[A-Za-z][A-Za-z0-9_]*' | wc -l | tr -d ' ')
       case "$PLATFORM" in
         x)

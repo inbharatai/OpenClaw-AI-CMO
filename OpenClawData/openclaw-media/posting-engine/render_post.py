@@ -31,7 +31,7 @@ from pathlib import Path
 
 # Import sanitizer and shared constants from same directory
 sys.path.insert(0, str(Path(__file__).parent))
-from sanitize_post import sanitize, validate
+from sanitize_post import sanitize, validate, strip_markdown
 from metadata_fields import METADATA_KEYS
 
 
@@ -100,7 +100,10 @@ def render_from_markdown(content):
                 continue
         body_lines.append(line)
 
-    return '\n'.join(body_lines).strip()
+    # Step 3: Strip markdown formatting (code fences, headings, bold, etc.)
+    text = '\n'.join(body_lines).strip()
+    text = strip_markdown(text)
+    return text
 
 
 def render(file_path, platform):

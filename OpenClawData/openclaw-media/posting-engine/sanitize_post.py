@@ -103,6 +103,56 @@ NULL_PATTERNS = [
 ]
 
 
+def strip_markdown(text):
+    """
+    Strip markdown formatting syntax from text, keeping the content.
+    Social media platforms render plain text — markdown markers appear as raw characters.
+
+    Key insight: In OpenClaw queue files, the ENTIRE post content is often wrapped
+    in ```markdown ... ``` fences. We must KEEP the content inside, just remove
+    the fence markers themselves.
+    """
+    lines = text.split('\n')
+    clean = []
+
+    for line in lines:
+        stripped = line.strip()
+
+        # Remove code fence lines (```markdown, ```, ```python, etc.)
+        # But keep the content between them — it IS the post.
+        if re.match(r'^```\w*\s*$', stripped):
+            continue
+
+        # Remove heading markers but keep text: ### Key Highlights → Key Highlights
+        if re.match(r'^#{1,6}\s+', stripped):
+            line = re.sub(r'^#{1,6}\s+', '', line.lstrip())
+
+        # Remove horizontal rules (standalone ---, ===, ***)
+        if re.match(r'^[-=*]{3,}\s*$', stripped):
+            continue
+
+        # Remove decorative lines (━━━, ═══, etc.)
+        if re.match(r'^[━═─]{3,}\s*$', stripped):
+            continue
+
+        clean.append(line)
+
+    text = '\n'.join(clean)
+
+    # Strip bold: **text** → text
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)
+    # Strip italic: *text* → text (but not ** which is bold, already handled)
+    text = re.sub(r'(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)', r'\1', text)
+    # Strip bold with underscores: __text__ → text
+    text = re.sub(r'__(.+?)__', r'\1', text)
+    # Strip inline code: `code` → code
+    text = re.sub(r'`([^`]+)`', r'\1', text)
+    # Strip link syntax: [text](url) → text (url)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'\1 (\2)', text)
+
+    return text
+
+
 def sanitize(text):
     """
     Sanitize text for public posting.
@@ -123,7 +173,13 @@ def sanitize(text):
             text = text.lstrip()[match.end():]
             issues.append("stripped_yaml_frontmatter")
 
-    # 2. Strip lines that are pure internal field references
+    # 2. Strip markdown formatting (code fences, headings, bold, italic)
+    before_md = text
+    text = strip_markdown(text)
+    if text != before_md:
+        issues.append("stripped_markdown_formatting")
+
+    # 3. Strip lines that are pure internal field references
     clean_lines = []
     for line in text.split('\n'):
         stripped = line.strip()
@@ -152,26 +208,26 @@ def sanitize(text):
 
     text = '\n'.join(clean_lines)
 
-    # 3. Fix escaped character artifacts
+    # 4. Fix escaped character artifacts
     for pattern, replacement in ESCAPE_PATTERNS:
         if re.search(pattern, text):
             text = re.sub(pattern, replacement, text)
             issues.append("fixed_escape_artifacts")
 
-    # 4. Remove template placeholders
+    # 5. Remove template placeholders
     for pattern in PLACEHOLDER_PATTERNS:
         matches = re.findall(pattern, text, re.IGNORECASE)
         if matches:
             text = re.sub(pattern, '', text, flags=re.IGNORECASE)
             issues.append(f"stripped_placeholder:{matches[0]}")
 
-    # 5. Remove null/undefined/None/True/False literals (only standalone ones)
+    # 6. Remove null/undefined/None/True/False literals (only standalone ones)
     for pattern in NULL_PATTERNS:
         if re.search(pattern, text):
             text = re.sub(pattern, '', text)
             issues.append("stripped_null_literal")
 
-    # 6. Clean up excessive whitespace from removals
+    # 7. Clean up excessive whitespace from removals
     text = re.sub(r'\n{3,}', '\n\n', text)
     text = re.sub(r'  +', ' ', text)
     text = text.strip()
@@ -222,6 +278,14 @@ def validate(text):
                                                   'content_id', 'platform_content',
                                                   'risk_', 'approval']):
             problems.append(f"json_metadata_block:{block[:50]}")
+
+    # Check for markdown formatting artifacts (should never appear in social posts)
+    if re.search(r'```', text):
+        problems.append("markdown_code_fence")
+    if re.search(r'^#{1,6}\s+', text, re.MULTILINE):
+        problems.append("markdown_heading_marker")
+    if re.search(r'\*\*[^*]+\*\*', text):
+        problems.append("markdown_bold_marker")
 
     # Check for excessive hashtag dumps (more than 20 hashtags)
     hashtags = re.findall(r'#\w+', text)

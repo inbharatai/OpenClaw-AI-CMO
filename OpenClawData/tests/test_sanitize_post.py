@@ -214,6 +214,94 @@ def test_horizontal_rule_not_eaten():
     assert 'Some text below' in clean, f"Text below --- should be preserved: {clean}"
 
 
+# ── Markdown stripping tests (added after LinkedIn leak incident) ──
+
+MARKDOWN_CODE_FENCE_POST = """```markdown
+title: "InBharat Bot Ecosystem Update"
+date: "2026-03-25"
+channel: "LinkedIn"
+
+Exciting updates to the InBharat Bot Ecosystem!
+
+### Key Highlights:
+- **Streamlined Approval Process**: Eliminated delays.
+- **Structured Reporting**: Enhanced data visibility.
+
+#InBharat #AIIntegration #ContentAutomation
+```"""
+
+MARKDOWN_HEADING_POST = """### Key Highlights:
+- **Streamlined Approval Process**: Eliminated delays.
+- **Structured Reporting**: Enhanced data visibility.
+
+**What's next?** Let's connect and discuss!"""
+
+
+def test_code_fences_stripped():
+    """Code fence markers (```) must be stripped — they appear as raw text on LinkedIn."""
+    clean, issues = sanitize(MARKDOWN_CODE_FENCE_POST)
+    assert '```' not in clean, f"Code fences should be stripped: {clean}"
+    assert 'markdown' not in clean.split('\n')[0] if clean else True, \
+        f"```markdown language tag should be stripped: {clean}"
+    assert '#InBharat' in clean, "Hashtags should be preserved"
+
+
+def test_heading_markers_stripped():
+    """### heading markers must be stripped, keeping the text."""
+    clean, issues = sanitize(MARKDOWN_HEADING_POST)
+    assert '###' not in clean, f"Heading markers should be stripped: {clean}"
+    assert 'Key Highlights' in clean, f"Heading text should be preserved: {clean}"
+
+
+def test_bold_markers_stripped():
+    """**bold** markers must be stripped, keeping the text."""
+    clean, issues = sanitize(MARKDOWN_HEADING_POST)
+    assert '**' not in clean, f"Bold markers should be stripped: {clean}"
+    assert 'Streamlined Approval Process' in clean, f"Bold text should be preserved: {clean}"
+    assert "What's next?" in clean, f"Bold text should be preserved: {clean}"
+
+
+def test_real_linkedin_leak_fixed():
+    """The actual LinkedIn post that leaked markdown must now be fully cleaned."""
+    leaked = """━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+```markdown
+title: "InBharat Bot Ecosystem Update"
+date: "2026-03-25"
+channel: "LinkedIn"
+type: "product-update"
+approval_level: "L1"
+status: "pending"
+char_count: 2950
+
+Exciting updates to the InBharat Bot Ecosystem!
+
+### Key Highlights:
+- **Streamlined Approval Process**: Eliminated delays with automated workflows.
+- **Structured Reporting**: Enhanced data visibility for informed decision-making.
+
+**What's next?** How can we further refine these tools?
+
+#InBharat #AIIntegration #ContentAutomation #DigitalTransformation #Efficiency
+```"""
+    clean, issues = sanitize(leaked)
+    assert '```' not in clean, f"Code fences must be gone: {clean}"
+    assert '###' not in clean, f"Heading markers must be gone: {clean}"
+    assert '**' not in clean, f"Bold markers must be gone: {clean}"
+    assert 'title:' not in clean, f"Metadata must be gone: {clean}"
+    assert 'approval_level' not in clean, f"Internal fields must be gone: {clean}"
+    assert 'Eliminated delays' in clean, f"Body content must be preserved: {clean}"
+    assert '#InBharat' in clean, f"Hashtags must be preserved: {clean}"
+
+
+def test_validate_catches_markdown():
+    """Validate must flag raw markdown in content."""
+    text_with_fences = "Hello ```python\nprint('hi')\n``` world"
+    is_clean, problems = validate(text_with_fences)
+    assert not is_clean, "Code fences should fail validation"
+    assert any('markdown' in p.lower() for p in problems), f"Should flag markdown: {problems}"
+
+
 # ── Run tests ──
 
 if __name__ == '__main__':
@@ -233,6 +321,11 @@ if __name__ == '__main__':
         test_urls_with_internal_field_names_preserved,
         test_inline_field_names_in_body_preserved,
         test_horizontal_rule_not_eaten,
+        test_code_fences_stripped,
+        test_heading_markers_stripped,
+        test_bold_markers_stripped,
+        test_real_linkedin_leak_fixed,
+        test_validate_catches_markdown,
     ]
 
     passed = 0
