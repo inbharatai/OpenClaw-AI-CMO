@@ -178,6 +178,22 @@ for PLATFORM in "${POSTABLE_PLATFORMS[@]}"; do
     log "POLICY OK: $PLATFORM — $POLICY_CHECK"
   fi
 
+  # ════════════════════════════════════════════
+  # GATE 0.5: SESSION HEALTH CHECK
+  # ════════════════════════════════════════════
+  # Verify platform session is valid BEFORE attempting any posts.
+  # Skip platform entirely if session is expired — don't waste time on silent failures.
+  if [ "$PLATFORM" != "email" ]; then  # email_zoho has different check mechanism
+    SESSION_CHECK=$(python3 "$ENGINE_DIR/post_${PLATFORM}.py" --check 2>&1)
+    SESSION_EXIT=$?
+    if [ $SESSION_EXIT -ne 0 ] || echo "$SESSION_CHECK" | grep -qi "EXPIRED\|ERROR\|not configured\|not logged"; then
+      log "SESSION EXPIRED: $PLATFORM — $SESSION_CHECK"
+      log "  Run: python3 $ENGINE_DIR/post_${PLATFORM}.py --login"
+      POLICY_BLOCKED=$((POLICY_BLOCKED + 1))
+      continue
+    fi
+  fi
+
   APPROVED_DIR="$QUEUES_DIR/$PLATFORM/approved"
   POSTED_DIR="$QUEUES_DIR/$PLATFORM/posted"
   REJECTED_DIR="$QUEUES_DIR/$PLATFORM/rejected"
@@ -299,8 +315,16 @@ for PLATFORM in "${POSTABLE_PLATFORMS[@]}"; do
       EXIT_CODE=$?
     fi
 
+    # ── Check for hidden failures: exit code 0 but ERROR in output ──
+    if [ "$EXIT_CODE" -eq 0 ] && echo "$OUTPUT" | grep -qi "^ERROR:"; then
+      log "FALSE POSITIVE CAUGHT: $PLATFORM/$FNAME — exit 0 but ERROR in output"
+      log "  Output: $(echo "$OUTPUT" | grep -i "ERROR:" | head -3)"
+      EXIT_CODE=1  # Override to failure
+    fi
+
     if [ "$EXIT_CODE" -eq 0 ]; then
       log "POSTED: $PLATFORM/$FNAME"
+      log "  Verification: $(echo "$OUTPUT" | grep -i "POSTED:\|verified\|confirmed" | head -1)"
       mv "$FILE" "$POSTED_DIR/"
       POSTED=$((POSTED + 1))
 

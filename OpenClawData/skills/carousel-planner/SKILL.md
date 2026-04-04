@@ -115,3 +115,8 @@ IMAGE BRIEF PER SLIDE
 - [ ] Visual direction matches brand-knowledge-base.json
 - [ ] Caption is platform-native (not cross-posted generic)
 - [ ] Total text per slide is scannable (< 30 words)
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.

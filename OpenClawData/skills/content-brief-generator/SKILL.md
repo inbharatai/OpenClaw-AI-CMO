@@ -77,3 +77,8 @@ Confidence:   {approved | safe-inference | needs-verification}
 - [ ] Source URLs are real and accessible
 - [ ] No restricted claims included without flagging
 - [ ] Image type matches platform requirements
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.

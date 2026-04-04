@@ -113,3 +113,8 @@ Clean, human-readable text ONLY. No JSON. No metadata. No field names.
 - [ ] CTA is relevant and not aggressive
 - [ ] Hashtags are within platform limits
 - [ ] No banned phrases from brand-voice-rules.json
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.

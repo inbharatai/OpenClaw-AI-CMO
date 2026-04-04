@@ -295,10 +295,50 @@ def send_email(pw, to, subject, body, draft_only=False, headless=False):
             context.close()
             return False
 
+        # ── VERIFY: Check for Zoho's "Message sent" confirmation ──
         time.sleep(3)
-        print(f"SENT: Email to {to} — Subject: {subject}")
-        context.close()
-        return True
+        confirmed = False
+        try:
+            # Zoho Mail shows a confirmation toast/banner after successful send
+            confirm_selectors = [
+                "text='Message sent'",
+                "text='Sent successfully'",
+                "div.zmNotifMsg:has-text('sent')",
+                "span:has-text('Message sent')",
+                "div.ztag-notif:has-text('sent')",
+            ]
+            for sel in confirm_selectors:
+                try:
+                    loc = page.locator(sel)
+                    if loc.count() > 0 and loc.first.is_visible(timeout=5000):
+                        confirmed = True
+                        break
+                except Exception:
+                    continue
+
+            # Also check if compose window closed (Zoho closes it on success)
+            if not confirmed:
+                time.sleep(3)
+                compose_area = page.locator("div.zmComposeBox, div.zmeditarea, div[role='textbox']")
+                if compose_area.count() == 0 or not compose_area.first.is_visible(timeout=3000):
+                    confirmed = True  # Compose area gone = email was sent
+        except Exception:
+            pass
+
+        if confirmed:
+            print(f"SENT: Email to {to} — Subject: {subject} (confirmed)")
+            context.close()
+            return True
+        else:
+            print(f"ERROR: Email to {to} — Send clicked but no confirmation received")
+            try:
+                screenshot_path = str(LOG_DIR / f"zoho-error-unconfirmed-{int(time.time())}.png")
+                page.screenshot(path=screenshot_path)
+                print(f"Debug screenshot: {screenshot_path}")
+            except Exception:
+                pass
+            context.close()
+            return False
 
     except Exception as e:
         print(f"ERROR: Failed to send email: {e}")

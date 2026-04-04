@@ -281,28 +281,86 @@ def post_to_linkedin(pw, text, headless=True, image_path=None):
 
         time.sleep(5)
 
-        # Verify — check if modal closed
+        # ── VERIFY: Did the post actually go through? ──
+        # Step 1: Check if compose modal closed (basic signal)
+        modal_closed = False
         try:
             editor.wait_for(state="hidden", timeout=15000)
-            print("POSTED: LinkedIn post published successfully")
-            context.close()
-            return True
+            modal_closed = True
         except Exception:
-            print("WARNING: Could not confirm modal closed. Post may have been sent — check LinkedIn.")
+            pass
+
+        if not modal_closed:
+            print("ERROR: Compose modal still open — post was NOT submitted")
+            _save_screenshot(page, "modal-still-open")
+            context.close()
+            return False
+
+        # Step 2: Navigate to feed and verify post appeared
+        # This is the REAL verification — modal closing alone is not proof
+        time.sleep(3)
+        verified = _verify_post_on_feed(page, text[:80])
+
+        if verified:
+            print("POSTED: LinkedIn post verified on feed")
             context.close()
             return True
+        else:
+            print("ERROR: Modal closed but post NOT found on LinkedIn feed")
+            _save_screenshot(page, "post-not-found-on-feed")
+            context.close()
+            return False
 
     except Exception as e:
         print(f"ERROR: Failed to post to LinkedIn: {e}")
-        # Take screenshot for debugging
-        try:
-            screenshot_path = str(POSTING_LOG / f"linkedin-error-{int(time.time())}.png")
-            page.screenshot(path=screenshot_path)
-            print(f"Debug screenshot saved: {screenshot_path}")
-        except Exception:
-            pass
+        _save_screenshot(page, "post-exception")
         context.close()
         return False
+
+
+def _verify_post_on_feed(page, text_snippet):
+    """Navigate to LinkedIn feed and check if our post appears in the top items."""
+    try:
+        page.goto("https://www.linkedin.com/feed/", wait_until="domcontentloaded", timeout=15000)
+        time.sleep(5)
+
+        # Look for our post content in the feed
+        # Check the first few feed items for our text
+        for attempt in range(2):
+            feed_text = page.locator("div.feed-shared-update-v2, div.update-components-text").all_text_contents()
+            combined = ' '.join(feed_text[:5])  # Check first 5 feed items
+            if text_snippet[:40] in combined:
+                return True
+            time.sleep(5)
+            page.reload(wait_until="domcontentloaded", timeout=10000)
+            time.sleep(3)
+
+        # Fallback: check profile activity page
+        try:
+            page.goto("https://www.linkedin.com/in/me/recent-activity/all/", wait_until="domcontentloaded", timeout=15000)
+            time.sleep(3)
+            activity_text = page.locator("div.update-components-text, span.break-words").all_text_contents()
+            combined = ' '.join(activity_text[:3])
+            if text_snippet[:40] in combined:
+                return True
+        except Exception:
+            pass
+
+        return False
+    except Exception as e:
+        print(f"WARNING: Feed verification failed: {e}")
+        return False
+
+
+def _save_screenshot(page, label):
+    """Save debug screenshot."""
+    try:
+        POSTING_LOG.mkdir(parents=True, exist_ok=True)
+        screenshot_path = str(POSTING_LOG / f"linkedin-error-{label}-{int(time.time())}.png")
+        page.screenshot(path=screenshot_path)
+        print(f"Debug screenshot: {screenshot_path}")
+    except Exception:
+        pass
 
 def log_posting(platform, file_path, success, text_preview=""):
     """Log the posting action."""

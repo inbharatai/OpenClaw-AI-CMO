@@ -348,18 +348,12 @@ def post_to_instagram(pw, caption, image_path, headless=True):
             context.close()
             return True
         except Exception:
-            # Check if we're back on the feed (post likely went through)
+            # No confirmation indicator found — post may or may not have worked
             time.sleep(5)
-            current_url = page.url
-            if "/create" not in current_url and "instagram.com" in current_url:
-                print("POSTED: Instagram post likely published (returned to feed)")
-                context.close()
-                return True
-            else:
-                print("WARNING: Could not confirm post. Check Instagram manually.")
-                _save_debug_screenshot(page, "post-unconfirmed")
-                context.close()
-                return False  # Changed from True — don't assume success
+            print("ERROR: Could not confirm Instagram post — no success indicator found")
+            _save_debug_screenshot(page, "post-unconfirmed")
+            context.close()
+            return False  # Never assume success without confirmation
 
     except Exception as e:
         print(f"ERROR: Failed to post to Instagram: {e}")

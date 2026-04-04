@@ -89,3 +89,8 @@ Product: {name}
 - Full sync: Weekly (or on demand)
 - Quick check (just status): Daily
 - Deep crawl (including sub-pages): Monthly
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.

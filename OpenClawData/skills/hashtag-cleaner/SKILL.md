@@ -53,3 +53,8 @@ Take raw hashtags from content generation and produce a clean, platform-appropri
 ## Output Format
 Return only the cleaned hashtag string, formatted for the target platform.
 No JSON. No metadata. Just clean hashtags ready to append.
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.

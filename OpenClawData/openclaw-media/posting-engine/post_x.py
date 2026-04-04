@@ -269,48 +269,68 @@ def post_tweet(pw, text, headless=True, image_path=None):
         post_btn.first.click(force=True)
         time.sleep(4)
 
-        # Verify the tweet was actually posted by checking if compose dialog closed
+        # ── VERIFY: Did the tweet actually post? ──
+        # Step 1: Check if compose dialog closed (basic signal)
+        modal_closed = False
         try:
-            # If the editor disappears or URL changes, the tweet was posted
             editor.first.wait_for(state="hidden", timeout=15000)
-            print("POSTED: Tweet published successfully (verified: compose dialog closed)")
-            context.close()
-            return True
+            modal_closed = True
         except Exception:
-            # Editor still visible — tweet may not have posted
-            # Try clicking Post again (maybe first click was blocked)
+            pass
+
+        if not modal_closed:
+            # Retry: dismiss overlays and click Post again
             try:
+                _dismiss_x_overlays(page)
+                page.keyboard.press("Escape")
+                time.sleep(0.5)
                 post_btn2 = page.locator("button[data-testid='tweetButton']")
                 if post_btn2.count() > 0 and post_btn2.first.is_visible():
-                    print("WARNING: First Post click may have failed, retrying...")
+                    print("WARNING: First Post click failed, retrying...")
                     post_btn2.first.click(force=True)
                     time.sleep(5)
                     try:
                         editor.first.wait_for(state="hidden", timeout=10000)
-                        print("POSTED: Tweet published successfully (verified on retry)")
-                        context.close()
-                        return True
+                        modal_closed = True
                     except Exception:
                         pass
             except Exception:
                 pass
 
-            # Check if we ended up on the home feed (successful post redirects)
-            if "/compose" not in page.url:
-                print("POSTED: Tweet likely published (navigated away from compose)")
-                context.close()
-                return True
-
-            # Still on compose page with editor visible — definitely failed
-            print("ERROR: Tweet was NOT posted — compose dialog still open after clicking Post")
-            screenshot_path = str(POSTING_LOG / f"x-error-{int(time.time())}.png")
+        if not modal_closed:
+            # Compose dialog still open — definitively failed
+            print("ERROR: Tweet NOT posted — compose dialog still open after retry")
             try:
+                screenshot_path = str(POSTING_LOG / f"x-error-{int(time.time())}.png")
                 page.screenshot(path=screenshot_path)
                 print(f"Debug screenshot: {screenshot_path}")
             except Exception:
                 pass
             context.close()
             return False
+
+        # Step 2: Verify on home feed — modal closed is necessary but not sufficient
+        time.sleep(3)
+        try:
+            page.goto("https://x.com/home", wait_until="domcontentloaded", timeout=15000)
+            time.sleep(4)
+            # Check if our tweet text appears in the first few feed items
+            feed_text = page.locator("article div[data-testid='tweetText']").all_text_contents()
+            snippet = text[:50]
+            for item in feed_text[:5]:
+                if snippet[:30] in item:
+                    print("POSTED: Tweet verified on home feed")
+                    context.close()
+                    return True
+            # If not found, still return True since modal closed (X's feed loads async)
+            print("POSTED: Tweet submitted (modal closed, feed verification inconclusive)")
+            context.close()
+            return True
+        except Exception:
+            # Feed check failed but modal DID close — cautious success
+            print("POSTED: Tweet submitted (modal closed, feed check skipped)")
+            context.close()
+            return True
 
     except Exception as e:
         print(f"ERROR: Failed to post tweet: {e}")

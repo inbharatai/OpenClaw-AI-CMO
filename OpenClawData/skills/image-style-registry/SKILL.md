@@ -95,3 +95,8 @@ This skill's rules are codified in `strategy/brand-knowledge-base.json` under `i
 The `enrich_image_prompt.py` script reads these rules automatically when `--image-type` is specified.
 
 For manual use: reference this skill when writing image briefs to ensure correct visual direction.
+
+---
+
+> **HONEST CLASSIFICATION:** This is a **prompt template**, not an executable plugin.
+> OpenClaw injects this as context to guide LLM behavior. It does NOT enforce rules at runtime.
