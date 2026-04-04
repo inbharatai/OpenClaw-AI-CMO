@@ -71,7 +71,7 @@ POLICY_BLOCKED=0
 PLAYWRIGHT_CHANNELS="linkedin x instagram discord"
 
 # ── Channels this script handles ──
-DISTRIBUTION_CHANNELS="website email substack heygen medium"
+DISTRIBUTION_CHANNELS="website email substack heygen medium facebook"
 
 # ── Ensure target directories exist ──
 mkdir -p "$MARKETING_DIR/website-posts" "$MARKETING_DIR/insights" "$MARKETING_DIR/build-logs" \
@@ -167,6 +167,21 @@ distribute_heygen() {
     fi
 }
 
+distribute_facebook() {
+    local FILE="$1"
+    local FILENAME=$(basename "$FILE")
+
+    mkdir -p "$MARKETING_DIR/facebook/"
+    if [ "$DRY_RUN" = false ]; then
+        cp "$FILE" "$MARKETING_DIR/facebook/"
+        mv "$FILE" "$EXPORTS_DIR/posted/"
+        record_post "facebook"
+        log "EXPORTED [facebook]: $FILENAME → facebook/ (queue/export only)"
+    else
+        log "[DRY RUN] Would export facebook: $FILENAME"
+    fi
+}
+
 distribute_medium() {
     local FILE="$1"
     local FILENAME=$(basename "$FILE")
@@ -234,6 +249,7 @@ for CHANNEL in "${CHANNELS[@]}"; do
             substack) distribute_email "$FILE" ;;  # Same export path
             heygen)   distribute_heygen "$FILE" ;;
             medium)   distribute_medium "$FILE" ;;
+            facebook) distribute_facebook "$FILE" ;;
             reddit)
                 # Reddit is NEVER auto-distributed — export only
                 log "SKIP [reddit]: Manual-only. File stays in approved queue."

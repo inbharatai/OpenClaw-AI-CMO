@@ -21,17 +21,17 @@ Multi-channel AI gateway for content creation, approval, and distribution with b
 
 ## Strongest Differentiators
 - 4-level approval system with risk scoring
-- 14 channel support with per-channel guardrails
+- 12 channel support with per-channel guardrails
 - Local-first AI (Ollama) with optional cloud escalation
 - Shell-script infrastructure (transparent, auditable, hackable)
-- 66+ skill templates for content variety
+- 76 skill templates for content variety
 - Real safety controls (not just prompts)
 
 ## Safe Claims
 - "Open source AI content operations tool"
 - "Multi-channel content pipeline with approval controls"
 - "Local-first AI with optional cloud models"
-- "66+ content generation skills"
+- "76 content generation skills"
 
 ## Restricted Claims
 - No user count claims without GitHub metrics

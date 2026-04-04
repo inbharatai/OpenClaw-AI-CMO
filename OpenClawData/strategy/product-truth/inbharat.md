@@ -33,7 +33,7 @@ India-first AI company building accessible, practical AI tools for Indian users,
 - Multiple live products (Sahaayak, TestsPrep, UniAssist, Phoring)
 - Working prototypes generated from real India problems
 - Open source contributions (OpenClaw, Agent Arcade)
-- Active development across 10+ GitHub repositories
+- Active development across 8 GitHub repositories
 
 ## Safe Claims
 - "Building AI tools for India"

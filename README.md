@@ -215,7 +215,7 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 │   │   ├── approval-engine.sh           ← L1-L4 approval scoring
 │   │   ├── session-keepalive.sh         ← Browser session refresh (every 6h)
 │   │   └── reporting-engine-v2.sh       ← Daily/weekly reports
-│   ├── skills/                            ← 75 skill templates
+│   ├── skills/                            ← 76 skill templates
 │   ├── security/                          ← Claim validator
 │   ├── tests/                             ← test_sanitize_post.py, test_enrich_image_prompt.py
 │   ├── reports/                           ← Generated reports

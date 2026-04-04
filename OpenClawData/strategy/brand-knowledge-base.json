@@ -315,9 +315,9 @@
       "core_capabilities": [
         "Autonomous multi-platform posting (LinkedIn, X, Instagram, Discord, email)",
         "4-level approval with 6-dimension risk scoring",
-        "64+ content generation skills with disclaimer guardrails",
+        "76 content generation skills with disclaimer guardrails",
         "10-stage content pipeline with claim validation",
-        "12 platform adapters with per-channel guardrails",
+        "12 channel adapters with per-channel guardrails",
         "Local-first AI (Ollama qwen3:8b + qwen2.5-coder:7b)",
         "DALL-E 3 image generation (~$0.04/image)",
         "Intelligence layer with 13 specialized scanning lanes",
