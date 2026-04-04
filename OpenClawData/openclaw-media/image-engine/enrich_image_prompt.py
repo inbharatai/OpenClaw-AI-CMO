@@ -87,6 +87,15 @@ def get_platform_dimensions(platform):
     return dims.get(platform, dims['instagram'])
 
 
+# Platform-specific visual style direction
+PLATFORM_STYLES = {
+    'linkedin': 'Professional SaaS aesthetic. Clean, modern, minimal. Product mockups, data visualizations, clean typography. Business-appropriate. No casual or playful elements.',
+    'instagram': 'Vibrant, eye-catching. Indian context where relevant — real scenarios, bright colors, educational visual. Strong visual hierarchy. Must work as a standalone square image.',
+    'x': 'Minimal and clean. Simple graphic, text card, or single focal point. Brand accent colors. Must read well at small sizes in a feed.',
+    'discord': 'Casual and community-friendly. Simpler visual, can be more playful. Clear and easy to understand at a glance.',
+}
+
+
 def enrich_prompt(brief, product_id=None, platform=None, image_type=None):
     """
     Enrich a raw image brief into a full DALL-E prompt.
@@ -150,7 +159,11 @@ def enrich_prompt(brief, product_id=None, platform=None, image_type=None):
             # Add top 3 most relevant principles
             prompt_parts.append(f'Design: {", ".join(principles[:3])}')
 
-    # 5. Platform sizing hint
+    # 5. Platform-specific visual style
+    if platform and platform in PLATFORM_STYLES:
+        prompt_parts.append(f'Platform style: {PLATFORM_STYLES[platform]}')
+
+    # 6. Platform sizing hint
     if dims:
         prompt_parts.append(f'Aspect ratio: {dims.get("aspect", "1:1")}')
 

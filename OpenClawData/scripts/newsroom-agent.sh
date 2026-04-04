@@ -103,6 +103,46 @@ while IFS= read -r -d '' FILE; do
         log "PRODUCED [linkedin news]: $LI_FILE"
     fi
 
+    # Generate X/Twitter variant for news
+    X_NEWS=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
+        "Adapt this AI news for X/Twitter (max 280 chars, sharp, 0-2 hashtags). Content: $(echo "$NEWS_SUMMARY" | head -c 400)" \
+        "qwen3:8b" 2>/dev/null | tail -n +5)
+
+    if [ -n "$X_NEWS" ]; then
+        X_FILE="$QUEUES_DIR/x/pending/x-news-$DATE_TAG-$SLUG.md"
+        echo "$X_NEWS" > "$X_FILE"
+        log "PRODUCED [x news]: $X_FILE"
+    fi
+
+    # Generate Instagram variant with image_brief (JSON)
+    INSTA_NEWS=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
+        "Create an Instagram caption about this AI news (max 300 chars, 5-10 hashtags). Also provide IMAGE_BRIEF: <one sentence describing a visual>. Content: $(echo "$NEWS_SUMMARY" | head -c 400)" \
+        "qwen3:8b" 2>/dev/null | tail -n +5)
+
+    if [ -n "$INSTA_NEWS" ]; then
+        INSTA_CAPTION=$(echo "$INSTA_NEWS" | sed -n 's/.*CAPTION:\s*//p' | sed 's/IMAGE_BRIEF:.*//' | head -1)
+        INSTA_BRIEF=$(echo "$INSTA_NEWS" | sed -n 's/.*IMAGE_BRIEF:\s*//p' | head -1)
+        [ -z "$INSTA_CAPTION" ] && INSTA_CAPTION="$INSTA_NEWS"
+        [ -z "$INSTA_BRIEF" ] && INSTA_BRIEF="A clean news visual about AI industry developments for InBharat"
+
+        INSTA_FILE="$QUEUES_DIR/instagram/pending/instagram-news-$DATE_TAG-$SLUG.json"
+        export IG_CAPTION="$INSTA_CAPTION" IG_BRIEF="$INSTA_BRIEF" IG_DATE="$DATE_TAG" IG_SLUG="$SLUG"
+        python3 << 'IGJSON' > "$INSTA_FILE"
+import json, os
+data = {
+    "content_id": f"IG-NEWS-{os.environ['IG_DATE']}-{os.environ['IG_SLUG']}",
+    "platform_content": {"instagram_caption": os.environ['IG_CAPTION']},
+    "image_brief": os.environ['IG_BRIEF'],
+    "image_path": "",
+    "product": "inbharat",
+    "approval_level": "L2",
+    "status": "pending"
+}
+print(json.dumps(data, indent=2))
+IGJSON
+        log "PRODUCED [instagram news]: $INSTA_FILE"
+    fi
+
     echo "$FILE" >> "$PROCESSED_LOG"
     TOTAL_PROCESSED=$((TOTAL_PROCESSED + 1))
     log "SUMMARIZED: $OUTPUT_FILE"

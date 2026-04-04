@@ -240,6 +240,54 @@ json.dump(meta, open('$META_FILE','w'), indent=2)
                     log "PRODUCED [linkedin variant]: $LI_FILE"
                 fi
             fi
+
+            # Generate X/Twitter variant
+            if echo "$CHANNELS" | grep -qiE "^x$|^x,|,x,|,x$| x "; then
+                X_OUT=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
+                    "Adapt this content for X/Twitter (max 280 chars, sharp direct tone, 0-2 hashtags). Content: $(echo "$GENERATED" | head -c 500)" \
+                    "qwen3:8b" 2>/dev/null | tail -n +5)
+                if [ -n "$X_OUT" ]; then
+                    X_FILE="$QUEUES_DIR/x/pending/x-$DATE_TAG-$(basename "$SOURCE_FILE" .md | head -c 30).md"
+                    echo "$X_OUT" > "$X_FILE"
+                    log "PRODUCED [x variant]: $X_FILE"
+                fi
+            fi
+
+            # Generate Instagram variant (JSON with image_brief — Instagram requires images)
+            if echo "$CHANNELS" | grep -qi "instagram"; then
+                INSTA_OUT=$("$SCRIPTS_DIR/skill-runner.sh" channel-adapter \
+                    "Create an Instagram caption from this content (max 300 chars, engaging, 5-10 hashtags). Also provide a one-sentence image_brief describing a visual for this post. Format your response as: CAPTION: <caption text> IMAGE_BRIEF: <image description>. Content: $(echo "$GENERATED" | head -c 500)" \
+                    "qwen3:8b" 2>/dev/null | tail -n +5)
+                if [ -n "$INSTA_OUT" ]; then
+                    # Parse caption and image_brief from output
+                    INSTA_CAPTION=$(echo "$INSTA_OUT" | sed -n 's/.*CAPTION:\s*//p' | sed 's/IMAGE_BRIEF:.*//' | head -1)
+                    INSTA_BRIEF=$(echo "$INSTA_OUT" | sed -n 's/.*IMAGE_BRIEF:\s*//p' | head -1)
+                    [ -z "$INSTA_CAPTION" ] && INSTA_CAPTION="$INSTA_OUT"
+                    [ -z "$INSTA_BRIEF" ] && INSTA_BRIEF="A clean, vibrant visual representing $CONTENT_TYPE content for InBharat AI"
+
+                    INSTA_FILE="$QUEUES_DIR/instagram/pending/instagram-$DATE_TAG-$(basename "$SOURCE_FILE" .md | head -c 30).json"
+                    export INSTA_ENV_CAPTION="$INSTA_CAPTION"
+                    export INSTA_ENV_BRIEF="$INSTA_BRIEF"
+                    export INSTA_ENV_DATE="$DATE_TAG"
+                    export INSTA_ENV_SOURCE="$SOURCE_FILE"
+                    python3 << 'INSTAJSON' > "$INSTA_FILE"
+import json, os
+data = {
+    "content_id": f"IG-{os.environ['INSTA_ENV_DATE']}-{os.path.basename(os.environ['INSTA_ENV_SOURCE'])[:20]}",
+    "platform_content": {
+        "instagram_caption": os.environ['INSTA_ENV_CAPTION']
+    },
+    "image_brief": os.environ['INSTA_ENV_BRIEF'],
+    "image_path": "",
+    "product": "inbharat",
+    "approval_level": "L2",
+    "status": "pending"
+}
+print(json.dumps(data, indent=2))
+INSTAJSON
+                    log "PRODUCED [instagram variant]: $INSTA_FILE"
+                fi
+            fi
         fi
 
     done < <(find "$DIR" -maxdepth 2 -name "*.meta.json" -print0 2>/dev/null)

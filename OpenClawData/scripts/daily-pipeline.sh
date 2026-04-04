@@ -104,6 +104,10 @@ run_stage() {
 # Scan source folders for new material and classify it
 run_stage "intake" "1" "\"$SCRIPTS_DIR/intake-processor.sh\" $DRY_RUN"
 
+# ===== STAGE 1.5: INTELLIGENCE TO CONTENT =====
+# Convert InBharat Bot intelligence reports (AI gaps, opportunities) into social content
+run_stage "intelligence" "1.5" "\"$SCRIPTS_DIR/intelligence-to-content.sh\" $DRY_RUN"
+
 # ===== STAGE 2A: NEWSROOM =====
 # Process AI news sources into summaries + multi-channel variants
 run_stage "newsroom" "2a" "\"$SCRIPTS_DIR/newsroom-agent.sh\" $DRY_RUN"
@@ -123,6 +127,12 @@ run_stage "validate" "2d" "\"$WORKSPACE_ROOT/OpenClawData/security/claim-validat
 # ===== STAGE 3: APPROVAL =====
 # Run all pending content through the approval engine
 run_stage "approve" "3" "\"$SCRIPTS_DIR/approval-engine.sh\" $DRY_RUN"
+
+# ===== STAGE 3.5: IMAGE GENERATION =====
+# Generate DALL-E images for approved content with image_brief fields
+# Must run AFTER approval (images cost money — only generate for approved content)
+MEDIA_DIR="$WORKSPACE_ROOT/OpenClawData/openclaw-media"
+run_stage "images" "3.5" "\"$MEDIA_DIR/image-engine/process-briefs.sh\" $DRY_RUN"
 
 # ===== STAGE 4: PUBLISH =====
 # Autonomous publishing — post approved content to platforms via Playwright browser automation
