@@ -21,6 +21,11 @@ import sys
 import time
 from pathlib import Path
 
+# Import sanitizer and policy gate
+sys.path.insert(0, str(Path(__file__).parent))
+from sanitize_post import sanitize, validate
+from direct_post_gate import gate_direct_post
+
 SESSION_DIR = Path.home() / ".openclaw" / "browser-sessions" / "linkedin"
 POSTING_LOG = Path("/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/analytics")
 
@@ -42,8 +47,16 @@ def launch_browser(pw, headless=False):
         user_data_dir=str(SESSION_DIR),
         headless=headless,
         viewport={"width": 1280, "height": 900},
-        args=["--disable-blink-features=AutomationControlled"],
+        user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        args=[
+            "--disable-blink-features=AutomationControlled",
+            "--disable-dev-shm-usage",
+        ],
     )
+    # Remove navigator.webdriver flag to avoid detection
+    for page in context.pages:
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    context.on("page", lambda p: p.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"))
     return context
 
 def do_login(pw):
@@ -128,11 +141,15 @@ def extract_text(file_path):
         with open(path) as f:
             return f.read().strip(), {}
 
-def post_to_linkedin(pw, text, headless=True):
-    """Post text content to LinkedIn."""
+def post_to_linkedin(pw, text, headless=True, image_path=None):
+    """Post text content to LinkedIn, optionally with an image."""
     if not text or len(text.strip()) < 10:
         print("ERROR: Post text too short or empty")
         return False
+
+    if image_path and not Path(image_path).exists():
+        print(f"WARNING: Image not found at {image_path}, posting without image")
+        image_path = None
 
     context = launch_browser(pw, headless=headless)
     page = context.pages[0] if context.pages else context.new_page()
@@ -211,6 +228,28 @@ def post_to_linkedin(pw, text, headless=True):
         time.sleep(0.5)
         page.keyboard.type(text, delay=10)
         time.sleep(2)
+
+        # Attach image if provided
+        if image_path:
+            try:
+                file_input = page.locator("input[type='file'][accept*='image']")
+                if file_input.count() > 0:
+                    file_input.first.set_input_files(image_path)
+                    print(f"Attached image: {image_path}")
+                    time.sleep(3)
+                else:
+                    # Try clicking the image/media button first
+                    media_btn = page.locator("button[aria-label*='media'], button[aria-label*='photo'], button[aria-label*='image']")
+                    if media_btn.count() > 0:
+                        media_btn.first.click()
+                        time.sleep(1)
+                        file_input = page.locator("input[type='file']")
+                        if file_input.count() > 0:
+                            file_input.first.set_input_files(image_path)
+                            print(f"Attached image: {image_path}")
+                            time.sleep(3)
+            except Exception as e:
+                print(f"WARNING: Could not attach image: {e}")
 
         # Click the Post button — find the submit button in the modal
         post_selectors = [
@@ -292,9 +331,15 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check if session is valid")
     parser.add_argument("--text", type=str, help="Text to post directly")
     parser.add_argument("--file", type=str, help="Content file to extract and post")
+    parser.add_argument("--image", type=str, help="Image file to attach to post")
     parser.add_argument("--visible", action="store_true", help="Show browser window (not headless)")
     parser.add_argument("--dry-run", action="store_true", help="Extract and show text without posting")
+    parser.add_argument("--allow-direct-post", action="store_true",
+                        help="Required for direct invocation (bypass publish.sh). Still enforces policy.")
     args = parser.parse_args()
+
+    # ── Policy gate: enforce platform policy before any posting ──
+    gate_direct_post(platform="linkedin", args=args)
 
     with get_playwright() as pw:
         if args.login:
@@ -323,6 +368,17 @@ def main():
             print("ERROR: No text extracted from source")
             sys.exit(1)
 
+        # Sanitize content before posting — strip any leaked metadata/JSON
+        text, sanitize_issues = sanitize(text)
+        if sanitize_issues:
+            print(f"SANITIZE: Fixed {len(sanitize_issues)} issues: {sanitize_issues}")
+        is_clean, problems = validate(text)
+        if not is_clean:
+            print(f"WARNING: Post may contain internal artifacts: {problems}")
+            if any('json_metadata_block' in p for p in problems):
+                print("ERROR: JSON metadata detected in post — aborting")
+                sys.exit(1)
+
         print(f"Content ({len(text)} chars):")
         print(f"---\n{text[:500]}\n---")
 
@@ -331,7 +387,7 @@ def main():
             return
 
         # Post
-        success = post_to_linkedin(pw, text, headless=not args.visible)
+        success = post_to_linkedin(pw, text, headless=not args.visible, image_path=args.image)
         log_posting("linkedin", source_file, success, text[:100])
 
         if success:

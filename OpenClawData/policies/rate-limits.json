@@ -26,12 +26,12 @@
       "notes": "Webhook posting enabled. Keep valuable, not spammy"
     },
     "linkedin": {
-      "daily_cap": 0,
-      "weekly_cap": 0,
-      "min_interval_hours": 0,
+      "daily_cap": 3,
+      "weekly_cap": 15,
+      "min_interval_hours": 3,
       "auto_post_allowed": false,
-      "blocked": true,
-      "notes": "BLOCKED by owner. Do not generate, queue, or export LinkedIn content until unblocked."
+      "blocked": false,
+      "notes": "Unblocked by founder 2026-04-03. Queue/export, professional tone, no engagement bait."
     },
     "x": {
       "daily_cap": 3,

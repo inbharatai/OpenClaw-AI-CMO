@@ -2,7 +2,7 @@
 
 **The AI-powered operating system that runs InBharat's entire growth, content, outreach, and intelligence operation.**
 
-Version 4.2 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
+Version 5.0 | Last updated: 2026-04-04 | [github.com/inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
 
 [![CI](https://github.com/inbharatai/OpenClaw-AI-CMO/actions/workflows/ci.yml/badge.svg)](https://github.com/inbharatai/OpenClaw-AI-CMO/actions/workflows/ci.yml)
 
@@ -13,7 +13,6 @@ Version 4.2 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO]
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                     FOUNDER (WhatsApp / Terminal)                     │
-│  "create a LinkedIn post about Phoring" / "scan for funding"         │
 └──────────────────────────┬──────────────────────────────────────────┘
                            ▼
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -26,61 +25,28 @@ Version 4.2 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO]
 │                           │                                          │
 │  ┌────────────────────────▼─────────────────────────────────────┐   │
 │  │  INBHARAT BOT — Internal Intelligence Layer                   │   │
-│  │  (NOT a separate platform — runs inside OpenClaw)             │   │
-│  │                                                               │   │
-│  │  13 Intelligence Lanes:                                       │   │
-│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
-│  │  │ Media   │ │ India    │ │ AI Gaps   │ │ Funding      │    │   │
-│  │  │ Engine  │ │ Problems │ │ Discovery │ │ & Grants     │    │   │
-│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
-│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
-│  │  │Compete  │ │Ecosystem │ │ Community │ │ Outreach     │    │   │
-│  │  │Monitor  │ │ Scanner  │ │ Intel     │ │ & Campaigns  │    │   │
-│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
-│  │  ┌─────────┐ ┌──────────┐ ┌───────────┐ ┌──────────────┐    │   │
-│  │  │Gov &    │ │ Learning │ │ Prototype │ │ Reddit       │    │   │
-│  │  │Tenders  │ │ & Review │ │ Builder   │ │ Drafting     │    │   │
-│  │  └─────────┘ └──────────┘ └───────────┘ └──────────────┘    │   │
-│  │                         ↕ Revenue & Lead Pipeline             │   │
+│  │  13 Intelligence Lanes: Media Engine, India Problems,         │   │
+│  │  AI Gaps, Funding, Compete Monitor, Ecosystem Scanner,        │   │
+│  │  Community Intel, Outreach, Gov & Tenders, Learning,          │   │
+│  │  Prototype Builder, Reddit Drafting, Revenue Pipeline         │   │
 │  └───────────────────────────────────────────────────────────────┘   │
 │                           │                                          │
 │  ┌────────────────────────▼─────────────────────────────────────┐   │
 │  │  CONTENT FACTORY (openclaw-media/)                            │   │
 │  │                                                               │   │
-│  │  Generation:          Publishing:          Analytics:         │   │
-│  │  ┌──────────────┐    ┌──────────────┐    ┌───────────────┐   │   │
-│  │  │Native Pipeline│    │Approval Gate │    │Post Logging   │   │   │
-│  │  │(Ollama qwen3) │    │L1→L2→L3→L4  │    │Feedback Loop  │   │   │
-│  │  ├──────────────┤    ├──────────────┤    │Performance    │   │   │
-│  │  │DALL-E 3      │    │Claim Validate│    └───────────────┘   │   │
-│  │  │Image Engine  │    │Brand Check   │                        │   │
-│  │  ├──────────────┤    ├──────────────┤                        │   │
-│  │  │ffmpeg Video  │    │Queue Manager │                        │   │
-│  │  │(local, free) │    │pending→post  │                        │   │
-│  │  ├──────────────┤    ├──────────────┤                        │   │
-│  │  │HeyGen Briefs │    │Platform Post │                        │   │
-│  │  │(gated queue) │    │LinkedIn│X│IG │                        │   │
-│  │  └──────────────┘    └──────────────┘                        │   │
+│  │  Generation:          Guardrails:           Publishing:       │   │
+│  │  ┌──────────────┐    ┌──────────────────┐  ┌─────────────┐   │   │
+│  │  │Ollama qwen3  │    │policy_enforcer.py│  │publish.sh   │   │   │
+│  │  │Native Pipeline│    │rate-limits.json  │  │(CANONICAL)  │   │   │
+│  │  ├──────────────┤    ├──────────────────┤  ├─────────────┤   │   │
+│  │  │DALL-E 3 +    │    │sanitize_post.py  │  │render_post  │   │   │
+│  │  │enrich_prompt │    │render_post.py    │  │qa-guardrail │   │   │
+│  │  ├──────────────┤    ├──────────────────┤  ├─────────────┤   │   │
+│  │  │ffmpeg Video  │    │qa-guardrail.sh   │  │dist-engine  │   │   │
+│  │  │HeyGen Briefs │    │claim-validator   │  │(non-browser) │   │   │
+│  │  └──────────────┘    │approval L1-L4    │  └─────────────┘   │   │
+│  │                      └──────────────────┘                     │   │
 │  └───────────────────────────────────────────────────────────────┘   │
-│                                                                      │
-│  ┌───────────────────────────────────────────────────────────────┐   │
-│  │  OPERATING DIRECTIVES (directives/)                            │   │
-│  │  Autonomy Tiers │ QA Chain │ Credential Rules │ Self-Correct  │   │
-│  └───────────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────────┘
-                           │
-                           ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│  LIVE PLATFORM CONNECTIONS                                           │
-│  ┌──────────┐ ┌────────┐ ┌───────────┐ ┌─────────┐ ┌────────────┐ │
-│  │ LinkedIn │ │   X    │ │ Instagram │ │ Discord │ │ Zoho Mail  │ │
-│  │ ✅ Live  │ │ ✅ Live│ │ ✅ Live   │ │ ✅ Live │ │ ✅ Live    │ │
-│  │Playwright│ │Playwrt │ │Playwright │ │ Webhook │ │ Playwright │ │
-│  └──────────┘ └────────┘ └───────────┘ └─────────┘ └────────────┘ │
-│  ┌──────────┐                                                       │
-│  │ Reddit   │  Draft-only (L3 manual) — no auto-posting             │
-│  │ 📝 Draft │                                                       │
-│  └──────────┘                                                       │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -90,147 +56,102 @@ Version 4.2 | Last updated: 2026-04-02 | [github.com/inbharatai/OpenClaw-AI-CMO]
 
 | Product | What it does | Website | Status |
 |---|---|---|---|
-| **InBharat.ai** | AI tools company — parent brand | [inbharat.ai](https://inbharat.ai) | Live |
-| **Phoring** | Smart communication layer | [phoring.in](https://phoring.in) | Live |
-| **TestsPrep** | AI-powered test preparation | [testsprep.in](https://testsprep.in) | Live |
-| **UniAssist** | University application assistant | [uniassist.ai](https://uniassist.ai) | Live |
-| **Sahaayak** | AI helper for everyday tasks | [sahaayak.ai](https://sahaayak.ai) | Live |
-| **CodeIn** | Code learning platform | — | In development |
-| **OpenClaw** | This system — autonomous ops engine | [GitHub](https://github.com/inbharatai/OpenClaw-AI-CMO) | Live |
-| **Agent Arcade** | AI agent gateway | [GitHub](https://github.com/inbharatai/agent-arcade-gateway) | In development |
+| **InBharat.ai** | AI consulting, tools & automation for Bharat | [inbharat.ai](https://inbharat.ai) | Live |
+| **Sahaayak** | Multilingual AI assistant for Indian users | [sahaayak.ai](https://sahaayak.ai) | Development |
+| **Sahaayak Seva** | Public service AI for government schemes | — | Development |
+| **TestsPrep** | AI-powered test preparation for Indian exams | [testsprep.in](https://testsprep.in) | Development |
+| **UniAssist** | University and higher education AI assistant | [uniassist.ai](https://uniassist.ai) | Development |
+| **Phoring** | AI-enhanced communication platform | [phoring.in](https://phoring.in) | Development |
+| **CodeIn** | AI coding assistance and education | [codein.pro](https://codein.pro) | Experimental |
+| **OpenClaw** | This system — autonomous ops engine | [GitHub](https://github.com/inbharatai/OpenClaw-AI-CMO) | Development |
+| **Agent Arcade** | AI agent experimentation platform | [GitHub](https://github.com/inbharatai/agent-arcade-gateway) | Experimental |
+| **Sahayak OS** | Framework for deploying AI assistants | — | Experimental |
 
-### GitHub Repositories (Monitored)
-- [inbharatai/OpenClaw-AI-CMO](https://github.com/inbharatai/OpenClaw-AI-CMO)
-- [inbharatai/phoring](https://github.com/inbharatai/phoring)
-- [inbharatai/agent-arcade-gateway](https://github.com/inbharatai/agent-arcade-gateway)
-- [inbharat-ai/uniassist.ai](https://github.com/inbharat-ai/uniassist.ai)
-- [inbharat-ai/testsprep.in](https://github.com/inbharat-ai/testsprep.in)
-- [inbharatai/sahaayak-ai-public](https://github.com/inbharatai/sahaayak-ai-public)
+### Source of Truth
+- Product facts: `strategy/product-registry.json` (10 products)
+- Product claims: `strategy/product-truth/*.md` (10 files, with safe/restricted claims)
+- Brand identity: `strategy/brand-knowledge-base.json`
+- Platform rules: `strategy/platform-rules/*.md` (6 files)
 
 ---
 
-## How It Works
+## Publishing Pipeline (Canonical Path)
 
-### Content Flow
+Every live post goes through this exact path — no exceptions:
+
 ```
-Signal Discovered → Scored → Content Generated → QA Chain (7 roles) → Queued → Approved → Posted
+Queue (approved/) → POLICY CHECK → CLAIM VALIDATE → SANITIZE → QA GUARDRAIL → RENDER → POST → RECORD
+                    policy_enforcer  claim-validator  sanitize_post  qa-guardrail  render_post  post_*.py  policy counter
 ```
 
-### Autonomy Tiers
+### Enforcement Gates
 
-| Tier | What | Examples |
+| Gate | File | What it checks |
 |---|---|---|
-| **T0 — Fully Autonomous** | No approval needed | Text posts, images, carousels, research, drafts, scheduling, community updates, outreach prep |
-| **T1 — Approved Connectors** | Uses saved sessions/keys | Browser posting, email drafts, analytics reads |
-| **T2 — Ask If Needed** | Real blockers only | Missing secrets, new integrations, threshold exceeded |
-| **T3 — Always Gated** | Founder must approve | HeyGen avatar videos, new skill installs, downloads, financial/legal commitments |
+| **Policy** | `policy_enforcer.py` | `blocked=true`? Daily cap reached? Platform allowed? |
+| **Claims** | `claim-validator.sh` | Fabricated stats? Unverified claims? Credentials leaked? |
+| **Sanitize** | `sanitize_post.py` | JSON leaks? YAML frontmatter? Template placeholders? Internal metadata? |
+| **QA** | `qa-guardrail.sh` | Post too long? Too many hashtags? Banned phrases? |
+| **Render** | `render_post.py` | Two-stage: queue file (JSON/MD) → clean human-readable text only |
 
-### Internal QA Chain (7 Roles)
-Every piece of content passes through:
-1. **Research Analyst** — verify facts and sources
-2. **Strategist** — confirm growth/trust value
-3. **Writer** — make it sharp and platform-native
-4. **Brand Reviewer** — ecosystem alignment check
-5. **Accuracy Reviewer** — reject hallucinations
-6. **Publisher** — publish, schedule, or skip
-7. **Performance Analyst** — log objectives and compare
+### Direct Script Protection
+Individual posting scripts (`post_linkedin.py`, `post_x.py`, etc.) require `--allow-direct-post` flag for direct invocation. Without it, they refuse to post and log the attempt. Even with the flag, policy enforcement still runs.
 
 ---
 
 ## Platform Publishing
 
-### Live Connections
+| Platform | Engine | Posting Mode | Daily Cap | Session |
+|---|---|---|---|---|
+| **LinkedIn** | `post_linkedin.py` | Playwright | 3/day | `~/.openclaw/browser-sessions/linkedin/` |
+| **X/Twitter** | `post_x.py` | Playwright | 3/day | `~/.openclaw/browser-sessions/x/` |
+| **Instagram** | `post_instagram.py` | Playwright (mobile) | 1/day | `~/.openclaw/browser-sessions/instagram/` |
+| **Discord** | `post_discord.py` | Webhook | 3/day | Keychain: `discord-webhook` |
+| **Zoho Mail** | `email_zoho.py` | Playwright (visible) | 1/day | `~/.openclaw/browser-sessions/zoho/` |
+| **Reddit** | Draft only | Manual (L3 always) | 1/day | — |
+| **Website** | `distribution-engine.sh` | File copy to staging | 3/day | — |
+| **HeyGen** | Brief export only | Founder-gated (T3) | 2/day | — |
 
-| Platform | Engine | How it posts | Session |
-|---|---|---|---|
-| **LinkedIn** | `post_linkedin.py` | Playwright browser automation | `~/.openclaw/browser-sessions/linkedin/` |
-| **X/Twitter** | `post_x.py` | Playwright browser automation | `~/.openclaw/browser-sessions/x/` |
-| **Instagram** | `post_instagram.py` | Playwright (mobile UA, image required) | `~/.openclaw/browser-sessions/instagram/` |
-| **Discord** | `post_discord.py` | Webhook (curl, no browser) | Keychain: `discord-webhook` |
-| **Zoho Mail** | `email_zoho.py` | Playwright (visible mode, Zoho blocks headless) | `~/.openclaw/browser-sessions/zoho/` |
-| **Reddit** | Draft only | `inbharat-run.sh reddit draft` | Manual posting (L3) |
+### Two Publishers, No Overlap
 
-### Platform Content Rules
+| Script | Handles | Method |
+|---|---|---|
+| `publish.sh` | LinkedIn, X, Instagram, Discord | Playwright browser automation + webhook |
+| `distribution-engine.sh` | Website, email, heygen, medium, substack | File staging + export |
 
-| Platform | Tone | Format | Max Length |
-|---|---|---|---|
-| **LinkedIn** | Professional, insightful | Text + line breaks, 5 hashtags max | 3000 chars |
-| **X** | Sharp, fast, direct | Plain text, 3 hashtags max | 280 chars / 8-tweet threads |
-| **Instagram** | Visual-first, engaging | Caption + image/carousel, 10-15 hashtags | 2200 chars |
-| **Discord** | Community-friendly | Markdown, embed-friendly | 2000 chars |
-| **Reddit** | Genuine, non-promotional | Reddit markdown, value-first | 10000 chars |
-
-### Session Management
-- **Keepalive cron**: Every 6 hours — refreshes all sessions
-- **Cookie sync**: Chrome cookies → Playwright sessions
-- **Re-login**: `python3 post_<platform>.py --login`
+Both enforce `policy_enforcer.py`. Both run `sanitize_post.py`. Neither can touch the other's platforms.
 
 ---
 
-## Image & Video Generation
+## Image Generation
 
 ```
-Content Package
-      │
-      ├──► DALL-E 3 ──► Post Image (autonomous, $0.04/image, 10/day cap)
-      │
-      ├──► ffmpeg ────► Text Animation / Slideshow / Quote Card (free, local)
-      │
-      └──► HeyGen ───► Avatar Video Brief → Founder Queue (Tier 3 gated)
+Content Package → enrich_image_prompt.py → DALL-E 3 → Post Image
+                  (brand colors, product    (or placeholder
+                   context, style, negative   fallback if offline)
+                   guidance, platform sizing)
 ```
 
-| Type | Tool | Cost | Autonomous? |
-|---|---|---|---|
-| Post images, cards, covers | DALL-E 3 (OpenAI API) | ~$0.04/image | Yes — 10/day budget cap |
-| Text animations | ffmpeg (local) | Free | Yes |
-| Slideshows with transitions | ffmpeg (local) | Free | Yes |
-| Ken Burns zoom | ffmpeg (local) | Free | Yes |
-| Quote card videos | ffmpeg (local) | Free | Yes |
-| Avatar presenter videos | HeyGen | Paid | No — founder-gated (Tier 3) |
-
-### Commands
-```bash
-# Images
-generate-image.sh "AI brain connected to India map" --size square
-generate-image.sh "Educational carousel slide" --size portrait
-generate-image.sh --budget  # Check today's spend
-
-# Videos
-generate-video-local.sh text "Building AI for India" --size 1080x1920
-generate-video-local.sh slideshow img1.png img2.png img3.png
-generate-video-local.sh quote "Think like an owner" --author "Reeturaj Goswami"
-generate-video-local.sh kenburns photo.png --duration 8
-```
+| Component | What it does |
+|---|---|
+| `enrich_image_prompt.py` | Transforms generic briefs into brand-aware DALL-E prompts |
+| `brand-knowledge-base.json` | Colors, visual style, prohibited styles per product |
+| `process-briefs.sh` | Batch processes all image briefs from content packages |
+| `generate-image.sh` | Routes to DALL-E 3, local Stable Diffusion, or placeholder |
+| `placeholder_generate.py` | Offline branded card generator (loads brand colors from KB) |
 
 ---
 
 ## Approval System
 
-```
-Content Generated
-      │
-      ▼
-┌─────────────────┐
-│ Claim Validator  │──► Blocks: fabricated stats, unverified claims, credentials
-└────────┬────────┘
-         ▼
-┌─────────────────┐     ┌──────────────────────┐
-│ L1: Auto-Approve│────►│ Standard posts,       │
-│                 │     │ Discord, community     │
-└─────────────────┘     └──────────────────────┘
-┌─────────────────┐     ┌──────────────────────┐
-│ L2: Score-Gated │────►│ Product claims,       │
-│                 │     │ industry commentary    │
-└─────────────────┘     └──────────────────────┘
-┌─────────────────┐     ┌──────────────────────┐
-│ L3: Review Queue│────►│ Reddit, HeyGen video, │
-│                 │     │ bold claims, outreach  │
-└─────────────────┘     └──────────────────────┘
-┌─────────────────┐     ┌──────────────────────┐
-│ L4: Hard Block  │────►│ Unverified funding,   │
-│                 │     │ credentials, legal     │
-└─────────────────┘     └──────────────────────┘
-```
+| Level | Decision | Content Types |
+|---|---|---|
+| **L1** | Auto-approve | Standard posts, Discord, community updates |
+| **L2** | Score-gated | Product claims, industry commentary, social posts |
+| **L3** | Founder review | Reddit, HeyGen, bold claims, partnership, outreach |
+| **L4** | Hard block | Unverified claims, credentials, PII, legal/political |
+
+Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand voice 15%, data safety 15%, duplication 10%, platform risk 10%).
 
 ---
 
@@ -238,47 +159,8 @@ Content Generated
 
 | Time | Job | Script |
 |---|---|---|
-| Every hour (:00) | WhatsApp status report | `hourly-whatsapp-report.sh` |
-| Every 6h (0/6/12/18) | Session keepalive | `session-keepalive.sh` |
 | 8:07 AM daily | Full CMO pipeline | `daily-pipeline.sh` |
 | 9:00 AM daily | Auto-content generation | `daily-auto-content.sh` |
-| Monday 7:53 AM | Weekly review | `weekly-pipeline.sh` |
-| 1st of month 7:42 AM | Monthly review | `monthly-pipeline.sh` |
-
----
-
-## Intelligence Commands
-
-### Content & Media
-| Command | What it does |
-|---|---|
-| `media native --product phoring` | Generate content package for Phoring |
-| `media native --product sahaayak --platform linkedin` | LinkedIn-specific post |
-| `media image --brief "description"` | Generate DALL-E 3 image |
-| `media video --file <package>` | Generate video from content package |
-| `media status` | Show queue counts |
-| `media review` | Show items needing review |
-| `media approve <file>` | Approve and publish |
-| `media publish` | Publish all approved items |
-
-### Intelligence & Discovery
-| Command | What it does |
-|---|---|
-| `india-problems scan` | Scan for problems AI can solve in India |
-| `ai-gaps scan` | Find gaps in AI market |
-| `funding scan` | Find grants, programs, funding |
-| `competitor scan` | Competitive intelligence |
-| `ecosystem scan` | Ecosystem developments |
-| `community scan` | Community intelligence |
-| `opportunities all` | All opportunity types |
-
-### Outreach & Revenue
-| Command | What it does |
-|---|---|
-| `outreach research "Company"` | Research a target organization |
-| `outreach campaign <type> <list>` | Draft outreach campaign |
-| `leads capture "inquiry"` | Log a business lead |
-| `revenue process` | Process hot leads |
 
 ---
 
@@ -288,44 +170,53 @@ Content Generated
 /Volumes/Expansion/CMO-10million/
 ├── CLAUDE.md                              ← System operating instructions
 ├── README.md                              ← THIS FILE
+├── assets/brand/                          ← Logo files (SVG, PNG)
 ├── OpenClawData/
-│   ├── directives/                        ← Operating directives (8 files)
-│   ├── inbharat-bot/                      ← Intelligence layer
-│   │   ├── inbharat-run.sh              ← Master orchestrator (13 lanes)
-│   │   ├── skills/                      ← 13 prompt skill templates
-│   │   ├── config/bot-config.json       ← Bot configuration
-│   │   ├── opportunities/               ← Scanner output
-│   │   ├── outreach/                    ← Campaign drafts
-│   │   └── leads/                       ← Lead pipeline
-│   ├── openclaw-media/                    ← Content factory
-│   │   ├── native-pipeline/             ← Content generation (Ollama)
-│   │   ├── image-engine/                ← DALL-E 3 + fallbacks
-│   │   ├── video-engine/                ← ffmpeg + HeyGen briefs
-│   │   ├── posting-engine/              ← Platform posters (6 scripts)
-│   │   ├── publishing/                  ← Queue manager + archive
-│   │   ├── analytics/                   ← Post logs + feedback
-│   │   └── generated-images/            ← DALL-E 3 output
-│   ├── queues/                            ← Per-platform content queues (12)
-│   │   ├── linkedin/                    ← pending → approved → posted
-│   │   ├── x/
-│   │   ├── discord/
-│   │   ├── instagram/
-│   │   ├── reddit/
-│   │   ├── website/
-│   │   ├── email/
-│   │   ├── shorts/
-│   │   ├── facebook/
-│   │   ├── medium/
-│   │   ├── substack/
-│   │   └── heygen/                      ← Avatar video briefs (gated)
-│   ├── scripts/                           ← Pipeline scripts
-│   ├── skills/                            ← 69 skill templates (all with honest disclaimers)
+│   ├── directives/                        ← Operating directives
+│   ├── policies/                          ← rate-limits.json, channel-policies, brand-voice-rules
+│   ├── strategy/
+│   │   ├── brand-knowledge-base.json     ← Canonical brand identity (10 products)
+│   │   ├── product-registry.json         ← Product catalog
+│   │   ├── product-truth/*.md            ← Per-product safe/restricted claims + visual identity
+│   │   ├── platform-rules/*.md           ← Per-platform format, tone, limits (6 files)
+│   │   └── content-templates/*.md        ← Reusable campaign templates (10 files)
+│   ├── inbharat-bot/                      ← Intelligence layer (13 lanes)
+│   ├── openclaw-media/
+│   │   ├── posting-engine/               ← Platform posters + enforcement layer
+│   │   │   ├── publish.sh               ← THE canonical publish path
+│   │   │   ├── policy_enforcer.py       ← Runtime policy enforcement
+│   │   │   ├── sanitize_post.py         ← Content sanitization
+│   │   │   ├── render_post.py           ← Two-stage rendering
+│   │   │   ├── direct_post_gate.py      ← Gate for direct script calls
+│   │   │   ├── metadata_fields.py       ← Shared metadata constants
+│   │   │   ├── post_linkedin.py         ← Playwright poster (gated)
+│   │   │   ├── post_x.py               ← Playwright poster (gated)
+│   │   │   ├── post_instagram.py        ← Playwright poster (gated)
+│   │   │   ├── post_discord.py          ← Webhook poster (gated)
+│   │   │   └── email_zoho.py           ← Playwright poster
+│   │   ├── image-engine/
+│   │   │   ├── enrich_image_prompt.py   ← Brand-aware prompt enrichment
+│   │   │   ├── dalle_generate.py        ← DALL-E 3 backend
+│   │   │   ├── placeholder_generate.py  ← Offline fallback (brand colors from KB)
+│   │   │   ├── generate-image.sh        ← Backend router
+│   │   │   └── process-briefs.sh        ← Batch processor with enrichment
+│   │   ├── native-pipeline/              ← Content generation (Ollama)
+│   │   ├── analytics/                    ← Post logs, error screenshots
+│   │   └── generated-images/             ← DALL-E 3 output
+│   ├── queues/                            ← Per-platform content queues
+│   │   └── {platform}/pending|approved|posted|rejected/
+│   ├── scripts/
+│   │   ├── daily-pipeline.sh            ← Master pipeline orchestrator
+│   │   ├── distribution-engine.sh       ← Non-browser distribution (policy-enforced)
+│   │   ├── qa-guardrail.sh              ← Pre-publish QA gate
+│   │   ├── approval-engine.sh           ← L1-L4 approval scoring
+│   │   └── reporting-engine-v2.sh       ← Daily/weekly reports
+│   ├── skills/                            ← 75 skill templates
 │   ├── security/                          ← Claim validator
-│   ├── strategy/                          ← Product truth, platform rules
-│   ├── policies/                          ← Approval rules, brand voice
+│   ├── tests/                             ← test_sanitize_post.py, test_enrich_image_prompt.py
 │   ├── reports/                           ← Generated reports
-│   └── logs/                              ← Execution logs
-└── MarketingToolData/                     ← Research data
+│   └── logs/                              ← Execution + policy enforcement logs
+└── MarketingToolData/                     ← Staged website content + research
 ```
 
 ---
@@ -334,68 +225,39 @@ Content Generated
 
 | Component | Technology | Cost |
 |---|---|---|
-| LLM (content gen) | Ollama qwen3:8b (local, 8.2B params) | Free |
-| LLM (coding) | Ollama qwen2.5-coder:7b (local, 7.6B params) | Free |
-| LLM (escalation) | Groq API (referenced, not wired) | Free tier |
+| LLM (content gen) | Ollama qwen3:8b (local) | Free |
+| LLM (coding) | Ollama qwen2.5-coder:7b (local) | Free |
 | Images | DALL-E 3 (OpenAI API) | ~$0.04/image, 10/day cap |
 | Video (local) | ffmpeg v7.0 at `~/local/bin/ffmpeg` | Free |
 | Video (avatar) | HeyGen | Paid, founder-gated |
 | Browser posting | Playwright persistent sessions | Free |
 | Discord posting | Webhook (curl) | Free |
-| Web search | DuckDuckGo | Free |
 | Secrets | macOS Keychain | Free |
-| Scheduling | crontab (7 jobs + caffeinate) | Free |
-| CI/CD | GitHub Actions (5 checks) | Free |
+| Scheduling | crontab | Free |
+| CI/CD | GitHub Actions | Free |
 
-### AI Model Usage
-
-| Model | Used By | Cost |
-|---|---|---|
-| **qwen3:8b** | Content gen, classification, scans, approvals, intelligence lanes | **FREE** (local) |
-| **qwen2.5-coder:7b** | Code tasks via model-router | **FREE** (local) |
-| **DALL-E 3** | Image gen via `generate-image.sh` (10/day budget cap) | **~$0.04/img** |
-| **ffmpeg** | Video gen (slideshow, text, kenburns, quote) | **FREE** (local) |
-| **HeyGen** | Avatar video briefs only (Tier 3 gated) | **Paid** |
-
-**Estimated monthly cost**: ~$12 (DALL-E at max usage) + $0 everything else = **< $15/month**
+**Estimated monthly cost**: ~$12-15 (DALL-E at max usage). Everything else is free/local.
 
 ---
 
-## System Maturity (Honest Assessment)
+## System Maturity
 
-| Component | Status | Maturity |
-|---|---|---|
-| LinkedIn posting | Tested — posted real content | **Fully verified** |
-| X/Twitter posting | Session valid, logic complete | **Integrated, not tested** |
-| Instagram posting | Session valid, requires image | **Integrated, not tested** |
-| Discord posting | Webhook operational | **Fully verified** |
-| Zoho Mail | Session valid (visible mode) | **Integrated, not tested** |
-| DALL-E 3 images | Generated real image | **Fully verified** |
-| ffmpeg video | Generated real video | **Fully verified** |
-| Content generation (Ollama) | Produces JSON packages | **Fully verified** |
-| Queue system | Directories populated | **Fully verified** |
-| Approval engine | Runs, L1-L4 routing active | **Tested, partial** |
-| Daily pipeline | All stages pass (dry-run verified) | **Fully verified** |
-| Model routing | qwen3:8b general + qwen2.5-coder:7b code | **Fully verified** |
-| Strategy/product-truth | Complete reference docs | **Fully verified** |
-| CI/CD | Shell syntax, JSON, skill disclaimers | **Fully verified** |
-| Analytics/learning | Logs exist, no engagement data | **Scaffolding** |
-| Amplify pipeline | Stub only | **Not implemented** |
-| Policy JSON enforcement | Defined but not consumed | **Not integrated** |
-
----
-
-## Troubleshooting
-
-| Issue | Fix |
+| Component | Status |
 |---|---|
-| Ollama not running | `ollama serve &` |
-| External HD not found | Plug in, check `/Volumes/Expansion/` |
-| Session expired | `python3 post_<platform>.py --login` |
-| DALL-E budget exceeded | Wait for next day or `--force` |
-| Pipeline intake fails (141) | Fixed — SIGPIPE trap added. If persists: `ollama serve &` |
-| ffmpeg not found | Already at `~/local/bin/ffmpeg` |
-| Zoho headless blocked | Runs visible mode only (by design) |
+| **Policy enforcement** | Enforced at runtime — `policy_enforcer.py` loads `rate-limits.json`, blocks platforms, enforces caps |
+| **Content sanitization** | Active in all posting scripts — strips JSON, metadata, placeholders |
+| **Two-stage rendering** | Active in `publish.sh` — queue files rendered to clean text before posting |
+| **QA guardrails** | Active in `publish.sh` — length, hashtags, banned phrases checked |
+| **Direct post gating** | Active — scripts require `--allow-direct-post`, log all attempts |
+| **Brand knowledge base** | Complete — 10 products with visual identity, colors, image rules |
+| **Image prompt enrichment** | Active — generic briefs enriched with product context and brand colors |
+| **LinkedIn posting** | Playwright, policy-enforced, 3/day cap |
+| **X/Twitter posting** | Playwright with overlay dismissal, dropdown clearing, upload waits |
+| **Instagram posting** | Playwright with multi-selector caption targeting, Stories detection |
+| **Discord posting** | Webhook, fully operational |
+| **Daily pipeline** | All stages functional — intake through reporting |
+| **Approval engine** | L1-L4 routing with 6-dimension risk scoring |
+| **27 unit tests** | Passing — sanitization (15) + image enrichment (12) |
 
 ---
 
@@ -408,18 +270,37 @@ ls /Volumes/Expansion/CMO-10million
 # 2. Start Ollama
 ollama serve &
 
-# 3. Health check
-bash OpenClawData/scripts/health-check.sh
+# 3. Check policy status
+python3 OpenClawData/openclaw-media/posting-engine/policy_enforcer.py --status
 
-# 4. Generate content
-bash OpenClawData/openclaw-media/native-pipeline/generate-content.sh --product phoring --platform linkedin
+# 4. Check publishing status
+bash OpenClawData/openclaw-media/posting-engine/publish.sh --status
 
-# 5. Check queues
-bash OpenClawData/openclaw-media/publishing/post-manager.sh --status
+# 5. Run full pipeline (dry-run first)
+bash OpenClawData/scripts/daily-pipeline.sh --dry-run
 
-# 6. Publish approved content
+# 6. Publish approved content (live)
 bash OpenClawData/openclaw-media/posting-engine/publish.sh
+
+# 7. Run tests
+python3 OpenClawData/tests/test_sanitize_post.py
+python3 OpenClawData/tests/test_enrich_image_prompt.py
 ```
+
+---
+
+## Troubleshooting
+
+| Issue | Fix |
+|---|---|
+| Ollama not running | `ollama serve &` |
+| External HD not found | Plug in, check `/Volumes/Expansion/` |
+| Session expired | `python3 post_<platform>.py --login` |
+| DALL-E budget exceeded | Wait for next day or `--force` |
+| Platform blocked by policy | Edit `policies/rate-limits.json` — set `blocked: false` |
+| Direct post refused | Add `--allow-direct-post` flag (still enforces policy) |
+| ffmpeg not found | Already at `~/local/bin/ffmpeg` |
+| Zoho headless blocked | Runs visible mode only (by design) |
 
 ---
 

@@ -37,3 +37,10 @@ Multi-channel AI gateway for content creation, approval, and distribution with b
 - No user count claims without GitHub metrics
 - No "production-ready for enterprise" without formal testing
 - No comparison to commercial tools without benchmarks
+
+## Visual Identity
+- **Preferred colors**: #1A1A2E (dark), #0A74DA (blue), #F5A623 (orange)
+- **Visual mood**: Technical, open source, command-line aesthetic, builder-focused
+- **Image types**: Pipeline flow diagrams, dashboard mockups, terminal output screenshots, architecture diagrams
+- **Image prompt rules**: Show pipeline flow diagrams or terminal-style interfaces. Clean architecture visualizations. Open source / builder aesthetic. Technical but accessible. No generic marketing dashboard imagery.
+- **Prohibited**: Generic marketing visuals, corporate dashboards, stock business imagery

@@ -21,6 +21,11 @@ import sys
 import time
 from pathlib import Path
 
+# Import sanitizer and policy gate
+sys.path.insert(0, str(Path(__file__).parent))
+from sanitize_post import sanitize, validate
+from direct_post_gate import gate_direct_post
+
 SESSION_DIR = Path.home() / ".openclaw" / "browser-sessions" / "x"
 POSTING_LOG = Path("/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/analytics")
 MAX_TWEET_LEN = 280
@@ -42,8 +47,16 @@ def launch_browser(pw, headless=False):
         user_data_dir=str(SESSION_DIR),
         headless=headless,
         viewport={"width": 1280, "height": 900},
-        args=["--disable-blink-features=AutomationControlled"],
+        user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        args=[
+            "--disable-blink-features=AutomationControlled",
+            "--disable-dev-shm-usage",
+        ],
     )
+    # Remove navigator.webdriver flag to avoid detection
+    for page in context.pages:
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    context.on("page", lambda p: p.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"))
     return context
 
 def do_login(pw):
@@ -118,7 +131,58 @@ def extract_text(file_path):
             text = f.read().strip()
         return text[:MAX_TWEET_LEN], [], {}
 
-def post_tweet(pw, text, headless=True):
+def _dismiss_x_overlays(page):
+    """Dismiss common X overlays: Premium upsell, notifications, cookie banners."""
+    for _ in range(2):
+        try:
+            # Premium upsell overlay — close button
+            close_btns = page.locator("[aria-label='Close'], [data-testid='xMigrationBottomBar'] button, button[aria-label='Close']")
+            if close_btns.count() > 0 and close_btns.first.is_visible(timeout=500):
+                close_btns.first.click()
+                time.sleep(0.5)
+        except Exception:
+            pass
+        try:
+            # "Not now" / "Maybe later" / "Dismiss" buttons
+            dismiss = page.locator("button:has-text('Not now'), button:has-text('Maybe later'), button:has-text('Dismiss')")
+            if dismiss.count() > 0 and dismiss.first.is_visible(timeout=500):
+                dismiss.first.click()
+                time.sleep(0.5)
+        except Exception:
+            pass
+        try:
+            # Any generic overlay backdrop
+            backdrop = page.locator("[data-testid='sheetDialog'] [aria-label='Close']")
+            if backdrop.count() > 0 and backdrop.first.is_visible(timeout=500):
+                backdrop.first.click()
+                time.sleep(0.5)
+        except Exception:
+            pass
+
+
+def _wait_for_media_upload(page, timeout=30):
+    """Wait for media upload to complete on X compose dialog."""
+    start = time.time()
+    while time.time() - start < timeout:
+        try:
+            # Check for upload progress indicators
+            progress = page.locator("[role='progressbar'], [data-testid='progressBar']")
+            if progress.count() == 0:
+                # No progress bar — upload either done or not started
+                time.sleep(1)
+                # Double-check: wait a bit and verify still no progress
+                if progress.count() == 0:
+                    print("Media upload complete (no progress indicator)")
+                    return True
+            else:
+                time.sleep(1)
+        except Exception:
+            time.sleep(1)
+    print("WARNING: Media upload may not have completed within timeout")
+    return False
+
+
+def post_tweet(pw, text, headless=True, image_path=None):
     if not text or len(text.strip()) < 5:
         print("ERROR: Tweet text too short")
         return False
@@ -126,6 +190,10 @@ def post_tweet(pw, text, headless=True):
     if len(text) > MAX_TWEET_LEN:
         print(f"WARNING: Text is {len(text)} chars, truncating to {MAX_TWEET_LEN}")
         text = text[:MAX_TWEET_LEN - 3] + "..."
+
+    if image_path and not Path(image_path).exists():
+        print(f"WARNING: Image not found at {image_path}, posting without image")
+        image_path = None
 
     context = launch_browser(pw, headless=headless)
     page = context.pages[0] if context.pages else context.new_page()
@@ -145,17 +213,104 @@ def post_tweet(pw, text, headless=True):
         time.sleep(1)
 
         editor.first.click()
-        page.keyboard.type(text, delay=5)
+        time.sleep(0.5)
+
+        # ── Dismiss any popups/overlays BEFORE typing ──
+        _dismiss_x_overlays(page)
+
+        # Use insertText for reliability (avoids hashtag autocomplete dropdown)
+        page.evaluate("""(text) => {
+            const editor = document.querySelector("div[role='textbox'][contenteditable='true']");
+            if (editor) {
+                editor.focus();
+                document.execCommand('insertText', false, text);
+            }
+        }""", text)
         time.sleep(2)
 
-        # Click Post button
-        post_btn = page.locator("button[data-testid='tweetButton'], button:has-text('Post')")
-        post_btn.first.click()
-        time.sleep(3)
+        # ── Aggressively dismiss autocomplete dropdowns ──
+        # The #1 failure cause: hashtag/emoji autocomplete blocking the Post button
+        for _ in range(3):
+            page.keyboard.press("Escape")
+            time.sleep(0.3)
+        # Click outside the editor to close any remaining dropdowns
+        page.mouse.click(640, 100)
+        time.sleep(0.5)
+        # Re-focus shouldn't be needed since text is already entered
 
-        print("POSTED: Tweet published successfully")
-        context.close()
-        return True
+        # ── Dismiss overlays again (Premium upsell, notifications) ──
+        _dismiss_x_overlays(page)
+
+        # Attach image if provided
+        if image_path:
+            file_input = page.locator("input[type='file'][accept*='image']")
+            if file_input.count() > 0:
+                file_input.first.set_input_files(image_path)
+                print(f"Attached image: {image_path}")
+                # Wait for upload to complete — check for progress indicator
+                _wait_for_media_upload(page)
+            else:
+                print("WARNING: Could not find image upload input, posting text only")
+
+        time.sleep(2)
+
+        # ── Final overlay dismissal before clicking Post ──
+        _dismiss_x_overlays(page)
+
+        # Click Post button
+        post_btn = page.locator("button[data-testid='tweetButton']")
+        post_btn.first.wait_for(state="visible", timeout=10000)
+        time.sleep(1)
+
+        # Dismiss any last-moment dropdowns
+        page.keyboard.press("Escape")
+        time.sleep(0.3)
+
+        post_btn.first.click(force=True)
+        time.sleep(4)
+
+        # Verify the tweet was actually posted by checking if compose dialog closed
+        try:
+            # If the editor disappears or URL changes, the tweet was posted
+            editor.first.wait_for(state="hidden", timeout=15000)
+            print("POSTED: Tweet published successfully (verified: compose dialog closed)")
+            context.close()
+            return True
+        except Exception:
+            # Editor still visible — tweet may not have posted
+            # Try clicking Post again (maybe first click was blocked)
+            try:
+                post_btn2 = page.locator("button[data-testid='tweetButton']")
+                if post_btn2.count() > 0 and post_btn2.first.is_visible():
+                    print("WARNING: First Post click may have failed, retrying...")
+                    post_btn2.first.click(force=True)
+                    time.sleep(5)
+                    try:
+                        editor.first.wait_for(state="hidden", timeout=10000)
+                        print("POSTED: Tweet published successfully (verified on retry)")
+                        context.close()
+                        return True
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+
+            # Check if we ended up on the home feed (successful post redirects)
+            if "/compose" not in page.url:
+                print("POSTED: Tweet likely published (navigated away from compose)")
+                context.close()
+                return True
+
+            # Still on compose page with editor visible — definitely failed
+            print("ERROR: Tweet was NOT posted — compose dialog still open after clicking Post")
+            screenshot_path = str(POSTING_LOG / f"x-error-{int(time.time())}.png")
+            try:
+                page.screenshot(path=screenshot_path)
+                print(f"Debug screenshot: {screenshot_path}")
+            except Exception:
+                pass
+            context.close()
+            return False
 
     except Exception as e:
         print(f"ERROR: Failed to post tweet: {e}")
@@ -193,8 +348,19 @@ def post_thread(pw, tweets, headless=True):
             editor = page.locator("div[role='textbox'][contenteditable='true']")
             editor.last.wait_for(state="visible", timeout=10000)
             editor.last.click()
-            page.keyboard.type(tweet_text, delay=5)
+            time.sleep(0.5)
+            # Use insertText to avoid hashtag autocomplete dropdown
+            page.evaluate("""(text) => {
+                const editors = document.querySelectorAll("div[role='textbox'][contenteditable='true']");
+                const editor = editors[editors.length - 1];
+                if (editor) {
+                    editor.focus();
+                    document.execCommand('insertText', false, text);
+                }
+            }""", tweet_text)
             time.sleep(1)
+            page.keyboard.press("Escape")
+            time.sleep(0.5)
 
             if i < len(tweets) - 1:
                 # Click "Add another tweet" button
@@ -203,18 +369,37 @@ def post_thread(pw, tweets, headless=True):
                     add_btn.first.click()
                     time.sleep(1)
 
-        time.sleep(1)
+        time.sleep(2)
         # Click Post all
-        post_btn = page.locator("button[data-testid='tweetButton'], button:has-text('Post')")
-        post_btn.first.click()
-        time.sleep(3)
+        post_btn = page.locator("button[data-testid='tweetButton'], button:has-text('Post'), button:has-text('Tweet')")
+        post_btn.first.click(force=True)
+        time.sleep(5)
 
-        print(f"POSTED: Thread with {len(tweets)} tweets published")
-        context.close()
-        return True
+        # Verify thread was posted
+        editor = page.locator("div[role='textbox'][contenteditable='true']")
+        if editor.count() == 0 or "/compose" not in page.url:
+            print(f"POSTED: Thread with {len(tweets)} tweets published (verified)")
+            context.close()
+            return True
+        else:
+            print(f"ERROR: Thread may not have posted — compose still open")
+            screenshot_path = str(POSTING_LOG / f"x-error-{int(time.time())}.png")
+            try:
+                page.screenshot(path=screenshot_path)
+                print(f"Debug screenshot: {screenshot_path}")
+            except Exception:
+                pass
+            context.close()
+            return False
 
     except Exception as e:
         print(f"ERROR: Failed to post thread: {e}")
+        try:
+            screenshot_path = str(POSTING_LOG / f"x-error-{int(time.time())}.png")
+            page.screenshot(path=screenshot_path)
+            print(f"Debug screenshot: {screenshot_path}")
+        except Exception:
+            pass
         context.close()
         return False
 
@@ -244,10 +429,16 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check if session is valid")
     parser.add_argument("--text", type=str, help="Tweet text to post")
     parser.add_argument("--file", type=str, help="Content file to extract and post")
+    parser.add_argument("--image", type=str, help="Image file to attach to tweet")
     parser.add_argument("--thread", action="store_true", help="Post as thread (from file)")
     parser.add_argument("--visible", action="store_true", help="Show browser window")
     parser.add_argument("--dry-run", action="store_true", help="Show text without posting")
+    parser.add_argument("--allow-direct-post", action="store_true",
+                        help="Required for direct invocation. Still enforces policy.")
     args = parser.parse_args()
+
+    # ── Policy gate: enforce platform policy before any posting ──
+    gate_direct_post(platform="x", args=args)
 
     with get_playwright() as pw:
         if args.login:
@@ -271,6 +462,23 @@ def main():
             print("ERROR: Provide --text or --file")
             sys.exit(1)
 
+        # Sanitize content before posting — strip any leaked metadata/JSON
+        text, sanitize_issues = sanitize(text)
+        if sanitize_issues:
+            print(f"SANITIZE: Fixed {len(sanitize_issues)} issues: {sanitize_issues}")
+        # Also sanitize thread tweets if present
+        if thread:
+            clean_thread = []
+            for tweet in thread:
+                clean_tweet, _ = sanitize(str(tweet))
+                clean_thread.append(clean_tweet)
+            thread = clean_thread
+
+        is_clean, problems = validate(text)
+        if not is_clean and any('json_metadata_block' in p for p in problems):
+            print(f"ERROR: JSON metadata detected in tweet — aborting: {problems}")
+            sys.exit(1)
+
         if args.dry_run:
             if args.thread and thread:
                 print(f"[DRY RUN] Would post thread ({len(thread)} tweets):")
@@ -285,7 +493,7 @@ def main():
             success = post_thread(pw, thread, headless=not args.visible)
             log_posting("x", source_file, success, thread[0][:100] if thread else "")
         else:
-            success = post_tweet(pw, text, headless=not args.visible)
+            success = post_tweet(pw, text, headless=not args.visible, image_path=args.image)
             log_posting("x", source_file, success, text[:100])
 
         sys.exit(0 if success else 1)

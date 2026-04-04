@@ -23,12 +23,40 @@ import tempfile
 from datetime import date
 
 
-# InBharat brand colors
-BRAND_ORANGE = "#FF6B35"
-BRAND_DARK_BLUE = "#1A1A2E"
-BRAND_WHITE = "#FFFFFF"
-BRAND_LIGHT_BG = "#F5F5F7"
-BRAND_ACCENT = "#E94560"
+# InBharat brand colors — loaded from brand-knowledge-base.json if available,
+# with hardcoded fallbacks for offline operation.
+def _load_brand_colors():
+    """Load brand colors from the canonical brand-knowledge-base.json."""
+    import json
+    kb_paths = [
+        os.path.join(os.path.dirname(__file__), '..', '..', 'strategy', 'brand-knowledge-base.json'),
+        '/Volumes/Expansion/CMO-10million/OpenClawData/strategy/brand-knowledge-base.json',
+    ]
+    for kb_path in kb_paths:
+        try:
+            with open(kb_path) as f:
+                data = json.load(f)
+            palette = data.get('global', {}).get('palette', {})
+            primary = data.get('global', {}).get('primary_colors', {})
+            return {
+                'orange': primary.get('orange', '#F5A623'),
+                'dark_blue': primary.get('dark', '#1A1A2E'),
+                'white': palette.get('background_light', '#FFFFFF'),
+                'light_bg': palette.get('background_subtle', '#F5F5F7'),
+                'accent': palette.get('accent_red', '#E94560'),
+                'blue': primary.get('blue', '#0A74DA'),
+            }
+        except (FileNotFoundError, json.JSONDecodeError, KeyError):
+            continue
+    return None
+
+_brand = _load_brand_colors()
+BRAND_ORANGE = _brand['orange'] if _brand else "#F5A623"
+BRAND_DARK_BLUE = _brand['dark_blue'] if _brand else "#1A1A2E"
+BRAND_WHITE = _brand['white'] if _brand else "#FFFFFF"
+BRAND_LIGHT_BG = _brand['light_bg'] if _brand else "#F5F5F7"
+BRAND_ACCENT = _brand['accent'] if _brand else "#E94560"
+BRAND_BLUE = _brand['blue'] if _brand else "#0A74DA"
 
 
 def build_html(brief_text, width, height):

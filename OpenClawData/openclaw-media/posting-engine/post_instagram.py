@@ -25,6 +25,11 @@ import sys
 import time
 from pathlib import Path
 
+# Import sanitizer and policy gate
+sys.path.insert(0, str(Path(__file__).parent))
+from sanitize_post import sanitize, validate
+from direct_post_gate import gate_direct_post
+
 SESSION_DIR = Path.home() / ".openclaw" / "browser-sessions" / "instagram"
 POSTING_LOG = Path("/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/analytics")
 
@@ -50,8 +55,15 @@ def launch_browser(pw, headless=False):
         device_scale_factor=3,
         is_mobile=True,
         has_touch=True,
-        args=["--disable-blink-features=AutomationControlled"],
+        args=[
+            "--disable-blink-features=AutomationControlled",
+            "--disable-dev-shm-usage",
+        ],
     )
+    # Remove navigator.webdriver flag to avoid detection
+    for page in context.pages:
+        page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    context.on("page", lambda p: p.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"))
     return context
 
 def do_login(pw):
@@ -242,62 +254,104 @@ def post_to_instagram(pw, caption, image_path, headless=True):
 
         # Upload the image
         file_input.first.set_input_files(image_path)
-        time.sleep(3)
+        # Wait for upload to process (Instagram needs time for large images)
+        time.sleep(5)
+
+        # ── Verify we're in the Feed post flow, not Stories ──
+        # If we see "Share story" or story UI, we're in the wrong mode
+        story_check = page.locator("button:has-text('Share story'), span:has-text('Share story')")
+        if story_check.count() > 0 and story_check.first.is_visible(timeout=2000):
+            print("WARNING: Entered Stories mode instead of Feed post. Restarting...")
+            _save_debug_screenshot(page, "stories-mode-detected")
+            context.close()
+            return False
 
         # Click through crop/filter screens
         # Step 1: Crop screen — click "Next"
         _click_next(page)
-        time.sleep(2)
+        time.sleep(3)
 
         # Step 2: Filter screen — click "Next"
         _click_next(page)
-        time.sleep(2)
+        time.sleep(3)
 
         # Step 3: Caption screen — enter caption
-        caption_input = page.locator(
-            "textarea[aria-label='Write a caption...'], "
-            "textarea[aria-label='Write a caption'], "
-            "div[aria-label='Write a caption...'][contenteditable='true'], "
-            "div[role='textbox'][contenteditable='true']"
-        )
+        # Try multiple selectors (Instagram web changes frequently)
+        caption_selectors = [
+            "textarea[aria-label='Write a caption...']",
+            "textarea[aria-label='Write a caption']",
+            "div[aria-label='Write a caption...'][contenteditable='true']",
+            "div[aria-label='Write a caption'][contenteditable='true']",
+            "div[role='textbox'][contenteditable='true']",
+            "textarea[placeholder*='caption']",
+            "textarea[placeholder*='Caption']",
+        ]
 
-        if caption_input.count() > 0:
-            caption_input.first.click()
-            time.sleep(1)
-            # Type caption (use keyboard for reliability with rich text editors)
-            page.keyboard.type(caption, delay=3)
-            time.sleep(2)
-        else:
+        caption_found = False
+        for sel in caption_selectors:
+            try:
+                loc = page.locator(sel)
+                if loc.count() > 0 and loc.first.is_visible(timeout=3000):
+                    loc.first.click()
+                    time.sleep(1)
+                    page.keyboard.type(caption, delay=3)
+                    time.sleep(2)
+                    caption_found = True
+                    print(f"Caption entered via selector: {sel}")
+                    break
+            except Exception:
+                continue
+
+        if not caption_found:
             print("WARNING: Could not find caption input. Post may go up without caption.")
             _save_debug_screenshot(page, "no-caption-input")
 
         # Click "Share" to publish
-        share_btn = page.locator(
-            "button:has-text('Share'), "
-            "div[role='button']:has-text('Share')"
-        )
+        share_selectors = [
+            "button:has-text('Share')",
+            "div[role='button']:has-text('Share')",
+            "button:has-text('Post')",
+            "div[role='button']:has-text('Post')",
+        ]
 
-        if share_btn.count() == 0:
-            print("ERROR: Could not find 'Share' button. Instagram UI may have changed.")
+        share_clicked = False
+        for sel in share_selectors:
+            try:
+                loc = page.locator(sel)
+                if loc.count() > 0 and loc.first.is_visible(timeout=3000):
+                    loc.first.click()
+                    share_clicked = True
+                    print(f"Share clicked via: {sel}")
+                    break
+            except Exception:
+                continue
+
+        if not share_clicked:
+            print("ERROR: Could not find Share/Post button.")
             _save_debug_screenshot(page, "no-share-btn")
             context.close()
             return False
 
-        share_btn.first.click()
-        time.sleep(5)
+        # Wait for upload to complete and post to process
+        time.sleep(8)
 
-        # Verify — look for "Post shared" or return to feed
+        # Verify — look for confirmation or feed return
         try:
-            # Instagram shows a checkmark animation or "Your post has been shared" text
-            shared_indicator = page.locator("img[alt='Animated checkmark'], span:has-text('shared')")
-            shared_indicator.first.wait_for(state="visible", timeout=15000)
-            print("POSTED: Instagram post published successfully")
+            shared_indicator = page.locator(
+                "img[alt='Animated checkmark'], "
+                "span:has-text('shared'), "
+                "span:has-text('Your post has been shared'), "
+                "span:has-text('Post shared')"
+            )
+            shared_indicator.first.wait_for(state="visible", timeout=20000)
+            print("POSTED: Instagram post published successfully (confirmed)")
             context.close()
             return True
         except Exception:
             # Check if we're back on the feed (post likely went through)
-            time.sleep(3)
-            if "/create" not in page.url:
+            time.sleep(5)
+            current_url = page.url
+            if "/create" not in current_url and "instagram.com" in current_url:
                 print("POSTED: Instagram post likely published (returned to feed)")
                 context.close()
                 return True
@@ -305,7 +359,7 @@ def post_to_instagram(pw, caption, image_path, headless=True):
                 print("WARNING: Could not confirm post. Check Instagram manually.")
                 _save_debug_screenshot(page, "post-unconfirmed")
                 context.close()
-                return True  # Optimistic — log it and verify later
+                return False  # Changed from True — don't assume success
 
     except Exception as e:
         print(f"ERROR: Failed to post to Instagram: {e}")
@@ -386,7 +440,12 @@ def main():
     parser.add_argument("--visible", action="store_true", help="Show browser window (not headless)")
     parser.add_argument("--dry-run", action="store_true", help="Extract and show content without posting")
     parser.add_argument("--confirm", action="store_true", help="Skip confirmation prompt (used by publish.sh)")
+    parser.add_argument("--allow-direct-post", action="store_true",
+                        help="Required for direct invocation. Still enforces policy.")
     args = parser.parse_args()
+
+    # ── Policy gate: enforce platform policy before any posting ──
+    gate_direct_post(platform="instagram", args=args)
 
     with get_playwright() as pw:
         if args.login:
@@ -413,6 +472,15 @@ def main():
 
         if not caption:
             print("ERROR: No caption extracted from source")
+            sys.exit(1)
+
+        # Sanitize caption before posting — strip any leaked metadata/JSON
+        caption, sanitize_issues = sanitize(caption)
+        if sanitize_issues:
+            print(f"SANITIZE: Fixed {len(sanitize_issues)} issues: {sanitize_issues}")
+        is_clean, problems = validate(caption)
+        if not is_clean and any('json_metadata_block' in p for p in problems):
+            print(f"ERROR: JSON metadata detected in caption — aborting: {problems}")
             sys.exit(1)
 
         # Show preview

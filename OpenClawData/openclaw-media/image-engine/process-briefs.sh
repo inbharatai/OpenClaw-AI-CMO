@@ -150,12 +150,45 @@ BEXTEOF
       continue
     fi
 
+    # ── Enrich brief with brand context before generating ──
+    ENRICHER="$ENGINE_DIR/enrich_image_prompt.py"
+    ENRICHED_BRIEF="$BRIEF_TEXT"
+    if [ -f "$ENRICHER" ]; then
+      # Extract product ID from content package for brand-aware enrichment
+      export ENRICH_PKG="$PACKAGE_FILE"
+      PRODUCT_ID=$(python3 << 'PIDEOF' 2>/dev/null
+import json, os
+try:
+    with open(os.environ['ENRICH_PKG']) as f:
+        data = json.load(f)
+    pid = data.get('product', data.get('product_id', ''))
+    print(str(pid).lower().strip())
+except Exception:
+    print('')
+PIDEOF
+)
+      # Determine platform from queue path (macOS-compatible — no grep -P)
+      QUEUE_PLATFORM=$(echo "$PACKAGE_FILE" | sed -n 's|.*queues/\([^/]*\)/.*|\1|p' 2>/dev/null)
+
+      ENRICH_ARGS="--brief \"$BRIEF_TEXT\""
+      [ -n "$PRODUCT_ID" ] && ENRICH_ARGS="$ENRICH_ARGS --product $PRODUCT_ID"
+      [ -n "$QUEUE_PLATFORM" ] && ENRICH_ARGS="$ENRICH_ARGS --platform $QUEUE_PLATFORM"
+
+      ENRICHED_RESULT=$(eval python3 "$ENRICHER" $ENRICH_ARGS 2>/dev/null)
+      if [ -n "$ENRICHED_RESULT" ] && [ ${#ENRICHED_RESULT} -gt 20 ]; then
+        ENRICHED_BRIEF="$ENRICHED_RESULT"
+        echo "  Enriched: ${ENRICHED_BRIEF:0:120}..."
+      else
+        echo "  Using original brief (enrichment skipped)"
+      fi
+    fi
+
     # Generate image
     BACKEND_ARG=""
     [ -n "$BACKEND" ] && BACKEND_ARG="--backend $BACKEND"
 
     GEN_RESULT=$("$ENGINE_DIR/generate-image.sh" \
-      --brief "$BRIEF_TEXT" \
+      --brief "$ENRICHED_BRIEF" \
       --output "$OUTPUT_FILE" \
       --content-id "$CONTENT_ID" \
       $BACKEND_ARG 2>&1)

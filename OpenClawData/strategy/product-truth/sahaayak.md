@@ -39,3 +39,10 @@ AI-powered conversational assistant designed for Indian users with multilingual 
 - Demo conversations in Hindi
 - Comparison of AI accessibility in Indian languages
 - Real use cases from Indian context
+
+## Visual Identity
+- **Preferred colors**: #0A74DA (blue), #10B981 (green), #FFFFFF (white)
+- **Visual mood**: Friendly, approachable, multilingual, modern
+- **Image types**: Chat interface mockups, multilingual text examples, Indian user scenarios
+- **Image prompt rules**: Show conversational interfaces with Hindi/English text. Feature realistic Indian users in everyday contexts. Clean, modern chat UI. Warm, approachable feel.
+- **Prohibited**: Generic chatbot clipart, robotic imagery, cold corporate visuals

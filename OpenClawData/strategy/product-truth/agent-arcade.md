@@ -29,3 +29,10 @@ Platform for building, testing, and showcasing AI agents in interactive scenario
 
 ## Restricted Claims
 - No adoption or usage metrics without evidence
+
+## Visual Identity
+- **Preferred colors**: #6366F1 (indigo), #0A74DA (blue), #FFFFFF (white)
+- **Visual mood**: Playful-technical, sandbox aesthetic, experimental
+- **Image types**: Agent interaction diagrams, sandbox environments, technical playground visuals
+- **Image prompt rules**: Show agent interaction flows or sandbox environments. Technical but approachable. Experimental / playground feel. No generic robot or gaming imagery unless directly relevant.
+- **Prohibited**: Generic gaming aesthetics, robotic imagery unless literal agent visualization

@@ -21,6 +21,11 @@ import sys
 import time
 from pathlib import Path
 
+# Import sanitizer and policy gate
+sys.path.insert(0, str(Path(__file__).parent))
+from sanitize_post import sanitize, validate
+from direct_post_gate import gate_direct_post
+
 POSTING_LOG = Path("/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media/analytics")
 
 def get_webhook_url():
@@ -186,7 +191,12 @@ def main():
     parser.add_argument("--text", type=str, help="Message to send")
     parser.add_argument("--file", type=str, help="Content file to extract and send")
     parser.add_argument("--dry-run", action="store_true", help="Show text without sending")
+    parser.add_argument("--allow-direct-post", action="store_true",
+                        help="Required for direct invocation. Still enforces policy.")
     args = parser.parse_args()
+
+    # ── Policy gate: enforce platform policy before any posting ──
+    gate_direct_post(platform="discord", args=args)
 
     if args.setup:
         url = input("Paste Discord webhook URL: ").strip()
@@ -214,6 +224,15 @@ def main():
         text = extract_text(args.file)
     else:
         print("ERROR: Provide --text or --file")
+        sys.exit(1)
+
+    # Sanitize content before posting — strip any leaked metadata/JSON
+    text, sanitize_issues = sanitize(text)
+    if sanitize_issues:
+        print(f"SANITIZE: Fixed {len(sanitize_issues)} issues: {sanitize_issues}")
+    is_clean, problems = validate(text)
+    if not is_clean and any('json_metadata_block' in p for p in problems):
+        print(f"ERROR: JSON metadata detected in Discord message — aborting: {problems}")
         sys.exit(1)
 
     if args.dry_run:

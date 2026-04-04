@@ -1,0 +1,441 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-04-03",
+  "description": "Single source of truth for brand identity, product visual rules, and image generation guidance across all InBharat products",
+
+  "global": {
+    "brand_family": "InBharat AI",
+    "founder": "Reeturaj Goswami",
+    "mission": "Building practical, accessible AI tools for India",
+    "primary_colors": {
+      "blue": "#0A74DA",
+      "orange": "#F5A623",
+      "dark": "#1A1A2E"
+    },
+    "palette": {
+      "background_light": "#FFFFFF",
+      "background_subtle": "#F5F5F7",
+      "text_primary": "#222222",
+      "text_secondary": "#555555",
+      "accent_blue": "#0A74DA",
+      "accent_orange": "#F5A623",
+      "accent_red": "#E94560",
+      "success": "#10B981",
+      "warning": "#F59E0B"
+    },
+    "typography": {
+      "primary_font": "Roboto",
+      "heading_font": "Roboto",
+      "heading_weight": "700",
+      "body_weight": "400",
+      "code_font": "JetBrains Mono"
+    },
+    "visual_principles": [
+      "modern and premium",
+      "clean and minimal",
+      "trustworthy and intelligent",
+      "India-first but globally credible",
+      "not childish or cartoon-like",
+      "not generic stock photo aesthetic",
+      "not sci-fi chaos or robot heads",
+      "not overloaded with text"
+    ],
+    "prohibited_visual_styles": [
+      "cliche robot heads or AI brain graphics",
+      "generic stock photos with fake diverse teams",
+      "overuse of Indian flags or tricolor in non-national contexts",
+      "low-quality clipart or icon dumps",
+      "fake product UI unless clearly marked conceptual",
+      "sci-fi dystopia or Matrix-style imagery",
+      "excessive neon or cyberpunk aesthetic",
+      "childish cartoon or doodle style for serious products"
+    ],
+    "logo_global": {
+      "primary": "OpenClawData/openclaw-media/assets/images/inbharat-logo.jpg",
+      "svg": "assets/brand/logo.svg",
+      "png": "assets/brand/logo.png"
+    },
+    "tone": {
+      "primary": ["clear", "direct", "knowledgeable", "practical"],
+      "secondary": ["approachable", "builder-minded", "honest", "forward-thinking"],
+      "avoid": ["corporate jargon", "hype language", "buzzword salad", "empty promises"]
+    }
+  },
+
+  "products": {
+    "inbharat": {
+      "product_name": "InBharat AI",
+      "brand_family": "InBharat AI",
+      "website_url": "https://inbharat.ai",
+      "github_url": "https://github.com/inbharatai/inbharatai",
+      "status": "live",
+      "approved_description_short": "India-first AI company building accessible, practical AI tools for Indian users, businesses, and institutions.",
+      "approved_description_long": "InBharat AI provides AI consulting, tools, and automation for Bharat. Services include AI consulting, chatbot development, business automation, custom AI tools, website development, WhatsApp automation, CRM development, and workflow automation — all designed for Indian businesses.",
+      "core_capabilities": [
+        "AI Consulting",
+        "Chatbot Development",
+        "Business Automation",
+        "Custom AI Tools",
+        "Website Development",
+        "WhatsApp Automation",
+        "CRM Development",
+        "Workflow Automation"
+      ],
+      "approved_use_cases": [
+        "AI-powered customer support",
+        "Business process automation",
+        "Educational assessment",
+        "University guidance",
+        "Communication tools",
+        "Government service access"
+      ],
+      "target_users": ["Indian businesses", "students", "educators", "government departments", "solo founders"],
+      "approved_keywords": ["India-first AI", "practical AI", "multilingual", "accessible AI", "Bharat"],
+      "disallowed_claims": [
+        "No specific user numbers without verification",
+        "No government partnerships unless signed",
+        "No 'largest' or 'first' claims without proof",
+        "No revenue figures unless verified"
+      ],
+      "cta_options": [
+        "Visit inbharat.ai",
+        "Follow our build journey",
+        "Star us on GitHub"
+      ],
+      "visual_style": {
+        "mood": "modern, premium, trustworthy, India-forward",
+        "image_types": ["product ecosystem diagrams", "India context visuals", "founder journey imagery", "clean tech interfaces"],
+        "avoid": ["cliche robot heads", "overuse of tricolor", "generic corporate imagery"]
+      },
+      "preferred_colors": ["#0A74DA", "#F5A623", "#FFFFFF", "#1A1A2E"],
+      "logo_path": "OpenClawData/openclaw-media/assets/images/inbharat-logo.jpg",
+      "image_prompt_rules": "Show real-world Indian contexts. Use clean, modern design. Include subtle InBharat branding. Avoid cliche flags, robots, or sci-fi. Focus on practical AI solving real problems.",
+      "content_angles": [
+        "What India actually needs from AI",
+        "Building AI that works for Bharat",
+        "Solo founder, multiple AI products",
+        "Behind-the-scenes of building for India"
+      ],
+      "platform_notes": {
+        "linkedin": "Thought leadership, founder insights, India AI ecosystem commentary",
+        "x": "Quick takes on AI in India, product updates, industry reactions",
+        "instagram": "Visual product stories, carousel explainers, founder journey",
+        "discord": "Community updates, launch notes, build-in-public"
+      }
+    },
+
+    "sahaayak": {
+      "product_name": "Sahaayak",
+      "brand_family": "InBharat AI",
+      "website_url": "https://sahaayak.ai",
+      "github_url": "https://github.com/inbharatai/sahaayak-ai-public",
+      "status": "development",
+      "approved_description_short": "AI-powered conversational assistant designed for Indian users with multilingual support.",
+      "approved_description_long": "Sahaayak is an AI assistant built for India — supporting Hindi, English, and regional languages to help Indian users get information, complete tasks, and access services in their preferred language.",
+      "core_capabilities": [
+        "Multilingual conversational AI",
+        "Indian language support",
+        "Context-aware responses for Indian users"
+      ],
+      "target_users": ["Indian consumers", "multilingual users", "first-time AI users"],
+      "approved_keywords": ["AI assistant", "multilingual", "Hindi AI", "Indian language AI"],
+      "disallowed_claims": [
+        "No accuracy percentages without testing evidence",
+        "No 'better than ChatGPT' claims without benchmarks",
+        "No user adoption numbers without verification"
+      ],
+      "cta_options": ["Try Sahaayak", "See how it works"],
+      "visual_style": {
+        "mood": "friendly, approachable, multilingual, modern",
+        "image_types": ["chat interface mockups", "multilingual text examples", "Indian user scenarios"],
+        "avoid": ["generic chatbot clipart", "robotic imagery"]
+      },
+      "preferred_colors": ["#0A74DA", "#10B981", "#FFFFFF"],
+      "image_prompt_rules": "Show conversational interfaces with Hindi/English text. Feature realistic Indian users in everyday contexts. Clean, modern chat UI. Warm, approachable feel."
+    },
+
+    "sahaayak-seva": {
+      "product_name": "Sahaayak Seva",
+      "brand_family": "InBharat AI",
+      "website_url": null,
+      "github_url": "https://github.com/inbharatai/sahaayakseva-public",
+      "status": "development",
+      "approved_description_short": "AI-powered public service and welfare delivery assistant for Indian government schemes and citizen services.",
+      "approved_description_long": "Sahaayak Seva helps Indian citizens navigate government schemes, welfare programs, and public services through an AI assistant that speaks their language and understands local government processes.",
+      "core_capabilities": [
+        "Government scheme navigation",
+        "Citizen service delivery",
+        "Multilingual public service AI",
+        "Frontline worker support"
+      ],
+      "target_users": ["Indian citizens", "frontline government workers", "rural populations"],
+      "approved_keywords": ["government AI", "public service", "welfare schemes", "citizen services"],
+      "disallowed_claims": [
+        "No claims of government adoption without formal agreements",
+        "No claims of deployment in specific states without evidence",
+        "No citizen count claims without verification"
+      ],
+      "cta_options": ["Learn about Sahaayak Seva", "See the vision"],
+      "visual_style": {
+        "mood": "trustworthy, accessible, government-grade, inclusive",
+        "image_types": ["citizen service scenarios", "rural India contexts", "government interface mockups"],
+        "avoid": ["political imagery", "party-specific colors", "poverty tourism visuals"]
+      },
+      "preferred_colors": ["#0A74DA", "#F5A623", "#FFFFFF"],
+      "image_prompt_rules": "Show citizens accessing services on phones. Include regional language text. Government-trustworthy feel. Include rural and urban contexts equally. No political imagery."
+    },
+
+    "testsprep": {
+      "product_name": "TestsPrep",
+      "brand_family": "InBharat AI",
+      "website_url": "https://testsprep.in",
+      "github_url": "https://github.com/inbharatai/testsprep.in",
+      "status": "development",
+      "approved_description_short": "AI-powered test preparation platform for Indian competitive exams and assessments.",
+      "approved_description_long": "TestsPrep uses AI to help Indian students prepare for competitive exams with practice questions aligned to Indian syllabi, adaptive learning paths, and intelligent performance tracking.",
+      "core_capabilities": [
+        "AI-powered test preparation",
+        "Indian exam syllabus alignment",
+        "Practice questions and assessments",
+        "Performance tracking"
+      ],
+      "target_users": ["Indian students", "competitive exam aspirants", "educators"],
+      "approved_keywords": ["test prep", "competitive exams", "AI tutor", "Indian exams", "practice questions"],
+      "disallowed_claims": [
+        "No 'guaranteed results' or score improvement percentages without data",
+        "No ranking claims without independent verification",
+        "No comparison to coaching institutes without evidence"
+      ],
+      "cta_options": ["Start preparing at testsprep.in", "Try practice questions"],
+      "visual_style": {
+        "mood": "serious, structured, achievement-oriented, modern education-tech",
+        "image_types": ["clean dashboard UI", "performance charts", "study interface mockups", "achievement graphics"],
+        "avoid": ["panic or stress visuals", "messy desk cliches", "childish school imagery"]
+      },
+      "preferred_colors": ["#0A74DA", "#10B981", "#F5A623"],
+      "image_prompt_rules": "Show clean, modern study interfaces. Performance dashboards with progress charts. Achievement-oriented visuals. Indian student contexts. No panic imagery or exam stress visuals."
+    },
+
+    "uniassist": {
+      "product_name": "UniAssist",
+      "brand_family": "InBharat AI",
+      "website_url": "https://uniassist.ai",
+      "github_url": "https://github.com/inbharatai/uniassist.ai",
+      "status": "development",
+      "approved_description_short": "AI-powered university and higher education assistant for Indian students.",
+      "approved_description_long": "UniAssist helps Indian students navigate university admissions, course selection, career planning, and higher education decisions with AI-powered guidance in multiple languages.",
+      "core_capabilities": [
+        "University guidance AI",
+        "Career navigation",
+        "Admission process help",
+        "Multilingual education support"
+      ],
+      "target_users": ["Indian university students", "higher education aspirants", "career changers"],
+      "approved_keywords": ["university guidance", "higher education", "career AI", "student assistant"],
+      "disallowed_claims": [
+        "No admission success rate claims without data",
+        "No specific university endorsements without verification"
+      ],
+      "cta_options": ["Explore UniAssist", "Get guidance at uniassist.ai"],
+      "visual_style": {
+        "mood": "modern education-tech, aspirational, trustworthy, professional",
+        "image_types": ["university campus contexts", "career path diagrams", "student guidance UI mockups"],
+        "avoid": ["childish school cliches", "graduation cap clipart", "generic campus stock photos"]
+      },
+      "preferred_colors": ["#0A74DA", "#6366F1", "#FFFFFF"],
+      "image_prompt_rules": "Show aspirational but realistic Indian university contexts. Clean guidance interfaces. Career path visualizations. Modern education technology. No childish or generic campus imagery."
+    },
+
+    "phoring": {
+      "product_name": "Phoring",
+      "brand_family": "InBharat AI",
+      "website_url": "https://phoring.in",
+      "github_url": "https://github.com/inbharatai/phoring",
+      "status": "development",
+      "approved_description_short": "AI-enhanced communication and calling platform.",
+      "approved_description_long": "Phoring brings AI intelligence to communication — smart calling features, conversation insights, and enhanced connectivity designed for Indian users and businesses.",
+      "core_capabilities": [
+        "AI-enhanced communication",
+        "Smart calling features",
+        "Conversation intelligence"
+      ],
+      "target_users": ["Indian businesses", "professionals", "teams needing smart communication"],
+      "approved_keywords": ["smart calling", "AI communication", "conversation intelligence"],
+      "disallowed_claims": [
+        "No call quality guarantees without testing evidence",
+        "No telecom comparison claims without benchmarks"
+      ],
+      "cta_options": ["Discover Phoring", "Visit phoring.in"],
+      "visual_style": {
+        "mood": "premium, professional, connected, intelligent",
+        "image_types": ["communication interfaces", "call UI mockups", "data visualization", "knowledge graphs"],
+        "avoid": ["old-style phone clipart", "generic call center imagery", "vague sci-fi chaos"]
+      },
+      "preferred_colors": ["#0A74DA", "#8B5CF6", "#FFFFFF"],
+      "image_prompt_rules": "Show premium communication interfaces. Clean, modern call/messaging UI. Knowledge graph or signal visualizations. Professional contexts. No old phone clipart or generic call center visuals."
+    },
+
+    "codein": {
+      "product_name": "CodeIn",
+      "brand_family": "InBharat AI",
+      "website_url": "https://codein.pro",
+      "github_url": null,
+      "status": "experimental",
+      "approved_description_short": "AI-powered coding assistance and education platform designed for Indian developers and students.",
+      "approved_description_long": "CodeIn provides AI-powered coding assistance, programming education, and developer productivity tools designed for Indian developers and computer science students.",
+      "core_capabilities": [
+        "AI coding assistant",
+        "Programming education",
+        "Developer productivity"
+      ],
+      "target_users": ["Indian developers", "CS students", "coding bootcamp learners"],
+      "approved_keywords": ["AI coding", "developer tools", "programming education"],
+      "disallowed_claims": [
+        "No accuracy or quality comparison claims without benchmarks",
+        "No adoption metrics without verification"
+      ],
+      "cta_options": ["Try CodeIn", "Visit codein.pro"],
+      "visual_style": {
+        "mood": "premium technical, dark-mode friendly, developer-centric",
+        "image_types": ["code editor interfaces", "terminal aesthetics", "architecture diagrams"],
+        "avoid": ["toy-like coding graphics", "childish programming visuals", "generic laptop stock photos"]
+      },
+      "preferred_colors": ["#1A1A2E", "#0A74DA", "#10B981"],
+      "image_prompt_rules": "Show premium code editor interfaces with dark mode. Clean terminal aesthetics. Architecture or system diagrams. Developer-focused, technical feel. No toy-like or childish coding imagery."
+    },
+
+    "openclaw": {
+      "product_name": "OpenClaw",
+      "brand_family": "InBharat AI",
+      "website_url": null,
+      "github_url": "https://github.com/inbharatai/OpenClaw-AI-CMO",
+      "status": "development",
+      "approved_description_short": "Multi-channel AI gateway for content creation, approval, and distribution with built-in safety controls.",
+      "approved_description_long": "OpenClaw is an AI-powered autonomous executive operating system that automates content creation, distribution, and intelligence gathering for solo builders and small teams. Runs with near-zero monthly cost through local-first architecture using Ollama, Playwright browser automation, and bash orchestration.",
+      "core_capabilities": [
+        "Autonomous multi-platform posting (LinkedIn, X, Instagram, Discord, email)",
+        "4-level approval with 6-dimension risk scoring",
+        "64+ content generation skills with disclaimer guardrails",
+        "10-stage content pipeline with claim validation",
+        "12 platform adapters with per-channel guardrails",
+        "Local-first AI (Ollama qwen3:8b + qwen2.5-coder:7b)",
+        "DALL-E 3 image generation (~$0.04/image)",
+        "Intelligence layer with 13 specialized scanning lanes",
+        "Shell-script infrastructure (transparent, auditable, hackable)",
+        "Cost: ~$12-15/month (DALL-E only; everything else free/local)"
+      ],
+      "target_users": ["solo founders", "content operators", "AI-first marketing teams"],
+      "approved_keywords": ["AI CMO", "content automation", "open source", "multi-channel", "approval pipeline"],
+      "disallowed_claims": [
+        "No user count claims without GitHub metrics",
+        "No 'production-ready for enterprise' without formal testing"
+      ],
+      "cta_options": ["Star OpenClaw on GitHub", "See how it works"],
+      "visual_style": {
+        "mood": "technical, open source, command-line aesthetic, builder-focused",
+        "image_types": ["pipeline flow diagrams", "dashboard mockups", "terminal output screenshots", "architecture diagrams"],
+        "avoid": ["generic marketing visuals", "corporate dashboards"]
+      },
+      "preferred_colors": ["#1A1A2E", "#0A74DA", "#F5A623"],
+      "image_prompt_rules": "Show pipeline flow diagrams or terminal-style interfaces. Clean architecture visualizations. Open source / builder aesthetic. Technical but accessible. No generic marketing dashboard imagery."
+    },
+
+    "agent-arcade": {
+      "product_name": "Agent Arcade",
+      "brand_family": "InBharat AI",
+      "website_url": null,
+      "github_url": "https://github.com/inbharatai/agent-arcade-gateway",
+      "status": "experimental",
+      "approved_description_short": "Platform for building, testing, and showcasing AI agents in interactive scenarios.",
+      "approved_description_long": "Agent Arcade provides a sandbox environment for experimenting with AI agents — build, test, and showcase agent capabilities in interactive scenarios.",
+      "core_capabilities": [
+        "AI agent experimentation",
+        "Interactive agent scenarios",
+        "Open source agent development"
+      ],
+      "target_users": ["AI developers", "researchers", "agent builders"],
+      "approved_keywords": ["AI agents", "agent platform", "open source"],
+      "disallowed_claims": ["No adoption or usage metrics without evidence"],
+      "cta_options": ["Explore Agent Arcade on GitHub"],
+      "visual_style": {
+        "mood": "playful-technical, sandbox aesthetic, experimental",
+        "image_types": ["agent interaction diagrams", "sandbox environments", "technical playground visuals"],
+        "avoid": ["gaming aesthetics unless literal", "generic robot imagery"]
+      },
+      "preferred_colors": ["#6366F1", "#0A74DA", "#FFFFFF"],
+      "image_prompt_rules": "Show agent interaction flows or sandbox environments. Technical but approachable. Experimental / playground feel. No generic robot or gaming imagery unless directly relevant."
+    },
+
+    "sahayak-os": {
+      "product_name": "Sahayak OS",
+      "brand_family": "InBharat AI",
+      "website_url": null,
+      "github_url": null,
+      "status": "experimental",
+      "approved_description_short": "Framework and operating layer for deploying and managing AI assistant instances.",
+      "core_capabilities": ["AI assistant framework", "Instance management"],
+      "target_users": ["AI developers"],
+      "approved_keywords": ["AI framework", "assistant OS"],
+      "disallowed_claims": ["No enterprise adoption claims without evidence"],
+      "cta_options": ["Part of the InBharat AI ecosystem"],
+      "visual_style": {
+        "mood": "technical, infrastructure, developer-focused",
+        "image_types": ["system architecture diagrams", "infrastructure visuals"],
+        "avoid": ["consumer-facing imagery"]
+      },
+      "preferred_colors": ["#1A1A2E", "#0A74DA"],
+      "image_prompt_rules": "Show system architecture or infrastructure diagrams. Developer-focused, technical. Minimal and clean."
+    }
+  },
+
+  "image_types": {
+    "static_post": {
+      "description": "Single image for feed post",
+      "aspect_ratios": {"instagram": "1:1 or 4:5", "linkedin": "1200x627", "x": "1200x675"},
+      "text_overlay": "minimal — max 8 words headline",
+      "composition": "clean, single focal point, brand colors in accent"
+    },
+    "carousel_cover": {
+      "description": "First slide of a carousel",
+      "aspect_ratios": {"instagram": "1:1", "linkedin": "1:1 or 4:5"},
+      "text_overlay": "bold headline, max 6-8 words",
+      "composition": "eye-catching, clear value proposition, brand-colored background"
+    },
+    "infographic": {
+      "description": "Data or process visualization",
+      "aspect_ratios": {"instagram": "4:5 or 1:1", "linkedin": "1200x1500"},
+      "text_overlay": "structured data points, charts, flow steps",
+      "composition": "organized grid or flow layout, brand colors for data points"
+    },
+    "ui_mockup": {
+      "description": "Product interface screenshot or mockup",
+      "aspect_ratios": {"any": "match product UI ratio"},
+      "text_overlay": "none or minimal label",
+      "composition": "clean device frame, real or realistic UI, no fake data"
+    },
+    "conceptual_poster": {
+      "description": "Abstract concept visualization",
+      "aspect_ratios": {"instagram": "1:1", "linkedin": "1200x627"},
+      "text_overlay": "optional short tagline",
+      "composition": "modern abstract with brand color accents, premium feel"
+    },
+    "product_explainer": {
+      "description": "How-it-works visual",
+      "aspect_ratios": {"any": "16:9 or 1:1"},
+      "text_overlay": "step labels, feature callouts",
+      "composition": "flow diagram or feature grid, clean and scannable"
+    },
+    "workflow_diagram": {
+      "description": "Process or architecture flow",
+      "aspect_ratios": {"any": "16:9"},
+      "text_overlay": "node labels, connection descriptions",
+      "composition": "left-to-right or top-to-bottom flow, brand-colored nodes"
+    },
+    "founder_message": {
+      "description": "Founder quote or insight card",
+      "aspect_ratios": {"instagram": "1:1", "linkedin": "1200x627"},
+      "text_overlay": "quote text + attribution",
+      "composition": "clean background, prominent text, subtle brand accent"
+    }
+  }
+}

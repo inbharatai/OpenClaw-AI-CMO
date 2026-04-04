@@ -36,3 +36,10 @@ AI-powered public service and welfare delivery assistant for Indian government s
 - No claims of deployment in specific states without evidence
 - No citizen count claims without verification
 - No accuracy claims for scheme eligibility without testing
+
+## Visual Identity
+- **Preferred colors**: #0A74DA (blue), #F5A623 (orange), #FFFFFF (white)
+- **Visual mood**: Trustworthy, accessible, government-grade, inclusive
+- **Image types**: Citizen service scenarios, rural India contexts, government interface mockups
+- **Image prompt rules**: Show citizens accessing services on phones. Include regional language text. Government-trustworthy feel. Include rural and urban contexts equally. No political imagery.
+- **Prohibited**: Political imagery, party-specific colors, poverty tourism visuals

@@ -77,3 +77,11 @@ India-first AI company building accessible, practical AI tools for Indian users,
 - Government relationships (only verified formal ones)
 - Revenue or funding status
 - Competitor comparisons without evidence
+
+## Visual Identity
+- **Preferred colors**: #0A74DA (blue), #F5A623 (orange), #FFFFFF (white), #1A1A2E (dark)
+- **Visual mood**: Modern, premium, trustworthy, India-forward
+- **Image types**: Product ecosystem diagrams, India context visuals, founder journey imagery, clean tech interfaces
+- **Logo**: OpenClawData/openclaw-media/assets/images/inbharat-logo.jpg
+- **Image prompt rules**: Show real-world Indian contexts. Use clean, modern design. Include subtle InBharat branding. Avoid cliche flags, robots, or sci-fi. Focus on practical AI solving real problems.
+- **Prohibited**: Cliche robot heads, overuse of tricolor, generic corporate imagery, sci-fi chaos
