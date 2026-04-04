@@ -477,7 +477,12 @@ def main():
             text = args.text
         elif args.file:
             source_file = args.file
-            text, thread, _ = extract_text(args.file)
+            text, thread, file_data = extract_text(args.file)
+            # Extract image_path from JSON file if --image not provided
+            if not args.image and isinstance(file_data, dict):
+                img = file_data.get('image_path', file_data.get('cover_path', ''))
+                if img and Path(img).exists():
+                    args.image = img
         else:
             print("ERROR: Provide --text or --file")
             sys.exit(1)

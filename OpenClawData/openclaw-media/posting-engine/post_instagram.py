@@ -235,6 +235,30 @@ def post_to_instagram(pw, caption, image_path, headless=True):
         create_btn.first.click()
         time.sleep(3)
 
+        # ── EARLY CHECK: Verify we're in Feed post creation, not Stories ──
+        # Must check BEFORE uploading any file — once in Stories, the image
+        # goes to the wrong place and can't be recovered.
+        story_indicators = page.locator(
+            "button:has-text('Share story'), "
+            "span:has-text('Share story'), "
+            "span:has-text('Add to your story'), "
+            "[data-testid='story-card'], "
+            "div[role='dialog'] span:has-text('Story')"
+        )
+        if story_indicators.count() > 0 and story_indicators.first.is_visible(timeout=2000):
+            print("ERROR: Create button opened Stories mode, not Feed post")
+            _save_debug_screenshot(page, "stories-mode-before-upload")
+            # Try to close and retry with different button
+            try:
+                close_btn = page.locator("button[aria-label='Close'], svg[aria-label='Close']")
+                if close_btn.count() > 0:
+                    close_btn.first.click()
+                    time.sleep(1)
+            except Exception:
+                pass
+            context.close()
+            return False
+
         # Handle file upload dialog
         # Instagram shows a "Select from computer" or drag-drop area
         file_input = page.locator("input[type='file']")
@@ -257,12 +281,11 @@ def post_to_instagram(pw, caption, image_path, headless=True):
         # Wait for upload to process (Instagram needs time for large images)
         time.sleep(5)
 
-        # ── Verify we're in the Feed post flow, not Stories ──
-        # If we see "Share story" or story UI, we're in the wrong mode
+        # ── POST-UPLOAD CHECK: Verify still in Feed mode (belt and suspenders) ──
         story_check = page.locator("button:has-text('Share story'), span:has-text('Share story')")
         if story_check.count() > 0 and story_check.first.is_visible(timeout=2000):
-            print("WARNING: Entered Stories mode instead of Feed post. Restarting...")
-            _save_debug_screenshot(page, "stories-mode-detected")
+            print("ERROR: Switched to Stories mode after upload — aborting")
+            _save_debug_screenshot(page, "stories-mode-after-upload")
             context.close()
             return False
 

@@ -159,8 +159,10 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 
 | Time | Job | Script |
 |---|---|---|
+| Every 15 min | Self-healing watchdog | `watchdog-agent.sh` |
 | 8:07 AM daily | Full CMO pipeline | `daily-pipeline.sh` |
 | 9:00 AM daily | Auto-content generation | `daily-auto-content.sh` |
+| Every 6h | Session keepalive | `session-keepalive.sh` |
 
 ---
 
@@ -207,9 +209,11 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 │   │   └── {platform}/pending|approved|posted|rejected/
 │   ├── scripts/
 │   │   ├── daily-pipeline.sh            ← Master pipeline orchestrator
+│   │   ├── watchdog-agent.sh            ← Self-healing agent (every 15 min)
 │   │   ├── distribution-engine.sh       ← Non-browser distribution (policy-enforced)
 │   │   ├── qa-guardrail.sh              ← Pre-publish QA gate
 │   │   ├── approval-engine.sh           ← L1-L4 approval scoring
+│   │   ├── session-keepalive.sh         ← Browser session refresh (every 6h)
 │   │   └── reporting-engine-v2.sh       ← Daily/weekly reports
 │   ├── skills/                            ← 75 skill templates
 │   ├── security/                          ← Claim validator
@@ -257,7 +261,8 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 | **Discord posting** | Webhook, fully operational |
 | **Daily pipeline** | All stages functional — intake through reporting |
 | **Approval engine** | L1-L4 routing with 6-dimension risk scoring |
-| **27 unit tests** | Passing — sanitization (15) + image enrichment (12) |
+| **Self-healing watchdog** | Active every 15 min — 9 checks, auto-restart Ollama/Gateway, session refresh, zombie cleanup |
+| **32 unit tests** | Passing — sanitization (20) + image enrichment (12) |
 
 ---
 

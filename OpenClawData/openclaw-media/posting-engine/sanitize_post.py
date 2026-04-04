@@ -86,11 +86,15 @@ PLACEHOLDER_PATTERNS = [
 FRONTMATTER_PATTERN = re.compile(r'^---\s*\n.*?\n---\s*\n', re.DOTALL)
 
 # ── Escaped character artifacts ──
+# Ollama/qwen3 output often contains literal \n (the text) instead of actual newlines.
+# These must be converted to real whitespace before posting.
 ESCAPE_PATTERNS = [
-    (r'\\n(?=[A-Z])', '\n'),         # Literal \n before capital letter
-    (r'\\n\\n', '\n\n'),             # Literal \n\n
-    (r'\\"', '"'),                   # Escaped quotes
-    (r'\\/', '/'),                   # Escaped slashes
+    (r'\\n', '\n'),                  # ALL literal \n → real newline
+    (r'\\r\\n', '\n'),               # Windows-style \r\n → newline
+    (r'\\r', ''),                    # Stray \r → remove
+    (r'\\t', '  '),                  # Literal \t → spaces
+    (r'\\"', '"'),                   # Escaped quotes → real quotes
+    (r'\\/', '/'),                   # Escaped slashes → real slashes
 ]
 
 # ── Null/undefined literals ──

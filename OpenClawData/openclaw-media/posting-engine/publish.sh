@@ -301,17 +301,35 @@ for PLATFORM in "${POSTABLE_PLATFORMS[@]}"; do
     # ════════════════════════════════════════════
     # EXECUTE POST
     # ════════════════════════════════════════════
-    # Instagram needs original file for image_path. Others use rendered file.
+    # Extract image_path from original queue file (JSON only).
+    # Rendered .txt files don't have image metadata — we need the original.
+    IMAGE_ARG=""
+    if [[ "$FILE" == *.json ]]; then
+      IMG_PATH=$(/usr/bin/python3 -c "
+import json, os
+try:
+    with open('$FILE') as f:
+        d = json.load(f)
+    p = d.get('image_path', d.get('cover_path', ''))
+    if p and os.path.isfile(p):
+        print(p)
+except: pass
+" 2>/dev/null)
+      [ -n "$IMG_PATH" ] && IMAGE_ARG="--image $IMG_PATH"
+    fi
+
+    # Instagram uses original file (needs image_path from JSON internally).
+    # LinkedIn/X use rendered .txt for text but get image via --image flag.
     if [ "$PLATFORM" = "instagram" ]; then
       OUTPUT=$($POSTER --file "$FILE" 2>&1)
       EXIT_CODE=$?
       rm -f "$RENDERED_FILE" 2>/dev/null
     elif [ -n "$RENDERED_FILE" ] && [ -f "$RENDERED_FILE" ]; then
-      OUTPUT=$($POSTER --file "$RENDERED_FILE" 2>&1)
+      OUTPUT=$($POSTER --file "$RENDERED_FILE" $IMAGE_ARG 2>&1)
       EXIT_CODE=$?
       rm -f "$RENDERED_FILE"
     else
-      OUTPUT=$($POSTER --file "$FILE" 2>&1)
+      OUTPUT=$($POSTER --file "$FILE" $IMAGE_ARG 2>&1)
       EXIT_CODE=$?
     fi
 
