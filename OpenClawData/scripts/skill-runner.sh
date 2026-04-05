@@ -70,15 +70,38 @@ echo "Prompt: $(echo "$USER_PROMPT" | head -c 80)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 
-# Build the combined prompt with skill context
+# Load banned phrases from brand-voice-rules.json
+BANNED_PHRASES=""
+BRAND_RULES="$WORKSPACE_ROOT/OpenClawData/policies/brand-voice-rules.json"
+if [ -f "$BRAND_RULES" ]; then
+    BANNED_PHRASES=$(python3 -c "
+import json
+try:
+    d = json.load(open('$BRAND_RULES'))
+    print(', '.join(d.get('banned_phrases', [])))
+except: pass
+" 2>/dev/null)
+fi
+
+# Build the combined prompt with skill context + strict output rules
 COMBINED_PROMPT="You are operating with the following skill instructions loaded. Follow them precisely.
+
+CRITICAL OUTPUT RULES (never break these):
+1. Output PLAIN TEXT only. No markdown formatting. No code fences (\`\`\`). No heading markers (###). No bold markers (**). No bullet markers (-). Just clean readable text.
+2. Never use these banned words: $BANNED_PHRASES
+3. Write in active voice. Short sentences. No filler phrases.
+4. Do not wrap your response in markdown code blocks or any formatting.
+5. Do not start with 'Here is' or 'Sure' or any preamble. Start directly with the content.
+6. If generating for social media: plain text only, platform-native formatting, no escaped characters like \\n.
 
 --- SKILL: $SKILL_NAME ---
 $SKILL_BODY
 --- END SKILL ---
 
 USER REQUEST:
-$USER_PROMPT"
+$USER_PROMPT
+
+REMINDER: Plain text output only. No markdown. No code fences. No banned words. Start directly with the content."
 
 # Call Ollama native API (not /v1, using native /api/chat for direct CLI bridge)
 curl -s "$OLLAMA_URL/api/chat" \
