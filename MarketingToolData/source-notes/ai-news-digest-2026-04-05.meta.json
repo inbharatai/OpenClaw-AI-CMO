@@ -1,0 +1,14 @@
+{
+  "cmo_classified": true,
+  "classified_date": "2026-04-05",
+  "source_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/source-notes/ai-news-digest-2026-04-05.md",
+  "source_type": "note",
+  "content_type": "ai-news",
+  "priority": "high",
+  "suggested_channels": " website-news, x, linkedin, discord",
+  "status": "content_produced",
+  "approval_level": "pending_scoring",
+  "output_file": "/Volumes/Expansion/CMO-10million/MarketingToolData/ai-news/news-2026-04-05-ai-news-digest-2026-04-05.md",
+  "queue_file": "/Volumes/Expansion/CMO-10million/OpenClawData/queues/website/pending/news-2026-04-05-ai-news-digest-2026-04-05.md",
+  "produced_date": "2026-04-05"
+}

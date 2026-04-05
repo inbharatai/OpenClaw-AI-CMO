@@ -22,10 +22,12 @@ if [ "$1" = "--dry-run" ]; then
 fi
 
 # Source folders to scan
+# Includes memory/approval/ — where gateway agent drafts and calendar content land
 SOURCE_DIRS=(
     "$WORKSPACE_ROOT/MarketingToolData/source-notes"
     "$WORKSPACE_ROOT/MarketingToolData/source-links"
     "$WORKSPACE_ROOT/MarketingToolData/product-updates"
+    "$WORKSPACE_ROOT/memory/approval"
 )
 
 PROCESSED_LOG="$WORKSPACE_ROOT/OpenClawData/logs/intake-processed-files.log"
