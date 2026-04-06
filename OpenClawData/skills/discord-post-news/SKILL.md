@@ -19,7 +19,7 @@ When this skill runs, it should post the *current* AI‑industry brief (the same
    ```bash
    curl -X POST -H "Content-Type: application/json" \
         -d "{\"content\":\"<MESSAGE_TEXT>\"}" \
-        https://discord.com/api/webhooks/1488846529346408458/rpIXdEotEjkFJaDw0Vwt5Ij2HmbdwA_3XT8RjXhOburn7lbm9poEZxLtHlznpfG3OQri
+        WEBHOOK_URL_IN_KEYCHAIN
    ```
    Replace `<MESSAGE_TEXT>` with the text you extracted in step 2 (properly escaped for JSON).
 
