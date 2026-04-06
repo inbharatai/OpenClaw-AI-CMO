@@ -41,7 +41,7 @@ def load_brand_kb():
     """Load the canonical brand knowledge base."""
     kb_paths = [
         Path(__file__).parent.parent.parent / 'strategy' / 'brand-knowledge-base.json',
-        Path('/Volumes/Expansion/CMO-10million/OpenClawData/strategy/brand-knowledge-base.json'),
+        Path('/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/strategy/brand-knowledge-base.json'),
     ]
     for path in kb_paths:
         try:

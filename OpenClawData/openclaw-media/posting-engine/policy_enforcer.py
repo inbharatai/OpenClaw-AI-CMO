@@ -28,7 +28,7 @@ from pathlib import Path
 
 
 # ── Paths ──
-WORKSPACE_ROOT = Path("/Volumes/Expansion/CMO-10million")
+WORKSPACE_ROOT = Path("/Users/reeturajgoswami/Desktop/CMO-10million")
 RATE_LIMITS_PATH = WORKSPACE_ROOT / "OpenClawData" / "policies" / "rate-limits.json"
 CHANNEL_POLICIES_PATH = WORKSPACE_ROOT / "OpenClawData" / "policies" / "channel-policies.json"
 COUNTER_DIR = WORKSPACE_ROOT / "OpenClawData" / "openclaw-media" / "analytics"

@@ -11,7 +11,7 @@
 
 set -uo pipefail
 
-WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
+WORKSPACE_ROOT="/Users/reeturajgoswami/Desktop/CMO-10million"
 ENGINE_DIR="$WORKSPACE_ROOT/OpenClawData/openclaw-media/image-engine"
 QUEUES_DIR="$WORKSPACE_ROOT/OpenClawData/queues"
 ASSETS_DIR="$WORKSPACE_ROOT/OpenClawData/openclaw-media/assets/images"

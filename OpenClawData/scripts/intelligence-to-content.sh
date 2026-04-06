@@ -16,7 +16,7 @@
 
 set -o pipefail
 
-WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
+WORKSPACE_ROOT="/Users/reeturajgoswami/Desktop/CMO-10million"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"
 BOT_DIR="$WORKSPACE_ROOT/OpenClawData/inbharat-bot"
 QUEUES_DIR="$WORKSPACE_ROOT/OpenClawData/queues"

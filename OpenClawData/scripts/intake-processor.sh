@@ -8,7 +8,7 @@
 # Ignore SIGPIPE — prevents exit code 141 from head|grep patterns on macOS
 trap '' PIPE
 
-WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
+WORKSPACE_ROOT="/Users/reeturajgoswami/Desktop/CMO-10million"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"
 LOG_FILE="$WORKSPACE_ROOT/OpenClawData/logs/intake-processor.log"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')

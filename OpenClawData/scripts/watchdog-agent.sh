@@ -9,11 +9,11 @@
 #   ./watchdog-agent.sh --check-only Report problems without fixing
 #   ./watchdog-agent.sh --status     Show current health summary
 #
-# Cron: */15 * * * * /Volumes/Expansion/CMO-10million/OpenClawData/scripts/watchdog-agent.sh
+# Cron: */15 * * * * /Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/scripts/watchdog-agent.sh
 
 set -o pipefail
 
-WORKSPACE="/Volumes/Expansion/CMO-10million"
+WORKSPACE="/Users/reeturajgoswami/Desktop/CMO-10million"
 OCD="$WORKSPACE/OpenClawData"
 SCRIPTS="$OCD/scripts"
 ENGINE="$OCD/openclaw-media/posting-engine"
@@ -142,6 +142,9 @@ check_ollama() {
 }
 
 check_gateway() {
+  # Gateway uninstalled — Claude Code is the primary executor now.
+  wlog "OK" "Gateway: not needed (Claude Code is primary executor)"
+  return
   if curl -sf --max-time 5 http://127.0.0.1:18789/ >/dev/null 2>&1; then
     wlog "OK" "Gateway: running on :18789"
   else

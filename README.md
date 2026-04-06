@@ -169,7 +169,7 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 ## Folder Structure
 
 ```
-/Volumes/Expansion/CMO-10million/
+/Users/reeturajgoswami/Desktop/CMO-10million/
 ├── CLAUDE.md                              ← System operating instructions
 ├── README.md                              ← THIS FILE
 ├── assets/brand/                          ← Logo files (SVG, PNG)
@@ -270,7 +270,7 @@ Risk scoring: 6 dimensions (source confidence 25%, claim sensitivity 25%, brand 
 
 ```bash
 # 1. Ensure external HD is connected
-ls /Volumes/Expansion/CMO-10million
+ls /Users/reeturajgoswami/Desktop/CMO-10million
 
 # 2. Start Ollama
 ollama serve &

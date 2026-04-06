@@ -30,7 +30,7 @@ def _load_brand_colors():
     import json
     kb_paths = [
         os.path.join(os.path.dirname(__file__), '..', '..', 'strategy', 'brand-knowledge-base.json'),
-        '/Volumes/Expansion/CMO-10million/OpenClawData/strategy/brand-knowledge-base.json',
+        '/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/strategy/brand-knowledge-base.json',
     ]
     for kb_path in kb_paths:
         try:

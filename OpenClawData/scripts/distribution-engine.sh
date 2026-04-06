@@ -22,7 +22,7 @@
 #   ./distribution-engine.sh --channel website  Distribute specific channel
 #   ./distribution-engine.sh --dry-run          Preview without distributing
 
-WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
+WORKSPACE_ROOT="/Users/reeturajgoswami/Desktop/CMO-10million"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"
 QUEUES_DIR="$WORKSPACE_ROOT/OpenClawData/queues"
 ENGINE_DIR="$WORKSPACE_ROOT/OpenClawData/openclaw-media/posting-engine"

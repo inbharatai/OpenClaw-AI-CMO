@@ -24,7 +24,7 @@
 
 set -o pipefail
 
-WORKSPACE_ROOT="/Volumes/Expansion/CMO-10million"
+WORKSPACE_ROOT="/Users/reeturajgoswami/Desktop/CMO-10million"
 QUEUES_DIR="$WORKSPACE_ROOT/OpenClawData/queues"
 ENGINE_DIR="$WORKSPACE_ROOT/OpenClawData/openclaw-media/posting-engine"
 SCRIPTS_DIR="$WORKSPACE_ROOT/OpenClawData/scripts"

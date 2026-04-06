@@ -124,17 +124,17 @@ Before asking for any credential, check in order:
 Report what was posted, scheduled, drafted, skipped, and what's in founder video queue. Report true blockers. Do NOT repeatedly ask "should I do this?"
 
 ## Key Paths
-- Workspace: `/Volumes/Expansion/CMO-10million`
-- OpenClawData: `/Volumes/Expansion/CMO-10million/OpenClawData`
-- Scripts: `/Volumes/Expansion/CMO-10million/OpenClawData/scripts`
-- Queues: `/Volumes/Expansion/CMO-10million/OpenClawData/queues`
-- Skills: `/Volumes/Expansion/CMO-10million/OpenClawData/skills`
-- InBharat Bot: `/Volumes/Expansion/CMO-10million/OpenClawData/inbharat-bot`
-- Media Pipeline: `/Volumes/Expansion/CMO-10million/OpenClawData/openclaw-media`
-- Policies: `/Volumes/Expansion/CMO-10million/OpenClawData/policies`
-- Strategy: `/Volumes/Expansion/CMO-10million/OpenClawData/strategy`
-- Directives: `/Volumes/Expansion/CMO-10million/OpenClawData/directives`
-- Logs: `/Volumes/Expansion/CMO-10million/OpenClawData/logs`
+- Workspace: `/Users/reeturajgoswami/Desktop/CMO-10million`
+- OpenClawData: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData`
+- Scripts: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/scripts`
+- Queues: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/queues`
+- Skills: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/skills`
+- InBharat Bot: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/inbharat-bot`
+- Media Pipeline: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/openclaw-media`
+- Policies: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/policies`
+- Strategy: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/strategy`
+- Directives: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/directives`
+- Logs: `/Users/reeturajgoswami/Desktop/CMO-10million/OpenClawData/logs`
 
 ## Local Models
 - Default (scripts): `qwen3:8b` via Ollama (`http://127.0.0.1:11434`) — FREE
