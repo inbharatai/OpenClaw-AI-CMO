@@ -69,3 +69,6 @@ socialflow/backend/openclaw_bridge_log.json
 # Playwright state
 socialflow/backend/playwright-report/
 _archive/
+
+# Browser sessions (contain cookies, cache — DO NOT COMMIT)
+.browser-sessions/
